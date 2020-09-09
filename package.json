@@ -1,0 +1,22 @@
+{
+  "name": "jh-next-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jihunhong/jh-next-boilerplate.git"
+  },
+  "keywords": [
+    "boilerplate"
+  ],
+  "author": "jihunhong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jihunhong/jh-next-boilerplate/issues"
+  },
+  "homepage": "https://github.com/jihunhong/jh-next-boilerplate#readme"
+}
