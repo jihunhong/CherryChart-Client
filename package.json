@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next",
+    "start": "next start",
+    "build": "next build"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,23 @@
   "bugs": {
     "url": "https://github.com/jihunhong/jh-next-boilerplate/issues"
   },
-  "homepage": "https://github.com/jihunhong/jh-next-boilerplate#readme"
+  "homepage": "https://github.com/jihunhong/jh-next-boilerplate#readme",
+  "dependencies": {
+    "@ant-design/colors": "^4.0.1",
+    "@ant-design/icons": "^4.2.1",
+    "antd": "^4.3.5",
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "next": "^9.4.4",
+    "next-http-proxy-middleware": "^1.0.4",
+    "next-redux-wrapper": "^6.0.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "react-slick": "^0.26.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "styled-components": "^5.1.1"
+  }
 }
