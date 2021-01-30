@@ -1,6 +1,10 @@
+import AppLayout from "../components/AppLayout";
+
 const Home = () => {
   return (
-    <div>Main Page</div>
+    <AppLayout>
+      <div>메인페이지</div>
+    </AppLayout>
   );
 };
 

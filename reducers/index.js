@@ -1,19 +1,18 @@
-// eslint-disable-next-line
 import { HYDRATE } from 'next-redux-wrapper';
 import { combineReducers } from 'redux';
+import user from './user';
 
-const initialState = {};
-
-const rootReducer = combineReducers({
-  index: (state = initialState, action) => {
-    switch (action.type) {
-      case 'HYDRATE':
-        console.log('HYDRATE', action);
-        return { ...state, ...action.playload };
-      default:
-        return state;
+const rootReducer = (state, action) => {
+  switch (action.type) {
+    case HYDRATE:
+      return action.payload;
+    default: {
+      const combineReducer = combineReducers({
+        user,
+      });
+      return combineReducer(state, action);
     }
-  },
-});
+  }
+};
 
 export default rootReducer;
