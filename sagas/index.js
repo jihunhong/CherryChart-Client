@@ -15,7 +15,7 @@ function* logIn(){
     } catch(err) {
         yield put({
             type : 'LOG_IN_FAILURE',
-            data : err.response.data
+            data : err.data
         })
     }
 }
@@ -28,14 +28,9 @@ function* watchLogOut() {
     yield take('LOG_OUT_REQUEST');
 }
 
-function* watchAddPost() {
-    yield take('ADD_POST_REQUEST');
-}
-
 export default function* rootSaga() {
     yield all([
         fork(watchLogIn),
         fork(watchLogOut),
-        fork(watchAddPost)
     ])
 }

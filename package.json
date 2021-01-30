@@ -1,5 +1,5 @@
 {
-  "name": "jh-next-boilerplate",
+  "name": "cherrychart",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jihunhong/jh-next-boilerplate.git"
+    "url": "git+https://github.com/jihunhong/CherryChart-Client.git"
   },
   "keywords": [
     "boilerplate"
@@ -18,11 +18,10 @@
   "author": "jihunhong",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jihunhong/jh-next-boilerplate/issues"
+    "url": "https://github.com/jihunhong/CherryChart-Client/issues"
   },
-  "homepage": "https://github.com/jihunhong/jh-next-boilerplate#readme",
+  "homepage": "https://github.com/jihunhong/CherryChart-Client#readme",
   "dependencies": {
-    "@ant-design/colors": "^4.0.1",
     "@ant-design/icons": "^4.2.1",
     "antd": "^4.3.5",
     "axios": "^0.19.2",
