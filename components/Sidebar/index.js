@@ -6,6 +6,7 @@ const Sidebar = () => {
         <SidebarWrapper>
             <ProfileNav />
             {/* <Navigation /> */}
+            <Navigation />
             {/* <MyPageNavigation /> */}
         </SidebarWrapper>
     )
