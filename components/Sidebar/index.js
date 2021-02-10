@@ -1,13 +1,15 @@
 import { SidebarWrapper } from './style';
 import ProfileNav from '../ProfileNav';
+import Navigation from '../Navigation';
+import MyMusic from '../MyMusic';
 
 const Sidebar = () => {
     return (
-        <SidebarWrapper>
+        <SidebarWrapper theme={'light'} width={250}>
             <ProfileNav />
             {/* <Navigation /> */}
             <Navigation />
-            {/* <MyPageNavigation /> */}
+            <MyMusic />
         </SidebarWrapper>
     )
 }

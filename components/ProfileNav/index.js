@@ -1,23 +1,21 @@
-import { useSelector } from 'react-redux';
-import { Avatar, Image, Typography } from 'antd';
-import { ProfileNavWrapper } from './style';
+import { Typography } from 'antd';
+import { ProfileNavWrapper, ProfileAvatar } from './style';
 
 const ProfileNav = () => {
     // const { me } = useSelector((state) => state.user);
 
     return (
         <ProfileNavWrapper>
-            <Avatar 
-                size={64}
-                src={<Image src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                // src={<Image src={me.profileSrc} />}
+            <ProfileAvatar 
+                size={96}
+                src={"https://dcimg5.dcinside.com/dccon.php?no=62b5df2be09d3ca567b1c5bc12d46b394aa3b1058c6e4d0ca41648b65eee226e566d584f835066177669861e6743682de96779ade11ed9020f77f2955dc1b01ff7b3b50cfe"}
             />
-            <Typography.Title level={4}>
-                {'Jihun Hong'}
+            <Typography.Title level={5} style={{ margin : 0 }}>
+                {'Farzan Faruk'}
                 {/* {me.userName} */}
             </Typography.Title>
             <Typography.Text type='secondary'>
-                {'redgee49@gmail.com'}
+                {'Luova.studio7@gmail.com'}
                 {/* {me.email} */}
             </Typography.Text>
         </ProfileNavWrapper>
