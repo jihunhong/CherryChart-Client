@@ -29,6 +29,11 @@ export const NavigationGlobal = createGlobalStyle`
             opacity : 1;
         }
     }
+
+    .ant-menu-inline {
+        border : none;
+    }
+
     .ant-menu-inline .ant-menu-item::after {
         border-right : none;
     }

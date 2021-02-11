@@ -1,15 +1,18 @@
 import { Layout } from 'antd';
 import Sidebar from '../Sidebar';
+import Header from '../Header';
+import Content from '../Content';
+import Footer from '../Footer';
 
 const AppLayout = ({ children }) => {
     return (
         <>
             <Layout>
                 <Sidebar />
-                <Layout>
-                    <Layout.Header>Header</Layout.Header>
-                    <Layout.Content>{ children }</Layout.Content>
-                    <Layout.Footer>Footer</Layout.Footer>
+                <Layout className>
+                    <Header>Header</Header>
+                    <Content>{ children }</Content>
+                    <Footer>Footer</Footer>
                 </Layout>
             </Layout>
         </>
