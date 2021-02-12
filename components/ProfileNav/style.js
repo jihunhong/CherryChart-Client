@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Avatar } from "antd";
 
-export const ProfileNavWrapper = styled('div')`
+export const ProfileNavContainer = styled('div')`
     text-align : center;
     padding : 33px;
     margin-bottom : 32px;

@@ -1,10 +1,10 @@
-import { FooterWrapper } from './style';
+import { FooterContainer } from './style';
 
 const Footer = ({ children }) => {
     return (
-        <FooterWrapper>
+        <FooterContainer>
             { children }
-        </FooterWrapper>
+        </FooterContainer>
     )
 }
 

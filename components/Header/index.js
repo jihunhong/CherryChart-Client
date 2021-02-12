@@ -1,10 +1,10 @@
-import { HeaderWrapper } from "./style";
+import { HeaderContainer } from "./style";
 
 const Header = ({ children }) => {
     return (
-        <HeaderWrapper>
+        <HeaderContainer>
             { children }
-        </HeaderWrapper>
+        </HeaderContainer>
     )
 }
 

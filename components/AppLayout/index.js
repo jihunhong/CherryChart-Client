@@ -17,7 +17,7 @@ const AppLayout = ({ children }) => {
                         <PopOverMenus />
                     </Header>
                     <Content>{ children }</Content>
-                    <Footer>Footer</Footer>
+                    {/* <Footer>Footer</Footer> */}
                 </Layout>
             </Layout>
         </>

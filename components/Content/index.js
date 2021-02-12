@@ -1,10 +1,10 @@
-import { ContentWrapper } from "./style";
+import { ContentContainer } from "./style";
 
 const Content = ({ children }) => {
     return (
-        <ContentWrapper>
+        <ContentContainer>
             { children }
-        </ContentWrapper>
+        </ContentContainer>
     )
 }
 
