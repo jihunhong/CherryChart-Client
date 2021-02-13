@@ -25,6 +25,9 @@ export const Title = styled('span')`
     margin : auto 1.5vw;
     width : 12vw;
     display : inline-block;
+    overflow : hidden;
+    text-overflow : ellipsis;
+    white-space : nowrap;
 `
 
 export const Artist = styled('span')`
@@ -33,6 +36,9 @@ export const Artist = styled('span')`
     display : inline-block;
     font-weight : 400;
     color : rgba(0, 0, 0, 0.45);
+    overflow : hidden;
+    text-overflow : ellipsis;
+    white-space : nowrap;
 `
 
 export const Duration = styled('span')`
