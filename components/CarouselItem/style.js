@@ -13,19 +13,19 @@ export const CarouselCoverImage = styled('div')`
     width : 282px;
     height : 282px;
 
-    :after {
-        transform: scale(0.90) translateY(36px) translateZ(-30px);
-        filter: blur(20px);
-        opacity: 0.9;
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 80%;
-        background-image: inherit;
-        background-size: cover;
-        z-index: -1;
-        transition: filter .3s ease;
-    }
+    // :after {
+    //     transform: scale(0.90) translateY(36px);
+    //     filter: blur(20px);
+    //     opacity: 0.9;
+    //     content: '';
+    //     position: absolute;
+    //     width: 76%;
+    //     height: 80%;
+    //     background-image: inherit;
+    //     background-size: cover;
+    //     z-index: -1;
+    //     transition: filter .3s ease;
+    // }
 `
 
 export const Title = styled(Typography.Title)`
