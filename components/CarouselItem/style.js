@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { Typography } from "antd";
 
 export const CarouselItemContainer = styled('div')`
-    display : block;
+    display : inline-block;
+    margin : auto 2vw auto auto;
 `
 
 export const CarouselCoverImage = styled('div')`
@@ -42,5 +43,4 @@ export const Artist = styled(Typography.Text)`
     text-overflow : ellipsis;
     white-space : nowrap;
     display : inline-block;
-    width : 100%;
 `

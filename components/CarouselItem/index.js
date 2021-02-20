@@ -1,14 +1,14 @@
 import { CarouselItemContainer, CarouselCoverImage, Title, Artist } from "./style";
 
-const CarouselItem = ({ imgUrl, title, artist }) => {
+const CarouselItem = ({ imgUrl, album, artist }) => {
     return (
         <CarouselItemContainer>
             <CarouselCoverImage background={ imgUrl } />
             <Title level={5}>
-                { title }
+                { album.slice(0, 30) }
             </Title>
             <Artist>
-                { artist }
+                { artist.slice(0, 30) }
             </Artist>
         </CarouselItemContainer>
     )
