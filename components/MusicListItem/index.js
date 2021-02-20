@@ -13,7 +13,7 @@ const MusicListItem = ({ rank, title, artist, duration, album }) => {
             </Rank>
             
             <CoverImageContainer>
-                <Avatar shape={'square'} size={64} src={`${baseURL}/cover/${album.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`} />
+                <Avatar shape={'square'} size={64} src={`${baseURL}/api/cover/${album.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`} />
             </CoverImageContainer>
 
             <Title>
