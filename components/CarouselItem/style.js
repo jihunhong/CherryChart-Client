@@ -11,22 +11,23 @@ export const CarouselCoverImage = styled('div')`
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     margin-bottom : 13px;
     background-image : url('${props => props.background}');
+    background-size: cover;
     width : 282px;
     height : 282px;
 
-    // :after {
-    //     transform: scale(0.90) translateY(36px);
-    //     filter: blur(20px);
-    //     opacity: 0.9;
-    //     content: '';
-    //     position: absolute;
-    //     width: 76%;
-    //     height: 80%;
-    //     background-image: inherit;
-    //     background-size: cover;
-    //     z-index: -1;
-    //     transition: filter .3s ease;
-    // }
+    :after {
+        transform: scale(0.9) translateY(15px);
+        filter: blur(10px);
+        opacity: 0.9;
+        content: '';
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        background-image: inherit;
+        background-size: cover;
+        z-index: -1;
+        transition: filter .3s ease;
+    }
 `
 
 export const Title = styled(Typography.Title)`

@@ -1,9 +1,10 @@
 import { CarouselItemContainer, CarouselCoverImage, Title, Artist } from "./style";
+import {baseURL} from "../../config";
 
-const CarouselItem = ({ imgUrl, album, artist }) => {
+const CarouselItem = ({ album, artist }) => {
     return (
         <CarouselItemContainer>
-            <CarouselCoverImage background={ imgUrl } />
+            <CarouselCoverImage background={`${baseURL}/cover/${album.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`} />
             <Title level={5}>
                 { album.slice(0, 30) }
             </Title>

@@ -6,4 +6,5 @@ export const SidebarContainer = styled(Layout.Sider)`
     height : 100vh;
     position : fixed;
     left : 0;
+    overflow: hidden;
 `

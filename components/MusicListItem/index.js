@@ -1,9 +1,9 @@
 import { MusicListItemContainer, Rank, CoverImageContainer, Title, Artist, Duration, HeartIcon } from "./style";
 import { Avatar } from "antd";
-import { AiFillHeart } from "react-icons/ai";
 import { BiHeart } from "react-icons/bi";
+import {baseURL} from "../../config";
 
-const MusicListItem = ({ rank, title, artist, duration, imgUrl }) => {
+const MusicListItem = ({ rank, title, artist, duration, album }) => {
 
     return (
         <MusicListItemContainer>
@@ -13,7 +13,7 @@ const MusicListItem = ({ rank, title, artist, duration, imgUrl }) => {
             </Rank>
             
             <CoverImageContainer>
-                <Avatar shape={'square'} size={64} src={imgUrl} />
+                <Avatar shape={'square'} size={64} src={`${baseURL}/cover/${album.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`} />
             </CoverImageContainer>
 
             <Title>

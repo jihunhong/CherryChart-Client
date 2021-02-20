@@ -18,6 +18,7 @@ export const CoverImageContainer = styled('div')`
 
     & img {
         padding : 4px;
+        border-radius : 10px;
     }
 `
 
