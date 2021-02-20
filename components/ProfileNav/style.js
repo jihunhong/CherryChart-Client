@@ -8,6 +8,6 @@ export const ProfileNavContainer = styled('div')`
 `
 
 export const ProfileAvatar = styled(Avatar)`
-    box-shadow: 0px 16px 17px 0px rgb(0 0 0 / 18%);
+    box-shadow: 1px 4px 15px 0px rgb(0 0 0 / 18%);
     margin-bottom : 12px;
 `

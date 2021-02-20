@@ -1,9 +1,10 @@
-import { MusicListItemContainer, Rank, CoverImageContainer, Title, Artist, Duration, HeartIcon } from "./style";
+import { MusicListItemContainer, Rank, CoverImageContainer, Title, Artist, YoutubeIcon, HeartIcon } from "./style";
 import { Avatar } from "antd";
 import { BiHeart } from "react-icons/bi";
+import { FaYoutube } from 'react-icons/fa';
 import {baseURL} from "../../config";
 
-const MusicListItem = ({ rank, title, artist, duration, album }) => {
+const MusicListItem = ({ rank, title, artist, album }) => {
 
     return (
         <MusicListItemContainer>
@@ -24,9 +25,9 @@ const MusicListItem = ({ rank, title, artist, duration, album }) => {
                 { artist }
             </Artist>
 
-            <Duration>
-                { duration }
-            </Duration>
+            <YoutubeIcon>
+                <FaYoutube />
+            </YoutubeIcon>
 
             <HeartIcon>
                 <BiHeart />

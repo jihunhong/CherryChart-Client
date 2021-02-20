@@ -3,7 +3,7 @@ import { Typography } from "antd";
 
 export const ChartContainer = styled('div')`
     display : inline-block;
-    width : 50vw;
+    width : 100%;
 `
 
 export const Title = styled(Typography.Title)`
