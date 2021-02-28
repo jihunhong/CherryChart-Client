@@ -7,5 +7,4 @@ export const baseURL = process.env.NODE_ENV === 'production'
 export const SIDEBAR_WIDTH = 250;
 
 export const fetcher = (url) => axios.get(url, { withCredetials : true })
-                                        .then((result) => result.data)
-                                        .catch((err) => err);
+                                        .then((result) => result.data);
