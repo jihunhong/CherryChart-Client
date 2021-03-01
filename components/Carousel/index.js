@@ -4,6 +4,7 @@ import { CarouselContainer, CarouselGlobalStyle, Title, Text } from './style';
 import useCarousel from '../../hooks/swr/useCarousel';
 import {Spin} from 'antd';
 import aggregateAlbum from '../../lib/aggregateAlbum';
+import Spinner from '../Spinner';
 
 const settings = {
   className: "slider variable-width",
@@ -21,10 +22,6 @@ const Carousel = () => {
       return <div>Error...</div>;
     }
 
-    if(loading){
-      return <Spin />
-    }
-
     const albums = aggregateAlbum(data);
 
     return (
@@ -34,15 +31,19 @@ const Carousel = () => {
           Melon Topchart
         </Title>
         <Text>
-          { albums.length } Albums
+          { albums?.length || 0 } Albums
         </Text>
           <CarouselGlobalStyle />
           <MultiCarousel
             {...settings}
           >
-              { albums.map((v, i) => (
-                  <CarouselItem key={i} {...v} />
-              ))}
+              {
+                loading
+                ? <Spinner />
+                :  albums.map((v, i) => (
+                      <CarouselItem key={i} {...v} />
+                  ))
+              }
           </MultiCarousel>
         </CarouselContainer>
       </>

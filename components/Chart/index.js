@@ -1,7 +1,8 @@
 import { ChartContainer, Title, MusicList } from "./style";
-import { Typography, Spin } from "antd";
+import { Typography } from "antd";
 import MusicListItem from "../MusicListItem";
 import useChart from "../../hooks/swr/useChart";
+import Spinner from "../Spinner";
 
 
 const Chart = () => {
@@ -11,9 +12,9 @@ const Chart = () => {
         return <div>Error</div>
     }
 
-    if(loading){
-        return <Spin />
-    }
+    // if(loading){
+    //     return <Spinner />
+    // }
 
     return (
         <ChartContainer>
@@ -27,7 +28,9 @@ const Chart = () => {
             
             <MusicList>
                 {
-                    data.map((v, i) => (
+                    loading
+                    ? <Spinner />
+                    : data.map((v, i) => (
                         <MusicListItem {...v} key={i} />
                     ))
                 }
