@@ -2,9 +2,11 @@ import MultiCarousel from 'react-slick';
 import CarouselItem from '../CarouselItem';
 import { CarouselContainer, CarouselGlobalStyle, Title, Text } from './style';
 import useCarousel from '../../hooks/swr/useCarousel';
-import {Spin} from 'antd';
+import {Spin, Select} from 'antd';
 import aggregateAlbum from '../../lib/aggregateAlbum';
 import Spinner from '../Spinner';
+import {useSelector} from 'react-redux';
+import SiteSelector from '../SiteSelector';
 
 const settings = {
   className: "slider variable-width",
@@ -16,8 +18,8 @@ const settings = {
 };
 
 const Carousel = () => {
-
-    const { data, error, loading } = useCarousel('melon');
+    const { site } = useSelector((state) => state.config);
+    const { data, error, loading } = useCarousel(site);
     if(error){
       return <div>Error...</div>;
     }
@@ -28,7 +30,7 @@ const Carousel = () => {
       <>
         <CarouselContainer>
         <Title level={4}>
-          Melon Topchart
+          <SiteSelector />
         </Title>
         <Text>
           { albums?.length || 0 } Albums

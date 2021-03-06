@@ -1,9 +1,12 @@
 import styled from "styled-components";
 import { Typography } from "antd";
+import {smooth_render} from "../KeyFrames";
 
 export const CarouselItemContainer = styled('div')`
     display : inline-block;
     margin : auto 2vw auto auto;
+    animation-name: ${smooth_render};
+    animation-duration: 2s;
 `
 
 export const CarouselCoverImage = styled('div')`

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { smooth_render } from "../KeyFrames";
 
 
 export const MusicListItemContainer = styled('li')`
@@ -7,6 +8,8 @@ export const MusicListItemContainer = styled('li')`
     background : #fff;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 24px;
     border-radius : 6px;
+    animation-name: ${smooth_render};
+    animation-duration: 1s;
 `
 
 export const Rank = styled('span')`

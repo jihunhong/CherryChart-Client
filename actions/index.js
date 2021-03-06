@@ -11,3 +11,8 @@ export const signUpAction = (data) => ({
 export const loadUserAction = (data) => ({
     type : types.LOAD_USER_INFO_REQUEST
 })
+
+export const assignSiteName = (data) => ({
+    type : types.ASSIGN_SITE_NAME,
+    data
+})

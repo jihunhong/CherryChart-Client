@@ -3,18 +3,15 @@ import { Typography } from "antd";
 import MusicListItem from "../MusicListItem";
 import useChart from "../../hooks/swr/useChart";
 import Spinner from "../Spinner";
+import {useSelector} from "react-redux";
 
 
 const Chart = () => {
-
-    const { data, error, loading } = useChart('melon');
+    const { site } = useSelector((state) => state.config);
+    const { data, error, loading } = useChart(site);
     if(error){
         return <div>Error</div>
     }
-
-    // if(loading){
-    //     return <Spinner />
-    // }
 
     return (
         <ChartContainer>
