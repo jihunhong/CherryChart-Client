@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const baseURL = process.env.NODE_ENV === 'production' 
-        ? 'http://cherrychart.com'
+        ? 'http://www.cherrychart.com'
         : 'http://localhost:8080';
 
 export const SIDEBAR_WIDTH = 250;
