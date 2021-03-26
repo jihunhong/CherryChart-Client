@@ -56,7 +56,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: install server packages
+          
+      - name: pull source
+        run: sudo git pull origin master
+        working-directory: ${{ env.client-directory }}
+
+      - name: install npm packages
         run: sudo npm i
         working-directory: ${{ env.client-directory }}
 
