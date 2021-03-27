@@ -46,7 +46,7 @@ export const Artist = styled('span')`
 `
 
 export const YoutubeIcon = styled('span')`
-    margin : auto auto auto 8vw;
+    margin : auto auto auto 15vw;
     width : 4vw;
     display : inline-block;
     font-weight : 400;
@@ -59,7 +59,7 @@ export const YoutubeIcon = styled('span')`
 `
 
 export const HeartIcon = styled('span')`
-    margin : auto 1vw;
+    margin : auto 4vw auto auto;
 
     & svg { 
         cursor : pointer;

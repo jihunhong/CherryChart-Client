@@ -10,13 +10,11 @@ const Home = () => {
       <Carousel />
 
       <Row>
-        <Col xs={12} lg={12} md={24} sm={24}>
+        <Col xs={24} lg={24} md={24} sm={24}>
           <Chart />
         </Col>
 
-        <Col xs={12} lg={12} md={24} sm={24}>
-          <Player />
-        </Col>
+        <Player />
       </Row>
     </AppLayout>
   );

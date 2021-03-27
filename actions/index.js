@@ -16,3 +16,7 @@ export const assignSiteName = (data) => ({
     type : types.ASSIGN_SITE_NAME,
     data
 })
+
+export const togglePlaylist = () => ({
+    type : types.TOGGLE_PLAYLIST,
+})

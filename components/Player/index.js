@@ -1,25 +1,31 @@
-import { PlayerContainer, PlayerBackground } from "./style";
+import { PlayerContainer, PlayerBackground, Title, PlayerHeader, PlayerSaveContainer, Description } from "./style";
 import YouTube from "react-youtube";
-import {Title} from "../Chart/style";
-import {Typography} from "antd";
+import { BiListPlus } from "react-icons/bi";
+import TogglePlaylistButton from "../TogglePlaylistButton";
 
 const playList = Array(30).fill();
 
 const Player = () => {
     return (
         <PlayerContainer>
-            <Title level={3}>
-                Now Playing
-            </Title>
-            <Typography.Text type="secondary">
-                {playList.length} Items on the list
-            </Typography.Text>
+            {/* <YouTube width="500"/> */}
+            <PlayerHeader>
+                <Title level={3}>
+                    Now Playing
+                </Title>
+                <Description type="secondary">
+                    {playList.length} Items on the list
+                </Description>
+                <TogglePlaylistButton />
+            </PlayerHeader>
+            <PlayerSaveContainer>
+                <Description type="secondary">
+                    <BiListPlus/>
+                </Description>
+            </PlayerSaveContainer>
 
-            <PlayerBackground>
-                <YouTube
-                    width="100%"
-                />
-            </PlayerBackground>
+            {/* <PlayerBackground>
+            </PlayerBackground> */}
 
         </PlayerContainer>
     )

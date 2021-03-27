@@ -1,8 +1,8 @@
-import { MusicListItemContainer, Rank, CoverImageContainer, Title, Artist, YoutubeIcon, HeartIcon } from "./style";
+import { MusicListItemContainer, Rank, CoverImageContainer, Title, Artist, Artist as AlbumName, YoutubeIcon, HeartIcon } from "./style";
 import { Avatar } from "antd";
 import { BiHeart } from "react-icons/bi";
 import { FaYoutube } from 'react-icons/fa';
-import {baseURL} from "../../config";
+import { baseURL } from "../../config";
 
 const MusicListItem = ({ rank, title, artist, album }) => {
 
@@ -24,6 +24,10 @@ const MusicListItem = ({ rank, title, artist, album }) => {
             <Artist>
                 { artist }
             </Artist>
+
+            <AlbumName>
+                { album }
+            </AlbumName>
 
             <YoutubeIcon>
                 <FaYoutube />
