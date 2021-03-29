@@ -1,0 +1,4 @@
+@types
+node_modules
+.vscode
+__test__
