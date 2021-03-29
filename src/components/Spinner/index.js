@@ -1,14 +1,14 @@
-import { SpinnerWrapper } from './style.js';
 import { Spin } from 'antd';
+import { SpinnerWrapper } from './style.js';
 
 const Spinner = () => {
-    return (
-        <>
-            <SpinnerWrapper>
-                <Spin size={'large'} tip="Loading..." />
-            </SpinnerWrapper>
-        </>
-    )
-}
+  return (
+    <>
+      <SpinnerWrapper>
+        <Spin size="large" tip="Loading..." />
+      </SpinnerWrapper>
+    </>
+  );
+};
 
 export default Spinner;

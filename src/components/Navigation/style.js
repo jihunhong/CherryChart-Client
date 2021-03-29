@@ -1,5 +1,5 @@
-import styled, { createGlobalStyle } from "styled-components";
-import { Menu } from "antd";
+import styled, { createGlobalStyle } from 'styled-components';
+import { Menu } from 'antd';
 
 export const NavigationGlobal = createGlobalStyle`
     * {
@@ -43,8 +43,8 @@ export const NavigationGlobal = createGlobalStyle`
         line-height: 33px;
     }
 
-`
+`;
 
 export const MenuItem = styled(Menu.Item)`
-    padding-left : 43px !important;
-`
+  padding-left: 43px !important;
+`;

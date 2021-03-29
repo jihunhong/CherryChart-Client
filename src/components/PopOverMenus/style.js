@@ -1,5 +1,5 @@
-import styled, { createGlobalStyle } from "styled-components";
-import { Badge } from "antd";
+import styled, { createGlobalStyle } from 'styled-components';
+import { Badge } from 'antd';
 
 export const PopOverMenusGlobalStyle = createGlobalStyle`
     & span.ant-badge {
@@ -20,8 +20,8 @@ export const PopOverMenusGlobalStyle = createGlobalStyle`
         font-size : 23px !important;
         color : rgb(255 255 255 / 88%);
     }
-`
+`;
 
 export const InitilBadge = styled(Badge)`
-    margin : auto 23px auto auto;
-`
+  margin: auto 23px auto auto;
+`;

@@ -1,8 +1,8 @@
-import AppLayout from "@components/AppLayout";
-import Carousel from "@components/Carousel";
-import Chart from "@components/Chart";
-import Player from "@components/Player";
-import { Row, Col } from "antd";
+import AppLayout from '@components/AppLayout';
+import Carousel from '@components/Carousel';
+import Chart from '@components/Chart';
+import Player from '@components/Player';
+import { Row, Col } from 'antd';
 
 const Home = () => {
   return (
