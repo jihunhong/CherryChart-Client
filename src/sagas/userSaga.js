@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { call, put, take, all, fork } from 'redux-saga/effects';
-import * as types from '../actions/actionTypes';
+import * as types from '@actionTypes';
 
 function logInAPI(){
     return axios.post('/api/login');

@@ -7,6 +7,24 @@
         "ssr": true,
         "displayName": true
       }
+    ],
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@actions": "./src/actions",
+          // "@assets": "./src/assets",
+          "@components": "./src/components",
+          "@hooks": "./src/hooks",
+          "@lib": "./src/lib",
+          "@reducers": "./src/reducers",
+          "@sagas": "./src/sagas",
+          "@store": "./src/store",
+          // "@Pages": "./src/components/@Pages",
+          "@actionTypes": "./src/actions/actionTypes.js",
+          "@config": "./config"
+        }
+      }
     ]
   ]
 }

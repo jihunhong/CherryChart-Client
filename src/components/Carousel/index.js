@@ -2,7 +2,6 @@ import MultiCarousel from 'react-slick';
 import CarouselItem from '../CarouselItem';
 import { CarouselContainer, CarouselGlobalStyle, Title, Text } from './style';
 import useCarousel from '../../hooks/swr/useCarousel';
-import {Spin, Select} from 'antd';
 import aggregateAlbum from '../../lib/aggregateAlbum';
 import Spinner from '../Spinner';
 import {useSelector} from 'react-redux';

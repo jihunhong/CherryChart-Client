@@ -2,7 +2,7 @@ import { MusicListItemContainer, Rank, CoverImageContainer, Title, Artist, Artis
 import { Avatar } from "antd";
 import { BiHeart } from "react-icons/bi";
 import { FaYoutube } from 'react-icons/fa';
-import { baseURL } from "../../config";
+import { baseURL } from "@config";
 
 const MusicListItem = ({ rank, title, artist, album }) => {
 

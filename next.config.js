@@ -1,11 +1,32 @@
+const path = require('path');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
     enabled: process.env.ANALYZE === 'true',
   });
   
   module.exports = withBundleAnalyzer({
     compress: true,
-    webpack(config, { webpack, isServer }) {
+    publicRuntimeConfig: {
+
+    },
+    webpack(config, { webpack }) {
       const prod = process.env.NODE_ENV === 'production';
+      config.resolve = {
+        ...config.resolve,
+        alias: {
+          ...config.resolve.alias,
+          '@actions': path.join(__dirname, 'src', 'actions'),
+          // '@assets': path.join(__dirname, 'src', 'assets'),
+          '@components': path.join(__dirname, 'src', 'components'),
+          '@hooks': path.join(__dirname, 'src', 'hooks'),
+          '@lib': path.join(__dirname, 'src', 'lib'),
+          '@reducers': path.join(__dirname, 'src', 'reducers'),
+          '@sagas': path.join(__dirname, 'src', 'sagas'),
+          '@store': path.join(__dirname, 'src', 'store'),
+          // '@Pages': path.join(__dirname, 'src', 'components', '@Pages'),
+          '@actionTypes': path.join(__dirname, 'src', 'actions', 'actionTypes.js'),
+          '@config': path.join(__dirname, 'config'),
+        }
+      }
       const newConfig = {
         ...config,
         mode: prod ? 'production' : 'development',

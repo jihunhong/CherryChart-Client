@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import { baseURL, fetcher } from '../../config';
+import { baseURL, fetcher } from '@config';
 
 const useChart = ( site ) => {
     const { data, error } = useSWR(`${baseURL}/api/chart/${site}`, fetcher);

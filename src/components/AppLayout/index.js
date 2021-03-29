@@ -5,7 +5,7 @@ import Content from '../Content';
 import Footer from '../Footer';
 import SearchBar from '../SearchBar';
 import PopOverMenus from '../PopOverMenus';
-import { SIDEBAR_WIDTH } from '../../config';
+import { SIDEBAR_WIDTH } from '@config';
 
 const AppLayout = ({ children }) => {
     return (

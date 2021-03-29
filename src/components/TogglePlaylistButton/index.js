@@ -1,7 +1,7 @@
 import { ExpandBtn, ShrinkBtn } from "./style";
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { togglePlaylist } from "../../actions";
+import { togglePlaylist } from "@actions/";
 
 const TogglePlaylistButton = () => {
 

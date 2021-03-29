@@ -1,5 +1,5 @@
 import { CarouselItemContainer, CarouselCoverImage, Title, Artist } from "./style";
-import {baseURL} from "../../config";
+import {baseURL} from "@config";
 
 const CarouselItem = ({ album, artist }) => {
     return (

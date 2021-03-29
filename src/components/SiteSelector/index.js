@@ -1,8 +1,8 @@
 import {useState, useCallback} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {assignSiteName} from "../../actions";
+import {assignSiteName} from "@actions/";
 import {SiteContainer, NameList, SelectOption} from "./style";
-import {siteNames} from "../../config";
+import {siteNames} from "@config";
 
 const SiteSelector = () => {
 

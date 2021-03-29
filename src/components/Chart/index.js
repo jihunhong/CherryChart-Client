@@ -1,7 +1,7 @@
 import { ChartContainer, Title, MusicList } from "./style";
 import { Typography } from "antd";
 import MusicListItem from "../MusicListItem";
-import useChart from "../../hooks/swr/useChart";
+import useChart from "@hooks/swr/useChart";
 import Spinner from "../Spinner";
 import {useSelector} from "react-redux";
 
