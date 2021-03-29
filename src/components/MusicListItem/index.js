@@ -1,8 +1,8 @@
 import { Avatar } from 'antd';
 import { BiHeart } from 'react-icons/bi';
 import { FaYoutube } from 'react-icons/fa';
-import { baseURL } from '@config';
 import { MusicListItemContainer, Rank, CoverImageContainer, Title, Artist, Artist as AlbumName, YoutubeIcon, HeartIcon } from './style';
+import { cdnURL } from '@config';
 
 const MusicListItem = ({ rank, title, artist, album }) => {
   return (
@@ -10,7 +10,7 @@ const MusicListItem = ({ rank, title, artist, album }) => {
       <Rank>{`0${rank}`.slice(-2)}</Rank>
 
       <CoverImageContainer>
-        <Avatar shape="square" size={64} src={`${baseURL}/api/cover/${album.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`} />
+        <Avatar shape="square" size={64} src={`${cdnURL}/${album.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`} />
       </CoverImageContainer>
 
       <Title>{title}</Title>
