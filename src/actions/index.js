@@ -20,3 +20,8 @@ export const assignSiteName = data => ({
 export const togglePlaylist = () => ({
   type: types.TOGGLE_PLAYLIST,
 });
+
+export const addMusicToPlayList = (data) => ({
+  type : types.ADD_MUSIC_TO_PLAYLIST,
+  data
+})

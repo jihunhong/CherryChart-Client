@@ -2,10 +2,12 @@ import YouTube from 'react-youtube';
 import { BiListPlus } from 'react-icons/bi';
 import { PlayerContainer, PlayerBackground, Title, PlayerHeader, PlayerSaveContainer, Description } from './style';
 import TogglePlaylistButton from '../TogglePlaylistButton';
-
-const playList = Array(30).fill();
+import CurrentPlayList from '@components/CurrentPlayList';
+import { useSelector } from 'react-redux';
 
 const Player = () => {
+  const { playList, isExpand } = useSelector(state => state.player);
+
   return (
     <PlayerContainer>
       {/* <YouTube width="500"/> */}
@@ -20,8 +22,11 @@ const Player = () => {
         </Description>
       </PlayerSaveContainer>
 
-      {/* <PlayerBackground>
-            </PlayerBackground> */}
+      {isExpand ? (
+        <PlayerBackground>
+          <CurrentPlayList />
+        </PlayerBackground>
+      ) : null}
     </PlayerContainer>
   );
 };

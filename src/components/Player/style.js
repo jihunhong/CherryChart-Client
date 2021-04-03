@@ -6,8 +6,9 @@ export const PlayerContainer = styled('div')`
   position: fixed;
   bottom: 0;
   right: 1vw;
-  // border : 3px solid orange;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   width: 30%;
+  transition: 0.5s;
 `;
 export const PlayerHeader = styled('div')`
   padding-top: 14px;
@@ -38,9 +39,5 @@ export const PlayerBackground = styled('div')`
   border-top: 0px solid;
   box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
   height: 25.5vh;
-
-  & div {
-    margin: auto;
-    padding: 2vh 2vw;
-  }
 `;
+export const PlayListItemTitle = styled('div')``;

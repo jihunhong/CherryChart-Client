@@ -9,6 +9,12 @@ export const MusicListItemContainer = styled('li')`
   border-radius: 6px;
   animation-name: ${smooth_render};
   animation-duration: 1s;
+  cursor: pointer;
+
+  :hover {
+    transition: all 0.8s;
+    box-shadow: rgb(149 157 165 / 60%) 7px 6px 24px;
+  }
 `;
 
 export const Rank = styled('span')`

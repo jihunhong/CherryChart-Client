@@ -3,10 +3,22 @@ import { BiHeart } from 'react-icons/bi';
 import { FaYoutube } from 'react-icons/fa';
 import { MusicListItemContainer, Rank, CoverImageContainer, Title, Artist, Artist as AlbumName, YoutubeIcon, HeartIcon } from './style';
 import { cdnURL } from '@config';
+import { useDispatch } from 'react-redux';
+import { addMusicToPlayList } from '@actions/';
 
 const MusicListItem = ({ rank, title, artist, album }) => {
+  const dispatch = useDispatch();
+
+  const handleMusic = () => {
+    dispatch(
+      addMusicToPlayList({
+        title, artist, album
+      })
+    )
+  }
+
   return (
-    <MusicListItemContainer>
+    <MusicListItemContainer onClick={handleMusic}>
       <Rank>{`0${rank}`.slice(-2)}</Rank>
 
       <CoverImageContainer>
