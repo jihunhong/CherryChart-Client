@@ -33,7 +33,9 @@ const Carousel = () => {
         </Title>
         <Text>{albums?.length || 0} Albums</Text>
         <CarouselGlobalStyle />
-        <MultiCarousel {...settings}>{loading ? <Spinner /> : albums.map((v, i) => <CarouselItem key={i} {...v} />)}</MultiCarousel>
+        <MultiCarousel {...settings}>
+          {loading ? <Spinner /> : albums.map((v, i) => <CarouselItem key={i} rank={v.rank} {...v.Music} />)}
+        </MultiCarousel>
       </CarouselContainer>
     </>
   );

@@ -17,7 +17,7 @@ const Chart = () => {
       <Title level={3}>Most Popular</Title>
       <Typography.Text type="secondary">100 Songs</Typography.Text>
 
-      <MusicList>{loading ? <Spinner /> : data.map((v, i) => <MusicListItem {...v} key={i} />)}</MusicList>
+      <MusicList>{loading ? <Spinner /> : data.map((v, i) => <MusicListItem rank={v.rank} {...v.Music} key={i} />)}</MusicList>
     </ChartContainer>
   );
 };
