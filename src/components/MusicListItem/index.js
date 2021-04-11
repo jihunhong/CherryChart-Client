@@ -6,16 +6,19 @@ import { cdnURL } from '@config';
 import { useDispatch } from 'react-redux';
 import { addMusicToPlayList } from '@actions/';
 
-const MusicListItem = ({ rank, title, artist, album }) => {
+const MusicListItem = ({ rank, title, artist, album, Video }) => {
   const dispatch = useDispatch();
 
   const handleMusic = () => {
     dispatch(
       addMusicToPlayList({
-        title, artist, album
-      })
-    )
-  }
+        title,
+        artist,
+        album,
+        videoId: Video?.videoId,
+      }),
+    );
+  };
 
   return (
     <MusicListItemContainer onClick={handleMusic}>
@@ -31,9 +34,11 @@ const MusicListItem = ({ rank, title, artist, album }) => {
 
       <AlbumName>{album}</AlbumName>
 
-      <YoutubeIcon>
-        <FaYoutube />
-      </YoutubeIcon>
+      {Video?.videoId && (
+        <YoutubeIcon>
+          <FaYoutube />
+        </YoutubeIcon>
+      )}
 
       <HeartIcon>
         <BiHeart />

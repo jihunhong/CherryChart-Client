@@ -9,6 +9,10 @@ export const PlayerContainer = styled('div')`
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   width: 30%;
   transition: 0.5s;
+
+  & iframe {
+    width: 100%;
+  }
 `;
 export const PlayerHeader = styled('div')`
   padding-top: 14px;

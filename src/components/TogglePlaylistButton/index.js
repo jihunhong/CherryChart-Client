@@ -11,7 +11,7 @@ const TogglePlaylistButton = () => {
     dispatch(togglePlaylist());
   }, [dispatch]);
 
-  return <>{isExpand ? <ShrinkBtn onClick={handleExpand} /> : <ExpandBtn onClick={handleExpand} />}</>;
+  return <>{isExpand ? <ExpandBtn onClick={handleExpand} /> : <ShrinkBtn onClick={handleExpand} />}</>;
 };
 
 export default TogglePlaylistButton;

@@ -4,6 +4,7 @@ import * as types from '../actions/actionTypes';
 export const playerInitialState = {
   isExpand: false,
   playList: [],
+  selectedIndex: 0,
 };
 
 const reducer = (state = playerInitialState, action) => {
@@ -13,8 +14,10 @@ const reducer = (state = playerInitialState, action) => {
         draft.isExpand = !draft.isExpand;
         break;
       case types.ADD_MUSIC_TO_PLAYLIST:
-        draft.isExpand = true;
         draft.playList.push(action.data);
+        break;
+      case types.SELECT_ITEM_PLAYLIST:
+        draft.selectedIndex = action.data.index;
         break;
       default:
         break;

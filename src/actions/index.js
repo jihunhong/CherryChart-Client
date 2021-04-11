@@ -21,7 +21,12 @@ export const togglePlaylist = () => ({
   type: types.TOGGLE_PLAYLIST,
 });
 
-export const addMusicToPlayList = (data) => ({
-  type : types.ADD_MUSIC_TO_PLAYLIST,
-  data
-})
+export const addMusicToPlayList = data => ({
+  type: types.ADD_MUSIC_TO_PLAYLIST,
+  data,
+});
+
+export const selectItemInPlayList = data => ({
+  type: types.SELECT_ITEM_PLAYLIST,
+  data,
+});
