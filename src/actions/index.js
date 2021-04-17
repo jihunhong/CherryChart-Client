@@ -30,3 +30,8 @@ export const selectItemInPlayList = data => ({
   type: types.SELECT_ITEM_PLAYLIST,
   data,
 });
+
+export const updatePlayingIndex = data => ({
+  type: types.UPDATE_PLAYING_INDEX,
+  data,
+});

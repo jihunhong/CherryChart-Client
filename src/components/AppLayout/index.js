@@ -6,6 +6,7 @@ import Content from '../Content';
 import Footer from '../Footer';
 import SearchBar from '../SearchBar';
 import PopOverMenus from '../PopOverMenus';
+import Player from '@components/Player';
 
 const AppLayout = ({ children }) => {
   return (
@@ -17,7 +18,12 @@ const AppLayout = ({ children }) => {
             <SearchBar />
             <PopOverMenus />
           </Header>
-          <Content>{children}</Content>
+          <Content>
+            <>
+              {children}
+              <Player />
+            </>
+          </Content>
           {/* <Footer>Footer</Footer> */}
         </Layout>
       </Layout>

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Typography } from 'antd';
+import { horizontal_render, disapper_horizontal } from '@components/KeyFrames';
 
 export const PlayerContainer = styled('div')`
   background-color: #fff;
@@ -21,6 +22,7 @@ export const PlayerHeader = styled('div')`
   border: 1px solid rgba(149, 157, 165, 0.2);
   background: #fff !important;
   border-bottom: 0px;
+  cursor: pointer;
 `;
 
 export const Title = styled(Typography.Title)`
@@ -42,6 +44,11 @@ export const PlayerBackground = styled('div')`
   border: 1px solid rgba(149, 157, 165, 0.2);
   border-top: 0px solid;
   box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
-  height: 25.5vh;
+
+  height: ${props => (props.isExpand ? '25.5vh' : '0vh')};
+  animation-name: ${horizontal_render};
+  animation-duration: 1s;
+  animation-direction: ${props => (props.isExpand ? 'reverse' : 'normal')};
+  transition: 0.3s;
 `;
 export const PlayListItemTitle = styled('div')``;

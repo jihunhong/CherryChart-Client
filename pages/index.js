@@ -13,8 +13,6 @@ const Home = () => {
         <Col xs={24} lg={24} md={24} sm={24}>
           <Chart />
         </Col>
-
-        <Player />
       </Row>
     </AppLayout>
   );

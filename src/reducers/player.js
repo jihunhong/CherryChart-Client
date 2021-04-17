@@ -13,6 +13,12 @@ const reducer = (state = playerInitialState, action) => {
       case types.TOGGLE_PLAYLIST:
         draft.isExpand = !draft.isExpand;
         break;
+      case types.UPDATE_PLAYING_INDEX:
+        if (draft.playList.length - 1 <= action.data.index) {
+          // playlist의 인덱스 범위만 참조하도록
+          draft.selectedIndex = action.data.index;
+        }
+        break;
       case types.ADD_MUSIC_TO_PLAYLIST:
         draft.playList.push(action.data);
         break;

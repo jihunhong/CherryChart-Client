@@ -9,6 +9,11 @@ export const PlayListItemsContainer = styled('ul')`
   animation-duration: 1s;
   padding: 4px 6px;
   overflow: scroll;
+  cursor: pointer;
+
+  & .ant-empty {
+    margin-top: 20px;
+  }
 `;
 
 export const PlayListItem = styled('li')`
@@ -17,6 +22,8 @@ export const PlayListItem = styled('li')`
   padding-bottom: 6px;
   border-bottom: 1px solid;
   border-color: rgb(0 0 0 / 10%);
+  animation-name: ${smooth_render};
+  animation-duration: 1s;
 
   :hover {
     transition: all 0.3s;

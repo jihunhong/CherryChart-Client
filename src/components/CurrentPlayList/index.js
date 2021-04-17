@@ -1,8 +1,8 @@
 import { PlayListItemsContainer, PlayListItem, PlayListItemCover, PlayListItemTitle, PlayListItemArtist, PlayListDivision } from './style';
 import { useSelector, useDispatch } from 'react-redux';
-import Avatar from 'antd/lib/avatar/avatar';
 import AlbumCover from '@components/AlbumCover';
 import { selectItemInPlayList } from '@actions/';
+import { Empty } from 'antd';
 
 const CurrentPlayList = () => {
   const dispatch = useDispatch();
@@ -19,17 +19,21 @@ const CurrentPlayList = () => {
   return (
     <>
       <PlayListItemsContainer>
-        {playList.map((music, index) => (
-          <PlayListItem onClick={handleOnClick.bind(null, index)}>
-            <PlayListItemCover>
-              <AlbumCover size={53} album={music.album} />
-            </PlayListItemCover>
-            <PlayListDivision>
-              <PlayListItemTitle>{music.title}</PlayListItemTitle>
-              <PlayListItemArtist>{music.artist}</PlayListItemArtist>
-            </PlayListDivision>
-          </PlayListItem>
-        ))}
+        {playList.length === 0 ? (
+          <Empty />
+        ) : (
+          playList.map((music, index) => (
+            <PlayListItem onClick={handleOnClick.bind(null, index)}>
+              <PlayListItemCover>
+                <AlbumCover size={53} album={music.album} />
+              </PlayListItemCover>
+              <PlayListDivision>
+                <PlayListItemTitle>{music.title}</PlayListItemTitle>
+                <PlayListItemArtist>{music.artist}</PlayListItemArtist>
+              </PlayListDivision>
+            </PlayListItem>
+          ))
+        )}
       </PlayListItemsContainer>
     </>
   );
