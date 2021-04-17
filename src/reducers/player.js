@@ -1,9 +1,10 @@
 import produce from 'immer';
 import * as types from '../actions/actionTypes';
+import { setLocalStorage, getLocalStorage } from '@lib/localStorage';
 
 export const playerInitialState = {
   isExpand: false,
-  playList: [],
+  playList: getLocalStorage('playList') || [],
   selectedIndex: 0,
 };
 
@@ -21,6 +22,7 @@ const reducer = (state = playerInitialState, action) => {
         break;
       case types.ADD_MUSIC_TO_PLAYLIST:
         draft.playList.push(action.data);
+        setLocalStorage('playList', draft.playList);
         break;
       case types.SELECT_ITEM_PLAYLIST:
         draft.selectedIndex = action.data.index;

@@ -6,9 +6,11 @@ import Content from '../Content';
 import Footer from '../Footer';
 import SearchBar from '../SearchBar';
 import PopOverMenus from '../PopOverMenus';
-import Player from '@components/Player';
+import dynamic from 'next/dynamic';
 
 const AppLayout = ({ children }) => {
+  const Player = dynamic(() => import('@components/Player'));
+
   return (
     <>
       <Layout>
