@@ -43,7 +43,6 @@ export const PlayerBackground = styled('div')`
   background: #fff;
   border: 1px solid rgba(149, 157, 165, 0.2);
   border-top: 0px solid;
-  box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
 
   height: ${props => (props.isExpand ? '25.5vh' : '0vh')};
   animation-name: ${horizontal_render};

@@ -4,11 +4,10 @@ import { smooth_render } from '../KeyFrames';
 export const PlayListItemsContainer = styled('ul')`
   width: 100%;
   background: #fff;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 24px;
   animation-name: ${smooth_render};
   animation-duration: 1s;
   padding: 4px 6px;
-  overflow: scroll;
+  overflow-y: scroll;
   cursor: pointer;
 
   & .ant-empty {
