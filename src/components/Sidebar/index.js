@@ -6,7 +6,7 @@ import MyMusic from '../MyMusic';
 
 const Sidebar = () => {
   return (
-    <SidebarContainer theme="light" width={SIDEBAR_WIDTH}>
+    <SidebarContainer theme="light" width={SIDEBAR_WIDTH} breakpoint={'lg'} collapsedWidth={0} trigger={null}>
       <ProfileNav />
       <Navigation />
       <MyMusic />
