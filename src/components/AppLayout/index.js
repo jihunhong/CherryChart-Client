@@ -15,7 +15,7 @@ const AppLayout = ({ children }) => {
     <>
       <Layout>
         <Sidebar />
-        <Layout>
+        <Layout style={{ marginLeft: SIDEBAR_WIDTH }}>
           <Header>
             <SearchBar />
             <PopOverMenus />
