@@ -9,7 +9,13 @@
     "build": "next build",
     "deploy": "sudo aws s3 sync s3://cherrychart.client ./.next --exact-timestamps",
     "prettier": "prettier --write '**/*.{ts,js,css}'",
-    "lint": "eslint . --ext .js --fix"
+    "lint": "eslint . --ext .js --fix",
+    "test:unit": "mocha --require babel-core/register --require ./test/helpers.js --require ./test/dom.js --require ignore-styles 'src/**/*.spec.js'",
+    "test:unit:watch": "npm run test:unit -- --watch",
+    "test:snapshot": "jest --config ./test/jest.config.json",
+    "test:snapshot:watch": "npm run test:snapshot -- --watch",
+    "test:cypress": "NODE_ENV=test start-server-and-test start http://localhost:3000 cypress",
+    "cypress": "cypress open"
   },
   "repository": {
     "type": "git",
@@ -54,12 +60,14 @@
     "swr": "^0.4.2"
   },
   "devDependencies": {
+    "cypress": "^7.1.0",
     "eslint": "^7.2.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-jsx-a11y": "^6.3.0",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.0",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "start-server-and-test": "^1.12.1"
   }
 }
