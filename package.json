@@ -27,6 +27,7 @@
   "dependencies": {
     "@ant-design/react-slick": "^0.28.2",
     "@next/bundle-analyzer": "^10.0.6",
+    "@reduxjs/toolkit": "^1.5.1",
     "antd": "^4.3.5",
     "axios": "^0.19.2",
     "babel-plugin-module-resolver": "^4.1.0",
