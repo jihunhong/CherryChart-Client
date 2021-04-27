@@ -1,19 +1,15 @@
 import { PlayListItemsContainer, PlayListItem, PlayListItemCover, PlayListItemTitle, PlayListItemArtist, PlayListDivision } from './style';
 import { useSelector, useDispatch } from 'react-redux';
 import AlbumCover from '@components/AlbumCover';
-import { selectItemInPlayList } from '@actions/';
 import { Empty } from 'antd';
+import playerSlice from '@reducers/player';
 
 const CurrentPlayList = () => {
   const dispatch = useDispatch();
   const { playList } = useSelector(state => state.player);
 
   const handleOnClick = index => {
-    dispatch(
-      selectItemInPlayList({
-        index,
-      }),
-    );
+    dispatch(playerSlice.actions.playSelectedItem(index));
   };
 
   return (

@@ -5,13 +5,14 @@ import { MusicListItemContainer, Rank, CoverImageContainer, Title, Artist, Artis
 import { cdnURL } from '@config';
 import { useDispatch } from 'react-redux';
 import { addMusicToPlayList } from '@actions/';
+import playerSlice from '@reducers/player';
 
 const MusicListItem = ({ rank, title, artist, album, Video }) => {
   const dispatch = useDispatch();
 
   const handleMusic = () => {
     dispatch(
-      addMusicToPlayList({
+      playerSlice.actions.addMusicToPlayList({
         title,
         artist,
         album,

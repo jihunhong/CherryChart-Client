@@ -1,20 +1,17 @@
-import produce from 'immer';
-import * as types from '../actions/actionTypes';
+import { createSlice } from '@reduxjs/toolkit';
 
-export const configInitialState = {
+const initialState = {
   site: 'melon',
 };
 
-const reducer = (state = configInitialState, action) => {
-  return produce(state, draft => {
-    switch (action.type) {
-      case types.ASSIGN_SITE_NAME:
-        draft.site = action.data.site;
-        break;
-      default:
-        break;
-    }
-  });
-};
+const configSlice = createSlice({
+  name: 'config',
+  initialState,
+  reducers: {
+    switchSiteName(state, action) {
+      state.site = action.payload;
+    },
+  },
+});
 
-export default reducer;
+export default configSlice;

@@ -1,36 +1,33 @@
-import produce from 'immer';
-import * as types from '../actions/actionTypes';
 import { setLocalStorage, getLocalStorage } from '@lib/localStorage';
+import { createSlice } from '@reduxjs/toolkit';
 
-export const playerInitialState = {
+const initialState = {
   isExpand: false,
   playList: getLocalStorage('playList') || [],
   selectedIndex: 0,
 };
 
-const reducer = (state = playerInitialState, action) => {
-  return produce(state, draft => {
-    switch (action.type) {
-      case types.TOGGLE_PLAYLIST:
-        draft.isExpand = !draft.isExpand;
-        break;
-      case types.UPDATE_PLAYING_INDEX:
-        if (draft.playList.length - 1 <= action.data.index) {
-          // playlist의 인덱스 범위만 참조하도록
-          draft.selectedIndex = action.data.index;
-        }
-        break;
-      case types.ADD_MUSIC_TO_PLAYLIST:
-        draft.playList.push(action.data);
-        setLocalStorage('playList', draft.playList);
-        break;
-      case types.SELECT_ITEM_PLAYLIST:
-        draft.selectedIndex = action.data.index;
-        break;
-      default:
-        break;
-    }
-  });
-};
+const playerSlice = createSlice({
+  name: 'player',
+  initialState,
+  reducers: {
+    togglePlayList(state) {
+      state.isExpand = !state.isExpand;
+    },
+    updatePlayingIndex(state, action) {
+      if (state.playList.length - 1 >= action.payload) {
+        // playlist의 인덱스 범위만 참조하도록
+        state.selectedIndex = action.payload;
+      }
+    },
+    addMusicToPlayList(state, action) {
+      state.playList.push(action.payload);
+      setLocalStorage('playList', state.playList);
+    },
+    playSelectedItem(state, action) {
+      state.selectedIndex = action.payload;
+    },
+  },
+});
 
-export default reducer;
+export default playerSlice;
