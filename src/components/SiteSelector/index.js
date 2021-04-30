@@ -1,6 +1,5 @@
 import { useState, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { assignSiteName } from '@actions/';
 import { siteNames } from '@config';
 import { SiteContainer, NameList, SelectOption } from './style';
 import configSlice from '@reducers/config';

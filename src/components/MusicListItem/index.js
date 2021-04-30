@@ -4,7 +4,6 @@ import { FaYoutube } from 'react-icons/fa';
 import { MusicListItemContainer, Rank, CoverImageContainer, Title, Artist, Artist as AlbumName, YoutubeIcon, HeartIcon } from './style';
 import { cdnURL } from '@config';
 import { useDispatch } from 'react-redux';
-import { addMusicToPlayList } from '@actions/';
 import playerSlice from '@reducers/player';
 
 const MusicListItem = ({ rank, title, artist, album, Video }) => {

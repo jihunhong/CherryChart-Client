@@ -1,6 +1,5 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { togglePlaylist } from '@actions/';
 import { ExpandBtn, ShrinkBtn } from './style';
 import playerSlice from '@reducers/player';
 

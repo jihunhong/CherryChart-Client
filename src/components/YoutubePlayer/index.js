@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
 import YouTube from 'react-youtube';
-import { updatePlayingIndex } from '@actions/';
 import playerSlice from '@reducers/player';
 
 const YoutubePlayer = () => {
