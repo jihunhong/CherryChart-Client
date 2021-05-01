@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { smooth_render } from '../KeyFrames';
+import { scrollbar } from '@components/Css/style';
 
 export const PlayListItemsContainer = styled('ul')`
   width: 100%;
@@ -13,6 +14,8 @@ export const PlayListItemsContainer = styled('ul')`
   & .ant-empty {
     margin-top: 20px;
   }
+
+  ${scrollbar}
 `;
 
 export const PlayListItem = styled('li')`
