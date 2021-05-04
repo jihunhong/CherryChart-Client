@@ -1,6 +1,6 @@
 import { PlayListItemsContainer, PlayListItem, PlayListItemCover, PlayListItemTitle, PlayListItemArtist, PlayListDivision } from './style';
 import { useSelector, useDispatch } from 'react-redux';
-import AlbumCover from '@components/AlbumCover';
+import AlbumCover from '@atoms/AlbumCover';
 import { Empty } from 'antd';
 import playerSlice from '@reducers/player';
 

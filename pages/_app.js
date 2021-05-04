@@ -6,14 +6,15 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import wrapper from '@store/configureStore';
 
-const App = ({ Component }) => {
+const App = ({ Component, pageProps }) => {
+  const getLayout = Component.getLayout || (page => page);
   return (
     <>
       <Head>
         <meta charSet="utf-8" />
         <title>Cherry Chart</title>
       </Head>
-      <Component />
+      {getLayout(<Component {...pageProps} />)}
     </>
   );
 };

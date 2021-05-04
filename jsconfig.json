@@ -3,17 +3,17 @@
     "baseUrl": ".",
     "paths": {
       "@actions/*": ["src/actions/*"],
-      //   "@assets/*": ["src/assets/*"],
+      "@assets/*": ["src/assets/*"],
+      "@Template/*": ["src/components/@Template/*"],
+      "@atoms/*": ["src/components/@atoms/*"],
+      "@molecules/*": ["src/components/@molecules/*"],
+      "@organisms/*": ["src/components/@organisms/*"],
       "@components/*": ["src/components/*"],
       "@hooks/*": ["src/hooks/*"],
       "@lib/*": ["src/lib/*"],
       "@reducers/*": ["src/reducers/*"],
-      "@sagas/*": ["src/sagas/*"],
       "@store/*": ["src/store/*"],
-      //   "@Pages/*": ["src/components/@Pages/*"],
-      "@actionTypes": ["src/actions/actionTypes.js"],
       "@config": ["config/*"]
     }
   }
-  // "include": ["."]
 }

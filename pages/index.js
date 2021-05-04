@@ -6,7 +6,7 @@ import { Row, Col } from 'antd';
 
 const Home = () => {
   return (
-    <AppLayout>
+    <>
       <Carousel />
 
       <Row>
@@ -14,8 +14,10 @@ const Home = () => {
           <Chart />
         </Col>
       </Row>
-    </AppLayout>
+    </>
   );
 };
+
+Home.getLayout = page => <AppLayout>{page}</AppLayout>;
 
 export default Home;

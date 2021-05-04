@@ -5,9 +5,15 @@ import { MusicListItemContainer, Rank, CoverImageContainer, Title, Artist, Artis
 import { cdnURL } from '@config';
 import { useDispatch } from 'react-redux';
 import playerSlice from '@reducers/player';
+import { useRouter } from 'next/dist/client/router';
 
-const MusicListItem = ({ rank, title, artist, album, Video }) => {
+const MusicListItem = ({ rank, title, artist, album, Video, AlbumId }) => {
   const dispatch = useDispatch();
+  const router = useRouter();
+
+  const gotoAlbumDetail = () => {
+    router.push(`/album/${AlbumId}`);
+  };
 
   const handleMusic = () => {
     dispatch(
@@ -21,7 +27,7 @@ const MusicListItem = ({ rank, title, artist, album, Video }) => {
   };
 
   return (
-    <MusicListItemContainer onClick={handleMusic}>
+    <MusicListItemContainer onClick={gotoAlbumDetail}>
       <Rank>{`0${rank}`.slice(-2)}</Rank>
 
       <CoverImageContainer>
@@ -35,7 +41,7 @@ const MusicListItem = ({ rank, title, artist, album, Video }) => {
       <AlbumName>{album}</AlbumName>
 
       {Video?.videoId && (
-        <YoutubeIcon>
+        <YoutubeIcon onClick={handleMusic}>
           <FaYoutube />
         </YoutubeIcon>
       )}
