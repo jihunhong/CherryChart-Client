@@ -1,7 +1,7 @@
 import { Avatar } from 'antd';
 import { BiHeart } from 'react-icons/bi';
 import { FaYoutube } from 'react-icons/fa';
-import { MusicListItemContainer, Rank, CoverImageContainer, Title, Artist, Artist as AlbumName, YoutubeIcon, HeartIcon } from './style';
+import { MusicListItemContainer, Rank, CoverImageContainer, Title, Artist, AlbumName, YoutubeIcon, HeartIcon } from './style';
 import { cdnURL } from '@config';
 import { useDispatch } from 'react-redux';
 import playerSlice from '@reducers/player';
@@ -27,7 +27,7 @@ const MusicListItem = ({ rank, title, artist, album, Video, AlbumId }) => {
   };
 
   return (
-    <MusicListItemContainer onClick={gotoAlbumDetail}>
+    <MusicListItemContainer>
       <Rank>{`0${rank}`.slice(-2)}</Rank>
 
       <CoverImageContainer>
@@ -38,7 +38,7 @@ const MusicListItem = ({ rank, title, artist, album, Video, AlbumId }) => {
 
       <Artist>{artist}</Artist>
 
-      <AlbumName>{album}</AlbumName>
+      <AlbumName onClick={gotoAlbumDetail}>{album}</AlbumName>
 
       {Video?.videoId && (
         <YoutubeIcon onClick={handleMusic}>

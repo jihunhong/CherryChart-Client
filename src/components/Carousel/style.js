@@ -7,9 +7,7 @@ export const CarouselGlobalStyle = createGlobalStyle`
     }
 `;
 
-export const CarouselContainer = styled('section')`
-  margin: 5vh auto;
-`;
+export const CarouselContainer = styled('section')``;
 
 export const Title = styled(Typography.Title)`
   margin-bottom: 0 !important;
@@ -20,4 +18,16 @@ export const Text = styled(Typography.Text)`
   display: inline-block;
   margin-bottom: 3vh;
   color: #262f57 !important;
+`;
+
+export const TrackAddIcon = styled.span`
+  margin: auto 3vw auto auto;
+  width: 4vw;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.45);
+
+  & svg {
+    fill: #ff0000;
+    cursor: pointer;
+  }
 `;

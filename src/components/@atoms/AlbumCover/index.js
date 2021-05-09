@@ -1,10 +1,10 @@
 import { Avatar } from 'antd';
 import { cdnURL } from '@config';
 
-const AlbumCover = ({ size, album }) => {
+const AlbumCover = ({ size, album, radius }) => {
   return (
     <>
-      <Avatar shape="square" size={size} src={`${cdnURL}/${album.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`} />
+      <Avatar style={{ borderRadius: radius }} shape="square" size={size} src={`${cdnURL}/${album.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`} />
     </>
   );
 };

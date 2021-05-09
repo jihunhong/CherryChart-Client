@@ -3,6 +3,7 @@ import useAlbum from '@hooks/swr/useAlbum';
 import Spinner from '@components/Spinner';
 import AlbumInfo from '@components/@organisms/AlbumInfo';
 import TrackList from '@organisms/TrackList';
+import { Title } from '@components/Chart/style';
 
 const AlbumDetail = () => {
   const router = useRouter();
@@ -18,6 +19,7 @@ const AlbumDetail = () => {
     <>
       <AlbumInfo {...data} />
       <TrackList tracks={data.Music} />
+      {/* <Title level={5}>{`More by ${data.artist}`}</Title> */}
     </>
   );
 };

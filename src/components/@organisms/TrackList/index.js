@@ -1,16 +1,23 @@
-import { Rank } from '@components/MusicListItem/style';
-import { Title } from '@components/MusicListItem/style';
-import { Row } from 'antd';
+import { MusicList } from '@components/Chart/style';
+import { TrackListItemContainer, TrackRank, TrackTitle } from './style';
+import { Divider } from 'antd';
+import { FaYoutube } from 'react-icons/fa';
+import { TrackAddIcon } from '@components/Carousel/style';
 
 const TrackList = ({ tracks }) => {
   return (
     <>
-      {tracks.map((t, index) => (
-        <Row>
-          <Rank>{index + 1}</Rank>
-          <Title>{t.title}</Title>
-        </Row>
-      ))}
+      <MusicList>
+        {tracks.map((t, index) => (
+          <TrackListItemContainer>
+            <TrackRank>{index + 1}</TrackRank>
+            <TrackTitle>{t.title}</TrackTitle>
+            <TrackAddIcon>
+              <FaYoutube />
+            </TrackAddIcon>
+          </TrackListItemContainer>
+        ))}
+      </MusicList>
     </>
   );
 };

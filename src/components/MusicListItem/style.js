@@ -9,7 +9,6 @@ export const MusicListItemContainer = styled('li')`
   border-radius: 6px;
   animation-name: ${smooth_render};
   animation-duration: 1s;
-  cursor: pointer;
 
   :hover {
     transition: all 0.8s;
@@ -18,11 +17,11 @@ export const MusicListItemContainer = styled('li')`
 `;
 
 export const Rank = styled('span')`
-  margin: auto 0 auto 1.5vw;
+  margin: auto 0 auto 0;
 `;
 
 export const CoverImageContainer = styled('div')`
-  margin: auto 1.5vw;
+  margin: auto 0;
 
   & img {
     padding: 4px;
@@ -31,7 +30,7 @@ export const CoverImageContainer = styled('div')`
 `;
 
 export const Title = styled('span')`
-  margin: auto 1.5vw;
+  margin: auto 0;
   width: 12vw;
   display: inline-block;
   overflow: hidden;
@@ -40,7 +39,7 @@ export const Title = styled('span')`
 `;
 
 export const Artist = styled('span')`
-  margin: auto 1.5vw;
+  margin: auto 0;
   width: 10vw;
   display: inline-block;
   font-weight: 400;
@@ -48,6 +47,17 @@ export const Artist = styled('span')`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+`;
+
+export const AlbumName = styled('span')`
+  margin: auto 0;
+  width: 10vw;
+  display: inline-block;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
 `;
 
 export const YoutubeIcon = styled('span')`
