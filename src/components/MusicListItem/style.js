@@ -17,11 +17,11 @@ export const MusicListItemContainer = styled('li')`
 `;
 
 export const Rank = styled('span')`
-  margin: auto 0 auto 0;
+  margin: auto 0 auto 1.5vw;
 `;
 
 export const CoverImageContainer = styled('div')`
-  margin: auto 0;
+  margin: auto 1.5vw;
 
   & img {
     padding: 4px;
@@ -30,7 +30,7 @@ export const CoverImageContainer = styled('div')`
 `;
 
 export const Title = styled('span')`
-  margin: auto 0;
+  margin: auto 1.5vw;
   width: 12vw;
   display: inline-block;
   overflow: hidden;
@@ -39,7 +39,7 @@ export const Title = styled('span')`
 `;
 
 export const Artist = styled('span')`
-  margin: auto 0;
+  margin: auto 1.5vw;
   width: 10vw;
   display: inline-block;
   font-weight: 400;
