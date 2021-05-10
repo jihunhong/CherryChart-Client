@@ -14,6 +14,7 @@ module.exports = withBundleAnalyzer({
         ...config.resolve.alias,
         '@actions': path.join(__dirname, 'src', 'actions'),
         // '@assets': path.join(__dirname, 'src', 'assets'),
+        '@Layout': path.join(__dirname, 'src', 'components', '@Layout'),
         '@Template': path.join(__dirname, 'src', 'components', '@Template'),
         '@atoms': path.join(__dirname, 'src', 'components', '@atoms'),
         '@molecules': path.join(__dirname, 'src', 'components', '@molecules'),

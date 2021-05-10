@@ -14,11 +14,12 @@
         "alias": {
           "@actions": "./src/actions",
           // "@assets": "./src/assets",
-          "@components": "./src/components",
+          "@Layout": "./src/components/@Layout",
           "@Template": "./src/components/@Template",
           "@atoms": "./src/components/@atoms",
           "@molecules": "./src/components/@molecules",
           "@organisms": "./src/components/@organisms",
+          "@components": "./src/components",
           "@hooks": "./src/hooks",
           "@lib": "./src/lib",
           "@reducers": "./src/reducers",

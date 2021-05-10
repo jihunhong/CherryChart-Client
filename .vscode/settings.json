@@ -1,6 +1,5 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
   "[javascript]": {
     "editor.formatOnSave": true
   },
@@ -8,7 +7,8 @@
   "prettier.disableLanguages": ["js"],
   "files.autoSave": "onFocusChange",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
   },
-  "eslint.enable": true
+  "eslint.enable": true,
 }

@@ -1,8 +1,8 @@
-import { useState, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { siteNames } from '@config';
-import { SiteContainer, NameList, SelectOption } from './style';
 import configSlice from '@reducers/config';
+import { useCallback, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { NameList, SelectOption, SiteContainer } from './style';
 
 const SiteSelector = () => {
   const dispatch = useDispatch();
@@ -11,7 +11,9 @@ const SiteSelector = () => {
   const [active, setActive] = useState(false);
 
   const onClick = useCallback(e => {
-    dispatch(configSlice.actions.switchSiteName(e.target.getAttribute('data-site-name').toLowerCase()));
+    dispatch(
+      configSlice.actions.switchSiteName(e.target.getAttribute('data-site-name').toLowerCase()),
+    );
     setActive(false);
   }, []);
 

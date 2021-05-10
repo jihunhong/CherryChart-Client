@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { smooth_render } from '../KeyFrames';
 import { scrollbar } from '@components/Css/style';
+import styled from 'styled-components';
+import { smooth_render } from '../../KeyFrames';
 
 export const PlayListItemsContainer = styled('ul')`
   width: 100%;

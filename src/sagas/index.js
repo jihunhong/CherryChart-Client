@@ -1,7 +1,6 @@
-import { all, fork } from 'redux-saga/effects';
-import axios from 'axios';
-
 import { baseURL } from '@config';
+import axios from 'axios';
+import { all, fork } from 'redux-saga/effects';
 import userSaga from './userSaga';
 
 axios.defaults.baseURL = baseURL;

@@ -1,6 +1,6 @@
-import styled from 'styled-components';
 import { Typography } from 'antd';
-import { smooth_render } from '../KeyFrames';
+import styled from 'styled-components';
+import { smooth_render } from '../../KeyFrames';
 
 export const CarouselItemContainer = styled('div')`
   display: inline-block;

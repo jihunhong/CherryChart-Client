@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { smooth_render } from '../KeyFrames';
+import { smooth_render } from '../../KeyFrames';
 
 export const SiteContainer = styled('div')`
   display: inline-block;

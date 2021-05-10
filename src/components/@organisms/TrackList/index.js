@@ -1,8 +1,7 @@
-import { MusicList } from '@components/Chart/style';
-import { TrackListItemContainer, TrackRank, TrackTitle } from './style';
-import { Divider } from 'antd';
-import { FaYoutube } from 'react-icons/fa';
 import { TrackAddIcon } from '@components/Carousel/style';
+import { MusicList } from '@components/Chart/style';
+import { FaYoutube } from 'react-icons/fa';
+import { TrackListItemContainer, TrackRank, TrackTitle } from './style';
 
 const TrackList = ({ tracks }) => {
   return (
