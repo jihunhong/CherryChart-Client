@@ -1,9 +1,16 @@
+import TogglePlaylistButton from '@atoms/TogglePlaylistButton';
+import YoutubePlayer from '@molecules/YoutubePlayer';
+import CurrentPlayList from '@organisms/CurrentPlayList';
 import { BiListPlus } from 'react-icons/bi';
-import { PlayerContainer, PlayerBackground, Title, PlayerHeader, PlayerSaveContainer, Description } from './style';
-import TogglePlaylistButton from '../TogglePlaylistButton';
-import CurrentPlayList from '@components/CurrentPlayList';
 import { useSelector } from 'react-redux';
-import YoutubePlayer from '@components/YoutubePlayer';
+import {
+  Description,
+  PlayerBackground,
+  PlayerContainer,
+  PlayerHeader,
+  PlayerSaveContainer,
+  Title,
+} from './style';
 
 const Player = () => {
   const { playList, isExpand } = useSelector(state => state.player);
@@ -22,7 +29,9 @@ const Player = () => {
         </Description>
       </PlayerSaveContainer>
 
-      <PlayerBackground isExpand={isExpand}>{isExpand ? <CurrentPlayList /> : null}</PlayerBackground>
+      <PlayerBackground isExpand={isExpand}>
+        {isExpand ? <CurrentPlayList /> : null}
+      </PlayerBackground>
     </PlayerContainer>
   );
 };

@@ -28,6 +28,7 @@
     "react/react-in-jsx-scope": 0,
     "operator-linebreak": 0,
     "import/no-unresolved": 0,
+    "quotes": 0,
     "no-param-reassign": 0,
     "arrow-body-style": 0,
     "object-curly-newline": 0,
@@ -40,13 +41,8 @@
         "specialLink": ["hrefLeft", "hrefRight"],
         "aspects": ["invalidHref", "preferButton"]
       }
-    ],
+    ]
     // next Link에서 이용되는 a 태그의 validate
-    "global-require": 0,
-    "react/jsx-no-undef": 0,
-    "react/forbid-prop-types": 0,
-    "quote-props": ["error", "consistent"],
-    "quotes": ["error", "single"]
   },
   "plugins": ["import", "react-hooks"]
 }

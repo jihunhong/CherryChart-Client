@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { smooth_render } from '../KeyFrames';
+import { smooth_render } from '../../KeyFrames';
 
 export const MusicListItemContainer = styled('li')`
   margin: 1.5vh auto;

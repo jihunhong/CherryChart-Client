@@ -1,9 +1,9 @@
-import { Typography } from 'antd';
+import Spinner from '@atoms/Spinner';
 import useChart from '@hooks/swr/useChart';
+import MusicListItem from '@molecules/MusicListItem';
+import { Typography } from 'antd';
 import { useSelector } from 'react-redux';
-import { ChartContainer, Title, MusicList } from './style';
-import MusicListItem from '../MusicListItem';
-import Spinner from '../Spinner';
+import { ChartContainer, MusicList, Title } from './style';
 
 const Chart = () => {
   const { site } = useSelector(state => state.config);
@@ -17,7 +17,13 @@ const Chart = () => {
       <Title level={3}>Most Popular</Title>
       <Typography.Text type="secondary">100 Songs</Typography.Text>
 
-      <MusicList>{loading ? <Spinner /> : data.map((v, i) => <MusicListItem rank={v.rank} {...v.Music} key={i} />)}</MusicList>
+      <MusicList>
+        {loading ? (
+          <Spinner />
+        ) : (
+          data.map((v, i) => <MusicListItem rank={v.rank} {...v.Music} key={i} />)
+        )}
+      </MusicList>
     </ChartContainer>
   );
 };

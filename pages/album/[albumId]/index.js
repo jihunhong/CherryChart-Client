@@ -1,4 +1,4 @@
-import AppLayout from '@components/AppLayout';
+import AppLayout from '@Layout/AppLayout';
 import AlbumDetail from '@Template/album/[albumId]';
 
 const AlbumDetailPage = () => {

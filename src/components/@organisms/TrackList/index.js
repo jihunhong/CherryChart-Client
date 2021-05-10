@@ -1,5 +1,4 @@
-import { Rank } from '@components/MusicListItem/style';
-import { Title } from '@components/MusicListItem/style';
+import { Rank, Title } from '@molecules/MusicListItem/style';
 import { Row } from 'antd';
 
 const TrackList = ({ tracks }) => {

@@ -1,8 +1,8 @@
-import { useRouter } from 'next/dist/client/router';
-import useAlbum from '@hooks/swr/useAlbum';
-import Spinner from '@components/Spinner';
+import Spinner from '@atoms/Spinner';
 import AlbumInfo from '@components/@organisms/AlbumInfo';
+import useAlbum from '@hooks/swr/useAlbum';
 import TrackList from '@organisms/TrackList';
+import { useRouter } from 'next/dist/client/router';
 
 const AlbumDetail = () => {
   const router = useRouter();

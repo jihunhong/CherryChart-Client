@@ -1,15 +1,14 @@
-import { Layout } from 'antd';
+import Content from '@atoms/Content';
 import { SIDEBAR_WIDTH } from '@config';
-import Sidebar from '../Sidebar';
-import Header from '../Header';
-import Content from '../Content';
-import Footer from '../Footer';
-import SearchBar from '../SearchBar';
-import PopOverMenus from '../PopOverMenus';
+import { Layout } from 'antd';
 import dynamic from 'next/dynamic';
+import Header from '../Header';
+import PopOverMenus from '../PopOverMenus';
+import SearchBar from '../SearchBar';
+import Sidebar from '../Sidebar';
 
 const AppLayout = ({ children }) => {
-  const Player = dynamic(() => import('@components/Player'));
+  const Player = dynamic(() => import('@organisms/Player'));
 
   return (
     <>

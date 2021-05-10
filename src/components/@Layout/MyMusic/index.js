@@ -1,9 +1,9 @@
-import { Menu, Typography } from 'antd';
-import { HiOutlineClock } from 'react-icons/hi';
+import { Menu } from 'antd';
 import { AiOutlineFile } from 'react-icons/ai';
-import { NavigationGlobal, MenuItem } from '../Navigation/style';
-import { Title } from './style';
 import { BiHeart } from 'react-icons/bi';
+import { HiOutlineClock } from 'react-icons/hi';
+import { MenuItem, NavigationGlobal } from '../Navigation/style';
+import { Title } from './style';
 
 const MyMusic = () => {
   return (

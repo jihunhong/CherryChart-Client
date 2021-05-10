@@ -4,6 +4,7 @@
     "paths": {
       "@actions/*": ["src/actions/*"],
       "@assets/*": ["src/assets/*"],
+      "@Layout/*": ["src/components/@Layout/*"],
       "@Template/*": ["src/components/@Template/*"],
       "@atoms/*": ["src/components/@atoms/*"],
       "@molecules/*": ["src/components/@molecules/*"],
