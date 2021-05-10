@@ -1,5 +1,5 @@
-import { TrackAddIcon } from '@components/Carousel/style';
-import { MusicList } from '@components/Chart/style';
+import { TrackAddIcon } from '@organisms/Carousel/style';
+import { MusicList } from '@organisms/Chart/style';
 import { FaYoutube } from 'react-icons/fa';
 import { TrackListItemContainer, TrackRank, TrackTitle } from './style';
 
