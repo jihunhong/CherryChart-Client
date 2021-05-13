@@ -7,6 +7,7 @@ export const CarouselItemContainer = styled('div')`
   margin: auto 2vw auto auto;
   animation-name: ${smooth_render};
   animation-duration: 2s;
+  cursor: pointer;
 `;
 
 export const CarouselCoverImage = styled('div')`
