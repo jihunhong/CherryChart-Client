@@ -11,9 +11,11 @@ const TrackList = ({ tracks }) => {
           <TrackListItemContainer>
             <TrackRank>{index + 1}</TrackRank>
             <TrackTitle>{t.title}</TrackTitle>
-            <TrackAddIcon>
-              <FaYoutube />
-            </TrackAddIcon>
+            {t.Video?.videoId && (
+              <TrackAddIcon>
+                <FaYoutube />
+              </TrackAddIcon>
+            )}
           </TrackListItemContainer>
         ))}
       </MusicList>
