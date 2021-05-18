@@ -1,6 +1,4 @@
 import SiteSelector from '@atoms/SiteSelector';
-import Spinner from '@atoms/Spinner';
-import useCarousel from '@hooks/swr/useCarousel';
 import aggregateAlbum from '@lib/aggregateAlbum';
 import CarouselItem from '@molecules/CarouselItem';
 import { useSelector } from 'react-redux';
@@ -17,13 +15,9 @@ const settings = {
 };
 
 const Carousel = () => {
-  const { site } = useSelector(state => state.config);
-  const { data, error, loading } = useCarousel(site);
-  if (error) {
-    return <div>Error...</div>;
-  }
+  const { chartData } = useSelector(state => state.chart);
 
-  const albums = aggregateAlbum(data);
+  const albums = aggregateAlbum(chartData);
 
   return (
     <>
@@ -34,11 +28,9 @@ const Carousel = () => {
         <Text>{albums?.length || 0} Albums</Text>
         <CarouselGlobalStyle />
         <MultiCarousel {...settings}>
-          {loading ? (
-            <Spinner />
-          ) : (
-            albums.map((v, i) => <CarouselItem key={i} rank={v.rank} {...v.Music} />)
-          )}
+          {albums.map((v, i) => (
+            <CarouselItem key={i} rank={v.rank} {...v.Music} />
+          ))}
         </MultiCarousel>
       </CarouselContainer>
     </>
