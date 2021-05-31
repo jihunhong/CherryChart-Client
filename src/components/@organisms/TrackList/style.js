@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { smooth_render } from '@components/KeyFrames';
+import styled from 'styled-components';
 
 export const TrackListItemContainer = styled('li')`
   margin: auto auto;
@@ -30,17 +30,16 @@ export const TrackListItemContainer = styled('li')`
   :nth-of-type(odd) {
     background-color: #f7f7f7;
   }
-`;
 
-export const TrackRank = styled('span')`
-  margin: auto 13px auto 13px;
-`;
-
-export const TrackTitle = styled('span')`
-  margin: auto 0 auto 13px;
-  width: 12vw;
-  display: inline-block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  & .rank {
+    margin: auto 13px auto 13px;
+  }
+  & .title {
+    margin: auto 0 auto 13px;
+    width: 12vw;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 `;

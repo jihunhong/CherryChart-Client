@@ -8,6 +8,7 @@ const AlbumDetail = () => {
   const router = useRouter();
   const { data, error, loading } = useAlbum(router.query.albumId);
   if (error) {
+    console.error(error);
     return <>{error}</>;
   }
 
