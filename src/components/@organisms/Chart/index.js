@@ -1,4 +1,4 @@
-import MusicListItem from '@molecules/MusicListItem';
+import ChartItem from '@molecules/ChartItem';
 import { Typography } from 'antd';
 import { useSelector } from 'react-redux';
 import { ChartContainer, MusicList, Title } from './style';
@@ -13,7 +13,7 @@ const Chart = () => {
 
       <MusicList>
         {chartData.map((v, i) => (
-          <MusicListItem rank={v.rank} {...v.Music} key={i} />
+          <ChartItem rank={v.rank} {...v.Music} key={i} />
         ))}
       </MusicList>
     </ChartContainer>

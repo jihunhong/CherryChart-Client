@@ -1,12 +1,11 @@
 import { cdnURL } from '@config';
-import playerSlice from '@reducers/player';
+import useAddItem from '@hooks/useAddItem';
 import { Avatar } from 'antd';
 import { useRouter } from 'next/dist/client/router';
 import { BiHeart } from 'react-icons/bi';
 import { FaYoutube } from 'react-icons/fa';
-import { useDispatch } from 'react-redux';
 import {
-  Artist as AlbumName,
+  AlbumName,
   Artist,
   CoverImageContainer,
   HeartIcon,
@@ -16,24 +15,24 @@ import {
   YoutubeIcon,
 } from './style';
 
-const MusicListItem = ({ rank, title, artist, album, Video, AlbumId }) => {
-  const dispatch = useDispatch();
+const ChartItem = ({ rank, title, artist, album, Video, AlbumId }) => {
+  const [handleMusic] = useAddItem();
   const router = useRouter();
 
   const gotoAlbumDetail = () => {
     router.push(`/album/${AlbumId}`);
   };
 
-  const handleMusic = () => {
-    dispatch(
-      playerSlice.actions.addMusicToPlayList({
-        title,
-        artist,
-        album,
-        videoId: Video?.videoId,
-      }),
-    );
-  };
+  // const handleMusic = () => {
+  //   dispatch(
+  //     playerSlice.actions.addMusicToPlayList({
+  //       title,
+  //       artist,
+  //       album,
+  //       videoId: Video?.videoId,
+  //     }),
+  //   );
+  // };
 
   return (
     <MusicListItemContainer>
@@ -66,4 +65,4 @@ const MusicListItem = ({ rank, title, artist, album, Video, AlbumId }) => {
   );
 };
 
-export default MusicListItem;
+export default ChartItem;

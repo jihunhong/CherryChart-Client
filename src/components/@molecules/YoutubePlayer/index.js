@@ -1,6 +1,6 @@
-import { useSelector, useDispatch } from 'react-redux';
-import YouTube from 'react-youtube';
 import playerSlice from '@reducers/player';
+import { useDispatch, useSelector } from 'react-redux';
+import YouTube from 'react-youtube';
 
 const YoutubePlayer = () => {
   const { playList, selectedIndex } = useSelector(state => state.player);
@@ -13,7 +13,12 @@ const YoutubePlayer = () => {
   return (
     <>
       {playList.length ? (
-        <YouTube width="420" videoId={playList[selectedIndex]?.videoId} opts={{ playerVars: { autoplay: 0 } }} onEnd={onPlayEnd} />
+        <YouTube
+          width="420"
+          videoId={playList[selectedIndex]?.videoId}
+          opts={{ playerVars: { autoplay: 0 } }}
+          onEnd={onPlayEnd}
+        />
       ) : null}
     </>
   );

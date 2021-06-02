@@ -1,22 +1,15 @@
-import { TrackAddIcon } from '@organisms/Carousel/style';
+import TrackItem from '@molecules/TrackItem';
 import { MusicList } from '@organisms/Chart/style';
-import { FaYoutube } from 'react-icons/fa';
-import * as Styled from './style';
+import { useSelector } from 'react-redux';
 
-const TrackList = ({ tracks }) => {
+const TrackList = () => {
+  const { tracks } = useSelector(state => state.content);
+
   return (
     <>
       <MusicList>
         {tracks.map((t, index) => (
-          <Styled.TrackListItemContainer>
-            <span className="rank">{index + 1}</span>
-            <span className="title">{t.title}</span>
-            {t.Video?.videoId && (
-              <TrackAddIcon>
-                <FaYoutube />
-              </TrackAddIcon>
-            )}
-          </Styled.TrackListItemContainer>
+          <TrackItem key={t.title} title={t.title} rank={index + 1} videoId={t.Video?.videoId} />
         ))}
       </MusicList>
     </>

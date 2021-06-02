@@ -1,4 +1,4 @@
-import { setLocalStorage, getLocalStorage } from '@lib/localStorage';
+import { getLocalStorage, setLocalStorage } from '@lib/localStorage';
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -23,6 +23,20 @@ const playerSlice = createSlice({
     addMusicToPlayList(state, action) {
       state.playList.push(action.payload);
       setLocalStorage('playList', state.playList);
+    },
+    addAlbumToPlayList(state, action) {
+      console.log(action.payload.tracks);
+      const valids = action.payload.tracks
+        .filter(v => v.Video?.videoId)
+        .map(v => {
+          return {
+            title: v.title,
+            artist: v.artist,
+            album: action.payload.album,
+            videoId: v.Video.videoId,
+          };
+        });
+      state.playList = [...state.playList, ...valids];
     },
     playSelectedItem(state, action) {
       state.selectedIndex = action.payload;

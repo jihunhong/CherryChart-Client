@@ -12,7 +12,7 @@ export const MusicListItemContainer = styled('li')`
 
   :hover {
     transition: all 0.8s;
-    box-shadow: rgb(149 157 165 / 60%) 7px 6px 24px;
+    box-shadow: rgb(149 157 165 / 60%) 2px 3px 6px;
   }
 `;
 
@@ -53,7 +53,7 @@ export const AlbumName = styled('span')`
   margin: auto 0;
   width: 10vw;
   display: inline-block;
-  font-weight: 600;
+  font-weight: 500;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
