@@ -16,7 +16,7 @@ import {
 } from './style';
 
 const ChartItem = ({ rank, title, artist, album, Video, AlbumId }) => {
-  const [handleMusic] = useAddItem();
+  const [handleMusic] = useAddItem({ title, artist, album, videoId: Video?.videoId });
   const router = useRouter();
 
   const gotoAlbumDetail = () => {
