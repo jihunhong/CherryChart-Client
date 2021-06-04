@@ -23,17 +23,6 @@ const ChartItem = ({ rank, title, artist, album, Video, AlbumId }) => {
     router.push(`/album/${AlbumId}`);
   };
 
-  // const handleMusic = () => {
-  //   dispatch(
-  //     playerSlice.actions.addMusicToPlayList({
-  //       title,
-  //       artist,
-  //       album,
-  //       videoId: Video?.videoId,
-  //     }),
-  //   );
-  // };
-
   return (
     <MusicListItemContainer>
       <Rank>{`0${rank}`.slice(-2)}</Rank>

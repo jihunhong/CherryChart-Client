@@ -2,6 +2,9 @@ import { cdnURL } from '@config';
 import { Avatar } from 'antd';
 
 const AlbumCover = ({ size, album, radius }) => {
+  if (!album) {
+    return <></>;
+  }
   return (
     <>
       <Avatar

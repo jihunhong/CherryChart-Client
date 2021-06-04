@@ -11,7 +11,8 @@ function* loadChartData(action) {
     const result = yield call(loadChartAPI, action.payload);
     yield put(chartSlice.actions.chartDataSuccess(result.data));
   } catch (err) {
-    yield put(chartSlice.actions.chartDataError(err.response?.data));
+    console.error(err);
+    yield put(chartSlice.actions.chartDataError(err.response?.message));
   }
 }
 

@@ -1,8 +1,9 @@
+import LinkHOC from '@atoms/LinkHOC';
 import { Menu } from 'antd';
-import { BiHomeAlt, BiWorld } from 'react-icons/bi';
 import { AiOutlineFileImage, AiOutlineVideoCamera } from 'react-icons/ai';
+import { BiHomeAlt, BiWorld } from 'react-icons/bi';
 import { FiUser } from 'react-icons/fi';
-import { NavigationGlobal, MenuItem } from './style';
+import { MenuItem, NavigationGlobal } from './style';
 
 const Navigation = () => {
   return (
@@ -10,7 +11,7 @@ const Navigation = () => {
       <NavigationGlobal />
       <Menu theme="light" mode="inline" defaultSelectedKeys={['1']}>
         <MenuItem key="1" icon={<BiHomeAlt />}>
-          Home
+          <LinkHOC href={'/'}>Home</LinkHOC>
         </MenuItem>
         <MenuItem key="2" icon={<BiWorld />}>
           Browse
