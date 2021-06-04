@@ -75,7 +75,7 @@ jobs:
       - name: pm2 list
         run: sudo pm2 list
         working-directory: ${{ env.client-directory }}
-    steps:
+        
       - uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
