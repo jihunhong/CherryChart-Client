@@ -38,12 +38,17 @@ export const PlayListItemCover = styled('div')`
   margin: auto 0.5vw auto 0;
   & img {
     padding: 2px;
-    border-radius: 6px;
   }
 `;
 
 export const PlayListDivision = styled('div')`
   margin: auto 0;
+  width: 100%;
+
+  & svg {
+    float: right;
+    margin: auto auto;
+  }
 `;
 
 export const PlayListItemTitle = styled('h4')`

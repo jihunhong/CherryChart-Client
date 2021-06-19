@@ -8,8 +8,6 @@ import SearchBar from '../SearchBar';
 import Sidebar from '../Sidebar';
 
 const AppLayout = ({ children }) => {
-  const Player = dynamic(() => import('@organisms/Player'));
-
   return (
     <>
       <Layout>

@@ -38,6 +38,11 @@ const playerSlice = createSlice({
     playSelectedItem(state, action) {
       state.selectedIndex = action.payload;
     },
+    removeItem(state, action) {
+      state.playList = state.playList.filter((v, i) => {
+        return i !== parseInt(action.payload);
+      });
+    },
   },
 });
 
