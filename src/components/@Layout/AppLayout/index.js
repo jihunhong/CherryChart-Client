@@ -8,8 +8,6 @@ import SearchBar from '../SearchBar';
 import Sidebar from '../Sidebar';
 
 const AppLayout = ({ children }) => {
-  const Player = dynamic(() => import('@organisms/Player'));
-
   return (
     <>
       <Layout>
@@ -20,10 +18,7 @@ const AppLayout = ({ children }) => {
             <PopOverMenus />
           </Header>
           <Content>
-            <>
-              {children}
-              <Player />
-            </>
+            <>{children}</>
           </Content>
           {/* <Footer>Footer</Footer> */}
         </Layout>

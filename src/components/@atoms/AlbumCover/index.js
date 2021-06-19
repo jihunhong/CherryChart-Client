@@ -1,5 +1,5 @@
 import { cdnURL } from '@config';
-import { Avatar } from 'antd';
+import { StyledAvatar } from './style';
 
 const AlbumCover = ({ size, album, radius }) => {
   if (!album) {
@@ -7,7 +7,7 @@ const AlbumCover = ({ size, album, radius }) => {
   }
   return (
     <>
-      <Avatar
+      <StyledAvatar
         shape="square"
         size={size}
         src={`${cdnURL}/${album.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`}

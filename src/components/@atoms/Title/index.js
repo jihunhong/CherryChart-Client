@@ -1,9 +1,14 @@
 import { Typography } from 'antd';
 import PropTypes from 'prop-types';
 
-const Title = ({ text, level, ellipsis, align = 'left', style }) => {
+const Title = ({ text, level, ellipsis, align = 'left', type, style }) => {
   return (
-    <Typography.Title ellipsis={ellipsis ? <></> : false} level={level} style={{ ...style, textAlign: align }}>
+    <Typography.Title
+      ellipsis={ellipsis ? <></> : false}
+      level={level}
+      style={{ ...style, textAlign: align }}
+      type={type}
+    >
       {text}
     </Typography.Title>
   );

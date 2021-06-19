@@ -8,7 +8,14 @@ import playerSlice from './player';
 const rootReducer = (state, action) => {
   switch (action.type) {
     case HYDRATE:
-      return action.payload;
+      const nextState = {
+        ...state,
+        ...action.payload,
+      };
+      if (state.player) {
+        nextState.player = state.player;
+      }
+      return nextState;
     default: {
       const combineReducer = combineReducers({
         player: playerSlice.reducer,

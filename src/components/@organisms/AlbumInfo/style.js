@@ -1,5 +1,6 @@
 import { Button, Col, Row } from 'antd';
 import styled from 'styled-components';
+import { StyledAvatar } from '@atoms/AlbumCover/style';
 
 export const PlayButton = styled(Button)`
   border-radius: 6px;
@@ -8,29 +9,30 @@ export const PlayButton = styled(Button)`
   }
 `;
 
-export const InfoContainer = styled(Row)`
-  padding-left: 34px;
-  flex-direction: column;
+export const AlbumInfoHeader = styled.section`
+  display: grid;
+  grid-template-columns: 270px auto;
+  column-gap: 12px;
+  align-items: center;
 
-  & .col {
-    margin: auto auto;
+  & h2,
+  h3 {
+    margin: 0 !important;
+    align-items: baseline;
   }
 
-  & h2 {
-    // album title
-    margin-bottom: 0px;
-    color: #262f57;
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    position: relative;
   }
 
-  & h3 {
-    margin: 0;
+  & button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
   }
-
-  & p {
-    margin-top: 23px;
-  }
-`;
-
-export const ActionColumn = styled(Col)`
-  margin: auto auto 0px 0px;
 `;
