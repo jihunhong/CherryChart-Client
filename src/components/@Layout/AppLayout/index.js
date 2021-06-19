@@ -20,10 +20,7 @@ const AppLayout = ({ children }) => {
             <PopOverMenus />
           </Header>
           <Content>
-            <>
-              {children}
-              <Player />
-            </>
+            <>{children}</>
           </Content>
           {/* <Footer>Footer</Footer> */}
         </Layout>
