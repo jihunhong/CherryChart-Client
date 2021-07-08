@@ -6,7 +6,9 @@ import { useSelector } from 'react-redux';
 import * as S from './style';
 
 const AlbumInfo = () => {
-  const { albumName, tracks, artist, releaseDate } = useSelector(state => state.content);
+  const { albumName, tracks, artist, releaseDate, description } = useSelector(
+    state => state.content,
+  );
   const [handleAlbum] = useAddAlbum({ album: albumName, tracks, artist });
   return (
     <section>
@@ -17,7 +19,7 @@ const AlbumInfo = () => {
           <Title text={artist} level={3} />
           <Text text={`KPOP · ${releaseDate?.slice(0, 4)}`} />
 
-          <p>The unit’s fourth EP embraces a shimmering electronic-pop sheen.</p>
+          <p>{description || ''}</p>
           <S.PlayButton type="primary" onClick={handleAlbum}>
             PLAY
           </S.PlayButton>
