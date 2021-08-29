@@ -4,7 +4,6 @@ import styled from 'styled-components';
 export const TrackListItemContainer = styled('li')`
   margin: auto auto;
   display: flex;
-  background: #fff;
   animation-name: ${smooth_render};
   animation-duration: 1s;
   min-height: 5vh;
@@ -19,16 +18,15 @@ export const TrackListItemContainer = styled('li')`
     border-top-right-radius: 7px;
   }
 
-  :nth-last-of-type {
+  :nth-last-of-type(1) {
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
   }
 
   :nth-of-type(even) {
-    background-color: #fbfbfbcf;
   }
   :nth-of-type(odd) {
-    background-color: #f7f7f7;
+    background-color: rgb(0 0 0 / 2%);
   }
 
   & .rank {

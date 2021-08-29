@@ -2,7 +2,7 @@ import playerSlice from '@reducers/player';
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
-export default ({ album, tracks, artist }) => {
+const useAddAlbum = ({ album, tracks, artist }) => {
   const dispatch = useDispatch();
   const handler = useCallback(() => {
     dispatch(
@@ -16,3 +16,4 @@ export default ({ album, tracks, artist }) => {
 
   return [handler];
 };
+export default useAddAlbum;

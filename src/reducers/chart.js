@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { loadChart } from '@actions/chartActions';
 
 const initialState = {
   chartLoading: false,
@@ -10,22 +11,23 @@ const initialState = {
 const chartSlice = createSlice({
   name: 'chart',
   initialState,
-  reducers: {
-    chartDataRequest(state) {
-      state.chartLoading = true;
-      state.chartDataDone = false;
-    },
-    chartDataSuccess(state, action) {
-      state.chartData = action.payload;
-      state.chartLoading = false;
-      state.chartDataDone = true;
-    },
-    chartDataError(state, action) {
-      state.chartLoading = false;
-      state.chartDataDone = true;
-      state.chartError = action.payload;
-    },
-  },
+  reducers: {},
+  extraReducers: builder =>
+    builder
+      .addCase(loadChart.pending, (state, action) => {
+        state.chartLoading = true;
+        state.chartDataDone = false;
+      })
+      .addCase(loadChart.fulfilled, (state, action) => {
+        state.chartData = action.payload;
+        state.chartLoading = false;
+        state.chartDataDone = true;
+      })
+      .addCase(loadChart.rejected, (state, action) => {
+        state.chartLoading = false;
+        state.chartDataDone = true;
+        state.chartError = action.payload;
+      }),
 });
 
 export default chartSlice;

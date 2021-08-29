@@ -1,12 +1,13 @@
-import AlbumInfo from '@components/@organisms/AlbumInfo';
+import AlbumSnippet from '@organisms/AlbumSnippet';
 import TrackList from '@organisms/TrackList';
+import AlbumFooter from '@organisms/AlbumFooter';
 
 const AlbumDetail = () => {
   return (
     <>
-      <AlbumInfo />
+      <AlbumSnippet />
       <TrackList />
-      {/* <Title level={5}>{`More by ${data.artist}`}</Title> */}
+      <AlbumFooter />
     </>
   );
 };

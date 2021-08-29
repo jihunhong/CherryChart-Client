@@ -4,8 +4,23 @@ import { StyledAvatar } from '@atoms/AlbumCover/style';
 
 export const PlayButton = styled(Button)`
   border-radius: 6px;
-  & span {
-    color: #fff;
+  background-color: #d60017;
+  :hover {
+    background-color: #ec2b40;
+  }
+  border: none;
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      fill: #fff;
+      stroke: #fff;
+      margin: 0;
+    }
+    span {
+      color: #fff;
+    }
   }
 `;
 
@@ -22,17 +37,22 @@ export const AlbumInfoHeader = styled.section`
   }
 
   .info {
+    padding-inline-start: 34px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     height: 100%;
     position: relative;
+    .artist {
+      color: #fa586a;
+      text-shadow: none;
+    }
   }
 
   & button {
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 34px;
   }
 `;

@@ -7,4 +7,10 @@ export const SidebarContainer = styled(Layout.Sider)`
   position: fixed;
   left: 0;
   overflow: hidden;
+  border-right: 1px solid rgb(0 0 0 / 10%);
+
+  .ant-menu-item-selected a,
+  .ant-menu-item-selected a:hover {
+    color: unset;
+  }
 `;
