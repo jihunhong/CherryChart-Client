@@ -1,10 +1,9 @@
 import AppLayout from '@Layout/AppLayout';
 import Carousel from '@organisms/Carousel';
 import Chart from '@organisms/Chart';
-import chartSlice from '@reducers/chart';
 import wrapper from '@store/configureStore';
 import { Col, Row } from 'antd';
-import { END } from 'redux-saga';
+import { loadChart } from '@actions/chartActions';
 
 const Home = () => {
   return (
@@ -23,14 +22,12 @@ const Home = () => {
 Home.getLayout = page => <AppLayout>{page}</AppLayout>;
 
 export const getServerSideProps = wrapper.getServerSideProps(async context => {
-  context.store.dispatch(
-    chartSlice.actions.chartDataRequest({
+  await context.store.dispatch(
+    loadChart({
       site: 'melon',
+      date: '2021-08-25',
     }),
   );
-
-  context.store.dispatch(END);
-  await context.store.sagaTask.toPromise();
 });
 
 export default Home;

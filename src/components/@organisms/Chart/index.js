@@ -9,7 +9,7 @@ const Chart = () => {
   return (
     <ChartContainer>
       <Title level={3}>Most Popular</Title>
-      <Typography.Text type="secondary">100 Songs</Typography.Text>
+      <Typography.Text type="secondary">{`${chartData?.length} Songs`}</Typography.Text>
 
       <MusicList>
         {chartData.map((v, i) => (

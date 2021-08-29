@@ -1,0 +1,31 @@
+{
+
+  "Print to console": {
+    "scope": "javascript,typescript",
+    "prefix": "ssr",
+    "body": [
+      "import wrapper from '@store/configureStore';\nimport axios from 'axios';\nimport dynamic from 'next/dynamic';\nimport { END } from 'redux-saga';\nimport cookies from 'next-cookies';\nimport { setToken } from '@lib/cookie';\nimport userSlice from '@reducers/user';\nimport artistSlice from '@reducers/artist';"
+    ],
+    "description": "ssr import"
+  },
+  "getServerSideProps": {
+    "scope": "javascript",
+    "prefix": "gsr",
+    "body": [
+      "export const getServerSideProps = wrapper.getServerSideProps(async context => {\nconst cookie = context.req ? context.req.headers.cookie : '';\nconst allCookies = cookies(context);\nconst accessToken = allCookies['accessToken'];\naxios.defaults.headers.Cookie = '';\naxios.defaults.headers.common.Authorization = null;\nif (context.req && cookie) {\nif (accessToken) {\nconst refreshToken = allCookies['refreshToken'] || '';\nsetToken(accessToken, refreshToken);\n}\n}\ncontext.store.dispatch(userSlice.actions.loadMyInfoRequest());\ncontext.store.dispatch(userSlice.actions.loadUserProfileByGroupIdRequest(\ngroupId: context:query.group_id,\n}));\ncontext.store.dispatch(artistSlice.actions.loadArtistContextRequest({\ngroupId : context.query.user_id\n}))\n\ncontext.store.dispatch(END);\nawait context.store.sagaTask.toPromise();\n});"
+    ],
+    "description": "default getServerSideProps"
+  },
+  "create AsyncThunk Function": {
+    "scope": "javascript",
+    "prefix": "cat",
+    "body": [
+      "createAsyncThunk('unique', async(payload, { rejectWithValue }) => {\ntry{\n\n}catch(err){\nreturn rejectWithValue(err.reponse.data);\n}\n});"
+    ]
+  },
+  "addCase": {
+    "scope": "javascript",
+    "prefix": "adc",
+    "body": [".addCase(action.fulfilled, (state, action) => {\n        here\n      })"]
+  }
+}
