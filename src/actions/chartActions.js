@@ -1,7 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { baseURL } from '@config';
 
-axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = baseURL;
 axios.defaults.withCredentials = true;
 
 export const loadChart = createAsyncThunk(
