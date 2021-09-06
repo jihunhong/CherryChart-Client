@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const baseURL = 'https://www.cherrychart.com';
+export const baseURL = 'https://cherrychart.com';
 export const cdnURL = 'https://cdn.cherrychart.com';
 
 export const SIDEBAR_WIDTH = 250;
