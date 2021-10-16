@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const baseURL = 'http://localhost:3000';
+export const baseURL = 'https://cherry-chart-client.vercel.app';
 export const API_URL = 'https://api.cherrychart.com';
 export const cdnURL = 'https://cdn.cherrychart.com';
 
