@@ -1,6 +1,5 @@
-# CherryChart <a href="http://www.cherrychart.com/">![](https://img.shields.io/badge/WEBSITE-CherryChart-red??style=social&logo=google-chrome&color=violet)</a>
+# CherryChart <a href="https://cherrychart.com/">![](https://img.shields.io/badge/WEBSITE-CherryChart-red??style=social&logo=google-chrome&color=violet)</a>
 
-![build workflow](https://github.com/jihunhong/CherryChart-Client/actions/workflows/github-action-deploy.yml/badge.svg)
 ![last commit](https://img.shields.io/github/last-commit/jihunhong/CherryChart-Client?logo=github)
 
 ## 🖋 개요
