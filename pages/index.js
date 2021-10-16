@@ -25,7 +25,6 @@ export const getServerSideProps = wrapper.getServerSideProps(async context => {
   await context.store.dispatch(
     loadChart({
       site: 'melon',
-      date: '2021-08-25',
     }),
   );
 });
