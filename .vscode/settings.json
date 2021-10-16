@@ -1,14 +1,10 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[javascript]": {
-    "editor.formatOnSave": true
-  },
+  "editor.formatOnSave": true,
   "eslint.alwaysShowStatus": true,
-  "prettier.disableLanguages": ["js"],
-  "files.autoSave": "onFocusChange",
+  // "files.autoSave": "onFocusChange",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.organizeImports": false
-  },
-  "eslint.enable": true,
+    "source.fixAll.eslint": false,
+    "source.organizeImports": true
+  }
 }
