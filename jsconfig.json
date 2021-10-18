@@ -14,7 +14,7 @@
       "@lib/*": ["src/lib/*"],
       "@reducers/*": ["src/reducers/*"],
       "@store/*": ["src/store/*"],
-      "@config": ["config/*"]
+      "@config/*": ["config/*"]
     }
   }
 }

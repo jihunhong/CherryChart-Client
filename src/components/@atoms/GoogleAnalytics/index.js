@@ -1,4 +1,4 @@
-import { GA_TRACKING_ID } from '@config';
+import { GA_TRACKING_ID } from '@config/settings';
 import useGoogleAnalytics from '@hooks/util/useGoogleAnalytics';
 import Head from 'next/head';
 
@@ -9,7 +9,7 @@ const GoogleAnalytics = () => {
       <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
       <script
         dangerouslySetInnerHTML={{
-          _html: `
+          __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
