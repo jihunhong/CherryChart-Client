@@ -1,10 +1,9 @@
-import { AlbumInfoContainer } from './style';
-import Title from '@atoms/Title';
-import { useSelector } from 'react-redux';
 import dayjs from 'dayjs';
+import { useSelector } from 'react-redux';
+import { AlbumInfoContainer } from './style';
 
 const AlbumFooter = () => {
-  const album = useSelector(state => state.content);
+  const album = useSelector(state => state.album);
   return (
     <AlbumInfoContainer>
       <p>{dayjs(album?.releaseDate).format('MMMM DD, YYYY')}</p>
