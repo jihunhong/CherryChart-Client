@@ -1,7 +1,8 @@
+import { loadArtistsAlbum } from '@actions/albumActions';
+import { loadAlbumInfo } from '@actions/contentActions';
 import AppLayout from '@Layout/AppLayout';
 import wrapper from '@store/configureStore';
 import AlbumDetail from '@Template/album/[albumId]';
-import { loadAlbumInfo } from '@actions/contentActions';
 
 const AlbumDetailPage = () => {
   return <AlbumDetail />;
@@ -12,6 +13,12 @@ export const getServerSideProps = wrapper.getServerSideProps(async context => {
   await context.store.dispatch(
     loadAlbumInfo({
       albumId: context.query.albumId,
+    }),
+  );
+  console.log(context.store.getState().album.artist);
+  await context.store.dispatch(
+    loadArtistsAlbum({
+      artistName: context.store.getState().album.artist,
     }),
   );
 });
