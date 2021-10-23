@@ -3,7 +3,7 @@ import { MusicList } from '@organisms/Chart/style';
 import { useSelector } from 'react-redux';
 
 const TrackList = () => {
-  const { tracks } = useSelector(state => state.content);
+  const { tracks } = useSelector(state => state.album);
 
   return (
     <>

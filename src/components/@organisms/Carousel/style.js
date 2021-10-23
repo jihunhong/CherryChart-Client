@@ -1,5 +1,5 @@
-import styled, { createGlobalStyle } from 'styled-components';
 import { Typography } from 'antd';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const CarouselGlobalStyle = createGlobalStyle`
     ul.react-multi-carousel-track > li {
@@ -7,7 +7,7 @@ export const CarouselGlobalStyle = createGlobalStyle`
     }
 `;
 
-export const CarouselContainer = styled('section')``;
+export const CarouselContainer = styled.section``;
 
 export const Title = styled(Typography.Title)`
   margin-bottom: 0 !important;

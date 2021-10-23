@@ -29,7 +29,7 @@ const Carousel = () => {
         <CarouselGlobalStyle />
         <MultiCarousel {...settings}>
           {albums.map((v, i) => (
-            <CarouselItem key={i} rank={v.rank} {...v.Music} />
+            <CarouselItem key={i} {...v.Music} />
           ))}
         </MultiCarousel>
       </CarouselContainer>

@@ -6,7 +6,9 @@ const useGoogleAnalytics = () => {
   const router = useRouter();
   useEffect(() => {
     const handleRouteChange = url => {
-      pageview(url);
+      if (process.env.NODE_ENV !== 'development') {
+        pageview(url);
+      }
     };
     router.events.on('routeChangeComplete', handleRouteChange);
     return () => {

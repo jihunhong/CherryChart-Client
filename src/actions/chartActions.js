@@ -1,6 +1,6 @@
+import { baseURL } from '@config';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { baseURL } from '@config';
 
 axios.defaults.baseURL = baseURL;
 axios.defaults.withCredentials = true;
