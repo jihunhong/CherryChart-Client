@@ -1,23 +1,21 @@
-import { Typography } from 'antd';
 import PropTypes from 'prop-types';
+import { Headings } from './style';
 
-const Title = ({ text, level, ellipsis, align = 'left', type, style, className }) => {
+const Title = ({ children, text, level, ellipsis, align, type, style, className }) => {
   return (
-    <Typography.Title
+    <Headings
       ellipsis={ellipsis ? <></> : false}
       level={level}
       style={{ ...style, textAlign: align }}
       type={type}
       className={className}
     >
-      {text}
-    </Typography.Title>
+      {text || children}
+    </Headings>
   );
 };
 
-Title.defaultProps = {
-  align: 'left',
-};
+Title.defaultProps = {};
 
 Title.propTypes = {
   text: PropTypes.string.isRequired,

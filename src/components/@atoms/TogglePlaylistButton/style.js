@@ -1,5 +1,5 @@
+import { MdExpandLess, MdExpandMore } from 'react-icons/md';
 import styled from 'styled-components';
-import { MdExpandMore, MdExpandLess } from 'react-icons/md';
 
 export const ExpandBtn = styled(MdExpandMore)`
   float: right;

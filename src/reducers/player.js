@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
+  visible: true,
   isExpand: false,
   playList: [],
   selectedIndex: 0,

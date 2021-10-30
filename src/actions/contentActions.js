@@ -12,3 +12,15 @@ export const loadAlbumInfo = createAsyncThunk(
     }
   },
 );
+
+export const loadUpdatedVideos = createAsyncThunk(
+  'content/loadUpdatedVideos',
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(`/api/videos/updated`);
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err.reponse?.data);
+    }
+  },
+);

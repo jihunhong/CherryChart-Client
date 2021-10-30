@@ -1,3 +1,4 @@
+import Title from '@atoms/Title';
 import TogglePlaylistButton from '@atoms/TogglePlaylistButton';
 import YoutubePlayer from '@molecules/YoutubePlayer';
 import CurrentPlayList from '@organisms/CurrentPlayList';
@@ -9,17 +10,16 @@ import {
   PlayerContainer,
   PlayerHeader,
   PlayerSaveContainer,
-  Title,
 } from './style';
 
 const Player = () => {
-  const { playList, isExpand } = useSelector(state => state.player);
+  const { playList, isExpand, visible } = useSelector(state => state.player);
 
   return (
     <PlayerContainer>
       <YoutubePlayer />
       <PlayerHeader>
-        <Title level={3}>Now Playing</Title>
+        <Title level={3} text={'Now Playing<'} />
         <Description type="secondary">{playList.length} Items on the list</Description>
         <TogglePlaylistButton />
       </PlayerHeader>

@@ -1,3 +1,4 @@
+import Text from '@atoms/Text';
 import { cdnURL } from '@config';
 import useAddItem from '@hooks/useAddItem';
 import { Avatar } from 'antd';
@@ -6,12 +7,10 @@ import { BiHeart } from 'react-icons/bi';
 import { FaYoutube } from 'react-icons/fa';
 import {
   AlbumName,
-  Artist,
   CoverImageContainer,
   HeartIcon,
   MusicListItemContainer,
   Rank,
-  Title,
   YoutubeIcon,
 } from './style';
 
@@ -27,7 +26,7 @@ const ChartItem = ({ rank, title, artist, album, Video, AlbumId }) => {
     <MusicListItemContainer>
       <Rank>{`0${rank}`.slice(-2)}</Rank>
 
-      <CoverImageContainer>
+      <CoverImageContainer onClick={handleMusic}>
         <Avatar
           shape="square"
           size={64}
@@ -35,9 +34,9 @@ const ChartItem = ({ rank, title, artist, album, Video, AlbumId }) => {
         />
       </CoverImageContainer>
 
-      <Title>{title}</Title>
+      <Text text={title} className="title" onClick={handleMusic} ellipsis />
 
-      <Artist>{artist}</Artist>
+      <Text text={artist} className="artist-name" ellipsis />
 
       <AlbumName onClick={gotoAlbumDetail}>{album}</AlbumName>
 

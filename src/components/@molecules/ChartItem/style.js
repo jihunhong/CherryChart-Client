@@ -1,5 +1,19 @@
+import { Span } from '@atoms/Text/style';
 import styled from 'styled-components';
 import { smooth_render } from '../../KeyFrames';
+
+export const Rank = styled('span')`
+  margin: auto 0 auto 1.5vw;
+`;
+
+export const CoverImageContainer = styled('div')`
+  margin: auto 1.5vw;
+  cursor: pointer;
+  & img {
+    padding: 4px;
+    border-radius: 10px;
+  }
+`;
 
 export const MusicListItemContainer = styled('li')`
   margin: 1.5vh auto;
@@ -10,43 +24,24 @@ export const MusicListItemContainer = styled('li')`
   animation-name: ${smooth_render};
   animation-duration: 1s;
 
+  ${Span}.title {
+    width: 12vw;
+    cursor: pointer;
+  }
+  ${Span}.artist-name {
+    width: 10vw;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.45);
+  }
+  ${Span} {
+    margin: auto 1.5vw;
+    display: inline-block;
+  }
+
   :hover {
     transition: all 0.8s;
     box-shadow: rgb(149 157 165 / 60%) 2px 3px 6px;
   }
-`;
-
-export const Rank = styled('span')`
-  margin: auto 0 auto 1.5vw;
-`;
-
-export const CoverImageContainer = styled('div')`
-  margin: auto 1.5vw;
-
-  & img {
-    padding: 4px;
-    border-radius: 10px;
-  }
-`;
-
-export const Title = styled('span')`
-  margin: auto 1.5vw;
-  width: 12vw;
-  display: inline-block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-`;
-
-export const Artist = styled('span')`
-  margin: auto 1.5vw;
-  width: 10vw;
-  display: inline-block;
-  font-weight: 400;
-  color: rgba(0, 0, 0, 0.45);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 `;
 
 export const AlbumName = styled('span')`

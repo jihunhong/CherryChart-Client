@@ -1,3 +1,4 @@
+import { Headings } from '@atoms/Title/style';
 import { Typography } from 'antd';
 import styled from 'styled-components';
 import { smooth_render } from '../../KeyFrames';
@@ -8,6 +9,10 @@ export const CarouselItemContainer = styled('div')`
   animation-name: ${smooth_render};
   animation-duration: 2s;
   cursor: pointer;
+
+  ${Headings} {
+    margin-bottom: 0px !important;
+  }
 `;
 
 export const CarouselCoverImage = styled('div')`
@@ -32,13 +37,6 @@ export const CarouselCoverImage = styled('div')`
     z-index: -1;
     transition: filter 0.3s ease;
   }
-`;
-
-export const Title = styled(Typography.Title)`
-  margin-bottom: 0px !important;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 `;
 
 export const Artist = styled(Typography.Text)`

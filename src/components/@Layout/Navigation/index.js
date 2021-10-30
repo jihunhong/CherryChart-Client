@@ -14,7 +14,7 @@ const Navigation = () => {
           <LinkHOC href={'/'}>Home</LinkHOC>
         </MenuItem>
         <MenuItem key="2" icon={<BiWorld />}>
-          Browse
+          <LinkHOC href={'/browse'}>Browse</LinkHOC>
         </MenuItem>
         <MenuItem key="3" icon={<AiOutlineFileImage />}>
           Album

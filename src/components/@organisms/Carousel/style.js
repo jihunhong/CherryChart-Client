@@ -1,4 +1,5 @@
-import { Typography } from 'antd';
+import { Span } from '@atoms/Text/style';
+import { Headings } from '@atoms/Title/style';
 import styled, { createGlobalStyle } from 'styled-components';
 
 export const CarouselGlobalStyle = createGlobalStyle`
@@ -7,17 +8,15 @@ export const CarouselGlobalStyle = createGlobalStyle`
     }
 `;
 
-export const CarouselContainer = styled.section``;
+export const MainIntroContainer = styled.section`
+  & ${Headings} {
+    margin-bottom: 0;
+  }
 
-export const Title = styled(Typography.Title)`
-  margin-bottom: 0 !important;
-  color: #262f57 !important;
-`;
-
-export const Text = styled(Typography.Text)`
-  display: inline-block;
-  margin-bottom: 3vh;
-  color: #262f57 !important;
+  & ${Span} {
+    display: inline-block;
+    margin-bottom: 28px;
+  }
 `;
 
 export const TrackAddIcon = styled.span`

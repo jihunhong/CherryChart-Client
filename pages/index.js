@@ -1,9 +1,9 @@
+import { loadChart } from '@actions/chartActions';
 import AppLayout from '@Layout/AppLayout';
 import Carousel from '@organisms/Carousel';
 import Chart from '@organisms/Chart';
 import wrapper from '@store/configureStore';
 import { Col, Row } from 'antd';
-import { loadChart } from '@actions/chartActions';
 
 const Home = () => {
   return (
