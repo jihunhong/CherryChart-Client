@@ -1,12 +1,16 @@
-import { Typography } from 'antd';
 import PropTypes from 'prop-types';
+import { Span } from './style';
 
-const Text = ({ text, type = 'secondary' }) => {
-  return <Typography.Text type={type}>{text}</Typography.Text>;
+const Text = ({ text, type = 'primary', ellipsis, ...rest }) => {
+  return (
+    <Span type={type} {...rest} ellipsis={ellipsis}>
+      {text}
+    </Span>
+  );
 };
 
 Text.defaultProps = {
-  type: 'secondary',
+  type: 'primary',
 };
 
 Text.propTypes = {

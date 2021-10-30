@@ -1,3 +1,4 @@
+import { Headings } from '@atoms/Title/style';
 import { horizontal_render } from '@components/KeyFrames';
 import { Typography } from 'antd';
 import styled from 'styled-components';
@@ -14,6 +15,10 @@ export const PlayerContainer = styled('div')`
   & iframe {
     width: 100%;
   }
+
+  & ${Headings} {
+    margin-bottom: 0px;
+  }
 `;
 export const PlayerHeader = styled('div')`
   padding: 14px;
@@ -21,10 +26,6 @@ export const PlayerHeader = styled('div')`
   background: #fff !important;
   border-bottom: 0px;
   cursor: pointer;
-`;
-
-export const Title = styled(Typography.Title)`
-  margin-bottom: 0px !important;
 `;
 
 export const Description = styled(Typography.Text)``;

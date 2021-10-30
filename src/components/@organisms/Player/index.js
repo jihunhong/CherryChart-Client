@@ -1,3 +1,4 @@
+import Title from '@atoms/Title';
 import TogglePlaylistButton from '@atoms/TogglePlaylistButton';
 import YoutubePlayer from '@molecules/YoutubePlayer';
 import CurrentPlayList from '@organisms/CurrentPlayList';
@@ -9,7 +10,6 @@ import {
   PlayerContainer,
   PlayerHeader,
   PlayerSaveContainer,
-  Title,
 } from './style';
 
 const Player = () => {
@@ -19,7 +19,7 @@ const Player = () => {
     <PlayerContainer>
       <YoutubePlayer />
       <PlayerHeader>
-        <Title level={3}>Now Playing</Title>
+        <Title level={3} text={'Now Playing<'} />
         <Description type="secondary">{playList.length} Items on the list</Description>
         <TogglePlaylistButton />
       </PlayerHeader>

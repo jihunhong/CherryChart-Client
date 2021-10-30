@@ -1,9 +1,11 @@
 import SiteSelector from '@atoms/SiteSelector';
+import Text from '@atoms/Text';
+import Title from '@atoms/Title';
 import aggregateAlbum from '@lib/aggregateAlbum';
 import CarouselItem from '@molecules/CarouselItem';
 import { useSelector } from 'react-redux';
 import MultiCarousel from 'react-slick';
-import { CarouselContainer, CarouselGlobalStyle, Text, Title } from './style';
+import { CarouselGlobalStyle, MainIntroContainer } from './style';
 
 const settings = {
   className: 'slider variable-width',
@@ -21,18 +23,18 @@ const Carousel = () => {
 
   return (
     <>
-      <CarouselContainer>
+      <MainIntroContainer>
         <Title level={4}>
           <SiteSelector />
         </Title>
-        <Text>{albums?.length || 0} Albums</Text>
+        <Text text={`${albums?.length || 0} Albums`} />
         <CarouselGlobalStyle />
         <MultiCarousel {...settings}>
           {albums.map((v, i) => (
             <CarouselItem key={i} {...v.Music} />
           ))}
         </MultiCarousel>
-      </CarouselContainer>
+      </MainIntroContainer>
     </>
   );
 };
