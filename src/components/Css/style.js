@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 
 export const scrollbar = css`
-  overflow: hidden;
+  overflow: scroll;
   &::-webkit-scrollbar {
     width: 7px;
     background-color: #f5f5f5;
@@ -15,8 +15,9 @@ export const scrollbar = css`
   &::-webkit-scrollbar-track {
     background-color: #fff;
   }
+`;
 
-  & :hover {
-    overflow: scroll;
-  }
+export const ScaleUp = css`
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
 `;

@@ -1,4 +1,4 @@
-import { scrollbar } from '@components/Css/style';
+import { ScaleUp, scrollbar } from '@components/Css/style';
 import styled from 'styled-components';
 import { smooth_render } from '../../KeyFrames';
 
@@ -16,6 +16,12 @@ export const PlayListItemsContainer = styled('ul')`
   }
 
   ${scrollbar}
+
+  .ant-empty {
+    & :hover {
+      ${ScaleUp}
+    }
+  }
 `;
 
 export const PlayListItem = styled('li')`

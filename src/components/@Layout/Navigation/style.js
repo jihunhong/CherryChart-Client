@@ -1,5 +1,5 @@
-import styled, { createGlobalStyle } from 'styled-components';
 import { Menu } from 'antd';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const NavigationGlobal = createGlobalStyle`
     * {
@@ -16,10 +16,12 @@ export const NavigationGlobal = createGlobalStyle`
         text-shadow: 0px 0px 1px rgba(0,0,0,0.3);
     }
 
-    svg {
-        margin-right : 15px;
-        font-size : 17px;
-        opacity : 0.5;
+    .ant-layout-sider {
+        svg {
+            margin-right : 15px;
+            font-size : 17px;
+            opacity : 0.5;
+        }
     }
 
     // overwrite

@@ -27,7 +27,7 @@ const ChartItem = ({ rank, title, artist, album, Video, AlbumId }) => {
     <MusicListItemContainer>
       <Rank>{`0${rank}`.slice(-2)}</Rank>
 
-      <CoverImageContainer>
+      <CoverImageContainer onClick={handleMusic}>
         <Avatar
           shape="square"
           size={64}
@@ -35,7 +35,7 @@ const ChartItem = ({ rank, title, artist, album, Video, AlbumId }) => {
         />
       </CoverImageContainer>
 
-      <Title>{title}</Title>
+      <Title onClick={handleMusic}>{title}</Title>
 
       <Artist>{artist}</Artist>
 

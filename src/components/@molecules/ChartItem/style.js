@@ -1,6 +1,28 @@
 import styled from 'styled-components';
 import { smooth_render } from '../../KeyFrames';
 
+export const Title = styled('span')`
+  margin: auto 1.5vw;
+  width: 12vw;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
+export const Rank = styled('span')`
+  margin: auto 0 auto 1.5vw;
+`;
+
+export const CoverImageContainer = styled('div')`
+  margin: auto 1.5vw;
+  cursor: pointer;
+  & img {
+    padding: 4px;
+    border-radius: 10px;
+  }
+`;
+
 export const MusicListItemContainer = styled('li')`
   margin: 1.5vh auto;
   display: flex;
@@ -10,32 +32,14 @@ export const MusicListItemContainer = styled('li')`
   animation-name: ${smooth_render};
   animation-duration: 1s;
 
+  ${Title} {
+    cursor: pointer;
+  }
+
   :hover {
     transition: all 0.8s;
     box-shadow: rgb(149 157 165 / 60%) 2px 3px 6px;
   }
-`;
-
-export const Rank = styled('span')`
-  margin: auto 0 auto 1.5vw;
-`;
-
-export const CoverImageContainer = styled('div')`
-  margin: auto 1.5vw;
-
-  & img {
-    padding: 4px;
-    border-radius: 10px;
-  }
-`;
-
-export const Title = styled('span')`
-  margin: auto 1.5vw;
-  width: 12vw;
-  display: inline-block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 `;
 
 export const Artist = styled('span')`

@@ -13,7 +13,7 @@ import {
 } from './style';
 
 const Player = () => {
-  const { playList, isExpand } = useSelector(state => state.player);
+  const { playList, isExpand, visible } = useSelector(state => state.player);
 
   return (
     <PlayerContainer>

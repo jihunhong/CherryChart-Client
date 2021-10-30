@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import { horizontal_render } from '@components/KeyFrames';
 import { Typography } from 'antd';
-import { horizontal_render, disapper_horizontal } from '@components/KeyFrames';
+import styled from 'styled-components';
 
 export const PlayerContainer = styled('div')`
   background-color: #fff;
@@ -16,9 +16,7 @@ export const PlayerContainer = styled('div')`
   }
 `;
 export const PlayerHeader = styled('div')`
-  padding-top: 14px;
-  padding-left: 14px;
-  padding-bottom: 9px;
+  padding: 14px;
   border: 1px solid rgba(149, 157, 165, 0.2);
   background: #fff !important;
   border-bottom: 0px;
