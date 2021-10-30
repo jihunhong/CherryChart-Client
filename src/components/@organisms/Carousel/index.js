@@ -16,7 +16,7 @@ const settings = {
   variableWidth: true,
 };
 
-const Carousel = () => {
+const Carousel = ({ title, subtext }) => {
   const { chartData } = useSelector(state => state.chart);
 
   const albums = aggregateAlbum(chartData);

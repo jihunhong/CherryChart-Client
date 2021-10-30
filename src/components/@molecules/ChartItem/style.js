@@ -24,10 +24,6 @@ export const MusicListItemContainer = styled('li')`
   animation-name: ${smooth_render};
   animation-duration: 1s;
 
-  ${Span} {
-    margin: auto 1.5vw;
-    display: inline-block;
-  }
   ${Span}.title {
     width: 12vw;
     cursor: pointer;
@@ -36,6 +32,10 @@ export const MusicListItemContainer = styled('li')`
     width: 10vw;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.45);
+  }
+  ${Span} {
+    margin: auto 1.5vw;
+    display: inline-block;
   }
 
   :hover {

@@ -12,5 +12,5 @@ export const ChartContainer = styled('div')`
 export const MusicList = styled('ol')`
   list-style: none;
   padding: 0;
-  margin-top: 3vh;
+  margin-top: 29px;
 `;

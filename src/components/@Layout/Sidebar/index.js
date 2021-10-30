@@ -9,7 +9,7 @@ const Sidebar = () => {
     <SidebarContainer
       theme="light"
       width={SIDEBAR_WIDTH}
-      breakpoint={'lg'}
+      breakpoint={'sm'}
       collapsedWidth={0}
       trigger={null}
     >

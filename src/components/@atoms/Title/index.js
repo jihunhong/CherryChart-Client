@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Headings } from './style';
 
-const Title = ({ children, text, level, ellipsis, align = 'left', type, style, className }) => {
+const Title = ({ children, text, level, ellipsis, align, type, style, className }) => {
   return (
     <Headings
       ellipsis={ellipsis ? <></> : false}
@@ -15,9 +15,7 @@ const Title = ({ children, text, level, ellipsis, align = 'left', type, style, c
   );
 };
 
-Title.defaultProps = {
-  align: 'left',
-};
+Title.defaultProps = {};
 
 Title.propTypes = {
   text: PropTypes.string.isRequired,
