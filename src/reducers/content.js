@@ -1,10 +1,13 @@
-import { loadUpdatedVideos } from '@actions/contentActions';
+import { loadUpdatedSongs, loadUpdatedVideos } from '@actions/contentActions';
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  recentUpdated: [],
-  recentUpdatedLoading: false,
-  recentUpdatedDataDone: false,
+  recentVideos: [],
+  recentVideosLoading: false,
+  recentVideosDataDone: false,
+  recentSongs: [],
+  recentSongsLoading: false,
+  recentSongsDataDone: false,
 };
 
 const contentSlice = createSlice({
@@ -14,17 +17,31 @@ const contentSlice = createSlice({
   extraReducers: builder =>
     builder
       .addCase(loadUpdatedVideos.pending, (state, action) => {
-        state.recentUpdatedLoading = true;
-        state.recentUpdatedDataDone = false;
+        state.recentVideosLoading = true;
+        state.recentVideosDataDone = false;
       })
       .addCase(loadUpdatedVideos.fulfilled, (state, action) => {
-        state.recentUpdated = action.payload;
-        state.recentUpdatedLoading = false;
-        state.recentUpdatedDataDone = true;
+        state.recentVideos = action.payload;
+        state.recentVideosLoading = false;
+        state.recentVideosDataDone = true;
       })
       .addCase(loadUpdatedVideos.rejected, (state, action) => {
-        state.recentUpdatedLoading = false;
-        state.recentUpdatedDataDone = true;
+        state.recentVideosLoading = false;
+        state.recentVideosDataDone = true;
+      })
+
+      .addCase(loadUpdatedSongs.pending, (state, action) => {
+        state.recentSongsLoading = true;
+        state.recentSongsDataDone = false;
+      })
+      .addCase(loadUpdatedSongs.fulfilled, (state, action) => {
+        state.recentSongs = action.payload;
+        state.recentSongsLoading = false;
+        state.recentSongsDataDone = true;
+      })
+      .addCase(loadUpdatedSongs.rejected, (state, action) => {
+        state.recentSongsLoading = false;
+        state.recentSongsDataDone = true;
       }),
 });
 
