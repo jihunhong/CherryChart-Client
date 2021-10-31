@@ -2,10 +2,24 @@ import { Headings } from '@atoms/Title/style';
 import styled from 'styled-components';
 
 export const BrowserContainer = styled.section`
-  & .recently-updated-videos {
-    margin: 28px 0;
-    ${Headings} {
+  & section {
+    margin: 14px 0;
+    > ${Headings} {
+      font-size: 17px;
       margin-bottom: 0;
+    }
+  }
+
+  .recently-updated-videos {
+    & .slick-track {
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+  }
+
+  .recently-updated-songs {
+    > ${Headings} {
+      margin-bottom: 12px;
     }
   }
 `;

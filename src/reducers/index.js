@@ -3,6 +3,7 @@ import { combineReducers } from 'redux';
 import albumSlice from './album';
 import chartSlice from './chart';
 import configSlice from './config';
+import contentSlice from './content';
 import playerSlice from './player';
 
 const rootReducer = (state, action) => {
@@ -22,6 +23,7 @@ const rootReducer = (state, action) => {
         config: configSlice.reducer,
         chart: chartSlice.reducer,
         album: albumSlice.reducer,
+        content: contentSlice.reducer,
       });
       return combineReducer(state, action);
     }
