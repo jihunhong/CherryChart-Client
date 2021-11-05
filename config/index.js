@@ -10,8 +10,6 @@ export const cdnURL = 'https://cdn.cherrychart.com';
 export const SIDEBAR_WIDTH = 250;
 
 export const fetcher = url =>
-  axios
-    .get(url, { withCredetials: true })
-    .then(result => result.data);
+  axios.get(url, { withCredetials: true }).then(result => result.data);
 
 export const siteNames = ['Melon', 'Genie', 'Bugs'];
