@@ -15,7 +15,12 @@ import {
 } from './style';
 
 const ChartItem = ({ rank, title, artist, album, Video, AlbumId }) => {
-  const [handleMusic] = useAddItem({ title, artist, album, videoId: Video?.videoId });
+  const [handleMusic] = useAddItem({
+    title,
+    artist,
+    album,
+    videoId: Video?.videoId,
+  });
   const router = useRouter();
 
   const gotoAlbumDetail = () => {
@@ -30,7 +35,10 @@ const ChartItem = ({ rank, title, artist, album, Video, AlbumId }) => {
         <Avatar
           shape="square"
           size={64}
-          src={`${cdnURL}/${album.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`}
+          src={`${cdnURL}/${album.replace(
+            /[`~!@#$%^&*|\\\'\";:\/?]/g,
+            '_',
+          )}.png`}
         />
       </CoverImageContainer>
 

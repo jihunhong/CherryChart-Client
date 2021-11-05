@@ -1,13 +1,16 @@
-import { Headings } from '@atoms/Title/style';
 import styled from 'styled-components';
 
 export const BrowserContainer = styled.section`
   & section {
-    margin: 14px 0;
-    > ${Headings} {
+    margin: 26px 0;
+    > h2 {
       font-size: 17px;
       margin-bottom: 0;
     }
+  }
+
+  & section > h4 {
+    margin-bottom: 12px;
   }
 
   .recently-updated-videos {
@@ -18,8 +21,5 @@ export const BrowserContainer = styled.section`
   }
 
   .recently-updated-songs {
-    > ${Headings} {
-      margin-bottom: 12px;
-    }
   }
 `;

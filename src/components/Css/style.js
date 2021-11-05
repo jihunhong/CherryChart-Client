@@ -1,7 +1,8 @@
 import { css } from 'styled-components';
 
 export const scrollbar = css`
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
   &::-webkit-scrollbar {
     width: 7px;
     background-color: #f5f5f5;

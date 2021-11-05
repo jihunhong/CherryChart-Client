@@ -19,7 +19,7 @@ const Player = () => {
     <PlayerContainer>
       <YoutubePlayer />
       <PlayerHeader>
-        <Title level={3} text={'Now Playing<'} />
+        <Title level={3} text={'Now Playing'} />
         <Description type="secondary">{playList.length} Items on the list</Description>
         <TogglePlaylistButton />
       </PlayerHeader>

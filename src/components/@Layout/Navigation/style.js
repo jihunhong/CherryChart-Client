@@ -13,7 +13,7 @@ export const NavigationGlobal = createGlobalStyle`
     }
 
     h1, h2, h3, h4, h5, span {
-        text-shadow: 0px 0px 1px rgba(0,0,0,0.3);
+        text-shadow: 0px 0px 1px rgba(0,0,0,0.6);
     }
 
     .ant-layout-sider {

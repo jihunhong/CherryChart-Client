@@ -1,16 +1,16 @@
-import {
-  PlayListItemsContainer,
-  PlayListItem,
-  PlayListItemCover,
-  PlayListItemTitle,
-  PlayListItemArtist,
-  PlayListDivision,
-} from './style';
-import { useSelector, useDispatch } from 'react-redux';
 import AlbumCover from '@atoms/AlbumCover';
-import { Empty } from 'antd';
 import playerSlice from '@reducers/player';
+import { Empty } from 'antd';
 import { FiDelete } from 'react-icons/fi';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  PlayListDivision,
+  PlayListItem,
+  PlayListItemArtist,
+  PlayListItemCover,
+  PlayListItemsContainer,
+  PlayListItemTitle,
+} from './style';
 
 const CurrentPlayList = () => {
   const dispatch = useDispatch();
@@ -39,7 +39,7 @@ const CurrentPlayList = () => {
                 <PlayListItemTitle>{music.title}</PlayListItemTitle>
                 <PlayListItemArtist>{music.artist}</PlayListItemArtist>
               </PlayListDivision>
-              <FiDelete onClick={handleRemove} data-index={index} />
+              <FiDelete onClick={handleRemove} data-index={index} className="delete-action" />
             </PlayListItem>
           ))
         )}
