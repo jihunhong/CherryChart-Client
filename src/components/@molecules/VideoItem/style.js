@@ -7,13 +7,13 @@ export const VideoItemContainer = styled.div`
   padding: 12px
   width: 100%;
   height: auto;
-  aspect-ratio: 530/304;
-  border-radius: 6px;
+  aspect-ratio: 530/280;
+  border-radius: 2px;
   & img {
     border-radius: 6px;
     width: 100%;
     height: auto;
-    aspect-ratio: 530/304;
+    aspect-ratio: 530/280;
     object-fit: cover;
   }
   & div {

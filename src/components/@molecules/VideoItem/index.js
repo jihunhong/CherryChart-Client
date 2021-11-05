@@ -5,7 +5,7 @@ import { VideoItemContainer } from './style';
 const VideoItem = ({ title, artist, videoId }) => {
   return (
     <VideoItemContainer>
-      <img src={`https://img.youtube.com/vi/${videoId}/sddefault.jpg`} />
+      <img src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`} />
       <div>
         <Title level={5} ellipsis text={title} className="video-title" />
         <Text type="secondary" text={artist} />

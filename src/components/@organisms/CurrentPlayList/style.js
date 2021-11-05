@@ -1,3 +1,4 @@
+import { StyledAvatar } from '@atoms/AlbumCover/style';
 import { ScaleUp, scrollbar } from '@components/Css/style';
 import styled from 'styled-components';
 import { smooth_render } from '../../KeyFrames';
@@ -8,7 +9,6 @@ export const PlayListItemsContainer = styled('ul')`
   animation-name: ${smooth_render};
   animation-duration: 1s;
   padding: 4px 6px;
-  overflow-y: scroll;
   cursor: pointer;
 
   & .ant-empty {
@@ -26,24 +26,35 @@ export const PlayListItemsContainer = styled('ul')`
 
 export const PlayListItem = styled('li')`
   display: flex;
-  padding: 6px 2px;
+  padding: 6px 0px;
   padding-bottom: 6px;
   border-bottom: 1px solid;
   border-color: rgb(0 0 0 / 10%);
   animation-name: ${smooth_render};
   animation-duration: 1s;
+  transition: all 0.3s ease-in-out;
 
   :hover {
-    transition: all 0.3s;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-color: rgb(0 0 0 / 60%);
+    & .delete-action {
+      opacity: 0.6;
+    }
+  }
+
+  .delete-action {
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+    :hover {
+      opacity: 1;
+    }
   }
 `;
 
 export const PlayListItemCover = styled('div')`
   float: left;
   margin: auto 0.5vw auto 0;
-  & img {
-    padding: 2px;
+  ${StyledAvatar} {
+    box-shadow: none;
   }
 `;
 
