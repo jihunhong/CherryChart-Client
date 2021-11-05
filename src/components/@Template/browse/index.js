@@ -1,25 +1,12 @@
 import Title from '@atoms/Title';
+import { artistCarouselSetting, songGridSetting, videoCarouselSetting } from '@config/carousel';
+import ArtistSliceItem from '@molecules/ArtistSliceItem';
 import SongSliceItem from '@molecules/SongSliceItem';
 import VideoItem from '@molecules/VideoItem';
 import { SongsGrid } from '@organisms/SongsGrids/style';
 import { useSelector } from 'react-redux';
 import MultiCarousel from 'react-slick';
 import { BrowserContainer } from './style';
-
-const videoSetting = {
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 3,
-};
-
-const songSetting = {
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: true,
-};
 
 const perPageItemCount = 16;
 
@@ -31,7 +18,7 @@ const BrowsePage = () => {
       <hr />
       <section className="recently-updated-videos">
         <Title level={4} text={'Recently Videos'} />
-        <MultiCarousel {...videoSetting}>
+        <MultiCarousel {...videoCarouselSetting}>
           {recentVideos.map(item => (
             <VideoItem
               key={item.videoId}
@@ -45,8 +32,8 @@ const BrowsePage = () => {
 
       <section className="recently-updated-songs">
         <Title level={4} text={'Recently Songs'} />
-        <MultiCarousel {...songSetting}>
-          {Array(recentSongs?.length / perPageItemCount)
+        <MultiCarousel {...songGridSetting}>
+          {Array(recentSongs?.length || 0 / perPageItemCount)
             .fill()
             .map((_, i) => (
               <SongsGrid>
@@ -54,6 +41,17 @@ const BrowsePage = () => {
                   <SongSliceItem key={song.id} {...song} />
                 ))}
               </SongsGrid>
+            ))}
+        </MultiCarousel>
+      </section>
+
+      <section className="recently-updated-artists">
+        <Title level={4} text={'Recently Artists'} />
+        <MultiCarousel {...artistCarouselSetting}>
+          {Array(24)
+            .fill()
+            .map(() => (
+              <ArtistSliceItem />
             ))}
         </MultiCarousel>
       </section>

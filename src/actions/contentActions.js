@@ -30,7 +30,7 @@ export const loadUpdatedSongs = createAsyncThunk(
   'content/loadUpdatedSongs',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`/api/songs/updated`);
+      const response = await axios.get(`/api/song/updated`);
       return response.data;
     } catch (err) {
       console.log(err.response);

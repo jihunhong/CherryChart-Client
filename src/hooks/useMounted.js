@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react';
 
 const useMounted = () => {
-  const renderRef = useRef(true);
+  const renderRef = useRef(false);
 
   useEffect(() => {
-    renderRef.current = false;
+    renderRef.current = true;
   }, []);
 
   return renderRef.current;

@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4 {
     color: var(--font-primary-color);
     font-weight: 600;
-    text-shadow: 0px 0px 1px rgb(0 0 0 / 30%);
+    text-shadow: 0px 0px 1px rgb(0 0 0 / 60%);
   }
 `;
 
