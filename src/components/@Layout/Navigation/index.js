@@ -1,7 +1,6 @@
 import LinkHOC from '@atoms/LinkHOC';
 import { Menu } from 'antd';
-import { AiOutlineFileImage, AiOutlineVideoCamera } from 'react-icons/ai';
-import { BiHomeAlt, BiWorld } from 'react-icons/bi';
+import { BiHomeAlt, BiMovie, BiMusic, BiWorld } from 'react-icons/bi';
 import { FiUser } from 'react-icons/fi';
 import { MenuItem, NavigationGlobal } from './style';
 
@@ -16,14 +15,14 @@ const Navigation = () => {
         <MenuItem key="2" icon={<BiWorld />}>
           <LinkHOC href={'/browse'}>Browse</LinkHOC>
         </MenuItem>
-        <MenuItem key="3" icon={<AiOutlineFileImage />}>
-          Album
+        <MenuItem key="3" icon={<BiMusic />}>
+          <LinkHOC href={'/songs'}>Songs</LinkHOC>
         </MenuItem>
         <MenuItem key="4" icon={<FiUser />}>
           Artists
         </MenuItem>
-        <MenuItem key="5" icon={<AiOutlineVideoCamera />}>
-          Videoes
+        <MenuItem key="5" icon={<BiMovie />}>
+          <LinkHOC href={'/videos'}>Videos</LinkHOC>
         </MenuItem>
       </Menu>
     </>
