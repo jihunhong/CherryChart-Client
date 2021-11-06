@@ -1,10 +1,12 @@
 import Text from '@atoms/Text';
 import Title from '@atoms/Title';
+import useAddItem from '@hooks/useAddItem';
 import { VideoItemContainer } from './style';
 
-const VideoItem = ({ title, artist, videoId }) => {
+const VideoItem = ({ title, artist, videoId, albumName }) => {
+  const [handler] = useAddItem({ title, artist, videoId, album: albumName });
   return (
-    <VideoItemContainer>
+    <VideoItemContainer onClick={handler}>
       <img src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`} />
       <div>
         <Title level={5} ellipsis text={title} className="video-title" />

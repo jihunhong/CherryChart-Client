@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Headings } from './style';
 
-const Title = ({ children, text, level, ellipsis, align, type, style, className }) => {
+const Title = ({ children, text, level, ellipsis, align, type, style, className, icon }) => {
   return (
     <Headings
       ellipsis={ellipsis ? <></> : false}
@@ -10,6 +10,7 @@ const Title = ({ children, text, level, ellipsis, align, type, style, className 
       type={type}
       className={className}
     >
+      {icon}
       {text || children}
     </Headings>
   );
