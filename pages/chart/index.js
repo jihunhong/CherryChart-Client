@@ -1,17 +1,16 @@
 import { loadChart } from '@actions/chartActions';
 import AppLayout from '@Layout/AppLayout';
 import wrapper from '@store/configureStore';
-import LandingPage from '@Template/landing';
 
-const Home = () => {
+const ChartPage = () => {
   return (
     <>
-      <LandingPage />
+      <Landing />
     </>
   );
 };
 
-Home.getLayout = page => <AppLayout>{page}</AppLayout>;
+ChartPage.getLayout = page => <AppLayout>{page}</AppLayout>;
 
 export const getServerSideProps = wrapper.getServerSideProps(async context => {
   await context.store.dispatch(
@@ -21,4 +20,4 @@ export const getServerSideProps = wrapper.getServerSideProps(async context => {
   );
 });
 
-export default Home;
+export default ChartPage;
