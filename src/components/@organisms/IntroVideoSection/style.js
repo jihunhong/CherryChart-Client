@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export const LetterBox = styled.section`
   z-index: 101;
   margin: auto;
-  width: 1900px;
+  width: 90%;
   font-family: 'Poppins';
   display: flex;
   flex-direction: column;

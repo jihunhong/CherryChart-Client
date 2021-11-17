@@ -29,6 +29,16 @@ export const disapper_horizontal = keyframes`
     }
 `;
 
+export const SlideUp = keyframes`
+  from {
+    transform: translate(0, 120px);
+  }
+  to {
+    transform: translate(0, 0px);
+  }
+  
+`;
+
 export const ripple = keyframes`
 0% {
     top: 42px;

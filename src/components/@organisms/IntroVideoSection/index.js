@@ -6,7 +6,7 @@ import { FaGithub } from 'react-icons/fa';
 import YouTube from 'react-youtube';
 import { IntroSectionContainer, LetterBox, VideoWrapper } from './style';
 
-const IntroSection = () => {
+const IntroVideoSection = () => {
   const [currentPlayed, setCurrentPlayed] = useState(
     Math.floor(Math.floor(Math.random() * 10) % 3),
   );
@@ -57,4 +57,4 @@ const IntroSection = () => {
   );
 };
 
-export default IntroSection;
+export default IntroVideoSection;

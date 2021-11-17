@@ -1,7 +1,13 @@
-import IntroSection from '@organisms/IntroSection';
+import Features from '@organisms/Features';
+import IntroVideoSection from '@organisms/IntroVideoSection';
 
 const LandingPage = () => {
-  return <IntroSection />;
+  return (
+    <>
+      <IntroVideoSection />
+      <Features />
+    </>
+  );
 };
 
 export default LandingPage;
