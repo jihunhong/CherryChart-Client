@@ -1,5 +1,10 @@
 import { FlexColumn } from '@atoms/FlexColumn/style';
-import { Col, Row } from 'antd';
+import LinkHOC from '@atoms/LinkHOC';
+import Text from '@atoms/Text';
+import Title from '@atoms/Title';
+import { Button, Col, Row } from 'antd';
+import { BiWorld } from 'react-icons/bi';
+import { BsFillPlayFill } from 'react-icons/bs';
 import { FeatureContainer } from './style';
 
 const Features = () => {
@@ -17,6 +22,24 @@ const Features = () => {
             <img src="./img/feature_player.png" />
             <img src="./img/feature_album.png" />
           </FlexColumn>
+        </Col>
+        <Col md={2}></Col>
+        <Col md={12} className="feature-description">
+          <Title text={'Listen and Watch'} />
+          <Text text={'Browse the KPOP charts and add your favorite songs to your playlist!'} />
+          <Text text={'Take a look at the songs that are counted every day.'} />
+          <Row>
+            <LinkHOC href="/chart">
+              <Button type="primary" icon={<BsFillPlayFill color={'#fff'} fill={'#fff'} />}>
+                DISCOVER
+              </Button>
+            </LinkHOC>
+            <LinkHOC href="/browse">
+              <Button type="primary" icon={<BiWorld color={'#fff'} fill={'#fff'} />}>
+                BROWSE
+              </Button>
+            </LinkHOC>
+          </Row>
         </Col>
       </Row>
     </FeatureContainer>

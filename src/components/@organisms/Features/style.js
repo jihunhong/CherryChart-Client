@@ -1,3 +1,5 @@
+import { Span } from '@atoms/Text/style';
+import { Headings } from '@atoms/Title/style';
 import { SlideUp } from '@components/KeyFrames';
 import styled from 'styled-components';
 
@@ -28,6 +30,33 @@ export const FeatureContainer = styled.section`
     }
     & img:nth-of-type(2) {
       margin-left: -16px;
+    }
+  }
+
+  .feature-description {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    & ${Headings} {
+      font-size: 50px;
+      margin-bottom: 0.2em;
+    }
+    & ${Span}:nth-last-of-type(1) {
+      margin-bottom: 0.7em;
+    }
+
+    & button {
+      display: flex;
+      margin-right: 6px;
+      border-radius: 6px;
+      svg {
+        margin-right: 4px;
+      }
+      > span {
+        color: #fff;
+      }
     }
   }
 
