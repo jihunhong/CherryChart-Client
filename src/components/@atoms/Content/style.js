@@ -5,6 +5,7 @@ export const ContentContainer = styled(Layout.Content)`
   background: #fcfdfe;
   padding: 0 50px;
   min-height: 100vh;
+  position: relative;
 
   & > section {
     margin: 5vh auto;

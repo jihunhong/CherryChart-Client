@@ -40,7 +40,7 @@ export const SlideUp = keyframes`
 `;
 
 export const ripple = keyframes`
-0% {
+  0% {
     top: 42px;
     left: 42px;
     width: 0;
@@ -53,5 +53,14 @@ export const ripple = keyframes`
     width: 58px;
     height: 58px;
     opacity: 0;
+  }
+`;
+
+export const StarUpSlide = keyframes`
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-2000px);
   }
 `;

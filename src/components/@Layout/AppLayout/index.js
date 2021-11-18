@@ -1,4 +1,5 @@
 import Content from '@atoms/Content';
+import StarsBackground from '@atoms/StarsBackground';
 import { SIDEBAR_WIDTH } from '@config';
 import { Layout } from 'antd';
 import Header from '../Header';
@@ -19,6 +20,7 @@ const AppLayout = ({ children }) => {
             <PopOverMenus />
           </Header>
           <Content>
+            <StarsBackground />
             <>{children}</>
           </Content>
           {/* <Footer>Footer</Footer> */}
