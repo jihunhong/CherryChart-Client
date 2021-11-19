@@ -3,6 +3,7 @@ import LinkHOC from '@atoms/LinkHOC';
 import Text from '@atoms/Text';
 import Title from '@atoms/Title';
 import { Button, Col, Row } from 'antd';
+import Image from 'next/image';
 import { BiWorld } from 'react-icons/bi';
 import { BsFillPlayFill } from 'react-icons/bs';
 import { FeatureContainer } from './style';
@@ -13,14 +14,14 @@ const Features = () => {
       <Row gutter={32}>
         <Col md={5} className="chart-column">
           <FlexColumn gutter={[16, 22]}>
-            <img src="./img/feature_chart.png" />
-            <img src="./img/feature_albums.png" className="albums" />
+            <Image src="/img/feature_chart.png" width={2128} height={1635} />
+            <Image src="/img/feature_albums.png" className="albums" width={788} height={602} />
           </FlexColumn>
         </Col>
         <Col md={4}>
           <FlexColumn gutter={[16, 32]} className="play-column">
-            <img src="./img/feature_player.png" />
-            <img src="./img/feature_album.png" />
+            <Image src="/img/feature_player.png" width={818} height={992} />
+            <Image src="/img/feature_album.png" width={1719} height={1267} />
           </FlexColumn>
         </Col>
         <Col md={2}></Col>

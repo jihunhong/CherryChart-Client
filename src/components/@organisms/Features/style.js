@@ -1,3 +1,4 @@
+import { FlexColumn } from '@atoms/FlexColumn/style';
 import { Span } from '@atoms/Text/style';
 import { Headings } from '@atoms/Title/style';
 import { SlideUp } from '@components/KeyFrames';
@@ -7,6 +8,18 @@ export const FeatureContainer = styled.section`
   animation-name: ${SlideUp};
   animation-duration: 1s;
   position: relative;
+
+  ${FlexColumn} {
+    > div {
+      border-radius: 8px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+      z-index: 3;
+
+      img {
+        padding: 8px;
+      }
+    }
+  }
 
   .chart-column {
     display: flex;
@@ -60,13 +73,6 @@ export const FeatureContainer = styled.section`
     }
   }
 
-  & img {
-    width: 100%;
-    padding: 8px;
-    border-radius: 14px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-    z-index: 3;
-  }
   & img.albums {
     padding-top: 0px;
   }
