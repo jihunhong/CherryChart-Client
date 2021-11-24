@@ -2,6 +2,7 @@ import { FlexColumn } from '@atoms/FlexColumn/style';
 import LinkHOC from '@atoms/LinkHOC';
 import Text from '@atoms/Text';
 import Title from '@atoms/Title';
+import { cdnURL } from '@config/index';
 import { Button, Col, Row } from 'antd';
 import Image from 'next/image';
 import { BiWorld } from 'react-icons/bi';
@@ -14,14 +15,19 @@ const Features = () => {
       <Row gutter={32}>
         <Col md={5} className="chart-column">
           <FlexColumn gutter={[16, 22]}>
-            <Image src="/img/feature_chart.png" width={2128} height={1635} />
-            <Image src="/img/feature_albums.png" className="albums" width={788} height={602} />
+            <Image src={`${cdnURL}/feature_chart.png`} width={2128} height={1635} />
+            <Image
+              src={`${cdnURL}/feature_albums.png`}
+              className="albums"
+              width={788}
+              height={602}
+            />
           </FlexColumn>
         </Col>
         <Col md={4}>
           <FlexColumn gutter={[16, 32]} className="play-column">
-            <Image src="/img/feature_player.png" width={818} height={992} />
-            <Image src="/img/feature_album.png" width={1719} height={1267} />
+            <Image src={`${cdnURL}/feature_player.png`} width={818} height={992} />
+            <Image src={`${cdnURL}/feature_album.png`} width={1719} height={1267} />
           </FlexColumn>
         </Col>
         <Col md={2}></Col>

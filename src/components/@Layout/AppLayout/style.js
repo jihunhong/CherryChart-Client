@@ -11,6 +11,12 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 600;
     text-shadow: 0px 0px 1px rgb(0 0 0 / 60%);
   }
+
+  button.ant-btn {
+    & svg {
+      margin-right: 6px;
+    }
+  }
 `;
 
 export const StyledLayout = styled(Layout)`

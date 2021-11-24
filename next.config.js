@@ -6,6 +6,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 module.exports = withBundleAnalyzer({
   compress: true,
   publicRuntimeConfig: {},
+  images: {
+    domains: ['cdn.cherrychart.com'],
+  },
   webpack(config, { webpack }) {
     const prod = process.env.NODE_ENV === 'production';
     config.resolve = {
@@ -33,7 +36,10 @@ module.exports = withBundleAnalyzer({
     const newConfig = {
       ...config,
       mode: prod ? 'production' : 'development',
-      plugins: [...config.plugins, new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /^\.\/ko$/)],
+      plugins: [
+        ...config.plugins,
+        new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /^\.\/ko$/),
+      ],
     };
     if (prod) {
       newConfig.devtool = 'hidden-source-map';

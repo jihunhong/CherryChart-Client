@@ -14,6 +14,11 @@ export const FeatureContainer = styled.section`
       border-radius: 8px;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
       z-index: 3;
+      transition: 0.3s ease-in-out;
+      :hover {
+        transform: scale(1.05);
+        z-index: 5;
+      }
 
       img {
         padding: 8px;
@@ -64,9 +69,6 @@ export const FeatureContainer = styled.section`
       display: flex;
       margin-right: 6px;
       border-radius: 6px;
-      svg {
-        margin-right: 4px;
-      }
       > span {
         color: #fff;
       }
