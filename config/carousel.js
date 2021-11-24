@@ -19,3 +19,23 @@ export const artistCarouselSetting = {
   slidesToShow: 6,
   slidesToScroll: 6,
 };
+
+export const chartCarouselSetting = {
+  className: 'slider variable-width',
+  infinite: false,
+  speed: 500,
+  slidesToScroll: 1,
+  swipeToSlide: 1,
+  variableWidth: true,
+};
+
+export const albumSlidesSetting = {
+  className: 'slider variable-width',
+  infinite: true,
+  slidesToShow: 5,
+  autoplay: true,
+  speed: 50000,
+  autoplaySpeed: 0,
+  cssEase: 'linear',
+  variableWidth: true,
+};

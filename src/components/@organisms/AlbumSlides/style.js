@@ -1,0 +1,17 @@
+import styled from 'styled-components';
+
+export const AlbumSlidesContainer = styled.section`
+  .ant-row {
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    margin-left: -12px;
+    margin-right: -12px;
+    > img {
+      margin-left: 12px;
+      margin-right: 12px;
+      width: calc(100% / 5);
+      height: auto;
+      aspect-ratio: 1/1;
+    }
+  }
+`;
