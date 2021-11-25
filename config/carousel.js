@@ -34,7 +34,7 @@ export const albumSlidesSetting = {
   infinite: true,
   slidesToShow: 5,
   autoplay: true,
-  speed: 100000,
+  speed: 400000,
   autoplaySpeed: 0,
   cssEase: 'linear',
   variableWidth: true,
