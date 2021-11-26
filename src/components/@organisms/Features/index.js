@@ -15,7 +15,7 @@ const Features = () => {
       <Row gutter={32}>
         <Col offset={1} md={5} className="chart-column">
           <FlexColumn gutter={[16, 22]}>
-            <Image src={`${cdnURL}/feature_chart.png`} width={2128} height={1635} />
+            <Image src={`${cdnURL}/feature_chart.png`} width={2128} height={1635} priority />
             <Image
               src={`${cdnURL}/feature_albums.png`}
               className="albums"
@@ -26,8 +26,8 @@ const Features = () => {
         </Col>
         <Col md={4}>
           <FlexColumn gutter={[16, 32]} className="play-column">
-            <Image src={`${cdnURL}/feature_player.png`} width={818} height={992} />
-            <Image src={`${cdnURL}/feature_album.png`} width={1719} height={1267} />
+            <Image src={`${cdnURL}/feature_player.png`} width={818} height={992} priority />
+            <Image src={`${cdnURL}/feature_album.png`} width={1719} height={1267} priority />
           </FlexColumn>
         </Col>
         <Col offset={3} md={11} className="feature-description">
