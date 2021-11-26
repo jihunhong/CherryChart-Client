@@ -13,7 +13,7 @@ const Features = () => {
   return (
     <FeatureContainer>
       <Row gutter={32}>
-        <Col md={5} className="chart-column">
+        <Col offset={1} md={5} className="chart-column">
           <FlexColumn gutter={[16, 22]}>
             <Image src={`${cdnURL}/feature_chart.png`} width={2128} height={1635} />
             <Image
@@ -30,8 +30,7 @@ const Features = () => {
             <Image src={`${cdnURL}/feature_album.png`} width={1719} height={1267} />
           </FlexColumn>
         </Col>
-        <Col md={2}></Col>
-        <Col md={12} className="feature-description">
+        <Col offset={3} md={11} className="feature-description">
           <Title text={'Listen and Watch'} />
           <Text text={'Browse the KPOP charts and add your favorite songs to your playlist!'} />
           <Text text={'Take a look at the songs that are counted every day.'} />

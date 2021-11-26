@@ -6,7 +6,7 @@ const ArtistSliceItem = () => {
   return (
     <ArtistSliceItemContainer align="middle" gutter={[0, 16]}>
       <a className="img-link">
-        <img src={faker.internet.avatar()} />
+        <img src={faker.image.avatar()} />
       </a>
       <a>
         <Text text={faker.name.findName()} />

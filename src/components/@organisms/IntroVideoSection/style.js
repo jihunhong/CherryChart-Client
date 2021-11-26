@@ -39,12 +39,14 @@ export const LetterBox = styled.section`
 `;
 
 export const IntroSectionContainer = styled.section`
-  display: flex;
-  position: relative;
-  height: auto;
-  aspect-ratio: 2293/740;
-  border-radius: 14px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  > div {
+    display: flex;
+    position: relative;
+    height: auto;
+    aspect-ratio: 2293/740;
+    border-radius: 14px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
 `;
 
 export const VideoWrapper = styled.div`

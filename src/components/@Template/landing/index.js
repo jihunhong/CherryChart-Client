@@ -1,5 +1,6 @@
 import StarsBackground from '@atoms/StarsBackground';
 import AlbumSlides from '@organisms/AlbumSlides';
+import Artists from '@organisms/Artists';
 import Features from '@organisms/Features';
 import IntroVideoSection from '@organisms/IntroVideoSection';
 import { useSelector } from 'react-redux';
@@ -11,6 +12,7 @@ const LandingPage = () => {
       <StarsBackground />
       <IntroVideoSection />
       <Features />
+      <Artists dataSource={recentSongs} />
       <AlbumSlides dataSource={recentSongs} />
     </>
   );
