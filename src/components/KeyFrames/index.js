@@ -64,3 +64,12 @@ export const StarUpSlide = keyframes`
     transform: translateY(-2000px);
   }
 `;
+
+export const Beated = keyframes`
+  50% {
+    height: 20%;
+  }
+  100% {
+    height : 80%;
+  }
+`;

@@ -4,7 +4,9 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   :root {
+    --primary-color: #1890ff;
     --font-primary-color: #262f57;
+    --background-color: #fcfdfe;
   }
   h1, h2, h3, h4 {
     color: var(--font-primary-color);
