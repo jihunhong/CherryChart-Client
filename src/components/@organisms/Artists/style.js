@@ -4,6 +4,9 @@ export const ArtistsContainer = styled.section`
   .ant-row {
     height: 40vh;
     overflow: hidden;
+    max-width: 91.66666667%;
+    border-radius: 14px;
+    margin: auto;
   }
   .artists-description {
     display: flex;
