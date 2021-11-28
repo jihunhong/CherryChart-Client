@@ -44,6 +44,7 @@ export const LandingDescriptionContainer = styled.section`
     }
     ${Span} {
       margin-bottom: auto;
+      margin-right: auto;
     }
   }
 `;
