@@ -1,14 +1,11 @@
 import { loadChart } from '@actions/chartActions';
 import AppLayout from '@Layout/AppLayout';
 import wrapper from '@store/configureStore';
-import ChartPage from '@Template/chart';
+import dynamic from 'next/dynamic';
 
 const Chart = () => {
-  return (
-    <>
-      <ChartPage />
-    </>
-  );
+  const ChartPage = dynamic(() => import('@Template/chart'));
+  return <ChartPage />;
 };
 
 Chart.getLayout = page => <AppLayout>{page}</AppLayout>;

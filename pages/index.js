@@ -2,14 +2,11 @@ import { loadChart } from '@actions/chartActions';
 import { loadUpdatedSongs } from '@actions/contentActions';
 import AppLayout from '@Layout/AppLayout';
 import wrapper from '@store/configureStore';
-import LandingPage from '@Template/landing';
+import dynamic from 'next/dynamic';
 
 const Home = () => {
-  return (
-    <>
-      <LandingPage />
-    </>
-  );
+  const LandingPage = dynamic(() => import('@Template/landing'));
+  return <LandingPage />;
 };
 
 Home.getLayout = page => <AppLayout>{page}</AppLayout>;

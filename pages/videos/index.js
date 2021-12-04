@@ -1,9 +1,10 @@
 import { loadUpdatedVideos } from '@actions/contentActions';
 import AppLayout from '@Layout/AppLayout';
 import wrapper from '@store/configureStore';
-import VideoPage from '@Template/videos';
+import dynamic from 'next/dynamic';
 
 const Videos = () => {
+  const VideoPage = dynamic(() => import('@Template/videos'));
   return <VideoPage />;
 };
 
