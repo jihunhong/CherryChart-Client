@@ -2,7 +2,6 @@ import Text from '@atoms/Text';
 import Title from '@atoms/Title';
 import SamplePlayer from '@molecules/SamplePlayer';
 import { Col, Row } from 'antd';
-import faker from 'faker';
 import { LandingDescriptionContainer } from './style';
 
 const PlayListShare = () => {
@@ -11,7 +10,11 @@ const PlayListShare = () => {
       <Row align="middle" justify="center">
         <Col offset={3} span={6} className="description">
           <Title text={'Check out other playlists and share them!'} />
-          <Text text={faker.lorem.paragraph(1)} />
+          <Text
+            text={
+              "If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text"
+            }
+          />
         </Col>
         <Col offset={1} span={8} className="example-player">
           <SamplePlayer />
