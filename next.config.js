@@ -5,7 +5,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 module.exports = withBundleAnalyzer({
   compress: true,
-  publicRuntimeConfig: {},
   images: {
     domains: ['cdn.cherrychart.com'],
   },
@@ -38,7 +37,6 @@ module.exports = withBundleAnalyzer({
       mode: prod ? 'production' : 'development',
       plugins: [
         ...config.plugins,
-        new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /^\.\/ko$/),
       ],
     };
     if (prod) {

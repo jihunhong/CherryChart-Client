@@ -13,7 +13,6 @@
       {
         "alias": {
           "@actions": "./src/actions",
-          // "@assets": "./src/assets",
           "@Layout": "./src/components/@Layout",
           "@Template": "./src/components/@Template",
           "@atoms": "./src/components/@atoms",
@@ -25,7 +24,6 @@
           "@reducers": "./src/reducers",
           "@sagas": "./src/sagas",
           "@store": "./src/store",
-          // "@Pages": "./src/components/@Pages",
           "@actionTypes": "./src/actions/actionTypes.js",
           "@config": "./config"
         }

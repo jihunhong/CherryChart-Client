@@ -23,7 +23,7 @@ const Artists = ({ dataSource = [] }) => {
           <Col offset={2} md={12} className="artists-avatars">
             {/** TODO :: 앨범 데이터를 임시로 사용 */}
             <div className="artists-avatars-container">
-              {dataSource.slice(0, 52).map((item, index) => (
+              {dataSource?.slice(0, 52).map((item, index) => (
                 <div key={index}>
                   <LinkHOC href={`/album/${item.AlbumId}`}>
                     <Avatar

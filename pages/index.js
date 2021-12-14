@@ -2,10 +2,9 @@ import { loadChart } from '@actions/chartActions';
 import { loadUpdatedSongs } from '@actions/contentActions';
 import AppLayout from '@Layout/AppLayout';
 import wrapper from '@store/configureStore';
-import dynamic from 'next/dynamic';
+import LandingPage from '@Template/landing';
 
 const Home = () => {
-  const LandingPage = dynamic(() => import('@Template/landing'));
   return <LandingPage />;
 };
 

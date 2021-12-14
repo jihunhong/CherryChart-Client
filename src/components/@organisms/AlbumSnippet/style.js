@@ -1,6 +1,5 @@
-import { Button, Col, Row } from 'antd';
+import { Button } from 'antd';
 import styled from 'styled-components';
-import { StyledAvatar } from '@atoms/AlbumCover/style';
 
 export const PlayButton = styled(Button)`
   border-radius: 6px;
