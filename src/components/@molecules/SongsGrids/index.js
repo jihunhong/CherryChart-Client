@@ -10,7 +10,7 @@ const SongsGrids = ({ dataSource = [], ...rest }) => {
         .fill()
         .map((_, i) => (
           <SongsGrid {...rest}>
-            {dataSource.slice(perPageItemCount * i, perPageItemCount * (i + 1)).map(song => (
+            {dataSource?.slice(perPageItemCount * i, perPageItemCount * (i + 1)).map(song => (
               <SongSliceItem key={song.id} {...song} />
             ))}
           </SongsGrid>

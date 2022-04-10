@@ -18,7 +18,7 @@ const RecentlySongs = () => {
           .fill()
           .map((_, i) => (
             <SongsGrid>
-              {recentSongs.slice(perPageItemCount * i, perPageItemCount * (i + 1)).map(song => (
+              {recentSongs?.slice(perPageItemCount * i, perPageItemCount * (i + 1)).map(song => (
                 <SongSliceItem key={song.id} {...song} />
               ))}
             </SongsGrid>
