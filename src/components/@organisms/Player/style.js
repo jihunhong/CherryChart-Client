@@ -11,6 +11,7 @@ export const PlayerContainer = styled('div')`
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   width: 30%;
   transition: 0.5s;
+  z-index: 9000;
 
   & iframe {
     width: 100%;

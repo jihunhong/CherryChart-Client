@@ -29,16 +29,13 @@ const ChartItem = ({ rank, title, artist, album, Video, AlbumId }) => {
 
   return (
     <MusicListItemContainer>
-      <Rank>{`0${rank}`.slice(-2)}</Rank>
+      <Rank>{`0${rank}`?.slice(-2)}</Rank>
 
       <CoverImageContainer onClick={handleMusic}>
         <Avatar
           shape="square"
           size={64}
-          src={`${cdnURL}/${album.replace(
-            /[`~!@#$%^&*|\\\'\";:\/?]/g,
-            '_',
-          )}.png`}
+          src={`${cdnURL}/${album.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`}
         />
       </CoverImageContainer>
 
