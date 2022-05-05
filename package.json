@@ -33,7 +33,7 @@
     "babel-plugin-styled-components": "^1.12.0",
     "dayjs": "^1.10.6",
     "express": "^4.17.1",
-    "next": "^10.2.3",
+    "next": "^12.1.6",
     "next-http-proxy-middleware": "^1.0.4",
     "next-images": "^1.7.0",
     "next-redux-saga": "^4.1.2",
@@ -54,12 +54,15 @@
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
+    "@types/node": "^17.0.31",
+    "@types/react": "^18.0.8",
     "eslint": "^7.2.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-jsx-a11y": "^6.3.0",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.0",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "typescript": "^4.6.4"
   }
 }

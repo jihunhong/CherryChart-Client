@@ -8,6 +8,11 @@ module.exports = withBundleAnalyzer({
   images: {
     domains: ['cdn.cherrychart.com'],
   },
+  swcMinify: true,
+  compiler: {
+    styledComponents: true,
+    removeConsole: true,
+  },
   webpack(config, { webpack }) {
     const prod = process.env.NODE_ENV === 'production';
     config.resolve = {
@@ -15,7 +20,6 @@ module.exports = withBundleAnalyzer({
       alias: {
         ...config.resolve.alias,
         '@actions': path.join(__dirname, 'src', 'actions'),
-        // '@assets': path.join(__dirname, 'src', 'assets'),
         '@Layout': path.join(__dirname, 'src', 'components', '@Layout'),
         '@Template': path.join(__dirname, 'src', 'components', '@Template'),
         '@atoms': path.join(__dirname, 'src', 'components', '@atoms'),
@@ -25,29 +29,19 @@ module.exports = withBundleAnalyzer({
         '@hooks': path.join(__dirname, 'src', 'hooks'),
         '@lib': path.join(__dirname, 'src', 'lib'),
         '@reducers': path.join(__dirname, 'src', 'reducers'),
-        '@sagas': path.join(__dirname, 'src', 'sagas'),
         '@store': path.join(__dirname, 'src', 'store'),
-        // '@Pages': path.join(__dirname, 'src', 'components', '@Pages'),
-        '@actionTypes': path.join(__dirname, 'src', 'actions', 'actionTypes.js'),
         '@config': path.join(__dirname, 'config'),
       },
     };
     const newConfig = {
       ...config,
       mode: prod ? 'production' : 'development',
-      plugins: [
-        ...config.plugins,
-      ],
+      plugins: [...config.plugins],
     };
     if (prod) {
       newConfig.devtool = 'hidden-source-map';
     }
-    newConfig.node = {
-      fs: 'empty',
-      net: 'empty',
-      tls: 'empty',
-      'fs-extra': 'empty',
-    };
+
     return newConfig;
   },
 });
