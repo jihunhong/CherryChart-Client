@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const AlbumSlidesContainer = styled.section`
+  overflow-y: hidden;
   .ant-row {
     flex-wrap: nowrap;
     overflow-x: hidden;

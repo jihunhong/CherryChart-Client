@@ -5,7 +5,8 @@ import { smooth_render } from '../../KeyFrames';
 
 export const CarouselItemContainer = styled('div')`
   display: inline-block;
-  margin: auto 2vw auto auto;
+  width: 100%;
+  margin: auto;
   animation-name: ${smooth_render};
   animation-duration: 2s;
   cursor: pointer;
@@ -15,14 +16,13 @@ export const CarouselItemContainer = styled('div')`
   }
 `;
 
-export const CarouselCoverImage = styled('div')`
+export const CarouselCoverImage = styled.img`
   border-radius: 8px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   margin-bottom: 13px;
-  background-image: url('${props => props.background}');
-  background-size: cover;
-  width: 282px;
-  height: 282px;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 
   :after {
     transform: scale(0.9) translateY(15px);

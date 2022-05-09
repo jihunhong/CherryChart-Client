@@ -8,7 +8,7 @@ const CarouselItem = ({ albumName, artistName, albumId }) => {
     <CarouselItemContainer>
       <LinkHOC href={`/album/${albumId}`}>
         <CarouselCoverImage
-          background={`${cdnURL}/${albumName?.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`}
+          src={`${cdnURL}/${albumName?.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`}
         />
         <Title level={5} ellipsis text={albumName?.slice(0, 30)} />
         <Artist>{artistName?.slice(0, 30)}</Artist>
