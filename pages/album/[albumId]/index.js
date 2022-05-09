@@ -1,5 +1,4 @@
-import { loadArtistsAlbum } from '@actions/albumActions';
-import { loadAlbumInfo } from '@actions/contentActions';
+import { loadAlbumInfo, loadArtistsAlbum } from '@actions/albumActions';
 import AppLayout from '@Layout/AppLayout';
 import wrapper from '@store/configureStore';
 import dynamic from 'next/dynamic';
@@ -16,10 +15,9 @@ export const getServerSideProps = wrapper.getServerSideProps(async context => {
       albumId: context.query.albumId,
     }),
   );
-  console.log(context.store.getState().album.artist);
   await context.store.dispatch(
     loadArtistsAlbum({
-      artistName: context.store.getState().album.artist,
+      artistName: context.store.getState().album.artistName,
     }),
   );
 });

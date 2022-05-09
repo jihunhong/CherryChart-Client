@@ -21,7 +21,7 @@ const ChartCarousel = ({ title, subtext }) => {
         <Text text={`${albums?.length || 0} Albums`} />
         <CarouselGlobalStyle />
         <Slider
-          occupy={0.14}
+          occupy="14%"
           dataSource={albums}
           renderItem={item => <CarouselItem key={item.music.albumId} {...item.music} />}
         />

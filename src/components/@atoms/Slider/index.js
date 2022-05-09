@@ -8,7 +8,7 @@ const Slider = ({
   children = null,
 }) => {
   return (
-    <SliderContainer $occupy={occupy * 100} $gap={gap}>
+    <SliderContainer $occupy={occupy} $gap={gap}>
       <ul className="list">
         {dataSource?.length > 0 ? dataSource?.map(renderItem) : null}
         {children}

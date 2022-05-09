@@ -16,7 +16,7 @@ export const SliderContainer = styled.div`
     grid-column-gap: ${props => props.$gap}px;
     grid-auto-flow: column;
     grid-auto-columns: ${props =>
-      typeof props.$occupy === 'string' ? props.$occupy : props.$occupy + '%'};
+      typeof props.$occupy === 'string' ? props.$occupy : props.$occupy * 100 + '%'};
     overflow-x: auto;
     overflow-y: hidden;
     overscroll-behavior-inline: contain;

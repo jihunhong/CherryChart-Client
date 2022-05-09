@@ -1,5 +1,4 @@
-import { loadArtistsAlbum } from '@actions/albumActions';
-import { loadAlbumInfo } from '@actions/contentActions';
+import { loadAlbumInfo, loadArtistsAlbum } from '@actions/albumActions';
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -25,7 +24,7 @@ const albumSlice = createSlice({
       .addCase(loadAlbumInfo.fulfilled, (state, action) => {
         state.albumInfoLoading = false;
         state.artistName = action.payload.artistName;
-        state.albumName = action.payload.album;
+        state.albumName = action.payload.albumName;
         state.releaseDate = action.payload.releaseDate;
         state.description = action.payload.description;
         state.tracks = action.payload.music;

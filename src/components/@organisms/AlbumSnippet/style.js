@@ -49,6 +49,14 @@ export const AlbumInfoHeader = styled.section`
     }
   }
 
+  & .description {
+    margin-top: 14px;
+  }
+
+  & .release-date {
+    margin-top: 8px;
+  }
+
   & button {
     position: absolute;
     bottom: 0;
