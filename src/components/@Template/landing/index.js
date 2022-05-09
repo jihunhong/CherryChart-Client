@@ -1,7 +1,7 @@
 import Features from '@organisms/Features';
 import IntroVideoSection from '@organisms/IntroVideoSection';
-import { useSelector } from 'react-redux';
 import dynamic from 'next/dynamic';
+import { useSelector } from 'react-redux';
 
 const LandingPage = () => {
   const { recentSongs } = useSelector(state => state.content);

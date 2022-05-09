@@ -25,10 +25,13 @@ const Artists = ({ dataSource = [] }) => {
             <div className="artists-avatars-container">
               {dataSource?.slice(0, 52).map((item, index) => (
                 <div key={index}>
-                  <LinkHOC href={`/album/${item.AlbumId}`}>
+                  <LinkHOC href={`/album/${item.albumNameId}`}>
                     <Avatar
                       shape="circle"
-                      src={`${cdnURL}/${item.album?.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`}
+                      src={`${cdnURL}/${item.albumName?.replace(
+                        /[`~!@#$%^&*|\\\'\";:\/?]/g,
+                        '_',
+                      )}.png`}
                       alt="artist's image"
                     />
                   </LinkHOC>

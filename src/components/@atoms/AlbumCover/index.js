@@ -1,8 +1,8 @@
 import { cdnURL } from '@config';
 import { StyledAvatar } from './style';
 
-const AlbumCover = ({ size, album, radius }) => {
-  if (!album) {
+const AlbumCover = ({ size, albumName, radius }) => {
+  if (!albumName) {
     return <></>;
   }
   return (
@@ -10,7 +10,7 @@ const AlbumCover = ({ size, album, radius }) => {
       <StyledAvatar
         shape="square"
         size={size}
-        src={`${cdnURL}/${album.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`}
+        src={`${cdnURL}/${albumName.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`}
       />
     </>
   );

@@ -16,8 +16,8 @@ const RelatedAlbums = ({ dataSource = [], artist = '' }) => {
     <RelatedAlbumsContainer>
       <h2>{`More by ${artist}`}</h2>
       <MultiCarousel {...settings}>
-        {dataSource.map(album => (
-          <CarouselItem AlbumId={album.id} album={album.album} artist={album.artist} />
+        {dataSource?.map(album => (
+          <CarouselItem albumId={album.id} album={album.album} artist={album.artist} />
         ))}
       </MultiCarousel>
     </RelatedAlbumsContainer>

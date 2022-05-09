@@ -10,7 +10,7 @@ const AlbumSlides = ({ dataSource }) => {
       <Row align="middle" justify="center">
         <Col md={22}>
           <MultiCarousel slidesToScroll={dataSource?.length} {...albumSlidesSetting}>
-            {dataSource.map((item, i) => (
+            {dataSource?.map((item, i) => (
               <CarouselItem key={i} {...item} />
             ))}
           </MultiCarousel>

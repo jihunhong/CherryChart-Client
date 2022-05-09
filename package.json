@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "export NODE_ENV=development && next",
     "start": "next start",
     "build": "next build",
     "deploy": "sudo aws s3 sync s3://cherrychart.client ./.next --exact-timestamps",

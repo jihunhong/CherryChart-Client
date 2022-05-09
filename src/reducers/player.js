@@ -29,8 +29,8 @@ const playerSlice = createSlice({
         .map(v => {
           return {
             title: v.title,
-            artist: v.artist,
-            album: action.payload.album,
+            artistName: v.artistName,
+            albumName: action.payload.albumName,
             videoId: v.Video.videoId,
           };
         });

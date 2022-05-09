@@ -1,23 +1,24 @@
 import rootReducer from '@reducers/index';
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { createWrapper } from 'next-redux-wrapper';
+import logger from 'redux-logger';
 
-const isDev = process.env.NODE_ENV !== 'production';
+const isDev = false;
 const createStore = () => {
   const middleware = getDefaultMiddleware();
   if (isDev) {
-    // middleware.push(logger);
+    middleware.push(logger);
   }
   const store = configureStore({
     reducer: rootReducer,
     middleware,
-    devTools: isDev,
+    devTools: false,
   });
   return store;
 };
 
 const wrapper = createWrapper(createStore, {
-  debug: isDev,
+  debug: true,
 });
 
 export default wrapper;

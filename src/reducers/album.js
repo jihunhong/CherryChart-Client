@@ -5,7 +5,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   albumInfoLoading: false,
   albumInfoError: null,
-  artist: null,
+  artistName: null,
   albumName: null,
   releaseDate: null,
   description: null,
@@ -24,7 +24,7 @@ const albumSlice = createSlice({
       })
       .addCase(loadAlbumInfo.fulfilled, (state, action) => {
         state.albumInfoLoading = false;
-        state.artist = action.payload.artist;
+        state.artistName = action.payload.artistName;
         state.albumName = action.payload.album;
         state.releaseDate = action.payload.releaseDate;
         state.description = action.payload.description;
@@ -41,7 +41,6 @@ const albumSlice = createSlice({
         state.albums = action.payload;
       })
       .addCase(loadArtistsAlbum.rejected, (state, action) => {
-        console.log(action.payload);
         state.albumInfoError = action.payload;
       }),
 });

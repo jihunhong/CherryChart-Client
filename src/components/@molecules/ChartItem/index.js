@@ -14,17 +14,17 @@ import {
   YoutubeIcon,
 } from './style';
 
-const ChartItem = ({ rank, title, artist, album, Video, AlbumId }) => {
+const ChartItem = ({ rank, title, artistName, album: albumName, Video, albumId }) => {
   const [handleMusic] = useAddItem({
     title,
-    artist,
-    album,
+    artistName,
+    albumName,
     videoId: Video?.videoId,
   });
   const router = useRouter();
 
   const gotoAlbumDetail = () => {
-    router.push(`/album/${AlbumId}`);
+    router.push(`/album/${albumId}`);
   };
 
   return (
@@ -35,15 +35,15 @@ const ChartItem = ({ rank, title, artist, album, Video, AlbumId }) => {
         <Avatar
           shape="square"
           size={64}
-          src={`${cdnURL}/${album.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`}
+          src={`${cdnURL}/${albumName.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`}
         />
       </CoverImageContainer>
 
       <Text text={title} className="title" onClick={handleMusic} ellipsis />
 
-      <Text text={artist} className="artist-name" ellipsis />
+      <Text text={artistName} className="artist-name" ellipsis />
 
-      <AlbumName onClick={gotoAlbumDetail}>{album}</AlbumName>
+      <AlbumName onClick={gotoAlbumDetail}>{albumName}</AlbumName>
 
       {Video?.videoId && (
         <YoutubeIcon onClick={handleMusic}>

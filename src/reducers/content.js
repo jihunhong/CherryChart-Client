@@ -42,6 +42,7 @@ const contentSlice = createSlice({
       .addCase(loadUpdatedSongs.rejected, (state, action) => {
         state.recentSongsLoading = false;
         state.recentSongsDataDone = true;
+        state.recentSongs = [];
       }),
 });
 

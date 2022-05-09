@@ -5,8 +5,8 @@ import { useSelector } from 'react-redux';
 import * as Styled from './style';
 
 const TrackItem = ({ title, rank, videoId }) => {
-  const { artist, albumName } = useSelector(state => state.album);
-  const [handleMusic] = useAddItem({ title, artist, album: albumName, videoId });
+  const { artistName, albumName } = useSelector(state => state.album);
+  const [handleMusic] = useAddItem({ title, artistName, album: albumName, videoId });
 
   return (
     <Styled.TrackListItemContainer>

@@ -6,14 +6,14 @@ import { Avatar, Row } from 'antd';
 import Link from 'next/link';
 import { SongSliceItemContainer } from './style';
 
-const SongSliceItem = ({ title, artist, album, AlbumId }) => {
+const SongSliceItem = ({ title, artistName, albumName, albumId }) => {
   return (
     <SongSliceItemContainer>
       <Link
         href={{
           pathname: '/album/[albumId]',
           query: {
-            albumId: AlbumId,
+            albumId,
           },
         }}
       >
@@ -22,12 +22,12 @@ const SongSliceItem = ({ title, artist, album, AlbumId }) => {
             <Avatar
               shape="square"
               size={64}
-              src={`${cdnURL}/${album.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`}
+              src={`${cdnURL}/${albumName?.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`}
               className="album-cover"
             />
             <FlexColumn align="start">
               <Title level={5} text={title} ellipsis />
-              <Text ellipsis type="secondary" text={artist} />
+              <Text ellipsis type="secondary" text={artistName} />
             </FlexColumn>
           </Row>
         </a>
