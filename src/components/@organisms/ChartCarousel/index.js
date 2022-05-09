@@ -1,34 +1,33 @@
 import SiteSelector from '@atoms/SiteSelector';
+import Slider from '@atoms/Slider';
 import Text from '@atoms/Text';
 import Title from '@atoms/Title';
-import { chartCarouselSetting } from '@config/carousel';
 import aggregateAlbum from '@lib/aggregateAlbum';
 import CarouselItem from '@molecules/CarouselItem';
 import { useSelector } from 'react-redux';
-import MultiCarousel from 'react-slick';
-import { CarouselGlobalStyle, MainIntroContainer } from './style';
+import { CarouselGlobalStyle, ChartCarouselContainer } from './style';
 
-const Carousel = ({ title, subtext }) => {
+const ChartCarousel = ({ title, subtext }) => {
   const { chartData } = useSelector(state => state.chart);
 
   const albums = aggregateAlbum(chartData);
 
   return (
     <>
-      <MainIntroContainer>
+      <ChartCarouselContainer>
         <Title level={4}>
           <SiteSelector />
         </Title>
         <Text text={`${albums?.length || 0} Albums`} />
         <CarouselGlobalStyle />
-        <MultiCarousel {...chartCarouselSetting}>
-          {albums.map((v, i) => (
-            <CarouselItem key={i} {...v.Music} />
-          ))}
-        </MultiCarousel>
-      </MainIntroContainer>
+        <Slider
+          occupy={0.14}
+          dataSource={albums}
+          renderItem={item => <CarouselItem key={item.music.albumId} {...item.music} />}
+        />
+      </ChartCarouselContainer>
     </>
   );
 };
 
-export default Carousel;
+export default ChartCarousel;

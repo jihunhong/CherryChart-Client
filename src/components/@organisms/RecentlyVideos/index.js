@@ -15,9 +15,9 @@ const RecentlyVideos = () => {
           <VideoItem
             key={item.videoId}
             videoId={item.videoId}
-            title={item.Music?.title}
-            artist={item.Music?.artist}
-            albumName={item.Music?.Album?.albumName}
+            title={item.music?.title}
+            artist={item.music?.artist}
+            albumName={item.music?.album?.albumName}
             {...item}
           />
         ))}

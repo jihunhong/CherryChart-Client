@@ -14,7 +14,7 @@ import {
   YoutubeIcon,
 } from './style';
 
-const ChartItem = ({ rank, title, artistName, album: albumName, Video, albumId }) => {
+const ChartItem = ({ rank, title, artistName, albumName, Video, albumId }) => {
   const [handleMusic] = useAddItem({
     title,
     artistName,

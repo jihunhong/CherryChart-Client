@@ -1,5 +1,5 @@
 import useAddItem from '@hooks/useAddItem';
-import { TrackAddIcon } from '@organisms/Carousel/style';
+import { TrackAddIcon } from '@organisms/ChartCarousel/style';
 import { FaYoutube } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import * as Styled from './style';

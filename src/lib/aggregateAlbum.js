@@ -1,7 +1,7 @@
 const aggregateAlbum = data => {
   if (data) {
-    const albums = Array.from(new Set(data.map(v => v.Music.album))).map(albumName => {
-      const target = data.find(v => v.Music.album === albumName);
+    const albums = Array.from(new Set(data.map(v => v.music.albumName))).map(albumName => {
+      const target = data.find(v => v.music.albumName === albumName);
       return target;
     });
 

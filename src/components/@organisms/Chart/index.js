@@ -1,8 +1,8 @@
+import Text from '@atoms/Text';
 import Title from '@atoms/Title';
 import ChartItem from '@molecules/ChartItem';
 import { useSelector } from 'react-redux';
 import { ChartContainer, MusicList } from './style';
-import Text from '@atoms/Text';
 
 const Chart = () => {
   const { chartData } = useSelector(state => state.chart);
@@ -13,8 +13,8 @@ const Chart = () => {
       <Text type="secondary" text={`${chartData?.length} Songs`} />
 
       <MusicList>
-        {chartData.map((v, i) => (
-          <ChartItem rank={v.rank} {...v.Music} key={i} />
+        {chartData.map((item, i) => (
+          <ChartItem rank={item.rank} {...item.music} key={item.rank} />
         ))}
       </MusicList>
     </ChartContainer>

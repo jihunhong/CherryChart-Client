@@ -28,7 +28,7 @@ const albumSlice = createSlice({
         state.albumName = action.payload.album;
         state.releaseDate = action.payload.releaseDate;
         state.description = action.payload.description;
-        state.tracks = action.payload.Music;
+        state.tracks = action.payload.music;
       })
       .addCase(loadAlbumInfo.rejected, (state, action) => {
         state.albumInfoLoading = false;

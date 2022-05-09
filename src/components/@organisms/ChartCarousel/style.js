@@ -8,7 +8,7 @@ export const CarouselGlobalStyle = createGlobalStyle`
     }
 `;
 
-export const MainIntroContainer = styled.section`
+export const ChartCarouselContainer = styled.section`
   & ${Headings} {
     margin-bottom: 0;
   }
