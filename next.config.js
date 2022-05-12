@@ -13,6 +13,9 @@ module.exports = withBundleAnalyzer({
     styledComponents: true,
     removeConsole: true,
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   webpack(config, { webpack }) {
     const prod = process.env.NODE_ENV === 'production';
     config.resolve = {
