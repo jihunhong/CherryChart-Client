@@ -16,7 +16,7 @@ const YoutubePlayer = () => {
         <YouTube
           width="420"
           videoId={playList[selectedIndex]?.videoId}
-          opts={{ playerVars: { autoplay: 0, controls: 0 } }}
+          opts={{ playerVars: { autoplay: 1, controls: 0 } }}
           onEnd={onPlayEnd}
         />
       ) : null}

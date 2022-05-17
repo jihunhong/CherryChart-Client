@@ -15,8 +15,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   button.ant-btn {
-    & svg {
-      margin-right: 6px;
+    span {
+      margin-left: 4px;
     }
   }
 `;

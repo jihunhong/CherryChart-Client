@@ -1,16 +1,8 @@
 import Slider from '@atoms/Slider';
 import CarouselItem from '@molecules/CarouselItem';
 import { Col, Row } from 'antd';
+import React from 'react';
 import { RelatedAlbumsContainer } from './style';
-
-const settings = {
-  className: 'slider variable-width',
-  infinite: false,
-  speed: 500,
-  slidesToScroll: 1,
-  swipeToSlide: 1,
-  variableWidth: true,
-};
 
 const RelatedAlbums = ({ dataSource = [], artist = '' }) => {
   return (

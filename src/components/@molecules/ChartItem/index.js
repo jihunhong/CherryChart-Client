@@ -14,12 +14,12 @@ import {
   YoutubeIcon,
 } from './style';
 
-const ChartItem = ({ rank, title, artistName, albumName, Video, albumId }) => {
+const ChartItem = ({ rank, title, artistName, albumName, video, albumId }) => {
   const [handleMusic] = useAddItem({
     title,
     artistName,
     albumName,
-    videoId: Video?.videoId,
+    videoId: video?.videoId,
   });
   const router = useRouter();
 
@@ -45,7 +45,7 @@ const ChartItem = ({ rank, title, artistName, albumName, Video, albumId }) => {
 
       <AlbumName onClick={gotoAlbumDetail}>{albumName}</AlbumName>
 
-      {Video?.videoId && (
+      {video?.videoId && (
         <YoutubeIcon onClick={handleMusic}>
           <FaYoutube />
         </YoutubeIcon>

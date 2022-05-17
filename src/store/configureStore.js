@@ -12,7 +12,7 @@ const createStore = () => {
   const store = configureStore({
     reducer: rootReducer,
     middleware,
-    devTools: false,
+    devTools: true,
   });
   return store;
 };
