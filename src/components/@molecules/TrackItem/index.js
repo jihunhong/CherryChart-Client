@@ -6,7 +6,7 @@ import * as Styled from './style';
 
 const TrackItem = ({ title, rank, videoId }) => {
   const { artistName, albumName } = useSelector(state => state.album);
-  const [handleMusic] = useAddItem({ title, artistName, album: albumName, videoId });
+  const [handleMusic] = useAddItem({ title, artistName, albumName, videoId });
 
   return (
     <Styled.TrackListItemContainer>

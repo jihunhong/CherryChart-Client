@@ -6,7 +6,7 @@ const TrackList = ({ dataSource = [] }) => {
     <>
       <MusicList>
         {dataSource?.map((t, index) => (
-          <TrackItem key={t.title} title={t.title} rank={index + 1} videoId={t.Video?.videoId} />
+          <TrackItem key={t.title} title={t.title} rank={index + 1} videoId={t.video?.videoId} />
         ))}
       </MusicList>
     </>

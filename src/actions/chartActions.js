@@ -1,4 +1,4 @@
-import { baseURL } from '@config';
+import { baseURL } from '@config/index';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 

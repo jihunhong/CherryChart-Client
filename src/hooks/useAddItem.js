@@ -2,15 +2,15 @@ import playerSlice from '@reducers/player';
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
-const useAddItem = ({ title, artist, album, videoId, tracks }) => {
+const useAddItem = ({ title, artistName, albumName, videoId, tracks }) => {
   const dispatch = useDispatch();
   const handler = useCallback(() => {
     if (tracks) {
       dispatch(
         playerSlice.actions.addAlbumToPlayList({
           title,
-          artist,
-          album,
+          artistName,
+          albumName,
           tracks,
         }),
       );
@@ -18,13 +18,13 @@ const useAddItem = ({ title, artist, album, videoId, tracks }) => {
       dispatch(
         playerSlice.actions.addMusicToPlayList({
           title,
-          artist,
-          album,
+          artistName,
+          albumName,
           videoId,
         }),
       );
     }
-  }, [title, artist, album, videoId]);
+  }, [title, artistName, albumName, videoId]);
 
   return [handler];
 };

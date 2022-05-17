@@ -4,7 +4,7 @@ import useAddItem from '@hooks/useAddItem';
 import { VideoItemContainer } from './style';
 
 const VideoItem = ({ title, artistName, videoId, albumName }) => {
-  const [handler] = useAddItem({ title, artistName, videoId, album: albumName });
+  const [handler] = useAddItem({ title, artistName, videoId, albumName });
   return (
     <VideoItemContainer onClick={handler}>
       <img src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`} />

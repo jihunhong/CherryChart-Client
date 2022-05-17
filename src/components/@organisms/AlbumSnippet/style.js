@@ -29,10 +29,8 @@ export const AlbumInfoHeader = styled.section`
   column-gap: 12px;
   align-items: center;
 
-  & h2,
-  h3 {
-    margin: 0 !important;
-    align-items: baseline;
+  .sight {
+    height: -webkit-fill-available;
   }
 
   .info {
@@ -43,14 +41,24 @@ export const AlbumInfoHeader = styled.section`
     justify-content: center;
     height: 100%;
     position: relative;
-    .artist {
+    > h2.album-name {
+      margin: 0;
+      align-items: baseline;
+    }
+    > h3.artist-name {
+      margin-top: 0;
+      margin-bottom: 14px;
       color: #fa586a;
       text-shadow: none;
     }
   }
 
   & .description {
-    margin-top: 14px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    font-style: italic;
   }
 
   & .release-date {
@@ -58,8 +66,6 @@ export const AlbumInfoHeader = styled.section`
   }
 
   & button {
-    position: absolute;
-    bottom: 0;
-    left: 34px;
+    margin-top: 14px;
   }
 `;
