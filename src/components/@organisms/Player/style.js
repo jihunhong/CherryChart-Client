@@ -1,6 +1,5 @@
 import { Headings } from '@atoms/Title/style';
 import { horizontal_render } from '@components/KeyFrames';
-import { Typography } from 'antd';
 import styled from 'styled-components';
 
 export const PlayerContainer = styled('div')`
@@ -26,19 +25,21 @@ export const PlayerContainer = styled('div')`
 export const PlayerHeader = styled('div')`
   padding: 14px;
   border: 1px solid rgba(149, 157, 165, 0.2);
-  background: #fff !important;
+  background: #fff;
   border-bottom: 0px;
   cursor: pointer;
 `;
 
-export const Description = styled(Typography.Text)``;
-
-export const PlayerSaveContainer = styled('div')`
+export const PlayerActionContainer = styled('div')`
   padding-top: 14px;
   padding-left: 14px;
   padding-bottom: 9px;
   border: 1px solid rgba(149, 157, 165, 0.2);
-  background: #fff !important;
+  background: #fff;
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 16px;
+  justify-content: start;
 `;
 export const PlayerBackground = styled('div')`
   display: flex;

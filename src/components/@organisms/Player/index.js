@@ -1,33 +1,44 @@
+import Text from '@atoms/Text';
 import Title from '@atoms/Title';
 import TogglePlaylistButton from '@atoms/TogglePlaylistButton';
 import YoutubePlayer from '@molecules/YoutubePlayer';
 import CurrentPlayList from '@organisms/CurrentPlayList';
+import playerSlice from '@reducers/player';
+import { useCallback } from 'react';
 import { BiListPlus } from 'react-icons/bi';
-import { useSelector } from 'react-redux';
-import {
-  Description,
-  PlayerBackground,
-  PlayerContainer,
-  PlayerHeader,
-  PlayerSaveContainer,
-} from './style';
+import { useDispatch, useSelector } from 'react-redux';
+import { PlayerActionContainer, PlayerBackground, PlayerContainer, PlayerHeader } from './style';
 
 const Player = () => {
   const { playList, isExpand } = useSelector(state => state.player);
+  const dispatch = useDispatch();
+  const handleExpand = useCallback(() => {
+    dispatch(playerSlice.actions.togglePlayList());
+  }, []);
+  const handlePip = useCallback(() => {
+    const video = document.querySelector('video');
+    if (document.pictureInPictureElement) {
+      document.exitPictureInPicture();
+    }
+    if (document.pictureInPictureEnabled) {
+      if (video) {
+        video.requestPictureInPicture();
+      }
+    }
+  }, []);
 
   return (
     <PlayerContainer>
       <YoutubePlayer />
-      <PlayerHeader>
+      <PlayerHeader onClick={handleExpand}>
         <Title level={3} text={'Now Playing'} />
-        <Description type="secondary">{playList.length} Items on the list</Description>
+        <Text type="secondary" text={`${playList.length} Items on the list`} />
         <TogglePlaylistButton />
       </PlayerHeader>
-      <PlayerSaveContainer>
-        <Description type="secondary">
-          <BiListPlus />
-        </Description>
-      </PlayerSaveContainer>
+      <PlayerActionContainer>
+        <BiListPlus size={28} />
+        {/* <BsPip size={28} onClick={handlePip} /> */}
+      </PlayerActionContainer>
 
       <PlayerBackground isExpand={isExpand}>
         {isExpand ? <CurrentPlayList /> : null}

@@ -1,5 +1,4 @@
 import LinkHOC from '@atoms/LinkHOC';
-import StarsBackground from '@atoms/StarsBackground';
 import Text from '@atoms/Text';
 import Title from '@atoms/Title';
 import { cdnURL } from '@config/';
@@ -9,7 +8,6 @@ import { ArtistsContainer } from './style';
 const Artists = ({ dataSource = [] }) => {
   return (
     <>
-      <StarsBackground />
       <ArtistsContainer>
         <Row justify="start">
           <Col md={10} className="artists-description">

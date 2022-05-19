@@ -1,6 +1,5 @@
 import { FlexColumn } from '@atoms/FlexColumn/style';
 import LinkHOC from '@atoms/LinkHOC';
-import StarsBackground from '@atoms/StarsBackground';
 import Text from '@atoms/Text';
 import Title from '@atoms/Title';
 import { cdnURL } from '@config/index';
@@ -13,7 +12,6 @@ import { FeatureContainer } from './style';
 const Features = () => {
   return (
     <>
-      <StarsBackground />
       <FeatureContainer>
         <Row gutter={32}>
           <Col offset={1} md={5} className="chart-column">
