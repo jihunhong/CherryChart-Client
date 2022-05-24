@@ -1,6 +1,6 @@
 import LinkHOC from '@atoms/LinkHOC';
 import Title from '@atoms/Title';
-import { cdnURL } from '@config';
+import { imgCdn } from '@config/';
 import { Artist, CarouselCoverImage, CarouselItemContainer } from './style';
 
 const CarouselItem = ({ albumName, artistName, albumId }) => {
@@ -8,7 +8,10 @@ const CarouselItem = ({ albumName, artistName, albumId }) => {
     <CarouselItemContainer>
       <LinkHOC href={`/album/${albumId}`}>
         <CarouselCoverImage
-          src={`${cdnURL}/${albumName?.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`}
+          src={`${imgCdn}/${albumName?.replace(
+            /[`~!@#$%^&*|\\\'\";:\/?]/g,
+            '_',
+          )}.png?w=287&ar=1:1&fit=crop`}
         />
         <Title level={5} ellipsis text={albumName?.slice(0, 30)} />
         <Artist>{artistName?.slice(0, 30)}</Artist>

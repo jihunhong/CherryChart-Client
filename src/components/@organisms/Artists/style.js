@@ -34,6 +34,8 @@ export const ArtistsContainer = styled.section`
     > div {
       width: inherit;
       aspect-ratio: 1/1;
+      border-radius: 50%;
+      overflow: hidden;
       height: auto;
 
       & span {

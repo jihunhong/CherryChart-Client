@@ -15,6 +15,7 @@ export const SamplePlayerContainer = styled.div`
     rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
   div.artist-thumb {
+    max-width: 161px;
     > img {
       border-radius: 14px;
       width: 100%;

@@ -1,5 +1,6 @@
 import { Span } from '@atoms/Text/style';
 import { Headings } from '@atoms/Title/style';
+import { imgCdn } from '@config/';
 import styled from 'styled-components';
 
 export const LandingDescriptionContainer = styled.section`
@@ -9,7 +10,7 @@ export const LandingDescriptionContainer = styled.section`
   > .ant-row {
     border-radius: 18px;
     height: 40vh;
-    background-image: url('https://raw.githubusercontent.com/steve228uk/YouTube-Music/master/screenshots/screenshot-1.png');
+    background-image: url('${imgCdn}/static/playlist-background.png?w=3000&ar=2025:503&fit=crop');
     background-size: cover;
     background-position-x: center;
     background-position-y: center;
