@@ -9,6 +9,7 @@ module.exports = withBundleAnalyzer({
     loader: 'imgix',
     path: 'https://cherry-chart.imgix.net',
     domains: ['cdn.cherrychart.com'],
+    formats: ['image/webp'],
   },
   swcMinify: true,
   compiler: {

@@ -10,7 +10,7 @@ export const LandingDescriptionContainer = styled.section`
   > .ant-row {
     border-radius: 18px;
     height: 40vh;
-    background-image: url('${imgCdn}/static/playlist-background.png?w=3000&ar=2025:503&fit=crop');
+    background-image: url('${imgCdn}/static/playlist-background.png?w=3000&ar=2025:503&fit=crop&auto=format');
     background-size: cover;
     background-position-x: center;
     background-position-y: center;

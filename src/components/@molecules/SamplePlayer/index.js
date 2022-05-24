@@ -12,7 +12,7 @@ const SamplePlayer = () => {
       <Row gutter={48}>
         <Col span={8} className="artist-thumb">
           <img
-            src={`${imgCdn}/static/artist-thumb.jpeg?w=226&ar=305:450&fit=clip`}
+            src={`${imgCdn}/static/artist-thumb.jpeg?w=226&ar=305:450&fit=clip&auto=format`}
             alt="sample artist"
           />
         </Col>

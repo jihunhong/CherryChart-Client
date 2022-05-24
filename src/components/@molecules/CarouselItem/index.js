@@ -11,7 +11,7 @@ const CarouselItem = ({ albumName, artistName, albumId }) => {
           src={`${imgCdn}/${albumName?.replace(
             /[`~!@#$%^&*|\\\'\";:\/?]/g,
             '_',
-          )}.png?w=287&ar=1:1&fit=crop`}
+          )}.png?w=287&ar=1:1&fit=crop&auto=format`}
         />
         <Title level={5} ellipsis text={albumName?.slice(0, 30)} />
         <Artist>{artistName?.slice(0, 30)}</Artist>

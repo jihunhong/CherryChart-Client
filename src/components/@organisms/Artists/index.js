@@ -29,7 +29,7 @@ const Artists = ({ dataSource = [] }) => {
                         src={`${item?.albumName?.replace(
                           /[`~!@#$%^&*|\\\'\";:\/?]/g,
                           '_',
-                        )}.png?w=242&h=242`}
+                        )}.png?w=242&h=242&auto=format`}
                         width={500}
                         height={500}
                       />
