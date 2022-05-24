@@ -1,24 +1,13 @@
 import Text from '@atoms/Text';
 import Title from '@atoms/Title';
 import { LANDING_BACKGROUND_VIDEO_ID } from '@config/settings';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import YouTube from 'react-youtube';
 import { IntroSectionContainer, LetterBox, VideoWrapper } from './style';
 
 const IntroVideoSection = () => {
-  const [currentPlayed, setCurrentPlayed] = useState(
-    Math.floor(Math.floor(Math.random() * 10) % 3),
-  );
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const randomNumber = Math.floor(Math.floor(Math.random() * 10) % 3);
-      setCurrentPlayed(randomNumber);
-    }, 60 * 1000);
-
-    return () => clearInterval(interval);
-  }, []);
+  const [currentPlayed] = useState(Math.floor(Math.floor(Math.random() * 10) % 2));
 
   return (
     <IntroSectionContainer>
@@ -50,6 +39,7 @@ const IntroVideoSection = () => {
                 showinfo: 0,
                 disablekb: 1,
                 rel: 0,
+                playlist: LANDING_BACKGROUND_VIDEO_ID[currentPlayed],
               },
             }}
           />

@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
-const LinkHOC = ({ children, href }) => {
+const LinkHOC = ({ children, href, ...props }) => {
   return (
     <Link href={href}>
-      <a>{children}</a>
+      <a {...props}>{children}</a>
     </Link>
   );
 };

@@ -66,12 +66,7 @@ export const FeatureContainer = styled.section`
     }
 
     & button {
-      display: flex;
       margin-right: 6px;
-      border-radius: 6px;
-      > span {
-        color: #fff;
-      }
     }
   }
 

@@ -1,15 +1,13 @@
 import LinkHOC from '@atoms/LinkHOC';
-import StarsBackground from '@atoms/StarsBackground';
 import Text from '@atoms/Text';
 import Title from '@atoms/Title';
-import { cdnURL } from '@config/';
-import { Avatar, Col, Row } from 'antd';
+import { Col, Row } from 'antd';
+import Image from 'next/image';
 import { ArtistsContainer } from './style';
 
 const Artists = ({ dataSource = [] }) => {
   return (
     <>
-      <StarsBackground />
       <ArtistsContainer>
         <Row justify="start">
           <Col md={10} className="artists-description">
@@ -25,15 +23,17 @@ const Artists = ({ dataSource = [] }) => {
             <div className="artists-avatars-container">
               {dataSource?.slice(0, 52).map((item, index) => (
                 <div key={index}>
-                  <LinkHOC href={`/album/${item.albumNameId}`}>
-                    <Avatar
-                      shape="circle"
-                      src={`${cdnURL}/${item.albumName?.replace(
-                        /[`~!@#$%^&*|\\\'\";:\/?]/g,
-                        '_',
-                      )}.png`}
-                      alt="artist's image"
-                    />
+                  <LinkHOC href={`/album/${item?.albumId}`}>
+                    <div>
+                      <Image
+                        src={`${item?.albumName?.replace(
+                          /[`~!@#$%^&*|\\\'\";:\/?]/g,
+                          '_',
+                        )}.png?w=242&h=242`}
+                        width={500}
+                        height={500}
+                      />
+                    </div>
                   </LinkHOC>
                 </div>
               ))}

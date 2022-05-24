@@ -1,19 +1,10 @@
-import playerSlice from '@reducers/player';
-import { useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { ExpandBtn, ShrinkBtn } from './style';
 
 const TogglePlaylistButton = () => {
-  const dispatch = useDispatch();
-  const { isExpand } = useSelector(state => state.player);
+  const isExpand = useSelector(state => state.player.isExpand);
 
-  const handleExpand = useCallback(() => {
-    dispatch(playerSlice.actions.togglePlayList());
-  }, []);
-
-  return (
-    <>{isExpand ? <ExpandBtn onClick={handleExpand} /> : <ShrinkBtn onClick={handleExpand} />}</>
-  );
+  return <>{isExpand ? <ExpandBtn /> : <ShrinkBtn />}</>;
 };
 
 export default TogglePlaylistButton;
