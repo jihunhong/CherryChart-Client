@@ -15,9 +15,14 @@ const Features = () => {
         <Row gutter={32}>
           <Col offset={1} md={5} className="chart-column">
             <FlexColumn gutter={[16, 22]}>
-              <Image src="feature_chart.png?w=902&h=695" width={2128} height={1635} priority />
               <Image
-                src="feature_albums.png?w=902&h=690&auto=format"
+                src="feature_chart.png?w=636&h=488&auto=format"
+                width={2128}
+                height={1635}
+                priority
+              />
+              <Image
+                src="feature_albums.png?w=636&h=486&auto=format"
                 className="albums"
                 width={788}
                 height={602}
@@ -27,13 +32,13 @@ const Features = () => {
           <Col md={4}>
             <FlexColumn gutter={[16, 32]} className="play-column">
               <Image
-                src="feature_player.png?w=716&h=868&auto=format"
+                src="feature_player.png?w=502&h=608&auto=format"
                 width={818}
                 height={992}
                 priority
               />
               <Image
-                src="feature_album.png?w=716&h=528&auto=format"
+                src="feature_album.png?w=502&h=370&auto=format"
                 width={1719}
                 height={1267}
                 priority
@@ -41,9 +46,9 @@ const Features = () => {
             </FlexColumn>
           </Col>
           <Col offset={3} md={11} className="feature-description">
-            <Title text={'Listen and Watch'} />
-            <Text text={'Browse the KPOP charts and add your favorite songs to your playlist!'} />
-            <Text text={'Take a look at the songs that are counted every day.'} />
+            <Title text="Listen and Watch" />
+            <Text text="Browse the KPOP charts and add your favorite songs to your playlist!" />
+            <Text text="Take a look at the songs that are counted every day." />
             <Row>
               <LinkHOC href="/chart">
                 <Button type="primary" icon={<BsFillPlayFill color={'#fff'} fill={'#fff'} />}>
