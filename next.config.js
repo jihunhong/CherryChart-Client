@@ -8,7 +8,7 @@ module.exports = withBundleAnalyzer({
   images: {
     loader: 'imgix',
     path: 'https://cherry-chart.imgix.net',
-    domains: ['cdn.cherrychart.com'],
+    domains: ['cdn.cherrychart.com', 'images.unsplash.com'],
     formats: ['image/webp'],
   },
   swcMinify: true,

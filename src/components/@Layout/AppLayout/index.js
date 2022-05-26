@@ -1,9 +1,6 @@
 import Content from '@atoms/Content';
 import { SIDEBAR_WIDTH } from '@config';
 import { Layout } from 'antd';
-import Header from '../Header';
-import PopOverMenus from '../PopOverMenus';
-import SearchBar from '../SearchBar';
 import Sidebar from '../Sidebar';
 import { GlobalStyle } from './style';
 
@@ -14,10 +11,9 @@ const AppLayout = ({ children }) => {
       <Layout>
         <Sidebar />
         <Layout style={{ marginLeft: SIDEBAR_WIDTH }}>
-          <Header>
-            <SearchBar />
+          {/* <Header>
             <PopOverMenus />
-          </Header>
+          </Header> */}
           <Content>
             <>{children}</>
           </Content>
