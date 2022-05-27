@@ -5,21 +5,6 @@ export const videoCarouselSetting = {
   slidesToScroll: 3,
 };
 
-export const songGridSetting = {
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: true,
-};
-
-export const artistCarouselSetting = {
-  infinite: true,
-  speed: 500,
-  slidesToShow: 6,
-  slidesToScroll: 6,
-};
-
 export const chartCarouselSetting = {
   className: 'slider variable-width',
   infinite: false,

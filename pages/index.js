@@ -13,7 +13,7 @@ Home.getLayout = page => <AppLayout>{page}</AppLayout>;
 export const getServerSideProps = wrapper.getServerSideProps(async context => {
   await context.store.dispatch(
     loadChart({
-      site: 'melon',
+      site: 'melon', 
     }),
   );
   await context.store.dispatch(loadUpdatedSongs());

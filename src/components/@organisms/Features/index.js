@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { BiWorld } from 'react-icons/bi';
 import { BsFillPlayFill } from 'react-icons/bs';
 import { FeatureContainer } from './style';
+import { imgCdn } from '@config/index';
 
 const Features = () => {
   return (
@@ -16,13 +17,13 @@ const Features = () => {
           <Col offset={1} md={5} className="chart-column">
             <FlexColumn gutter={[16, 22]}>
               <Image
-                src="feature_chart.png?w=636&h=488&auto=format"
+                src={`${imgCdn}/feature_chart.png?w=636&h=488&auto=format`}
                 width={2128}
                 height={1635}
                 priority
               />
               <Image
-                src="feature_albums.png?w=636&h=486&auto=format"
+                src={`${imgCdn}/feature_albums.png?w=636&h=486&auto=format`}
                 className="albums"
                 width={788}
                 height={602}
@@ -32,13 +33,13 @@ const Features = () => {
           <Col md={4}>
             <FlexColumn gutter={[16, 32]} className="play-column">
               <Image
-                src="feature_player.png?w=502&h=608&auto=format"
+                src={`${imgCdn}/feature_player.png?w=502&h=608&auto=format`}
                 width={818}
                 height={992}
                 priority
               />
               <Image
-                src="feature_album.png?w=502&h=370&auto=format"
+                src={`${imgCdn}/feature_album.png?w=502&h=370&auto=format`}
                 width={1719}
                 height={1267}
                 priority

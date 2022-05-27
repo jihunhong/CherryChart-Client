@@ -1,14 +1,11 @@
 import { Headings } from '@atoms/Title/style';
 import { Typography } from 'antd';
 import styled from 'styled-components';
-import { smooth_render } from '../../KeyFrames';
 
 export const CarouselItemContainer = styled('div')`
   display: inline-block;
   width: 100%;
   margin: auto;
-  animation-name: ${smooth_render};
-  animation-duration: 2s;
   cursor: pointer;
 
   ${Headings} {

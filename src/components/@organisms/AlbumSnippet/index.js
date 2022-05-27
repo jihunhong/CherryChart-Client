@@ -8,12 +8,14 @@ import { useSelector } from 'react-redux';
 import * as S from './style';
 
 const AlbumSnippet = () => {
-  const { albumName, tracks, artistName, releaseDate } = useSelector(state => state.album);
+  const { albumName, tracks, artistName, releaseDate, middleCoverImage } = useSelector(
+    state => state.album,
+  );
   const [handleAlbum] = useAddAlbum({ albumName, tracks, artistName });
   return (
     <section>
       <S.AlbumInfoHeader align="middle" justify="center">
-        <AlbumCover size={270} radius={5} albumName={albumName} />
+        <AlbumCover size={270} src={middleCoverImage} />
         <div className="sight">
           <section className="info">
             <Title text={albumName} level={2} className="album-name" />
@@ -26,7 +28,7 @@ const AlbumSnippet = () => {
             <S.PlayButton
               type="primary"
               onClick={handleAlbum}
-              icon={<BsFillPlayFill color={'#fff'} fill={'#fff'} />}
+              icon={<BsFillPlayFill color='#fff' fill='#fff' />}
             >
               PLAY
             </S.PlayButton>

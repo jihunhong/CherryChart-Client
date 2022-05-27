@@ -1,10 +1,9 @@
 import { loadUpdatedSongs } from '@actions/contentActions';
 import AppLayout from '@Layout/AppLayout';
 import wrapper from '@store/configureStore';
-import dynamic from 'next/dynamic';
+import SongPage from '@Template/songs';
 
 const Song = () => {
-  const SongPage = dynamic(() => import('@Template/songs'));
   return <SongPage />;
 };
 

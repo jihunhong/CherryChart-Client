@@ -1,5 +1,4 @@
 import Text from '@atoms/Text';
-import { cdnURL } from '@config';
 import useAddItem from '@hooks/useAddItem';
 import { Avatar } from 'antd';
 import { useRouter } from 'next/dist/client/router';
@@ -14,11 +13,21 @@ import {
   YoutubeIcon,
 } from './style';
 
-const ChartItem = ({ rank, title, artistName, albumName, video, albumId }) => {
+const ChartItem = ({
+  rank,
+  title,
+  artistName,
+  albumName,
+  video,
+  albumId,
+  middleCoverImage,
+  smallCoverImage,
+}) => {
   const [handleMusic] = useAddItem({
     title,
     artistName,
     albumName,
+    smallCoverImage,
     videoId: video?.videoId,
   });
   const router = useRouter();
@@ -32,11 +41,7 @@ const ChartItem = ({ rank, title, artistName, albumName, video, albumId }) => {
       <Rank>{`0${rank}`?.slice(-2)}</Rank>
 
       <CoverImageContainer onClick={handleMusic}>
-        <Avatar
-          shape="square"
-          size={64}
-          src={`${cdnURL}/${albumName.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`}
-        />
+        <Avatar shape="square" size={64} src={smallCoverImage} />
       </CoverImageContainer>
 
       <Text text={title} className="title" onClick={handleMusic} ellipsis />

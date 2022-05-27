@@ -33,6 +33,7 @@ const playerSlice = createSlice({
               title: v.title,
               artistName: v.artistName,
               albumName: action.payload.albumName,
+              smallCoverImage: action.payload.smallCoverImage,
               videoId: v.video.videoId,
             };
           });

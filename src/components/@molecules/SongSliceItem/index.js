@@ -1,12 +1,12 @@
+import AlbumCover from '@atoms/AlbumCover';
 import { FlexColumn } from '@atoms/FlexColumn/style';
 import Text from '@atoms/Text';
 import Title from '@atoms/Title';
-import { cdnURL } from '@config/';
-import { Avatar, Row } from 'antd';
+import { Row } from 'antd';
 import Link from 'next/link';
 import { SongSliceItemContainer } from './style';
 
-const SongSliceItem = ({ title, artistName, albumName, albumId }) => {
+const SongSliceItem = ({ title, artistName, albumId, smallCoverImage }) => {
   return (
     <SongSliceItemContainer>
       <Link
@@ -19,12 +19,7 @@ const SongSliceItem = ({ title, artistName, albumName, albumId }) => {
       >
         <a>
           <Row align="middle" className="row-content">
-            <Avatar
-              shape="square"
-              size={64}
-              src={`${cdnURL}/${albumName?.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`}
-              className="album-cover"
-            />
+            <AlbumCover size={64} src={smallCoverImage} className="album-cover" />
             <FlexColumn align="start">
               <Title level={5} text={title} ellipsis />
               <Text ellipsis type="secondary" text={artistName} />

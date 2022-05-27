@@ -6,26 +6,27 @@ import { useState } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { IntroSectionContainer, LetterBox, VideoWrapper } from './style';
 
+const YouTube = dynamic(() => import('react-youtube'), {
+  ssr: false,
+  loading: () => <div>...</div>,
+});
 const IntroVideoSection = () => {
   const [currentPlayed] = useState(Math.floor(Math.floor(Math.random() * 10) % 2));
-  const YouTube = dynamic(() => import('react-youtube'), { ssr: false });
 
   return (
     <IntroSectionContainer>
       <div className="container">
         <LetterBox>
-          <Title className="site-title" level={1} text={'Cherry Chart'} />
+          <Title className="site-title" level={1} text="Cherry Chart" />
           <Text
             className="site-describe"
-            text={"Enjoy your music life and Kpop charts on YouTube. It's free!"}
+            text="Enjoy your music life and Kpop charts on YouTube. It's free!"
           />
           <a className="owner-link" href="https://github.com/jihunhong">
-            {
-              <>
-                2021 · jihunhong
-                <FaGithub fill="#fff" />
-              </>
-            }
+            <>
+              2021 · jihunhong
+              <FaGithub fill="#fff" />
+            </>
           </a>
         </LetterBox>
         <VideoWrapper>

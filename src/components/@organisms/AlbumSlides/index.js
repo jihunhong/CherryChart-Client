@@ -10,8 +10,13 @@ const AlbumSlides = ({ dataSource = [] }) => {
         <Col md={22}>
           <Slider
             occupy="14%"
-            dataSource={dataSource}
-            renderItem={item => <CarouselItem key={item.albumId} {...item} />}
+            dataSource={dataSource.slice(0, 15)}
+            renderItem={item => (
+              <CarouselItem
+                key={item.albumId}
+                {...item.music}
+              />
+            )}
           />
         </Col>
       </Row>

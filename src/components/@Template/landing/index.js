@@ -6,15 +6,15 @@ import PlayListShare from '@organisms/LandingDescription';
 import { useSelector } from 'react-redux';
 
 const LandingPage = () => {
-  const { recentSongs } = useSelector(state => state.content);
+  const { chartData } = useSelector(state => state.chart);
 
   return (
     <>
       <IntroVideoSection />
       <Features />
-      <Artists dataSource={recentSongs} />
+      <Artists dataSource={chartData} />
       <PlayListShare />
-      <AlbumSlides dataSource={recentSongs} />
+      <AlbumSlides dataSource={chartData} />
     </>
   );
 };

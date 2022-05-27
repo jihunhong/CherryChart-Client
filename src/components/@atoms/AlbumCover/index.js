@@ -1,18 +1,14 @@
-import { cdnURL } from '@config';
-import { StyledAvatar } from './style';
+import Image from 'next/image';
+import { AlbumCoverContainer } from './style';
 
-const AlbumCover = ({ size, albumName, radius }) => {
-  if (!albumName) {
+const AlbumCover = ({ size, src, className }) => {
+  if (!src) {
     return <></>;
   }
   return (
-    <>
-      <StyledAvatar
-        shape="square"
-        size={size}
-        src={`${cdnURL}/${albumName.replace(/[`~!@#$%^&*|\\\'\";:\/?]/g, '_')}.png`}
-      />
-    </>
+    <AlbumCoverContainer className={className}>
+      <Image src={src} width={size} height={size} />
+    </AlbumCoverContainer>
   );
 };
 

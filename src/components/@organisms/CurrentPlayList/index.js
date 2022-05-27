@@ -28,7 +28,7 @@ const CurrentPlayList = () => {
             // eslint-disable-next-line
             <PlayListItem key={`${item?.videoId}-${index}`}>
               <PlayListItemCover data-index={index} data-index={index} onClick={handleOnClick}>
-                <AlbumCover size={53} albumName={item?.albumName} />
+                <AlbumCover size={53} src={item?.smallCoverImage} />
               </PlayListItemCover>
               <PlayListDivision data-index={index} data-index={index} onClick={handleOnClick}>
                 <Typography.Title level={5} ellipsis>

@@ -1,3 +1,4 @@
+import Slider from '@atoms/Slider';
 import Title from '@atoms/Title';
 import { songGridSetting } from '@config/carousel';
 import { SongsGrid } from '@molecules/SongsGrids/style';
@@ -13,7 +14,7 @@ const RecentlySongs = () => {
   return (
     <section className="recently-updated-songs">
       <Title level={4} text={'Recently Songs'} />
-      <MultiCarousel {...songGridSetting}>
+      <Slider>
         {Array(recentSongs?.length || 0 / perPageItemCount)
           .fill()
           .map((_, i) => (
@@ -23,7 +24,7 @@ const RecentlySongs = () => {
               ))}
             </SongsGrid>
           ))}
-      </MultiCarousel>
+        </Slider>
     </section>
   );
 };

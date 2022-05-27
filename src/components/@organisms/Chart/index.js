@@ -9,7 +9,7 @@ const Chart = () => {
 
   return (
     <ChartContainer>
-      <Title level={3} text={'Most Popular'} />
+      <Title level={3} text="Most Popular" />
       <Text type="secondary" text={`${chartData?.length} Songs`} />
 
       <MusicList>

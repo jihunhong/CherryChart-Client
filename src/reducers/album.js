@@ -8,6 +8,7 @@ const initialState = {
   albumName: null,
   releaseDate: null,
   description: null,
+  middleCoverImage: null,
   tracks: [],
   albums: [],
 };
@@ -27,6 +28,7 @@ const albumSlice = createSlice({
         state.albumName = action.payload.albumName;
         state.releaseDate = action.payload.releaseDate;
         state.description = action.payload.description;
+        state.middleCoverImage = action.payload.middleCoverImage;
         state.tracks = action.payload.music;
       })
       .addCase(loadAlbumInfo.rejected, (state, action) => {

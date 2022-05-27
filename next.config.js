@@ -6,9 +6,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 module.exports = withBundleAnalyzer({
   compress: true,
   images: {
-    loader: 'imgix',
-    path: 'https://cherry-chart.imgix.net',
-    domains: ['cdn.cherrychart.com', 'images.unsplash.com'],
+    domains: ['cdn.cherrychart.com', 'images.unsplash.com', 'cherry-chart.imgix.net'],
     formats: ['image/webp'],
   },
   swcMinify: true,

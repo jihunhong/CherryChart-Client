@@ -17,6 +17,7 @@ export const GlobalStyle = createGlobalStyle`
   button.ant-btn {
     display: flex;
     border-radius: 6px;
+    align-items: center;
     border: none;
     span {
       color: #fff;

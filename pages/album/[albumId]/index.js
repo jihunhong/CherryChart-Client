@@ -1,10 +1,9 @@
 import { loadAlbumInfo, loadArtistsAlbum } from '@actions/albumActions';
 import AppLayout from '@Layout/AppLayout';
 import wrapper from '@store/configureStore';
-import dynamic from 'next/dynamic';
+import AlbumDetail from '@Template/album/[albumId]';
 
 const AlbumDetailPage = () => {
-  const AlbumDetail = dynamic(() => import('@Template/album/[albumId]'));
   return <AlbumDetail />;
 };
 
