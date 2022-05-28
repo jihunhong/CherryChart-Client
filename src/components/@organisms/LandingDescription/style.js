@@ -4,7 +4,7 @@ import { imgCdn } from '@config/';
 import styled from 'styled-components';
 
 export const LandingDescriptionContainer = styled.section`
-  max-width: 91.66666667%;
+  max-width: 93%;
   font-family: 'Poppins', sans-serif;
   border-radius: 14px;
   > .ant-row {

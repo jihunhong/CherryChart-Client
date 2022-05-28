@@ -1,6 +1,5 @@
 import { Span } from '@atoms/Text/style';
 import styled from 'styled-components';
-import { smooth_render } from '../../KeyFrames';
 
 export const Rank = styled('span')`
   margin: auto 0 auto 1.5vw;
@@ -21,8 +20,7 @@ export const MusicListItemContainer = styled('li')`
   background: #fff;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 24px;
   border-radius: 6px;
-  animation-name: ${smooth_render};
-  animation-duration: 1s;
+  transition: box-shadow 0.8s ease-in-out;
 
   ${Span}.title {
     width: 12vw;
@@ -39,7 +37,6 @@ export const MusicListItemContainer = styled('li')`
   }
 
   :hover {
-    transition: all 0.8s;
     box-shadow: rgb(149 157 165 / 60%) 2px 3px 6px;
   }
 `;

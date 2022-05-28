@@ -9,7 +9,7 @@ const PlayListShare = () => {
     <LandingDescriptionContainer>
       <Row align="middle" justify="center">
         <Col offset={3} span={6} className="description">
-          <Title text={'Check out other playlists and share them!'} />
+          <Title text="Check out other playlists and share them!" />
           <Text
             text={
               "If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text"

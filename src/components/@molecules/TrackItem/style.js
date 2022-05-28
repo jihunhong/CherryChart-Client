@@ -1,15 +1,12 @@
-import { smooth_render } from '@components/KeyFrames';
 import styled from 'styled-components';
 
 export const TrackListItemContainer = styled('li')`
   margin: auto auto;
   display: flex;
-  animation-name: ${smooth_render};
-  animation-duration: 1s;
+  transition: box-shadow 0.8s ease-in-out;
   min-height: 5vh;
 
   :hover {
-    transition: all 0.8s;
     box-shadow: rgb(149 157 165 / 60%) 2px 3px 6px;
   }
 

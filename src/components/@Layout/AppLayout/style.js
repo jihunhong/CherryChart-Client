@@ -7,6 +7,9 @@ export const GlobalStyle = createGlobalStyle`
     --primary-color: #1890ff;
     --font-primary-color: #262f57;
     --background-color: #fcfdfe;
+    --melon-color: #00cd3c;
+    --genie-color: #0095ff;
+    --bugs-color: #ff3b28;
   }
   h1, h2, h3, h4 {
     color: var(--font-primary-color);

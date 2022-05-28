@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const ArtistsContainer = styled.section`
+max-width: 93%;
   .ant-row {
     height: 40vh;
     overflow: hidden;
-    max-width: 91.66666667%;
     border-radius: 14px;
     margin: auto;
   }

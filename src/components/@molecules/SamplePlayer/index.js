@@ -1,10 +1,12 @@
 import { FlexColumn } from '@atoms/FlexColumn/style';
-import MusicWave from '@atoms/MusicWave';
 import Title from '@atoms/Title';
 import { imgCdn } from '@config/';
 import ArtistActions from '@molecules/ArtistActions';
 import { Col, Row } from 'antd';
+import dynamic from 'next/dynamic';
 import { SamplePlayerContainer } from './style';
+
+const MusicWave = dynamic(() => import('@atoms/MusicWave'), { ssr: false, loading: () => null });
 
 const SamplePlayer = () => {
   return (
@@ -19,8 +21,8 @@ const SamplePlayer = () => {
         <Col span={16} className="player">
           <FlexColumn className="container">
             <FlexColumn>
-              <Title text={'billie eilish'} level={5} />
-              <Title text={'bad guy'} level={3} />
+              <Title text="billie eilish" level={5} />
+              <Title text="bad guy" level={3} />
             </FlexColumn>
             <MusicWave count={24} />
             <ArtistActions />
