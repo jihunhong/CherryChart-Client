@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import { AlbumCoverContainer } from './style';
 
-const AlbumCover = ({ size, src, className }) => {
+const AlbumCover = ({ size, src, className, ...props }) => {
   if (!src) {
     return <></>;
   }
   return (
-    <AlbumCoverContainer className={className}>
+    <AlbumCoverContainer $size={size} className={className} {...props}>
       <Image src={src} width={size} height={size} />
     </AlbumCoverContainer>
   );

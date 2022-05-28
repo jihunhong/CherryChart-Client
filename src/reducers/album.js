@@ -9,6 +9,7 @@ const initialState = {
   releaseDate: null,
   description: null,
   middleCoverImage: null,
+  smallCoverImage: null,
   tracks: [],
   albums: [],
 };
@@ -28,6 +29,7 @@ const albumSlice = createSlice({
         state.albumName = action.payload.albumName;
         state.releaseDate = action.payload.releaseDate;
         state.description = action.payload.description;
+        state.smallCoverImage = action.payload.smallCoverImage;
         state.middleCoverImage = action.payload.middleCoverImage;
         state.tracks = action.payload.music;
       })

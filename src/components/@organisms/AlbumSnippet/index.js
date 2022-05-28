@@ -8,10 +8,10 @@ import { useSelector } from 'react-redux';
 import * as S from './style';
 
 const AlbumSnippet = () => {
-  const { albumName, tracks, artistName, releaseDate, middleCoverImage } = useSelector(
+  const { albumName, tracks, artistName, releaseDate, middleCoverImage, smallCoverImage } = useSelector(
     state => state.album,
   );
-  const [handleAlbum] = useAddAlbum({ albumName, tracks, artistName });
+  const [handleAlbum] = useAddAlbum({ albumName, tracks, artistName, smallCoverImage });
   return (
     <section>
       <S.AlbumInfoHeader align="middle" justify="center">

@@ -1,4 +1,4 @@
-import { StyledAvatar } from '@atoms/AlbumCover/style';
+import { AlbumCoverContainer } from '@atoms/AlbumCover/style';
 import { ScaleUp, scrollbar } from '@components/Css/style';
 import styled from 'styled-components';
 
@@ -22,7 +22,10 @@ export const PlayListItemsContainer = styled('ul')`
 `;
 
 export const PlayListItem = styled('li')`
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 8px;
+  justify-content: flex-start;
   position: relative;
   padding: 6px 0px;
   padding-bottom: 6px;
@@ -48,13 +51,11 @@ export const PlayListItem = styled('li')`
       opacity: 1;
     }
   }
-`;
 
-export const PlayListItemCover = styled('div')`
-  float: left;
-  margin: auto 0.5vw auto 0;
-  ${StyledAvatar} {
-    box-shadow: none;
+  ${AlbumCoverContainer} {
+    > span {
+      box-shadow: none;
+    }
   }
 `;
 
@@ -71,5 +72,11 @@ export const PlayListDivision = styled('div')`
   span {
     margin: 0;
     font-weight: 500;
+    line-height: 12px;
+    font-size: 12px;
+  }
+
+  span {
+    color: rgba(0, 0, 0, 0.45);
   }
 `;

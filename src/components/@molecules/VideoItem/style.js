@@ -3,6 +3,7 @@ import { Headings } from '@atoms/Title/style';
 import styled from 'styled-components';
 
 export const VideoItemContainer = styled.div`
+  cursor: pointer;
   margin: 12px;
   padding: 12px
   width: 100%;

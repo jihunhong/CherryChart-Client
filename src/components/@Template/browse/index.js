@@ -6,7 +6,7 @@ import { SingleTemplate } from './style';
 const BrowsePage = () => {
   return (
     <SingleTemplate>
-      <PageHeadTitle text={'Browse'} />
+      <PageHeadTitle text="Browse" />
       <RecentlyVideos />
       <RecentlySongs />
     </SingleTemplate>

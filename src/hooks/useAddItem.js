@@ -12,7 +12,7 @@ const useAddItem = ({ title, artistName, albumName, videoId, tracks, smallCoverI
           artistName,
           albumName,
           tracks,
-          smallCoverImage
+          smallCoverImage,
         }),
       );
     } else {
@@ -22,11 +22,11 @@ const useAddItem = ({ title, artistName, albumName, videoId, tracks, smallCoverI
           artistName,
           albumName,
           videoId,
-          smallCoverImage
+          smallCoverImage,
         }),
       );
     }
-  }, [title, artistName, albumName, videoId, smallCoverImage]);
+  }, [title, artistName, albumName, videoId, smallCoverImage, tracks]);
 
   return [handler];
 };

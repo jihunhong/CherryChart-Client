@@ -2,7 +2,7 @@ import playerSlice from '@reducers/player';
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
-const useAddAlbum = ({ albumName, tracks, artistName, videoId }) => {
+const useAddAlbum = ({ albumName, tracks, artistName, videoId, smallCoverImage }) => {
   const dispatch = useDispatch();
   const handler = useCallback(() => {
     dispatch(
@@ -10,9 +10,10 @@ const useAddAlbum = ({ albumName, tracks, artistName, videoId }) => {
         albumName,
         tracks,
         artistName,
+        smallCoverImage
       }),
     );
-  }, [albumName, tracks, artistName]);
+  }, [albumName, tracks, artistName, smallCoverImage]);
 
   return [handler];
 };

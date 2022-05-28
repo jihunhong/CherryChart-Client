@@ -6,7 +6,7 @@ export const NavigationGlobal = createGlobalStyle`
         color : #262f57;
     }
 
-    li > * {
+    li.ant-menu-item > * {
         vertical-align: middle;
         font-weight : 600;
         font-size : 15px;
