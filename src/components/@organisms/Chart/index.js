@@ -1,6 +1,7 @@
 import Text from '@atoms/Text';
 import Title from '@atoms/Title';
 import ChartItem from '@molecules/ChartItem';
+import { Row } from 'antd';
 import { useSelector } from 'react-redux';
 import { ChartContainer, MusicList } from './style';
 

@@ -1,10 +1,18 @@
 import { HYDRATE } from 'next-redux-wrapper';
 import { combineReducers } from 'redux';
+import storage from 'redux-persist/lib/storage';
+import { persistReducer } from 'redux-persist';
 import albumSlice from './album';
 import chartSlice from './chart';
 import configSlice from './config';
 import contentSlice from './content';
 import playerSlice from './player';
+
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: ['player'],
+};
 
 const rootReducer = (state, action) => {
   switch (action.type) {
@@ -30,4 +38,5 @@ const rootReducer = (state, action) => {
   }
 };
 
+export const persistedReducer = persistReducer(persistConfig, rootReducer);
 export default rootReducer;

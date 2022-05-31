@@ -5,14 +5,14 @@ import styled, { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
   :root {
     --primary-color: #1890ff;
-    --font-primary-color: #262f57;
+    --font-plain-color: #262f57;
     --background-color: #fcfdfe;
     --melon-color: #00cd3c;
     --genie-color: #0095ff;
     --bugs-color: #ff3b28;
   }
   h1, h2, h3, h4 {
-    color: var(--font-primary-color);
+    color: var(--font-plain-color);
     font-weight: 600;
     text-shadow: 0px 0px 1px rgb(0 0 0 / 60%);
   }

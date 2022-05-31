@@ -3,7 +3,6 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 export const NavigationGlobal = createGlobalStyle`
     * {
-        color : #262f57;
     }
 
     li.ant-menu-item > * {
