@@ -1,7 +1,8 @@
+
 import { Span } from '@atoms/Text/style';
 import styled from 'styled-components';
 
-export const LoginContainer = styled.div`
+export const SignUpContainer = styled.div`
   margin: 5vh auto;
   width: 100%;
   display: flex;
@@ -13,6 +14,7 @@ export const LoginContainer = styled.div`
       margin: 1em;
     }
   }
+
   > div.login-describe-container {
     display: flex;
     justify-content: center;
@@ -52,6 +54,7 @@ export const LoginContainer = styled.div`
       max-height: 85vh;
     }
   }
+  
   > div.action-container {
     flex: 40%;
 

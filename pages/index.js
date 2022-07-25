@@ -1,4 +1,5 @@
 import { loadChart } from '@actions/chartActions';
+import { loadArtists } from '@actions/artistActions';
 import { loadUpdatedSongs } from '@actions/contentActions';
 import AppLayout from '@Layout/AppLayout';
 import wrapper from '@store/configureStore';
@@ -13,9 +14,14 @@ Home.getLayout = page => <AppLayout>{page}</AppLayout>;
 export const getServerSideProps = wrapper.getServerSideProps(async context => {
   await context.store.dispatch(
     loadChart({
-      site: 'melon', 
+      site: 'melon',
     }),
   );
+  await context.store.dispatch(
+    loadArtists({
+      site: 'melon'
+    })
+  )
   await context.store.dispatch(loadUpdatedSongs());
 });
 

@@ -9,12 +9,13 @@ const Artists = dynamic(() => import('@organisms/Artists'), { ssr: false, loadin
 
 const LandingPage = () => {
   const { chartData } = useSelector(state => state.chart);
+  const { artistList } = useSelector(state => state.artist);
 
   return (
     <>
       <IntroVideoSection />
       <Features />
-      <Artists dataSource={chartData} />
+      <Artists dataSource={artistList} />
       <PlayListShare />
       <AlbumSlides dataSource={chartData} />
     </>

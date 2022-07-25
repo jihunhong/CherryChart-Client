@@ -28,9 +28,9 @@ max-width: 93%;
   div.artists-avatars-container {
     display: grid;
     grid-template-rows: repeat(5, 1fr);
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 12px;
-    transform: rotatez(13deg) translate(0px, -97px);
+    transform: rotatez(19deg) translate(84px,-97px);
     > div {
       width: inherit;
       aspect-ratio: 1/1;
