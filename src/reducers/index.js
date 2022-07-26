@@ -8,6 +8,7 @@ import configSlice from './config';
 import contentSlice from './content';
 import playerSlice from './player';
 import artistSlice from './artist';
+import userSlice from './user';
 
 const persistConfig = {
   key: 'root',
@@ -34,6 +35,7 @@ const rootReducer = (state, action) => {
         album: albumSlice.reducer,
         content: contentSlice.reducer,
         artist: artistSlice.reducer,
+        user: userSlice.reducer
       });
       return combineReducer(state, action);
     }

@@ -1,13 +1,38 @@
+import { postGoogleOauth } from '@actions/userActions';
 import LinkHOC from '@atoms/LinkHOC';
 import Text from '@atoms/Text';
 import Title from '@atoms/Title';
+import { CLIENT_ID } from '@config/settings';
+import useScript from '@hooks/util/useScript';
 import { Button, Checkbox, Form, Input, Row } from 'antd';
+import axios from 'axios';
+import { useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { LoginContainer } from './style';
-import { useSelector } from 'react-redux';
+
+axios.defaults.withCredentials = true;
 
 const LoginPage = () => {
-
   const { artistList } = useSelector(state => state.artist);
+  const GoogleBtn = useRef(null);
+  const dispatch = useDispatch();
+  useScript('https://accounts.google.com/gsi/client', () => {
+    const client = window.google.accounts.oauth2.initTokenClient({
+      client_id: CLIENT_ID,
+      scope: 'https://www.googleapis.com/auth/userinfo.profile \
+      https://www.googleapis.com/auth/userinfo.email \
+      https://www.googleapis.com/auth/youtube.readonly \
+      https://www.googleapis.com/auth/youtube.force-ssl \
+      https://www.googleapis.com/auth/youtubepartner',
+      callback: async(res) => {
+        console.log(res);
+        dispatch(postGoogleOauth({
+          accessToken: res.access_token
+        }))
+       }
+    });
+    client.requestAccessToken();
+  });
 
   return (
     <>
@@ -33,7 +58,17 @@ const LoginPage = () => {
             </Form.Item>
           </section>
           <Button type="primary">Login</Button>
-          <div className="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+<div id="g_id_onload"
+         data-client_id={CLIENT_ID}>
+      </div>
+      <div class="g_id_signin"
+         data-type="standard"
+         data-size="large"
+         data-theme="outline"
+         data-text="sign_in_with"
+         data-shape="rectangular"
+         data-logo_alignment="left">
+      </div>
         </Form>
       </div>
       <div className="login-describe-container">
