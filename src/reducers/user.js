@@ -1,27 +1,39 @@
-import { loadArtists } from '@actions/artistActions';
-import { postGoogleOauth } from '@actions/userActions';
+import { loadMyYoutubePlaylist, loadGoogleProfile } from '@actions/userActions';
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    me: null,
-    google_oauth_loading: false,
+  me: null,
+  my_youtube_playlist: [],
+  google_api_loading: false,
+  google_oauth_loading: false,
+  accessToken: null,
 };
 
 const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    assignAccessToken(state, action) {
+      state.accessToken = action.payload;
+    },
+  },
   extraReducers: builder =>
     builder
-      .addCase(postGoogleOauth.pending, (state) => {
+      .addCase(loadGoogleProfile.pending, (state, action) => {
+        if (action.payload) {
+          state.accessToken = action.payload;
+        }
         state.google_oauth_loading = true;
       })
-      .addCase(postGoogleOauth.fulfilled, (state, action) => {
+      .addCase(loadGoogleProfile.fulfilled, (state, action) => {
         state.google_oauth_loading = false;
-        state.me = action.payload
+        state.me = action.payload;
       })
-      .addCase(postGoogleOauth.rejected, (state, action) => {
+      .addCase(loadGoogleProfile.rejected, (state, action) => {
         state.google_oauth_loading = false;
+      })
+      .addCase(loadMyYoutubePlaylist.fulfilled, (state, action) => {
+        state.my_youtube_playlist = action.payload;
       }),
 });
 

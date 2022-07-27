@@ -30,7 +30,7 @@ const createStore = () => {
 };
 
 const wrapper = createWrapper(createStore, {
-  debug: true,
+  debug: false,
 });
 
 export default wrapper;
