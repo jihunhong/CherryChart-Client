@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 import { Span } from './style';
 
-const Text = ({ text, type = 'primary', ellipsis, ...rest }) => {
+const Text = ({ text, type = 'primary', icon, ellipsis, ...rest }) => {
   return (
     <Span type={type} {...rest} ellipsis={ellipsis}>
+      {icon}
       {text}
     </Span>
   );

@@ -11,17 +11,14 @@ const YouTube = dynamic(() => import('react-youtube'), {
   loading: () => <div>...</div>,
 });
 const IntroVideoSection = () => {
-  const [currentPlayed] = useState(Math.floor(Math.floor(Math.random() * 10) % 2));
+  const [currentPlayed] = useState(Math.floor(Math.random() * 10) % 2);
 
   return (
     <IntroSectionContainer>
       <div className="container">
         <LetterBox>
           <Title className="site-title" level={1} text="Cherry Chart" />
-          <Text
-            className="site-describe"
-            text="Enjoy your music life and Kpop charts on YouTube. It's free!"
-          />
+          <Text className="site-describe" text="Enjoy your music life and Kpop charts on YouTube. It's free!" />
           <a className="owner-link" href="https://github.com/jihunhong">
             <>
               2021 · jihunhong

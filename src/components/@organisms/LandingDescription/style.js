@@ -22,7 +22,6 @@ export const LandingDescriptionContainer = styled.section`
       border-radius: 13px;
       background-color: var(--background-color);
       opacity: 0.92;
-      -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=85)';
       z-index: -1;
       position: absolute;
       content: '';

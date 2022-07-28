@@ -3,3 +3,5 @@ export const CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
 export const LANDING_BACKGROUND_VIDEO_ID = ['cM963tI7Q_k', 'vg6Iq_Es3Wk'];
 // viviz - BOP BOP
 // PSY - Celeb
+
+export const ACCOUNT_ARTIST_IMAGE = ['joyuri', 'taeyeon', 'biile_elish', 'heize', 'iu'];

@@ -1,5 +1,5 @@
 import Content from '@atoms/Content';
-import { SIDEBAR_WIDTH } from '@config';
+import { SIDEBAR_WIDTH } from '@config/index';
 import { Layout } from 'antd';
 import Sidebar from '../Sidebar';
 import { GlobalStyle } from './style';
@@ -10,7 +10,7 @@ const AppLayout = ({ children }) => {
       <GlobalStyle />
       <Layout>
         <Sidebar />
-        <Layout style={{ marginLeft: SIDEBAR_WIDTH }}>
+        <Layout className="app-content" style={{ marginLeft: SIDEBAR_WIDTH }}>
           {/* <Header>
             <PopOverMenus />
           </Header> */}

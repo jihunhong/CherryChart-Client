@@ -1,13 +1,24 @@
+import { ContentContainer } from '@atoms/Content/style';
 import { Span } from '@atoms/Text/style';
-import styled from 'styled-components';
+import { imgCdn } from '@config/';
+import styled, { createGlobalStyle } from 'styled-components';
+
+export const LoginPageGlobalStyle = createGlobalStyle`
+  ${ContentContainer} {
+    aspect-ratio: 3840/2160;
+    background-image: url(./svg/bubbles.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+`;
 
 export const LoginContainer = styled.div`
-  margin: 5vh auto;
-  width: 100%;
+  margin: 5vh 50px;
+  max-width: 100%;
   display: flex;
   justify-content: space-between;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  gap: 1em;
+  gap: 4em;
   @supports not (gap: 1em) {
     margin: -1em;
     > div {
@@ -19,33 +30,72 @@ export const LoginContainer = styled.div`
   padding-left: 24px;
 
   > div.login-describe-container {
+    background-image: url('${imgCdn}/static/account-banner/${props => props.imageName}.jpeg');
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    height: 90vh;
     display: flex;
     justify-content: flex-end;
-    flex: 50%;
+    flex: 30%;
     position: relative;
-    .artist-description {
+    :after {
+      background-color: #000;
+      opacity: 0.6;
       position: absolute;
-      bottom: 6em;
-      right: 12em;
-      width: auto;
-      z-index: 2;
-    }
-    :before {
       content: '';
-      position: absolute;
+      height: 100%;
+      width: 100%;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient( to right,var(--background-color) 10%,transparent 33%);
-      z-index: 1;
     }
-    > img {
-      object-fit: cover;
-      max-height: 85vh;
+    .login-describe {
+      position: absolute;
+      top: 50%;
+      left: 2em;
+      right: 2em;
+      width: auto;
+      z-index: 2;
+      transform: translateY(-50%);
+      .artists-profiles {
+        display: flex;
+        align-items: center;
+        margin: 8px 0;
+        span {
+          margin-left: 8px;
+        }
+        div.artist-container {
+          & :nth-of-type(n + 2) {
+            margin-left: -13px;
+          }
+          z-index: 2;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          overflow: hidden;
+          background: linear-gradient(135deg, #e3e3e3a6, #ffffff91);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          span {
+            border-radius: 50%;
+          }
+        }
+      }
+      * {
+        color: #fff;
+      }
+    }
+    .ant-divider {
+      margin: 8px 0;
+      border-top: 1px solid #fff;
+    }
+    svg {
+      vertical-align: middle;
     }
   }
-  
+
   > div.action-container {
     flex: 50%;
 
