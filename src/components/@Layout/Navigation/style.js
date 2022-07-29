@@ -2,9 +2,6 @@ import { Menu } from 'antd';
 import styled, { createGlobalStyle } from 'styled-components';
 
 export const NavigationGlobal = createGlobalStyle`
-    * {
-    }
-
     li.ant-menu-item > * {
         vertical-align: middle;
         font-weight : 600;
@@ -12,12 +9,12 @@ export const NavigationGlobal = createGlobalStyle`
     }
 
     h1, h2, h3, h4, h5, span {
-        text-shadow: 0px 0px 1px rgba(0,0,0,0.6);
+        text-shadow: 0px 0px 1px rgb(0 0 0 / 30%);
     }
 
     .ant-layout-sider {
         svg {
-            margin-right : 15px;
+            margin-right: 12px;
             font-size : 17px;
             opacity : 0.5;
         }
@@ -47,5 +44,14 @@ export const NavigationGlobal = createGlobalStyle`
 `;
 
 export const MenuItem = styled(Menu.Item)`
-  padding-left: 43px !important;
+  padding: 0 23px !important;
+  > .ant-menu-item-icon + span {
+    margin-left: 0;
+    font-size: 1em;
+    font-family: system-ui, 'Apple SD Gothic Neo', AppleGothic, sans-serif;
+    font-weight: 400;
+  }
+
+  .ant-menu-title-content a {
+  }
 `;

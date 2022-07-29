@@ -2,12 +2,14 @@ import { Layout } from 'antd';
 import styled from 'styled-components';
 
 export const HeaderContainer = styled(Layout.Header)`
-  background: #fcfdfe;
+  background: #fff;
+  box-shadow: rgb(0 0 0 / 5%) 0px 6px 24px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px;
   display: flex;
-  justify-content: flex-end;
-  & svg {
-    margin-right: 15px;
-    font-size: 17px;
-    opacity: 0.5;
-  }
+  z-index: 10;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 36px 12px 23px;
+  width: 100%;
+  height: 56px;
+  position: fixed;
 `;

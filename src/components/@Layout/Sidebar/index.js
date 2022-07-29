@@ -6,14 +6,8 @@ import { SidebarContainer } from './style';
 
 const Sidebar = () => {
   return (
-    <SidebarContainer
-      theme="light"
-      width={SIDEBAR_WIDTH}
-      breakpoint={'sm'}
-      collapsedWidth={0}
-      trigger={null}
-    >
-      <ProfileNav />
+    <SidebarContainer theme="light" width={SIDEBAR_WIDTH} breakpoint={'sm'} collapsedWidth={0} trigger={null}>
+      {/* <ProfileNav /> */}
       <Navigation />
       <MyMusic />
     </SidebarContainer>

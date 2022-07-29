@@ -5,10 +5,10 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 export const LoginPageGlobalStyle = createGlobalStyle`
   ${ContentContainer} {
-    aspect-ratio: 3840/2160;
-    background-image: url(./svg/bubbles.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    // aspect-ratio: 3840/2160;
+    // background-image: url(./svg/bubbles.svg);
+    // background-size: cover;
+    // background-repeat: no-repeat;
   }
 `;
 
@@ -35,7 +35,7 @@ export const LoginContainer = styled.div`
     background-position-x: center;
     background-position-y: center;
     background-repeat: no-repeat;
-    height: 90vh;
+    height: 80vh;
     display: flex;
     justify-content: flex-end;
     flex: 30%;
@@ -65,21 +65,9 @@ export const LoginContainer = styled.div`
         span {
           margin-left: 8px;
         }
-        div.artist-container {
+        div.profile-circle-container {
           & :nth-of-type(n + 2) {
             margin-left: -13px;
-          }
-          z-index: 2;
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          overflow: hidden;
-          background: linear-gradient(135deg, #e3e3e3a6, #ffffff91);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          span {
-            border-radius: 50%;
           }
         }
       }

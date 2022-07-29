@@ -1,7 +1,8 @@
 import Title from '@atoms/Title';
-import { Menu } from 'antd';
+import { Menu, Row } from 'antd';
 import { AiOutlineFile } from 'react-icons/ai';
 import { BiHeart } from 'react-icons/bi';
+import { FiMusic } from 'react-icons/fi';
 import { HiOutlineClock } from 'react-icons/hi';
 import { MenuItem, NavigationGlobal } from '../Navigation/style';
 import { MyMusicContainer } from './style';
@@ -11,11 +12,10 @@ const MyMusic = () => {
     <>
       <NavigationGlobal />
       <MyMusicContainer>
-        <Title level={5}>
-          MY MUSIC
-          {/* {me.userName} */}
-        </Title>
-        <Menu theme="light" mode="inline" defaultSelectedKeys={['1']}>
+        <Row align="middle">
+          <h4>MY MUSIC</h4>
+        </Row>
+        <Menu inlineIndent={12} theme="light" mode="inline" defaultSelectedKeys={['1']}>
           <MenuItem key="6" icon={<HiOutlineClock />}>
             Played History
           </MenuItem>

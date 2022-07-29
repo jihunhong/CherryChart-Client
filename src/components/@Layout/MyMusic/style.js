@@ -2,9 +2,12 @@ import { Headings } from '@atoms/Title/style';
 import styled from 'styled-components';
 
 export const MyMusicContainer = styled.section`
-  ${Headings} {
-    padding-left: 43px;
-    margin: 60px 0 20px 0;
+  .ant-row {
+    padding-left: 23px;
+    margin: 60px 0 12px 0;
+    h4 {
+      margin: 0;
+    }
   }
   li {
     cursor: not-allowed;

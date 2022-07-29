@@ -5,8 +5,9 @@ import { ProfileNavContainer } from './style';
 const ProfileNav = () => {
   return (
     <ProfileNavContainer align="center">
-      <FaApple />
-      <Typography.Title level={5}>Cherry Chart</Typography.Title>
+      <a href="/">
+        <FaApple />
+      </a>
     </ProfileNavContainer>
   );
 };

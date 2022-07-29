@@ -16,17 +16,14 @@ const App = ({ Component, pageProps }) => {
     <>
       <Head>
         <meta charSet="utf-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
         <meta property="og:type" content="website" />
         <title>Cherry Chart</title>
         <link rel="canonical" href="https://cherrychart.com" />
       </Head>
       <GoogleAnalytics />
       {getLayout(<Component {...pageProps} />)}
-      <Player />
+      {/* <Player /> */}
     </>
   );
 };

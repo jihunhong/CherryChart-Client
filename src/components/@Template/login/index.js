@@ -1,4 +1,5 @@
 import LinkHOC from '@atoms/LinkHOC';
+import ProfileCircle from '@atoms/ProfileCircle';
 import Text from '@atoms/Text';
 import Title from '@atoms/Title';
 import { ACCOUNT_ARTIST_IMAGE } from '@config/settings';
@@ -50,9 +51,7 @@ const LoginPage = () => {
             <Text text="Browse the KPOP charts and add your favorite songs to your playlist! Take a look at the songs that are counted every day." />
             <section className="artists-profiles">
               {artistList.slice(0, 5).map(item => (
-                <div className="artist-container" key={item.id}>
-                  <Image src={item?.music?.middleArtistProfile} width={38} height={38} />
-                </div>
+                <ProfileCircle key={item.id} className="profile-circle-container" src={item?.music?.middleArtistProfile} width={38} height={38} />
               ))}
               <Text text="+ More artists are registered with us." />
             </section>

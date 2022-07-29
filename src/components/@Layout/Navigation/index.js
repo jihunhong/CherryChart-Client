@@ -8,7 +8,7 @@ const Navigation = () => {
   return (
     <>
       <NavigationGlobal />
-      <Menu theme="light" mode="inline" defaultSelectedKeys={['1']}>
+      <Menu inlineIndent={12} theme="light" mode="inline" defaultSelectedKeys={[null]}>
         <MenuItem key="1" icon={<BiHomeAlt />}>
           <LinkHOC href={'/'}>Home</LinkHOC>
         </MenuItem>
