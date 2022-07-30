@@ -1,3 +1,4 @@
+import { API_URL } from '@config/';
 import allowCors from '@lib/allowCors';
 import axios from 'axios';
 
@@ -6,10 +7,9 @@ import axios from 'axios';
  */
 export default allowCors(async (req, res) => {
   try {
-    const response = await axios.get('https://www.googleapis.com/oauth2/v1/userinfo?alt=json', {
-      headers: {
-        Authorization: req.headers?.authorization,
-      },
+    console.log(req.cookie);
+    const response = await axios.get(`${API_URL}/api/oauth/google/user`, {
+      withCredentials: true,
     });
     res.status(200).json(response.data);
   } catch (error) {

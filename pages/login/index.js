@@ -1,20 +1,9 @@
-import AppLayout from '@Layout/AppLayout';
-import LoginPage from '@Template/login';
 import { loadArtists } from '@actions/artistActions';
+import AppLayout from '@Layout/AppLayout';
 import wrapper from '@store/configureStore';
-import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import LoginPage from '@Template/login';
 
 const Login = () => {
-  const me = useSelector(state => state.user.me);
-  const router = useRouter();
-  useEffect(() => {
-    if (me) {
-      router.push('/chart');
-    }
-  }, [me]);
-
   return <LoginPage />;
 };
 

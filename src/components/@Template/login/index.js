@@ -1,3 +1,4 @@
+import { loadMyYoutubePlaylist } from '@actions/userActions';
 import LinkHOC from '@atoms/LinkHOC';
 import ProfileCircle from '@atoms/ProfileCircle';
 import Text from '@atoms/Text';
@@ -5,17 +6,23 @@ import Title from '@atoms/Title';
 import { ACCOUNT_ARTIST_IMAGE } from '@config/settings';
 import useGoogleLogin from '@hooks/oauth2/useGoogleLogin';
 import { Button, Checkbox, Divider, Form, Input, Row } from 'antd';
-import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import GoogleButton from 'react-google-button';
 import { BiInfoCircle } from 'react-icons/bi';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { LoginContainer, LoginPageGlobalStyle } from './style';
 
 const LoginPage = () => {
+  const dispatch = useDispatch();
   const { artistList } = useSelector(state => state.artist);
-  const [_, onRequestToken] = useGoogleLogin();
+  const [_, handleLogin] = useGoogleLogin();
   const [random] = useState(Math.floor(Math.random() * 10) % ACCOUNT_ARTIST_IMAGE.length);
+  const me = useSelector(state => state.user.me);
+  useEffect(() => {
+    if (me) {
+      dispatch(loadMyYoutubePlaylist());
+    }
+  }, [me]);
 
   return (
     <>
@@ -42,7 +49,7 @@ const LoginPage = () => {
               </Form.Item>
             </section>
             <Button type="primary">Login</Button>
-            <GoogleButton style={{ width: '100%' }} type="light" onClick={onRequestToken} />
+            <GoogleButton style={{ width: '100%' }} type="light" onClick={handleLogin} />
           </Form>
         </div>
         <div className="login-describe-container">

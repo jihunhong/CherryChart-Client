@@ -1,35 +1,25 @@
-import { loadGoogleProfile, loadMyYoutubePlaylist } from '@actions/userActions';
-import { CLIENT_ID } from '@config/settings';
-import useScript from '@hooks/util/useScript';
-import { useDebugValue, useState } from 'react';
+import { loadGoogleProfile } from '@actions/userActions';
+import { API_URL } from '@config/';
 import { useDispatch } from 'react-redux';
 
 const useGoogleLogin = () => {
   const dispatch = useDispatch();
-  const [client, setClient] = useState(null);
-  useScript('https://accounts.google.com/gsi/client', () => {
-    const tokenClient = window.google.accounts.oauth2.initTokenClient({
-      client_id: CLIENT_ID,
-      scope:
-        'https://www.googleapis.com/auth/userinfo.profile \
-          https://www.googleapis.com/auth/userinfo.email \
-          https://www.googleapis.com/auth/youtube.readonly \
-          https://www.googleapis.com/auth/youtube.force-ssl \
-          https://www.googleapis.com/auth/youtubepartner',
-      callback: async res => {
-        dispatch(loadGoogleProfile(res.access_token));
-        dispatch(loadMyYoutubePlaylist(res.access_token));
-      },
-    });
-    if (!client) setClient(tokenClient);
-  });
-
-  const requestToken = e => {
-    client.requestAccessToken();
+  const handleLogin = () => {
+    let timer = null;
+    const loginWindow = window.open(`${API_URL}/api/oauth/google/login`, '_blank', 'width=500,height=600');
+    if (loginWindow) {
+      timer = setInterval(() => {
+        if (loginWindow.closed) {
+          dispatch(loadGoogleProfile());
+          if (timer) {
+            clearInterval(timer);
+          }
+        }
+      }, 500);
+    }
   };
 
-  useDebugValue(client);
-  return [client, requestToken];
+  return [null, handleLogin];
 };
 
 export default useGoogleLogin;
