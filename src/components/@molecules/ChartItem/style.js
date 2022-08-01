@@ -2,11 +2,11 @@ import { Span } from '@atoms/Text/style';
 import styled from 'styled-components';
 
 export const Rank = styled('span')`
-  margin: auto 0 auto 1.5vw;
+  margin: auto;
 `;
 
 export const CoverImageContainer = styled('div')`
-  margin: auto 1.5vw;
+  margin: auto;
   cursor: pointer;
   & img {
     padding: 4px;
@@ -15,25 +15,43 @@ export const CoverImageContainer = styled('div')`
 `;
 
 export const MusicListItemContainer = styled('li')`
-  margin: 1.5vh auto;
-  display: flex;
+  margin: 1rem auto;
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 1em;
+  grid-template-columns: 42px 32px 64px 328px 222px 262px auto 130px 130px;
   background: #fff;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 24px;
   border-radius: 6px;
   transition: box-shadow 0.8s ease-in-out;
 
+  div[class*='flex-container'],
+  a[class*='flex-container'] {
+    display: flex;
+    align-items: center;
+
+    input {
+      margin: auto 19px;
+    }
+  }
+
+  div[class*='action-container'] {
+    cursor: pointer;
+  }
+
+  a {
+    ${Span} {
+      color: var(--font-plain-color);
+      margin: auto 1rem;
+    }
+  }
+
   ${Span}.title {
-    width: 12vw;
     cursor: pointer;
   }
   ${Span}.artist-name {
-    width: 10vw;
-    font-weight: 400;
     color: rgba(0, 0, 0, 0.45);
-  }
-  ${Span} {
-    margin: auto 1.5vw;
-    display: inline-block;
+    margin: auto 1.4rem;
   }
 
   :hover {
@@ -42,8 +60,8 @@ export const MusicListItemContainer = styled('li')`
 `;
 
 export const AlbumName = styled('span')`
-  margin: auto 0;
-  width: 10vw;
+  margin: 1rem;
+  color: rgba(0, 0, 0, 0.85);
   display: inline-block;
   font-weight: 500;
   overflow: hidden;
@@ -53,8 +71,7 @@ export const AlbumName = styled('span')`
 `;
 
 export const YoutubeIcon = styled('span')`
-  margin: auto auto auto 15vw;
-  width: 4vw;
+  margin: auto;
   display: inline-block;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.45);
@@ -66,7 +83,7 @@ export const YoutubeIcon = styled('span')`
 `;
 
 export const HeartIcon = styled('span')`
-  margin: auto 4vw auto auto;
+  margin: auto;
 
   & svg {
     cursor: pointer;

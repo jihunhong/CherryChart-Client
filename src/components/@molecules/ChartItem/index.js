@@ -1,28 +1,13 @@
+import LinkHOC from '@atoms/LinkHOC';
 import Text from '@atoms/Text';
 import useAddItem from '@hooks/useAddItem';
 import { Avatar } from 'antd';
 import { useRouter } from 'next/dist/client/router';
 import { BiHeart } from 'react-icons/bi';
 import { FaYoutube } from 'react-icons/fa';
-import {
-  AlbumName,
-  CoverImageContainer,
-  HeartIcon,
-  MusicListItemContainer,
-  Rank,
-  YoutubeIcon,
-} from './style';
+import { AlbumName, CoverImageContainer, HeartIcon, MusicListItemContainer, Rank, YoutubeIcon } from './style';
 
-const ChartItem = ({
-  rank,
-  title,
-  artistName,
-  albumName,
-  video,
-  albumId,
-  middleCoverImage,
-  smallCoverImage,
-}) => {
+const ChartItem = ({ rank, title, artistName, albumName, video, albumId, middleCoverImage, smallCoverImage }) => {
   const [handleMusic] = useAddItem({
     title,
     artistName,
@@ -30,35 +15,48 @@ const ChartItem = ({
     smallCoverImage,
     videoId: video?.videoId,
   });
-  const router = useRouter();
-
-  const gotoAlbumDetail = () => {
-    router.push(`/album/${albumId}`);
-  };
 
   return (
     <MusicListItemContainer>
-      <Rank>{`0${rank}`?.slice(-2)}</Rank>
+      <div className="flex-container">
+        <input type="checkbox" />
+      </div>
+      <div className="flex-container">
+        <Rank>{`0${rank}`?.slice(-2)}</Rank>
+      </div>
 
-      <CoverImageContainer onClick={handleMusic}>
-        <Avatar shape="square" size={64} src={smallCoverImage} />
+      <CoverImageContainer>
+        <LinkHOC className="flex-container" href={`/album/${albumId}`}>
+          <Avatar shape="square" size={64} src={smallCoverImage} />
+        </LinkHOC>
       </CoverImageContainer>
 
-      <Text text={title} className="title" onClick={handleMusic} ellipsis />
+      <LinkHOC className="flex-container" href={`/album/${albumId}`}>
+        <Text text={title} className="title" ellipsis />
+      </LinkHOC>
 
-      <Text text={artistName} className="artist-name" ellipsis />
+      <LinkHOC className="flex-container" href={`/album/${albumId}`}>
+        <Text text={artistName} className="artist-name" ellipsis />
+      </LinkHOC>
 
-      <AlbumName onClick={gotoAlbumDetail}>{albumName}</AlbumName>
+      <LinkHOC className="flex-container" href={`/album/${albumId}`}>
+        <AlbumName>{albumName}</AlbumName>
+      </LinkHOC>
 
-      {video?.videoId && (
-        <YoutubeIcon onClick={handleMusic}>
-          <FaYoutube />
-        </YoutubeIcon>
-      )}
+      <div className="divider" />
+      <div className="flex-container action-container" onClick={handleMusic}>
+        {video?.videoId && (
+          <YoutubeIcon>
+            <FaYoutube />
+          </YoutubeIcon>
+        )}
+      </div>
 
-      <HeartIcon>
-        <BiHeart />
-      </HeartIcon>
+      <div className="flex-container action-container">
+        <HeartIcon>
+          <BiHeart />
+        </HeartIcon>
+      </div>
     </MusicListItemContainer>
   );
 };

@@ -11,10 +11,10 @@ const Chart = () => {
   return (
     <ChartContainer>
       <Title level={3} text="Most Popular" />
-      <Text type="secondary" text={`${chartData?.length} Songs`} />
+      <Text type="secondary" text={`${chartData?.length} Albums`} />
 
       <MusicList>
-        {chartData.map((item, i) => (
+        {chartData.map(item => (
           <ChartItem rank={item.rank} {...item.music} key={item.rank} />
         ))}
       </MusicList>
