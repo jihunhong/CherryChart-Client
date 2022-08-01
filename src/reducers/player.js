@@ -20,6 +20,10 @@ const playerSlice = createSlice({
         state.selectedIndex = parseInt(action.payload, 10);
       }
     },
+    addMultiMusic(state, action) {
+      state.selectedIndex = state.playList?.length > 0 ? state.selectedIndex : 0;
+      state.playList = [...state.playList, ...action.payload];
+    },
     addMusicToPlayList(state, action) {
       state.selectedIndex = state.playList?.length > 0 ? state.selectedIndex : 0;
       state.playList.push(action.payload);

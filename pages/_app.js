@@ -23,7 +23,7 @@ const App = ({ Component, pageProps }) => {
       </Head>
       <GoogleAnalytics />
       {getLayout(<Component {...pageProps} />)}
-      {/* <Player /> */}
+      <Player />
     </>
   );
 };

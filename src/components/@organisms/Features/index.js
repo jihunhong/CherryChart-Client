@@ -15,32 +15,12 @@ const Features = () => {
       <FeatureContainer>
         <div className="grid">
           <FlexColumn gutter={[0, 22]}>
-            <Image
-              src={`${imgCdn}/feature_chart.png?w=636&h=488&auto=format`}
-              width={2128}
-              height={1635}
-              priority
-            />
-            <Image
-              src={`${imgCdn}/feature_albums.png?w=636&h=486&auto=format`}
-              className="albums"
-              width={788}
-              height={602}
-            />
+            <Image src={`${imgCdn}/feature_chart.png?w=636&h=488&auto=format`} width={2128} height={1635} priority />
+            <Image src={`${imgCdn}/feature_albums.png?w=636&h=486&auto=format`} className="albums" width={788} height={602} />
           </FlexColumn>
           <FlexColumn gutter={[0, 32]} className="play-column">
-            <Image
-              src={`${imgCdn}/feature_player.png?w=502&h=608&auto=format`}
-              width={818}
-              height={992}
-              priority
-            />
-            <Image
-              src={`${imgCdn}/feature_album.png?w=502&h=370&auto=format`}
-              width={1719}
-              height={1267}
-              priority
-            />
+            <Image src={`${imgCdn}/feature_player.png?w=502&h=608&auto=format`} width={818} height={992} priority />
+            <Image src={`${imgCdn}/feature_album.png?w=502&h=370&auto=format`} width={1719} height={1267} priority />
           </FlexColumn>
           <div />
           <div className="feature-description">
@@ -49,12 +29,12 @@ const Features = () => {
             <Text text="Take a look at the songs that are counted every day." />
             <Row>
               <LinkHOC href="/chart">
-                <Button type="primary" icon={<BsFillPlayFill color={'#fff'} fill={'#fff'} />}>
+                <Button type="primary" icon={<BsFillPlayFill color="#fff" />}>
                   DISCOVER
                 </Button>
               </LinkHOC>
               <LinkHOC href="/browse">
-                <Button type="primary" icon={<BiWorld color={'#fff'} fill={'#fff'} />}>
+                <Button type="primary" icon={<BiWorld color="#fff" />}>
                   BROWSE
                 </Button>
               </LinkHOC>

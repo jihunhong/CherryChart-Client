@@ -1,4 +1,3 @@
-import { loadMyYoutubePlaylist } from '@actions/userActions';
 import LinkHOC from '@atoms/LinkHOC';
 import ProfileCircle from '@atoms/ProfileCircle';
 import Text from '@atoms/Text';
@@ -6,23 +5,18 @@ import Title from '@atoms/Title';
 import { ACCOUNT_ARTIST_IMAGE } from '@config/settings';
 import useGoogleLogin from '@hooks/oauth2/useGoogleLogin';
 import { Button, Checkbox, Divider, Form, Input, Row } from 'antd';
-import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 import GoogleButton from 'react-google-button';
 import { BiInfoCircle } from 'react-icons/bi';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { LoginContainer, LoginPageGlobalStyle } from './style';
 
 const LoginPage = () => {
-  const dispatch = useDispatch();
+  const router = useRouter();
   const { artistList } = useSelector(state => state.artist);
   const [_, handleLogin] = useGoogleLogin();
   const [random] = useState(Math.floor(Math.random() * 10) % ACCOUNT_ARTIST_IMAGE.length);
-  const me = useSelector(state => state.user.me);
-  useEffect(() => {
-    if (me) {
-      dispatch(loadMyYoutubePlaylist());
-    }
-  }, [me]);
 
   return (
     <>

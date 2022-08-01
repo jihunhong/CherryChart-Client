@@ -2,7 +2,7 @@ import { Span } from '@atoms/Text/style';
 import styled from 'styled-components';
 
 export const Rank = styled('span')`
-  margin: auto;
+  margin: auto 0 auto 28px;
 `;
 
 export const CoverImageContainer = styled('div')`
@@ -15,11 +15,10 @@ export const CoverImageContainer = styled('div')`
 `;
 
 export const MusicListItemContainer = styled('li')`
-  margin: 1rem auto;
   display: grid;
   grid-auto-flow: column;
   grid-column-gap: 1em;
-  grid-template-columns: 42px 32px 64px 328px 222px 262px auto 130px 130px;
+  grid-template-columns: 54px 64px 328px 222px 262px auto 130px 130px;
   background: #fff;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 24px;
   border-radius: 6px;
@@ -29,10 +28,6 @@ export const MusicListItemContainer = styled('li')`
   a[class*='flex-container'] {
     display: flex;
     align-items: center;
-
-    input {
-      margin: auto 19px;
-    }
   }
 
   div[class*='action-container'] {

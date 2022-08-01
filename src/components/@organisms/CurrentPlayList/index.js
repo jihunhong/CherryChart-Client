@@ -1,7 +1,8 @@
 import AlbumCover from '@atoms/AlbumCover';
 import playerSlice from '@reducers/player';
 import { Empty, Typography } from 'antd';
-import { AiOutlineCloseCircle } from 'react-icons/ai';
+import { AiFillCloseCircle, AiOutlineCloseCircle } from 'react-icons/ai';
+import { MdDelete } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
 import { PlayListDivision, PlayListItem, PlayListItemsContainer } from './style';
 
@@ -27,12 +28,7 @@ const CurrentPlayList = () => {
             /* 같은 곡이 플레이리스트 내에 여러개가 존재할수도 있기 때문에! key를 합성해서 구성 */
             // eslint-disable-next-line
             <PlayListItem key={`${item?.videoId}-${index}`}>
-              <AlbumCover
-                size={53}
-                src={item?.smallCoverImage}
-                data-index={index}
-                onClick={handleOnClick}
-              />
+              <AlbumCover size={53} src={item?.smallCoverImage} data-index={index} onClick={handleOnClick} />
               <PlayListDivision data-index={index} onClick={handleOnClick}>
                 <Typography.Title level={5} ellipsis>
                   {item.title}
@@ -41,12 +37,7 @@ const CurrentPlayList = () => {
                   {item.artistName}
                 </Typography.Text>
               </PlayListDivision>
-              <AiOutlineCloseCircle
-                size={22}
-                onClick={handleRemove}
-                data-index={index}
-                className="delete-action"
-              />
+              <MdDelete size={22} onClick={handleRemove} data-index={index} className="delete-action" />
             </PlayListItem>
           ))
         )}

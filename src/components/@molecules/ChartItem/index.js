@@ -1,13 +1,13 @@
 import LinkHOC from '@atoms/LinkHOC';
 import Text from '@atoms/Text';
 import useAddItem from '@hooks/useAddItem';
+import useCheckBox from '@hooks/useCheckBox';
 import { Avatar } from 'antd';
-import { useRouter } from 'next/dist/client/router';
 import { BiHeart } from 'react-icons/bi';
 import { FaYoutube } from 'react-icons/fa';
 import { AlbumName, CoverImageContainer, HeartIcon, MusicListItemContainer, Rank, YoutubeIcon } from './style';
 
-const ChartItem = ({ rank, title, artistName, albumName, video, albumId, middleCoverImage, smallCoverImage }) => {
+const ChartItem = ({ id, rank, title, artistName, albumName, video, albumId, middleCoverImage, smallCoverImage }) => {
   const [handleMusic] = useAddItem({
     title,
     artistName,
@@ -18,9 +18,6 @@ const ChartItem = ({ rank, title, artistName, albumName, video, albumId, middleC
 
   return (
     <MusicListItemContainer>
-      <div className="flex-container">
-        <input type="checkbox" />
-      </div>
       <div className="flex-container">
         <Rank>{`0${rank}`?.slice(-2)}</Rank>
       </div>

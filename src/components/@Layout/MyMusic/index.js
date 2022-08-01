@@ -19,10 +19,7 @@ const MyMusic = () => {
           <MenuItem key="6" icon={<HiOutlineClock />}>
             Played History
           </MenuItem>
-          <MenuItem key="7" icon={<AiOutlineFile />}>
-            Local Files
-          </MenuItem>
-          <MenuItem key="8" icon={<BiHeart />}>
+          <MenuItem key="7" icon={<BiHeart />}>
             Favorite
           </MenuItem>
         </Menu>

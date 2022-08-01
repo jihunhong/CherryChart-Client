@@ -12,6 +12,8 @@ export const GlobalStyle = createGlobalStyle`
     --melon-color: #00cd3c;
     --genie-color: #0095ff;
     --bugs-color: #ff3b28;
+    --light-gray-color: #dadada;
+    --gray-color: #a3a0a0;
   }
   h1, h2, h3, h4 {
     color: var(--font-plain-color);

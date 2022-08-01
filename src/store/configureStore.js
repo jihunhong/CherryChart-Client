@@ -1,12 +1,13 @@
 import rootReducer, { persistedReducer } from '@reducers/index';
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { createWrapper } from 'next-redux-wrapper';
-import logger from 'redux-logger';
+import { createLogger } from 'redux-logger';
 import { persistStore } from 'redux-persist';
 
 const isDev = false;
 const createStore = () => {
   const middleware = getDefaultMiddleware();
+  const logger = createLogger();
   if (isDev) {
     middleware.push(logger);
   }
