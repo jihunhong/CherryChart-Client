@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const TrackListItemContainer = styled('li')`
+  width: 100%;
   margin: auto auto;
   display: flex;
   transition: box-shadow 0.8s ease-in-out;
