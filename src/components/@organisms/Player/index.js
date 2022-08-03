@@ -15,17 +15,7 @@ const Player = () => {
   const handleExpand = useCallback(() => {
     dispatch(playerSlice.actions.togglePlayList());
   }, []);
-  const handlePip = useCallback(() => {
-    const video = document.querySelector('video');
-    if (document.pictureInPictureElement) {
-      document.exitPictureInPicture();
-    }
-    if (document.pictureInPictureEnabled) {
-      if (video) {
-        video.requestPictureInPicture();
-      }
-    }
-  }, []);
+  const handleInsertPlaylist = useCallback(() => {}, []);
 
   return (
     <PlayerContainer>
@@ -40,9 +30,7 @@ const Player = () => {
         {/* <BsPip size={28} onClick={handlePip} /> */}
       </PlayerActionContainer>
 
-      <PlayerBackground isExpand={isExpand}>
-        {isExpand ? <CurrentPlayList /> : null}
-      </PlayerBackground>
+      <PlayerBackground isExpand={isExpand}>{isExpand ? <CurrentPlayList /> : null}</PlayerBackground>
     </PlayerContainer>
   );
 };

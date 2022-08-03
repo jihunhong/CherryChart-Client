@@ -9,15 +9,21 @@ const YoutubePlayer = () => {
     const index = selectedIndex + 1;
     dispatch(playerSlice.actions.updatePlayingIndex(index));
   };
+  const onReadyEnd = event => {
+    window.YTPlayer = event.target;
+    window.YTPlayer.playVideoAt(selectedIndex);
+    window.YTPlayer.stopVideo();
+    // persist된 index에 해당하는 영상정보를 load만하고 재생은 하지 않도록;
+  };
 
   return (
     <>
       {playList.length ? (
         <YouTube
           width="420"
-          videoId={playList[selectedIndex]?.videoId}
-          opts={{ playerVars: { autoplay: 0, controls: 0 } }}
+          opts={{ playerVars: { autoplay: 0, controls: 1, playlist: playList.map(el => el.videoId).join(',') } }}
           onEnd={onPlayEnd}
+          onReady={onReadyEnd}
         />
       ) : null}
     </>

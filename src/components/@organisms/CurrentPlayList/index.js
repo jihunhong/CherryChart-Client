@@ -8,10 +8,15 @@ import { PlayListDivision, PlayListItem, PlayListItemsContainer } from './style'
 
 const CurrentPlayList = () => {
   const dispatch = useDispatch();
-  const { playList } = useSelector(state => state.player);
+  const playList = useSelector(state => state.player.playList);
 
   const handleOnClick = e => {
-    dispatch(playerSlice.actions.playSelectedItem(e.currentTarget.dataset.index));
+    const playerList = playList.filter(el => el.video);
+    const index = playerList.findIndex(item => item.id === parseInt(e.currentTarget.dataset.id));
+    dispatch(playerSlice.actions.playSelectedItem(index));
+    if (window.YTPlayer) {
+      window.YTPlayer.playVideoAt(index);
+    }
   };
 
   const handleRemove = e => {
@@ -28,8 +33,8 @@ const CurrentPlayList = () => {
             /* 같은 곡이 플레이리스트 내에 여러개가 존재할수도 있기 때문에! key를 합성해서 구성 */
             // eslint-disable-next-line
             <PlayListItem key={`${item?.videoId}-${index}`}>
-              <AlbumCover size={53} src={item?.smallCoverImage} data-index={index} onClick={handleOnClick} />
-              <PlayListDivision data-index={index} onClick={handleOnClick}>
+              <AlbumCover size={53} src={item?.smallCoverImage} data-index={index} data-id={item?.id} onClick={handleOnClick} />
+              <PlayListDivision data-index={index} data-id={item?.id} onClick={handleOnClick}>
                 <Typography.Title level={5} ellipsis>
                   {item.title}
                 </Typography.Title>
