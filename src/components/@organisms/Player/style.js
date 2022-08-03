@@ -28,6 +28,11 @@ export const PlayerHeader = styled('div')`
   background: #fff;
   border-bottom: 0px;
   cursor: pointer;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
 `;
 
 export const PlayerActionContainer = styled('div')`
@@ -40,6 +45,9 @@ export const PlayerActionContainer = styled('div')`
   grid-auto-flow: column;
   column-gap: 16px;
   justify-content: start;
+  svg {
+    cursor: pointer;
+  }
 `;
 export const PlayerBackground = styled('div')`
   display: flex;

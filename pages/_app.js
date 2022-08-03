@@ -1,4 +1,5 @@
 import GoogleAnalytics from '@atoms/GoogleAnalytics';
+import useFetchProfile from '@hooks/useFetchProfile';
 import wrapper from '@store/configureStore';
 import 'antd/dist/antd.css';
 import dynamic from 'next/dynamic';
@@ -11,6 +12,7 @@ const Player = dynamic(() => import('@organisms/Player'));
 
 const App = ({ Component, pageProps }) => {
   const getLayout = Component.getLayout || (page => page);
+  useFetchProfile();
 
   return (
     <>
@@ -23,6 +25,7 @@ const App = ({ Component, pageProps }) => {
       </Head>
       <GoogleAnalytics />
       {getLayout(<Component {...pageProps} />)}
+
       <Player />
     </>
   );
