@@ -1,3 +1,4 @@
+import { createPlaylist } from '@actions/playlistActions';
 import { loadMyYoutubePlaylist, loadGoogleProfile } from '@actions/userActions';
 import { createSlice } from '@reduxjs/toolkit';
 
@@ -34,7 +35,10 @@ const userSlice = createSlice({
       })
       .addCase(loadMyYoutubePlaylist.fulfilled, (state, action) => {
         state.my_youtube_playlist = action.payload;
-      }),
+      })
+      .addCase(createPlaylist.pending, (state, action) => {})
+      .addCase(createPlaylist.fulfilled, (state, action) => {})
+      .addCase(createPlaylist.rejected, (state, action) => {}),
 });
 
 export default userSlice;

@@ -1,4 +1,5 @@
 import { Span } from '@atoms/Text/style';
+import media from '@lib/media';
 import styled from 'styled-components';
 
 export const Rank = styled('span')`
@@ -16,9 +17,13 @@ export const CoverImageContainer = styled('div')`
 
 export const MusicListItemContainer = styled('li')`
   display: grid;
+  width: 100%;
   grid-auto-flow: column;
   grid-column-gap: 1em;
   grid-template-columns: 54px 64px 328px 222px 262px auto 130px 130px;
+  ${media.desktop`
+    grid-template-columns: 54px 64px 268px 222px 262px auto 80px 80px;
+  `}
   background: #fff;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 24px;
   border-radius: 6px;

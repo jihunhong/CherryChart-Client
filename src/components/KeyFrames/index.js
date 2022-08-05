@@ -1,12 +1,12 @@
 import { keyframes } from 'styled-components';
 
-export const horizontal_render = keyframes`
+export const playlistRenderAnim = keyframes`
     from {
-      height : 0%;
+      height : 0;
     }
 
     to {
-      height : 100%;
+      height : 200px;
     }
 `;
 

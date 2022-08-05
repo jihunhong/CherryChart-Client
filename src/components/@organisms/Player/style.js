@@ -1,21 +1,32 @@
 import { Headings } from '@atoms/Title/style';
-import { horizontal_render } from '@components/KeyFrames';
+import { playlistRenderAnim } from '@components/KeyFrames';
 import styled from 'styled-components';
 
 export const PlayerContainer = styled('div')`
   background-color: #fff;
   position: fixed;
   bottom: 0;
-  right: 1vw;
+  right: 1rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  width: 30%;
-  transition: 0.5s;
+  width: 400px;
+  height: max-content;
   z-index: 9000;
 
   & iframe {
     width: 100%;
     height: auto;
     aspect-ratio: 16/9;
+  }
+
+  & .draggable-container {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: -48px;
+    right: -1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   & ${Headings} {
@@ -55,10 +66,10 @@ export const PlayerBackground = styled('div')`
   border: 1px solid rgba(149, 157, 165, 0.2);
   border-top: 0px solid;
 
-  height: ${props => (props.isExpand ? '25.5vh' : '0vh')};
-  animation-name: ${horizontal_render};
-  animation-duration: 1s;
-  animation-direction: ${props => (props.isExpand ? 'reverse' : 'normal')};
-  transition: 0.3s;
+  max-height: 200px;
+  animation-name: ${playlistRenderAnim};
+  animation-duration: 0.1s;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
 `;
 export const PlayListItemTitle = styled('div')``;
