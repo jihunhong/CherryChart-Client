@@ -2,13 +2,12 @@ import { createPlaylist } from '@actions/playlistActions';
 import Text from '@atoms/Text';
 import Title from '@atoms/Title';
 import TogglePlaylistButton from '@atoms/TogglePlaylistButton';
-import useDraggable from '@hooks/player/useDraggable';
+import ToggleSwitch from '@atoms/ToggleSwitch';
 import YoutubePlayer from '@molecules/YoutubePlayer';
 import CurrentPlayList from '@organisms/CurrentPlayList';
 import playerSlice from '@reducers/player';
-import { useCallback, useRef } from 'react';
-import { BiListPlus } from 'react-icons/bi';
-import { BsArrowsMove } from 'react-icons/bs';
+import { useCallback } from 'react';
+import { BiHeadphone, BiListPlus, BiMusic } from 'react-icons/bi';
 import { useDispatch, useSelector } from 'react-redux';
 import { PlayerActionContainer, PlayerBackground, PlayerContainer, PlayerHeader } from './style';
 
@@ -29,6 +28,9 @@ const Player = () => {
       }),
     );
   }, [playList]);
+  const onChange = () => {
+    console.log('asdfasdfadf');
+  };
 
   return (
     <PlayerContainer>
@@ -36,10 +38,12 @@ const Player = () => {
       <PlayerHeader onClick={handleExpand}>
         <Title level={3} text="Now Playing" />
         <Text type="secondary" text={`${playList.length} Items on the list`} />
+
         <TogglePlaylistButton />
       </PlayerHeader>
       <PlayerActionContainer>
         <BiListPlus size={28} onClick={handleInsertPlaylist} />
+        <ToggleSwitch onChange={onChange} />
       </PlayerActionContainer>
 
       {isExpand ? (

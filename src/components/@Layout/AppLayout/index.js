@@ -1,5 +1,6 @@
 import Content from '@atoms/Content';
 import { SIDEBAR_WIDTH } from '@config/index';
+import Footer from '@Layout/Footer';
 import Header from '@Layout/Header';
 import PopOverMenus from '@Layout/PopOverMenus';
 import ProfileNav from '@Layout/ProfileNav';
@@ -21,8 +22,8 @@ const AppLayout = ({ children }) => {
           <Content>
             <>{children}</>
           </Content>
-          {/* <Footer>Footer</Footer> */}
         </Layout>
+        <Footer />
       </Layout>
     </>
   );

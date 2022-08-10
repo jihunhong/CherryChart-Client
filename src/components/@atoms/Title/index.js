@@ -6,9 +6,9 @@ const Title = ({ children, text = '', level, ellipsis, align, type, style, class
     <Headings
       ellipsis={ellipsis ? <></> : false}
       level={level}
-      style={{ ...style, textAlign: align }}
+      style={{ marginBottom: 0, textAlign: align, ...style }}
       type={type}
-      className={className}
+      className={`typography-title${className ? ` ${className}` : ''}`}
     >
       {icon}
       {text || children}

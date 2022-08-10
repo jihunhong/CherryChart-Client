@@ -41,21 +41,21 @@ export const PlayerHeader = styled('div')`
   cursor: pointer;
 
   svg {
+    float: right;
+    cursor: pointer;
+    z-index: 1000;
     width: 24px;
     height: 24px;
   }
 `;
 
 export const PlayerActionContainer = styled('div')`
-  padding-top: 14px;
-  padding-left: 14px;
-  padding-bottom: 9px;
+  padding: 14px;
   border: 1px solid rgba(149, 157, 165, 0.2);
   background: #fff;
-  display: grid;
-  grid-auto-flow: column;
-  column-gap: 16px;
-  justify-content: start;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   svg {
     cursor: pointer;
   }

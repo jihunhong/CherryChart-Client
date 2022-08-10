@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { Span } from './style';
 
-const Text = ({ text, type = 'primary', icon, ellipsis, ...rest }) => {
+const Text = ({ text, type = 'primary', icon, ellipsis, className, ...rest }) => {
   return (
-    <Span type={type} {...rest} ellipsis={ellipsis}>
+    <Span type={type} {...rest} ellipsis={ellipsis} className={`typography-text${className ? ` ${className}` : ''}`}>
       {icon}
       {text}
     </Span>

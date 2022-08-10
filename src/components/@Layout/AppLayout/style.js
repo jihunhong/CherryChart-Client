@@ -14,6 +14,10 @@ export const GlobalStyle = createGlobalStyle`
     --bugs-color: #ff3b28;
     --light-gray-color: #dadada;
     --gray-color: #a3a0a0;
+    --font-gray-color: #868484;
+  }
+  body {
+    overscroll-behavior: none;
   }
   h1, h2, h3, h4 {
     color: var(--font-plain-color);
@@ -26,6 +30,9 @@ export const GlobalStyle = createGlobalStyle`
     position: relative;
     flex-direction: column;
     align-items: stretch;
+    > .ant-layout {
+      background: #fff;
+    }
   }
 
   .app-content {
