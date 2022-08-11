@@ -12,7 +12,7 @@ const RecentlySongs = () => {
   return (
     <section className="recently-updated-songs">
       <Title level={4} text="Recently Songs" />
-      <Slider>
+      <Slider occupy={1}>
         {Array(recentSongs?.length || 0 / perPageItemCount)
           .fill()
           .map((_, i) => (

@@ -4,10 +4,14 @@ import styled from 'styled-components';
 export const BarPlayerContainer = styled.div`
   .youtube-container {
     position: absolute;
-    bottom: 121px;
+    bottom: 74px;
     left: 13px;
     width: 480px;
     height: 270px;
+    & iframe {
+      width: 480px;
+      height: 270px;
+    }
   }
   position: fixed;
   bottom: 0;
@@ -33,7 +37,8 @@ export const BarPlayerContainer = styled.div`
     background: linear-gradient(45deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
   }
 
-  > div {
+  > .played-info,
+  .player-action {
     display: flex;
     align-items: center;
     z-index: 1000;

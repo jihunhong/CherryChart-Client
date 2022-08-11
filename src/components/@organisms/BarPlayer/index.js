@@ -2,28 +2,28 @@ import AlbumCover from '@atoms/AlbumCover';
 import { FlexColumn } from '@atoms/FlexColumn/style';
 import Text from '@atoms/Text';
 import Title from '@atoms/Title';
+import useBarPlayer from '@hooks/player/useBarPlayer';
 import useCurrent from '@hooks/player/useCurrent';
+import useToggle from '@hooks/util/useToggle';
 import YoutubePlayer from '@molecules/YoutubePlayer';
-import { BiPlay, BiRepeat, BiShuffle, BiSkipNext, BiSkipPrevious, BiVolume, BiVolumeFull } from 'react-icons/bi';
+import { BiCaretUp, BiPause, BiPlay, BiRepeat, BiShuffle, BiSkipNext, BiSkipPrevious, BiStop, BiVolume, BiVolumeFull } from 'react-icons/bi';
 import { BarPlayerContainer } from './style';
 
 const BarPlayer = () => {
   const [currentMusic] = useCurrent();
-  const onClick = () => {
-    window.YTPlayer.playVideo();
-  };
+  const { playing, toggler, playerHandler, nextHandler, previouseHandler } = useBarPlayer();
 
   return (
     <BarPlayerContainer>
-      {/* <YoutubePlayer /> */}
+      <YoutubePlayer onStateChange={toggler} />
       <div className="player-action">
-        <div className="icon-container">
+        <div className="icon-container" onClick={previouseHandler}>
           <BiSkipPrevious size={28} />
         </div>
-        <div className="icon-container" onClick={onClick}>
-          <BiPlay size={34} />
+        <div className="icon-container" onClick={playerHandler}>
+          {playing ? <BiPause size={34} /> : <BiPlay size={34} />}
         </div>
-        <div className="icon-container">
+        <div className="icon-container" onClick={nextHandler}>
           <BiSkipNext size={28} />
         </div>
       </div>
@@ -47,6 +47,9 @@ const BarPlayer = () => {
         </div>
         <div className="icon-container">
           <BiShuffle size={18} />
+        </div>
+        <div className="icon-container">
+          <BiCaretUp size={18} />
         </div>
       </div>
     </BarPlayerContainer>
