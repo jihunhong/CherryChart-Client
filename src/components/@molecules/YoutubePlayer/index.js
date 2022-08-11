@@ -24,7 +24,7 @@ const YoutubePlayer = ({ onStateChange }) => {
             onStateChange={onStateChange}
             containerClassName="youtube-container"
             width="200"
-            opts={{ playerVars: { autoplay: 0, controls: 0, playlist: playList.map(el => el.videoId).join(',') } }}
+            opts={{ playerVars: { autoplay: 0, controls: 1, playlist: playList.map(el => el.videoId).join(',') } }}
             onEnd={onPlayEnd}
             onReady={onReadyEnd}
           />

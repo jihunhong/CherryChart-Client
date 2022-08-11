@@ -4,7 +4,7 @@ import { Headings } from './style';
 const Title = ({ children, text = '', level, ellipsis, align, type, style, className, icon }) => {
   return (
     <Headings
-      ellipsis={ellipsis ? <></> : false}
+      ellipsis={ellipsis ? <>...</> : false}
       level={level}
       style={{ marginBottom: 0, textAlign: align, ...style }}
       type={type}

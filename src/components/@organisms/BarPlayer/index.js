@@ -11,11 +11,11 @@ import { BarPlayerContainer } from './style';
 
 const BarPlayer = () => {
   const [currentMusic] = useCurrent();
-  const { playing, toggler, playerHandler, nextHandler, previouseHandler } = useBarPlayer();
+  const { playing, onStateChange, playerHandler, nextHandler, previouseHandler } = useBarPlayer();
 
   return (
     <BarPlayerContainer>
-      <YoutubePlayer onStateChange={toggler} />
+      <YoutubePlayer onStateChange={onStateChange} />
       <div className="player-action">
         <div className="icon-container" onClick={previouseHandler}>
           <BiSkipPrevious size={28} />
