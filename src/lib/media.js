@@ -3,7 +3,8 @@ import { css } from 'styled-components';
 export const sizes = {
   phone: 480,
   tablet: 1024,
-  desktop: 1280,
+  laptop: 1440,
+  desktop: 1920,
 };
 
 const media = Object.keys(sizes).reduce((acc, label) => {

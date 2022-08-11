@@ -20,7 +20,8 @@ const YoutubePlayer = () => {
     <>
       {playList.length ? (
         <YouTube
-          width="420"
+          containerClassName="youtube-container"
+          width="200"
           opts={{ playerVars: { autoplay: 0, controls: 1, playlist: playList.map(el => el.videoId).join(',') } }}
           onEnd={onPlayEnd}
           onReady={onReadyEnd}
