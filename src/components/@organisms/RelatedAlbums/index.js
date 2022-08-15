@@ -7,16 +7,16 @@ import { RelatedAlbumsContainer } from './style';
 const RelatedAlbums = ({ dataSource = [], artist = '' }) => {
   return (
     <RelatedAlbumsContainer>
-      <h2>{`More by ${artist}`}</h2>
-      <Row>
-        <Col span={24}>
-          <Slider
-            occupy="12.5%"
-            dataSource={dataSource}
-            renderItem={item => <CarouselItem albumId={item.id} {...item} />}
-          />
-        </Col>
-      </Row>
+      {dataSource?.length ? (
+        <>
+          <h2>{`More by ${artist}`}</h2>
+          <Row>
+            <Col span={24}>
+              <Slider occupy="12.5%" dataSource={dataSource} renderItem={item => <CarouselItem albumId={item.id} {...item} />} />
+            </Col>
+          </Row>
+        </>
+      ) : null}
     </RelatedAlbumsContainer>
   );
 };

@@ -1,11 +1,8 @@
 import { FlexColumn } from '@atoms/FlexColumn/style';
 import LinkHOC from '@atoms/LinkHOC';
+import Logo from '@atoms/Logo';
 import Text from '@atoms/Text';
-import Title from '@atoms/Title';
-import { Row } from 'antd';
-import { BiGlobe, BiMailSend, BiMusic, BiWorld } from 'react-icons/bi';
-import { BsPeople } from 'react-icons/bs';
-import { FaApple, FaGithub, FaPage4 } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 import { FiMail } from 'react-icons/fi';
 import { Author, FooterContainer, SiteLinks } from './style';
 
@@ -15,7 +12,7 @@ const Footer = () => {
       <div className="grid-column">
         <FlexColumn>
           <div className="site-footer">
-            <h1>CHERRY CHART</h1>
+            <Logo />
             <Text text="Enjoy your music life and Kpop charts on YouTube. It's free!" />
           </div>
           <div>

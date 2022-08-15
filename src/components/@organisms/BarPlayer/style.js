@@ -51,12 +51,20 @@ export const BarPlayerContainer = styled.div`
     flex-wrap: nowrap;
     overflow: hidden;
     ${AlbumCoverContainer} {
-      flex: 0 0 38px;
+      flex: 0 0 46px;
     }
-    ${FlexColumn} {
+    ${FlexColumn}.meta {
       width: 0;
-      flex: 1 1 calc(280px - 16px - 38px);
-      margin: 0 16px;
+      flex: 1 1 calc(280px - 12px - 46px - 32px);
+      margin: 0 12px;
+      a {
+        width: 100%;
+      }
+    }
+    ${FlexColumn}.feature {
+      width: 0;
+      flex: 0 0 32px;
+      align-items: center;
     }
     & *[class*='typography'] {
       color: #fff;
@@ -74,6 +82,9 @@ export const BarPlayerContainer = styled.div`
     .icon-container {
       margin: 0 12px;
       cursor: pointer;
+      &.active svg {
+        opacity: 1;
+      }
       svg {
         opacity: 0.5;
         vertical-align: middle;

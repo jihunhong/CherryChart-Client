@@ -13,7 +13,7 @@ import userSlice from './user';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['player'],
+  // whitelist: ['player'],
 };
 
 const rootReducer = (state, action) => {
@@ -35,7 +35,7 @@ const rootReducer = (state, action) => {
         album: albumSlice.reducer,
         content: contentSlice.reducer,
         artist: artistSlice.reducer,
-        user: userSlice.reducer
+        user: userSlice.reducer,
       });
       return combineReducer(state, action);
     }

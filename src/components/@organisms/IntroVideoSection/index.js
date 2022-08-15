@@ -3,7 +3,7 @@ import Title from '@atoms/Title';
 import { LANDING_BACKGROUND_VIDEO_ID } from '@config/settings';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaGlobeAsia } from 'react-icons/fa';
 import { IntroSectionContainer, LetterBox, VideoWrapper } from './style';
 
 const YouTube = dynamic(() => import('react-youtube'), {

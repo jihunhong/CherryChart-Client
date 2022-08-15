@@ -17,6 +17,7 @@ export const getServerSideProps = wrapper.getServerSideProps(async context => {
   await context.store.dispatch(
     loadArtistsAlbum({
       artistName: context.store.getState().album.artistName,
+      site: 'melon',
     }),
   );
 });

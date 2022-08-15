@@ -6,6 +6,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
   :root {
     --primary-color: #1890ff;
+    --light-plain-color: #3657dc;
     --font-plain-color: #262f57;
     --background-color: #fcfdfe;
     --sidebar-text-color: #939393;

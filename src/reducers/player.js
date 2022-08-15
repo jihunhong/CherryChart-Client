@@ -37,6 +37,7 @@ const playerSlice = createSlice({
               title: v.title,
               artistName: v.artistName,
               albumName: action.payload.albumName,
+              albumId: action.payload.albumId,
               smallCoverImage: action.payload.smallCoverImage,
               videoId: v.video.videoId,
             };

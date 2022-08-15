@@ -14,6 +14,7 @@ const ChartItem = ({ id, rank, title, artistName, albumName, video, albumId, mid
     albumName,
     smallCoverImage,
     videoId: video?.videoId,
+    albumId,
   });
 
   return (

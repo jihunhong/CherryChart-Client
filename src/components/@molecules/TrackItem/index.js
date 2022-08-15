@@ -1,12 +1,10 @@
 import useAddItem from '@hooks/useAddItem';
 import { TrackAddIcon } from '@organisms/ChartCarousel/style';
 import { FaYoutube } from 'react-icons/fa';
-import { useSelector } from 'react-redux';
 import * as Styled from './style';
 
-const TrackItem = ({ title, rank, videoId }) => {
-  const { artistName, albumName } = useSelector(state => state.album);
-  const [handleMusic] = useAddItem({ title, artistName, albumName, videoId });
+const TrackItem = ({ rank, title, artistName, albumName, albumId, videoId, smallCoverImage }) => {
+  const [handleMusic] = useAddItem({ title, artistName, albumId, albumName, videoId, smallCoverImage });
 
   return (
     <Styled.TrackListItemContainer>

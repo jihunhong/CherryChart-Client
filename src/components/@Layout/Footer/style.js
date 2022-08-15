@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Layout } from 'antd';
 import { SIDEBAR_WIDTH } from '@config/';
 import { FlexColumn } from '@atoms/FlexColumn/style';
+import { LogoContainer } from '@atoms/Logo/style';
 
 export const FooterContainer = styled(Layout.Footer)`
   background: #fff;
@@ -9,6 +10,9 @@ export const FooterContainer = styled(Layout.Footer)`
   padding-top: 0;
   padding-left: ${SIDEBAR_WIDTH}px;
   min-height: 300px;
+  ${LogoContainer} {
+    margin-bottom: 6px;
+  }
   > .grid-column {
     padding: 50px;
     display: grid;
