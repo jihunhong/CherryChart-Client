@@ -3,15 +3,19 @@ import { FlexColumn } from '@atoms/FlexColumn/style';
 import LinkHOC from '@atoms/LinkHOC';
 import Text from '@atoms/Text';
 import Title from '@atoms/Title';
+import useBarAction from '@hooks/player/useBarAction';
 import useBarPlayer from '@hooks/player/useBarPlayer';
 import useCurrent from '@hooks/player/useCurrent';
 import YoutubePlayer from '@molecules/YoutubePlayer';
 import { BiCaretUp, BiHeart, BiPause, BiPlay, BiRepeat, BiShuffle, BiSkipNext, BiSkipPrevious, BiVolumeFull } from 'react-icons/bi';
+import { useSelector } from 'react-redux';
 import { BarPlayerContainer } from './style';
 
 const BarPlayer = () => {
   const [currentMusic] = useCurrent();
   const { playing, onStateChange, playerHandler, nextHandler, previouseHandler } = useBarPlayer();
+  const { handleRepeat, handleShuffle } = useBarAction();
+  const loop = useSelector(state => state.player.loop);
 
   return (
     <BarPlayerContainer>
@@ -49,10 +53,10 @@ const BarPlayer = () => {
         <div className="icon-container">
           <BiVolumeFull size={18} />
         </div>
-        <div className="icon-container active">
-          <BiRepeat size={18} color="#fff" />
+        <div className={`icon-container ${loop ? 'active' : ''}`} onClick={handleRepeat}>
+          <BiRepeat size={18} />
         </div>
-        <div className="icon-container">
+        <div className="icon-container" onClick={handleShuffle}>
           <BiShuffle size={18} />
         </div>
         <div className="icon-container">

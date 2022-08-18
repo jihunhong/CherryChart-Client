@@ -5,6 +5,8 @@ const initialState = {
   isExpand: false,
   playList: [],
   selectedIndex: 0,
+  loop: false,
+  playing: false,
 };
 
 const playerSlice = createSlice({
@@ -13,6 +15,15 @@ const playerSlice = createSlice({
   reducers: {
     togglePlayList(state) {
       state.isExpand = !state.isExpand;
+    },
+    toggleRepeat(state) {
+      state.loop = !state.loop;
+    },
+    togglePlay(state) {
+      state.playing = !state.playing;
+    },
+    switchPlay(state, action) {
+      state.playing = action.payload;
     },
     updatePlayingIndex(state, action) {
       if (state.playList.length - 1 >= action.payload) {

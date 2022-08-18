@@ -14,7 +14,7 @@ const usePlayList = () => {
 
   useEffect(() => {
     if (storageList?.length === 0 && playList.length) {
-      setStorageList(playList.map(videoIdMapping));
+      setStorageList(playList.map(videoIdMapping).join(','));
     }
   }, [storageList, playList]);
 

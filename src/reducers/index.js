@@ -13,7 +13,7 @@ import userSlice from './user';
 const persistConfig = {
   key: 'root',
   storage,
-  // whitelist: ['player'],
+  whitelist: ['player'],
 };
 
 const rootReducer = (state, action) => {

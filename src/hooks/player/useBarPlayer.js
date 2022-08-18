@@ -5,27 +5,38 @@ import usePlayList from './usePlayList';
 
 const useBarPlayer = () => {
   const dispatch = useDispatch();
-  const selectedIndex = useSelector(state => state.player.selectedIndex);
+  const { selectedIndex, playing } = useSelector(state => state.player);
   const [storageList, playlistState] = usePlayList();
-  const [playing, _, setPlaying] = useToggle(false);
   const onStateChange = e => {
     const player = window.YTPlayer;
     const currentProgress = player.getCurrentTime();
     const videoDuration = player.getDuration();
     if (player.getPlayerState() === 1) {
-      setPlaying(true);
+      // 재생중
+      dispatch(playerSlice.actions.switchPlay(true));
     }
     if (player.getPlayerState() === 2) {
-      setPlaying(false);
+      // 일시중지
+      dispatch(playerSlice.actions.switchPlay(false));
     }
     if (currentProgress === 0 && videoDuration === 0 && playing) {
-      dispatch(playerSlice.actions.updatePlayingIndex(player.getPlaylistIndex()));
+      // 영상이 끝나고나서 다음 영상으로 가는 시점
+      // dispatch(playerSlice.actions.updatePlayingIndex(player.getPlaylistIndex()));
+      if (player.getPlaylist().length !== playlistState?.length) {
+        console.log('sync');
+        player.loadPlaylist(playlistState, player.getPlaylistIndex() + 1);
+      }
     }
   };
   const playerHandler = () => {
     const player = window.YTPlayer;
-    if (playing) player.pauseVideo();
-    else player.playVideo();
+    if (playing) {
+      player.pauseVideo();
+      dispatch(playerSlice.actions.switchPlay(false));
+    } else {
+      player.playVideo();
+      dispatch(playerSlice.actions.switchPlay(true));
+    }
   };
 
   const nextHandler = () => {
