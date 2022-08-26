@@ -13,7 +13,7 @@ const ProfileCircle = ({ src, width = 38, height = 38, ...props }) => {
 
   return (
     <ProfileCircleContainer {...props} $width={width} $height={height}>
-      <img src={src} alt={props?.alt} width={width} height={height} />
+      <img src={src} alt={props?.alt} width={width} height={height} referrerpolicy="no-referrer" />
     </ProfileCircleContainer>
   );
 };

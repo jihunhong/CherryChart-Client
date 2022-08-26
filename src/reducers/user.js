@@ -1,5 +1,5 @@
 import { createPlaylist } from '@actions/playlistActions';
-import { loadMyYoutubePlaylist, loadGoogleProfile } from '@actions/userActions';
+import { loadMyYoutubePlaylist, loadGoogleProfile, loadFavoriteArtist } from '@actions/userActions';
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -8,6 +8,7 @@ const initialState = {
   google_api_loading: false,
   google_oauth_loading: false,
   accessToken: null,
+  favorite_artists: [],
 };
 
 const userSlice = createSlice({
@@ -20,6 +21,9 @@ const userSlice = createSlice({
   },
   extraReducers: builder =>
     builder
+      .addCase(loadFavoriteArtist.fulfilled, (state, action) => {
+        state.favorite_artists = action.payload;
+      })
       .addCase(loadGoogleProfile.pending, (state, action) => {
         if (action.payload) {
           state.accessToken = action.payload;

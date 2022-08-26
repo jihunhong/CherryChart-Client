@@ -7,6 +7,9 @@ const useFetchProfile = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   useEffect(() => {
+    dispatch(loadGoogleProfile());
+  }, []);
+  useEffect(() => {
     const handleRouteChange = () => {
       dispatch(loadGoogleProfile());
     };
