@@ -40,45 +40,17 @@ export const BarPlayerContainer = styled.div`
 
   > .played-info,
   .player-action {
-    display: flex;
-    align-items: center;
     z-index: 1000;
   }
 
   .played-info {
     width: 280px;
     margin: 0 auto;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    ${AlbumCoverContainer} {
-      flex: 0 0 46px;
-    }
-    ${FlexColumn}.meta {
-      width: 0;
-      flex: 1 1 calc(280px - 12px - 46px - 32px);
-      margin: 0 12px;
-      a {
-        width: 100%;
-      }
-    }
-    ${FlexColumn}.feature {
-      width: 0;
-      flex: 0 0 32px;
-      align-items: center;
-    }
-    & *[class*='typography'] {
-      color: #fff;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    .typography-text {
-      color: #909090;
-      font-weight: 400;
-    }
   }
 
   .player-action {
+    display: flex;
+    align-items: center;
     .icon-container {
       margin: 0 12px;
       cursor: pointer;

@@ -11,6 +11,6 @@ export const HeaderContainer = styled(Layout.Header)`
   justify-content: space-between;
   padding: 12px 36px 12px 23px;
   width: 100%;
-  height: 56px;
+  height: var(--header-height);
   position: fixed;
 `;

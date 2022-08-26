@@ -2,11 +2,14 @@ import useToggle from '@hooks/util/useToggle';
 import playerSlice from '@reducers/player';
 import { useDispatch, useSelector } from 'react-redux';
 import usePlayList from './usePlayList';
+import useScrollLock from './useScollLock';
 
 const useBarPlayer = () => {
   const dispatch = useDispatch();
   const { selectedIndex, playing } = useSelector(state => state.player);
   const [storageList, playlistState] = usePlayList();
+  useScrollLock();
+
   const onStateChange = e => {
     const player = window.YTPlayer;
     const currentProgress = player.getCurrentTime();

@@ -4,12 +4,7 @@ export const TrackListItemContainer = styled('li')`
   width: 100%;
   margin: auto auto;
   display: flex;
-  transition: box-shadow 0.8s ease-in-out;
   min-height: 5vh;
-
-  :hover {
-    box-shadow: rgb(149 157 165 / 60%) 2px 3px 6px;
-  }
 
   :nth-of-type(1) {
     border-top-left-radius: 7px;

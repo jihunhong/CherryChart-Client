@@ -10,15 +10,19 @@ const useBarAction = () => {
   };
 
   const handleShuffle = () => {
-    window.YTPlayer.playVideo();
-    window.YTPlayer.setShuffle(true);
-    const shuffled = window.YTPlayer.getPlaylist();
-    const list = shuffled.map(videoId => {
-      return playList.find(p => p.videoId === videoId);
-    });
-    dispatch(playerSlice.actions.assignPlayList(list));
+    // window.YTPlayer.playVideo();
+    // window.YTPlayer.setShuffle(true);
+    // const shuffled = window.YTPlayer.getPlaylist();
+    // const list = shuffled.map(videoId => {
+    //   return playList.find(p => p.videoId === videoId);
+    // });
+    // dispatch(playerSlice.actions.assignPlayList(list));
   };
 
-  return { handleRepeat, handleShuffle };
+  const handleTogglePlaylist = () => {
+    dispatch(playerSlice.actions.togglePlayList());
+  };
+
+  return { handleRepeat, handleShuffle, handleTogglePlaylist };
 };
 export default useBarAction;
