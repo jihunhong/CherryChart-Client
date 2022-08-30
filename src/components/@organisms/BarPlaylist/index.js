@@ -1,3 +1,6 @@
+import SortablePlayList from '@components/@hoc/SortablePlayList';
+import useDragItem from '@hooks/player/useDragItem';
+import usePlayerControl from '@hooks/player/usePlayerControl';
 import PlayerMusicItem from '@molecules/PlayerMusicItem';
 import { useSelector } from 'react-redux';
 import { PlaylistSideContainer } from './style';
@@ -10,15 +13,19 @@ import { PlaylistSideContainer } from './style';
 
 const BarPlaylist = () => {
   const playList = useSelector(state => state.player.playList);
+  const { onSortEnd } = useDragItem();
 
   return (
     <>
       <div className="player-side"></div>
       <PlaylistSideContainer className="playlist-side">
         <div className="grid">
-          {playList.map(item => (
-            <PlayerMusicItem {...item} coverImage={item?.smallCoverImage} />
-          ))}
+          <SortablePlayList
+            dataSource={playList}
+            onSortEnd={onSortEnd}
+            distance={1}
+            helperClass="sortable-play-item"
+          />
         </div>
       </PlaylistSideContainer>
     </>

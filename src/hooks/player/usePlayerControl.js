@@ -1,10 +1,17 @@
 import playerSlice from '@reducers/player';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
-const useBarAction = () => {
+const usePlayerControl = () => {
   const dispatch = useDispatch();
-  const playList = useSelector(state => state.player.playList);
-  const playing = useSelector(state => state.player.playing);
+  const handlePlayItem = e => {
+    const index = e.currentTarget.dataset.index;
+    if (index) {
+      dispatch(playerSlice.actions.updatePlayingIndex(index));
+      if (window.YTPlayer) {
+        window.YTPlayer.playVideoAt(index);
+      }
+    }
+  };
   const handleRepeat = () => {
     dispatch(playerSlice.actions.toggleRepeat());
   };
@@ -23,6 +30,6 @@ const useBarAction = () => {
     dispatch(playerSlice.actions.togglePlayList());
   };
 
-  return { handleRepeat, handleShuffle, handleTogglePlaylist };
+  return { handleRepeat, handleShuffle, handleTogglePlaylist, handlePlayItem };
 };
-export default useBarAction;
+export default usePlayerControl;

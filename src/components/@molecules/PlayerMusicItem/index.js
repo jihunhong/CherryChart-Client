@@ -5,10 +5,18 @@ import Text from '@atoms/Text';
 import Title from '@atoms/Title';
 import { PlayerMusicItemContainer } from './style';
 
-const PlayerMusicItem = ({ coverImage, title, albumId, artistName, albumName, children }) => {
+const PlayerMusicItem = ({
+  smallCoverImage,
+  title,
+  albumId,
+  artistName,
+  albumName,
+  children,
+  ...props
+}) => {
   return (
-    <PlayerMusicItemContainer>
-      <AlbumCover src={coverImage} size={46} />
+    <PlayerMusicItemContainer {...props}>
+      <AlbumCover src={smallCoverImage} size={46} />
       <FlexColumn className="meta">
         <LinkHOC href={`/album/${albumId}`}>
           <Title level={5} text={title} />

@@ -66,6 +66,9 @@ const playerSlice = createSlice({
         return i !== parseInt(action.payload, 10);
       });
     },
+    dragSortPlaylist(state, action) {
+      state.playList = action.payload;
+    },
   },
 });
 

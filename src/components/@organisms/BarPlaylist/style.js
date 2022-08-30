@@ -1,5 +1,7 @@
 import { AlbumCoverContainer } from '@atoms/AlbumCover/style';
+import { FlexColumn } from '@atoms/FlexColumn/style';
 import { PlayerMusicItemContainer } from '@molecules/PlayerMusicItem/style';
+import { BiVolumeFull } from 'react-icons/bi';
 import styled from 'styled-components';
 
 /**
@@ -14,7 +16,8 @@ export const BarPlaylistContainer = styled.div`
   width: 100vw;
   height: calc(100vh - var(--header-height) - var(--bar-player-height));
   background: #000;
-  ${props => (props.$isExpand ? 'transform: translate3d(0,0,0);' : 'transform: translate3d(0, 100vh, 0);')}
+  ${props =>
+    props.$isExpand ? 'transform: translate3d(0,0,0);' : 'transform: translate3d(0, 100vh, 0);'}
   transition: transform 300ms cubic-bezier(0.2, 0, 0.6, 1);
   will-change: transform;
   .player-side {
@@ -40,10 +43,32 @@ export const PlaylistSideContainer = styled.section`
       h5[class*='typography'] {
         font-size: 14px;
       }
+      &.active {
+        background-color: var(--dark-gray);
+        ${AlbumCoverContainer} {
+          position: relative;
+          :after {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.7);
+            top: 0;
+            left: 0;
+            width: inherit;
+            height: inherit;
+            border-radius: 4px;
+          }
+        }
+      }
+      a {
+        pointer-events: none;
+      }
       span {
         font-size: 12px;
       }
+      ${FlexColumn} {
+        cursor: move;
+      }
       ${AlbumCoverContainer} {
+        cursor: pointer;
         flex: 0 0 32px;
         width: 32px;
         height: 32px;
@@ -53,6 +78,5 @@ export const PlaylistSideContainer = styled.section`
         }
       }
     }
-    grid-template-rows: 56px;
   }
 `;

@@ -2,10 +2,17 @@ import playerSlice from '@reducers/player';
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-const useAddItem = ({ id, title, artistName, albumName, videoId, tracks, smallCoverImage, albumId }) => {
+const useAddItem = ({
+  id,
+  title,
+  artistName,
+  albumName,
+  videoId,
+  tracks,
+  smallCoverImage,
+  albumId,
+}) => {
   const dispatch = useDispatch();
-  const playList = useSelector(state => state.player.playList);
-  const selectedIndex = useSelector(state => state.player.selectedIndex);
   const handler = useCallback(() => {
     if (tracks) {
       dispatch(

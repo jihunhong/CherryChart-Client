@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import { ChartContainer, Header, MusicList } from './style';
 
 const Chart = () => {
-  const { chartData } = useSelector(state => state.chart);
+  const chartData = useSelector(state => state.chart.chartData);
   const [handleAdd, handleShuffle] = useAddChart();
 
   return (
