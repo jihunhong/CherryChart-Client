@@ -9,6 +9,9 @@ const initialState = {
   google_oauth_loading: false,
   accessToken: null,
   favorite_artists: [],
+  create_playlist_loading: false,
+  create_playlist_done: false,
+  create_playlist_error: null,
 };
 
 const userSlice = createSlice({
@@ -40,9 +43,21 @@ const userSlice = createSlice({
       .addCase(loadMyYoutubePlaylist.fulfilled, (state, action) => {
         state.my_youtube_playlist = action.payload;
       })
-      .addCase(createPlaylist.pending, (state, action) => {})
-      .addCase(createPlaylist.fulfilled, (state, action) => {})
-      .addCase(createPlaylist.rejected, (state, action) => {}),
+      .addCase(createPlaylist.pending, (state, action) => {
+        state.create_playlist_loading = true;
+        state.create_playlist_done = false;
+        state.create_playlist_error = null;
+      })
+      .addCase(createPlaylist.fulfilled, (state, action) => {
+        state.create_playlist_loading = false;
+        state.create_playlist_done = true;
+        state.create_playlist_error = null;
+      })
+      .addCase(createPlaylist.rejected, (state, action) => {
+        state.create_playlist_loading = false;
+        state.create_playlist_done = true;
+        state.create_playlist_error = action.payload;
+      }),
 });
 
 export default userSlice;

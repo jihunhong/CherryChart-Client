@@ -34,6 +34,21 @@ export const BarPlaylistContainer = styled.div`
 
 // BarPlaylist
 export const PlaylistSideContainer = styled.section`
+  .playlist-header {
+    display: grid;
+    padding: 8px 4px;
+    align-items: center;
+    grid-auto-flow: column;
+
+    .save-playlist {
+      display: flex;
+      align-items: center;
+      svg {
+        margin-right: 4px;
+      }
+    }
+  }
+
   div.grid {
     display: grid;
     grid-auto-flow: row;

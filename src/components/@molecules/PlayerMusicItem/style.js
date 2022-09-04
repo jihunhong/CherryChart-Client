@@ -10,10 +10,23 @@ export const PlayerMusicItemContainer = styled.div`
   width: 100%;
   ${AlbumCoverContainer} {
     flex: 0 0 46px;
+    > span {
+      box-shadow: none;
+    }
   }
   ${FlexColumn}.meta {
     width: 0;
-    flex: 1 1 calc(280px - 12px - 46px - 32px);
+
+    --container-width: 280px;
+    --column-gap-width: 12px;
+    --album-cover-width: 46px;
+    --favorite-width: 32px;
+
+    flex: 1 1
+      calc(
+        var(--container-width) - var(--column-gap-width) - var(--album-cover-width) -
+          var(--favorite-width)
+      );
     margin: 0 12px;
     a {
       width: 100%;

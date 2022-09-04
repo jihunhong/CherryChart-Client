@@ -25,7 +25,7 @@ export const BarPlayerContainer = styled.div`
   align-items: center;
   grid-template-columns: 0fr 1fr 0fr;
   padding: 0 8px;
-  z-index: 9000;
+  z-index: 600;
 
   &:before {
     content: '';
@@ -40,7 +40,7 @@ export const BarPlayerContainer = styled.div`
 
   > .played-info,
   .player-action {
-    z-index: 1000;
+    z-index: 500;
   }
 
   .played-info {

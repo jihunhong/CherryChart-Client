@@ -1,14 +1,31 @@
 import LinkHOC from '@atoms/LinkHOC';
 import Text from '@atoms/Text';
 import useAddItem from '@hooks/useAddItem';
-import useCheckBox from '@hooks/useCheckBox';
 import { Avatar } from 'antd';
 import { BiHeart } from 'react-icons/bi';
 import { FaYoutube } from 'react-icons/fa';
-import { AlbumName, CoverImageContainer, HeartIcon, MusicListItemContainer, Rank, YoutubeIcon } from './style';
+import {
+  AlbumName,
+  CoverImageContainer,
+  HeartIcon,
+  MusicListItemContainer,
+  Rank,
+  YoutubeIcon,
+} from './style';
 
-const ChartItem = ({ id, rank, title, artistName, albumName, video, albumId, middleCoverImage, smallCoverImage }) => {
+const ChartItem = ({
+  id,
+  rank,
+  title,
+  artistName,
+  albumName,
+  video,
+  albumId,
+  middleCoverImage,
+  smallCoverImage,
+}) => {
   const [handleMusic] = useAddItem({
+    id,
     title,
     artistName,
     albumName,

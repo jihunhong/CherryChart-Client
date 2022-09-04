@@ -1,7 +1,10 @@
+import Text from '@atoms/Text';
 import SortablePlayList from '@components/@hoc/SortablePlayList';
 import useDragItem from '@hooks/player/useDragItem';
-import usePlayerControl from '@hooks/player/usePlayerControl';
-import PlayerMusicItem from '@molecules/PlayerMusicItem';
+import useToggle from '@hooks/util/useToggle';
+import { Button } from 'antd';
+import dynamic from 'next/dynamic';
+import { BiListPlus } from 'react-icons/bi';
 import { useSelector } from 'react-redux';
 import { PlaylistSideContainer } from './style';
 /**
@@ -11,14 +14,27 @@ import { PlaylistSideContainer } from './style';
  *         store에있는 isExpand값으로 부터 처리되는 transition을 lazyLoad 시점보다 이른 때에 하기 위함이다.
  */
 
+const PlaylistInsertModal = dynamic(() => import('@organisms/Modal/PlaylistInsertModal'), {
+  ssr: false,
+});
+
 const BarPlaylist = () => {
   const playList = useSelector(state => state.player.playList);
   const { onSortEnd } = useDragItem();
+  const [visible, toggle] = useToggle(false);
 
   return (
     <>
+      {visible ? <PlaylistInsertModal visible={visible} onCancel={toggle} /> : <></>}
       <div className="player-side"></div>
       <PlaylistSideContainer className="playlist-side">
+        <div className="playlist-header">
+          <div className="save-playlist">
+            <Button ghost icon={<BiListPlus color="#fff" />} onClick={toggle}>
+              재생목록 저장
+            </Button>
+          </div>
+        </div>
         <div className="grid">
           <SortablePlayList
             dataSource={playList}

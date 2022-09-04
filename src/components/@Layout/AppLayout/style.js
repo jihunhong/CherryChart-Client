@@ -41,7 +41,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .sortable-play-item {
-    z-index: 9999;
+    z-index: 700;
   }
   .app-content {
     padding-top: 56px;
@@ -49,13 +49,13 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   button.ant-btn {
-    display: flex;
-    border-radius: 6px;
-    align-items: center;
-    border: none;
-    span {
-      color: #fff;
-      margin-left: 4px;
+    border-radius: 4px;
+    svg, span {
+      vertical-align: middle;
+    }
+    svg {
+      margin-right: 4px;
+      
     }
   }
 `;
