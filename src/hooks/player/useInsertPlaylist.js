@@ -1,19 +1,23 @@
 import { createPlaylist } from '@actions/playlistActions';
-import { useCallback, useDebugValue, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import useInput from '@hooks/useInput';
+import { useDebugValue, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import useVideoPlaylist from './useVideoPlaylist';
 
 const useInsertPlaylist = () => {
-  const playList = useVideoPlaylist();
+  const [playList] = useVideoPlaylist();
   const dispatch = useDispatch();
   const [excludes, setExcludes] = useState([]);
+  const [title, onChangeTitle] = useInput('Title');
+  const [description, onChangeDescription] = useInput('Description');
+  useDebugValue([title, description]);
 
   const handleInsertPlaylist = () => {
-    const items = playList.filter(el => !excludes.includes(el?.id));
+    const items = playList.filter(el => !excludes.includes(el?.id)).map(v => v?.id);
     dispatch(
       createPlaylist({
-        title: 'first playlist',
-        description: 'this is first my playlist',
+        title,
+        description,
         items,
       }),
     );
@@ -30,7 +34,7 @@ const useInsertPlaylist = () => {
     }
   };
 
-  return [handleInsertPlaylist, handleCheckboxs];
+  return { handleInsertPlaylist, handleCheckboxs, onChangeTitle, onChangeDescription };
 };
 
 export default useInsertPlaylist;

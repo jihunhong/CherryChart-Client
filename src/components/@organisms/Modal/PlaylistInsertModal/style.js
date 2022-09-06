@@ -1,7 +1,67 @@
 import { PlayerMusicItemContainer } from '@molecules/PlayerMusicItem/style';
 import styled from 'styled-components';
 
-export const CustomModalHeader = styled.div``;
+export const CustomModalHeader = styled.div`
+  .grid-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 120px 1fr;
+    grid-column-gap: 24px;
+  }
+  .playlist-thumbnail {
+    width: 120px;
+    height: 120px;
+    padding: 12px;
+    background: var(--gray-color);
+    border-radius: 14px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .playlist-inputs {
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+
+    .input-container {
+      width: 100%;
+      position: relative;
+      border-bottom: var(--light-gray-color) 2px solid;
+      &:after {
+        position: absolute;
+        left: 0;
+        top: 2px;
+        content: '';
+        width: 100%;
+        height: 100%;
+        transition: transform 0.25s;
+        transform: scaleX(0);
+      }
+      &:focus-within {
+        :after {
+          border-bottom: var(--primary-color) 2px solid;
+          transform: scale(1);
+        }
+      }
+    }
+
+    input {
+      background: transparent;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      ::placeholder {
+        color: var(--font-gray-color);
+        font-style: italic;
+      }
+    }
+    input.description {
+      margin-top: 8px;
+    }
+  }
+`;
 
 export const PlaylistInsertModalBody = styled.div`
   overflow-y: scroll;

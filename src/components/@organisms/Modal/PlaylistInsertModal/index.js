@@ -1,13 +1,16 @@
+import { FlexColumn } from '@atoms/FlexColumn/style';
 import useInsertPlaylist from '@hooks/player/useInsertPlaylist';
 import useVideoPlaylist from '@hooks/player/useVideoPlaylist';
 import PlayerMusicItem from '@molecules/PlayerMusicItem';
-import { Checkbox, Modal, Row } from 'antd';
+import { Checkbox, Divider, Input, Modal } from 'antd';
+import { BiListCheck } from 'react-icons/bi';
 import { useSelector } from 'react-redux';
 import { CustomModalHeader, PlaylistInsertModalBody } from './style';
 
 const PlaylistInsertModal = ({ visible, onCancel }) => {
   const [playList] = useVideoPlaylist();
-  const [handleInsert, handleCheckboxs] = useInsertPlaylist();
+  const { handleInsertPlaylist, handleCheckboxs, onChangeTitle, onChangeDescription } =
+    useInsertPlaylist();
   const loading = useSelector(state => state.user.create_playlist_loading);
 
   return (
@@ -17,13 +20,39 @@ const PlaylistInsertModal = ({ visible, onCancel }) => {
       title={null}
       visible={visible}
       onCancel={onCancel}
-      onOk={handleInsert}
+      onOk={handleInsertPlaylist}
       confirmLoading={loading}
     >
       <CustomModalHeader>
-        {/* sample playlist image */}
-        {/* title, description */}
+        <div className="grid-container">
+          <div className="playlist-thumbnail">
+            <BiListCheck size={60} color="#696969" />
+          </div>
+          <div className="playlist-inputs">
+            <div className="input-container">
+              <input
+                onChange={onChangeTitle}
+                className="title"
+                placeholder="Title"
+                autoComplete="false"
+                autoCapitalize="none"
+                maxLength={150}
+              />
+            </div>
+            <div className="input-container">
+              <input
+                onChange={onChangeDescription}
+                className="description"
+                placeholder="Description"
+                autoComplete="false"
+                autoCapitalize="none"
+                maxLength={450}
+              />
+            </div>
+          </div>
+        </div>
       </CustomModalHeader>
+      <Divider />
       <PlaylistInsertModalBody>
         <div className="grid">
           {playList.map((item, index) => (
