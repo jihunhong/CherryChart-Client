@@ -3,7 +3,7 @@ import { Headings } from '@atoms/Title/style';
 import styled from 'styled-components';
 
 export const LetterBox = styled.section`
-  z-index: 101;
+  z-index: 2;
   margin: auto;
   width: 90%;
   font-family: 'Poppins';
