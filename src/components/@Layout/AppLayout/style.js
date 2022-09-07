@@ -1,7 +1,7 @@
-import { scrollbar } from '@components/Css/style';
+import { globalNotificationStyle, scrollbar } from '@components/Css/style';
 import { SIDEBAR_WIDTH } from '@config/';
 import { Layout } from 'antd';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle, css } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   :root {
@@ -58,6 +58,8 @@ export const GlobalStyle = createGlobalStyle`
       
     }
   }
+
+  ${globalNotificationStyle}
 `;
 
 export const StyledLayout = styled(Layout)`

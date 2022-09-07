@@ -1,5 +1,15 @@
 import { css } from 'styled-components';
 
+export const globalNotificationStyle = css`
+  .success-notification,
+  .error-notification {
+    border-radius: 6px;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), 0 8px 40px rgba(0, 0, 0, 0.25);
+    background: #faf9f9;
+  }
+`;
+
 export const scrollbar = css`
   overflow-x: hidden;
   overflow-y: scroll;

@@ -1,26 +1,43 @@
 import { createPlaylist } from '@actions/playlistActions';
-import useInput from '@hooks/useInput';
-import { useDebugValue, useState } from 'react';
+import { notification } from 'antd';
+import { useDebugValue, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import notificationConfig from '@config/notification';
 import useVideoPlaylist from './useVideoPlaylist';
 
-const useInsertPlaylist = () => {
+const useInsertPlaylist = modalToggler => {
   const [playList] = useVideoPlaylist();
   const dispatch = useDispatch();
   const [excludes, setExcludes] = useState([]);
-  const [title, onChangeTitle] = useInput('Title');
-  const [description, onChangeDescription] = useInput('Description');
-  useDebugValue([title, description]);
+  const titleRef = useRef();
+  const descriptionRef = useRef();
+  useDebugValue([titleRef, descriptionRef]);
 
-  const handleInsertPlaylist = () => {
-    const items = playList.filter(el => !excludes.includes(el?.id)).map(v => v?.id);
-    dispatch(
-      createPlaylist({
-        title,
-        description,
-        items,
-      }),
-    );
+  const handleInsertPlaylist = async () => {
+    try {
+      const items = playList.filter(el => !excludes.includes(el?.id)).map(v => v?.id);
+      const response = await dispatch(
+        createPlaylist({
+          title: titleRef?.current?.value,
+          description: descriptionRef?.current?.value,
+          items,
+        }),
+      ).unwrap();
+      notification.success({
+        className: 'success-notification',
+        message: `${response?.title} 작성 완료`,
+        key: 'success-playlist-insert',
+        ...notificationConfig,
+      });
+      modalToggler();
+    } catch (err) {
+      notification.error({
+        className: 'error-notification',
+        message: '플레이리스트 작성 실패',
+        description: '잠시후에 다시 시도해주세요',
+        ...notificationConfig,
+      });
+    }
   };
 
   const handleCheckboxs = e => {
@@ -34,7 +51,12 @@ const useInsertPlaylist = () => {
     }
   };
 
-  return { handleInsertPlaylist, handleCheckboxs, onChangeTitle, onChangeDescription };
+  return {
+    handleInsertPlaylist,
+    handleCheckboxs,
+    titleRef,
+    descriptionRef,
+  };
 };
 
 export default useInsertPlaylist;

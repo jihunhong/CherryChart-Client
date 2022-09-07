@@ -1,7 +1,7 @@
 import { PlayerMusicItemContainer } from '@molecules/PlayerMusicItem/style';
 import styled from 'styled-components';
 
-export const CustomModalHeader = styled.div`
+export const InsertModalHeader = styled.div`
   .grid-container {
     display: grid;
     grid-auto-flow: column;
@@ -28,11 +28,11 @@ export const CustomModalHeader = styled.div`
     .input-container {
       width: 100%;
       position: relative;
-      border-bottom: var(--light-gray-color) 2px solid;
+      border-bottom: var(--light-gray-color) 1px solid;
       &:after {
         position: absolute;
         left: 0;
-        top: 2px;
+        top: 1px;
         content: '';
         width: 100%;
         height: 100%;
@@ -44,17 +44,6 @@ export const CustomModalHeader = styled.div`
           border-bottom: var(--primary-color) 2px solid;
           transform: scale(1);
         }
-      }
-    }
-
-    input {
-      background: transparent;
-      border: none;
-      outline: none;
-      box-shadow: none;
-      ::placeholder {
-        color: var(--font-gray-color);
-        font-style: italic;
       }
     }
     input.description {

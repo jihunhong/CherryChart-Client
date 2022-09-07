@@ -1,18 +1,17 @@
-import { FlexColumn } from '@atoms/FlexColumn/style';
+import Input from '@atoms/Input';
 import useInsertPlaylist from '@hooks/player/useInsertPlaylist';
 import useVideoPlaylist from '@hooks/player/useVideoPlaylist';
 import PlayerMusicItem from '@molecules/PlayerMusicItem';
-import { Checkbox, Divider, Input, Modal } from 'antd';
+import { Checkbox, Divider, Modal } from 'antd';
 import { BiListCheck } from 'react-icons/bi';
 import { useSelector } from 'react-redux';
-import { CustomModalHeader, PlaylistInsertModalBody } from './style';
+import { InsertModalHeader, PlaylistInsertModalBody } from './style';
 
 const PlaylistInsertModal = ({ visible, onCancel }) => {
   const [playList] = useVideoPlaylist();
-  const { handleInsertPlaylist, handleCheckboxs, onChangeTitle, onChangeDescription } =
-    useInsertPlaylist();
+  const { handleInsertPlaylist, handleCheckboxs, titleRef, descriptionRef } =
+    useInsertPlaylist(onCancel);
   const loading = useSelector(state => state.user.create_playlist_loading);
-
   return (
     <Modal
       centered
@@ -23,15 +22,15 @@ const PlaylistInsertModal = ({ visible, onCancel }) => {
       onOk={handleInsertPlaylist}
       confirmLoading={loading}
     >
-      <CustomModalHeader>
+      <InsertModalHeader>
         <div className="grid-container">
           <div className="playlist-thumbnail">
             <BiListCheck size={60} color="#696969" />
           </div>
           <div className="playlist-inputs">
             <div className="input-container">
-              <input
-                onChange={onChangeTitle}
+              <Input
+                ref={titleRef}
                 className="title"
                 placeholder="Title"
                 autoComplete="false"
@@ -40,8 +39,8 @@ const PlaylistInsertModal = ({ visible, onCancel }) => {
               />
             </div>
             <div className="input-container">
-              <input
-                onChange={onChangeDescription}
+              <Input
+                ref={descriptionRef}
                 className="description"
                 placeholder="Description"
                 autoComplete="false"
@@ -51,7 +50,7 @@ const PlaylistInsertModal = ({ visible, onCancel }) => {
             </div>
           </div>
         </div>
-      </CustomModalHeader>
+      </InsertModalHeader>
       <Divider />
       <PlaylistInsertModalBody>
         <div className="grid">
