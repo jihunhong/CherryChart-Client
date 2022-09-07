@@ -52,7 +52,7 @@ export const IntroSectionContainer = styled.section`
 export const VideoWrapper = styled.div`
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 1;
   position: absolute;
   width: 100%;
   height: auto;
