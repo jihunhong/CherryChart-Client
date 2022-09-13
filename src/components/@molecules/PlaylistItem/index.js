@@ -1,7 +1,7 @@
 import LinkHOC from '@atoms/LinkHOC';
 import usePlaylistItem from '@hooks/playlistItem/usePlaylistItem';
 import Image from 'next/image';
-import { BiListPlus, BiListUl } from 'react-icons/bi';
+import { BiListPlus } from 'react-icons/bi';
 import { PlaylistItemContainer } from './style';
 
 const PlaylistItem = ({ pId }) => {
