@@ -6,7 +6,7 @@ axios.defaults.withCredentials = true;
 
 export const createPlaylist = createAsyncThunk(
   'playlist/create',
-  async ({ title, description, items }, { rejectWithValue }) => {
+  async ({ title = '', description = '', items = [] }, { rejectWithValue }) => {
     try {
       const response = await axios.post(`${API_URL}/api/youtube/playlist`, {
         title,

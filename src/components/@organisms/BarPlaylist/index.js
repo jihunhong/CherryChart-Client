@@ -1,7 +1,6 @@
-import Text from '@atoms/Text';
 import SortablePlayList from '@components/@hoc/SortablePlayList';
 import useDragItem from '@hooks/player/useDragItem';
-import useToggle from '@hooks/util/useToggle';
+import usePlaylistModal from '@hooks/player/usePlaylistModal';
 import { Button } from 'antd';
 import dynamic from 'next/dynamic';
 import { BiListPlus } from 'react-icons/bi';
@@ -21,7 +20,7 @@ const PlaylistInsertModal = dynamic(() => import('@organisms/Modal/PlaylistInser
 const BarPlaylist = () => {
   const playList = useSelector(state => state.player.playList);
   const { onSortEnd } = useDragItem();
-  const [visible, toggle] = useToggle(false);
+  const [visible, toggle] = usePlaylistModal(false);
 
   return (
     <>

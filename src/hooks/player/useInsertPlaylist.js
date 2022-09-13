@@ -1,8 +1,8 @@
 import { createPlaylist } from '@actions/playlistActions';
-import { notification } from 'antd';
-import { useDebugValue, useRef, useState } from 'react';
-import { useDispatch } from 'react-redux';
 import notificationConfig from '@config/notification';
+import { notification } from 'antd';
+import { useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import useVideoPlaylist from './useVideoPlaylist';
 
 const useInsertPlaylist = modalToggler => {
@@ -11,7 +11,6 @@ const useInsertPlaylist = modalToggler => {
   const [excludes, setExcludes] = useState([]);
   const titleRef = useRef();
   const descriptionRef = useRef();
-  useDebugValue([titleRef, descriptionRef]);
 
   const handleInsertPlaylist = async () => {
     try {

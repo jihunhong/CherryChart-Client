@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
 
     --header-height: 56px;
     --bar-player-height: 62px;
+    font-size: 14px;
   }
   body {
     overscroll-behavior: none;
