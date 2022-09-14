@@ -28,26 +28,22 @@ const PlaylistInsertModal = ({ visible, onCancel }) => {
             <BiListCheck size={60} color="#696969" />
           </div>
           <div className="playlist-inputs">
-            <div className="input-container">
-              <Input
-                ref={titleRef}
-                className="title"
-                placeholder="Title"
-                autoComplete="false"
-                autoCapitalize="none"
-                maxLength={150}
-              />
-            </div>
-            <div className="input-container">
-              <Input
-                ref={descriptionRef}
-                className="description"
-                placeholder="Description"
-                autoComplete="false"
-                autoCapitalize="none"
-                maxLength={450}
-              />
-            </div>
+            <Input
+              ref={titleRef}
+              className="title"
+              placeholder="Title"
+              autoComplete="false"
+              autoCapitalize="none"
+              maxLength={150}
+            />
+            <Input
+              ref={descriptionRef}
+              className="description"
+              placeholder="Description"
+              autoComplete="false"
+              autoCapitalize="none"
+              maxLength={450}
+            />
           </div>
         </div>
       </InsertModalHeader>

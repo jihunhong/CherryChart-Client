@@ -23,7 +23,7 @@ const PlaylistItem = ({ pId }) => {
       <div className="meta">
         <span className="title">{preview?.title}</span>
         <span className="user">
-          {preview?.user?.nickname?.slice(0, 6)} • 노래 {preview?.playlistItems}곡
+          {preview?.user?.nickname?.slice(0, 6)} • 노래 {preview?.playlistItemCount}곡
         </span>
       </div>
     </PlaylistItemContainer>

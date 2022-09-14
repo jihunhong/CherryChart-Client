@@ -1,46 +1,79 @@
+import Input from '@atoms/Input';
 import LinkHOC from '@atoms/LinkHOC';
+import ProfileCircle from '@atoms/ProfileCircle';
 import Text from '@atoms/Text';
 import Title from '@atoms/Title';
-import { Button, Checkbox, Form, Input, Row } from 'antd';
+import { ACCOUNT_ARTIST_IMAGE } from '@config/settings';
+import useValidation from '@hooks/form/useValidation';
+import { Button, Checkbox, Divider, Form, Row } from 'antd';
+import { useState } from 'react';
+import { BiInfoCircle } from 'react-icons/bi';
+import { useSelector } from 'react-redux';
 import { SignUpContainer } from './style';
 
 const SignUpPage = () => {
+  const { artistList } = useSelector(state => state.artist);
+  const [random] = useState(Math.floor(Math.random() * 10) % ACCOUNT_ARTIST_IMAGE.length);
+  const { form, onChange } = useValidation();
+  console.log(form);
   return (
-    <SignUpContainer>
+    <SignUpContainer imageName={ACCOUNT_ARTIST_IMAGE[random]}>
       <div className="action-container">
-        <Title level={3} text="Welcome back!" />
-        <Text type="secondary" text="Check the music charts and make a playlist" level={3} />
-        <Form autoComplete="off">
+        <Title level={3} text="Hello, Friend!" />
+        <Text type="secondary" text="Enter your details and start journey with us" level={3} />
+        <form onChange={onChange}>
           <section className="login-container">
-            <Form.Item rules={[{ required: true, message: 'Please input your username!' }]}>
-              <Input placeholder="Email" />
-            </Form.Item>
-            <Form.Item rules={[{ required: true, message: 'Please input your password!' }]}>
-              <Input.Password placeholder="Password" />
-            </Form.Item>
-            <Form.Item rules={[{ required: true, message: 'Please input your password!' }]}>
-              <Input.Password placeholder="Password" />
-            </Form.Item>
-            <Form.Item rules={[{ required: true, message: 'Please input your password!' }]}>
-              <Input.Password placeholder="Nickname" />
-            </Form.Item>
-            <Form.Item>
-              <Form.Item name="remember" valuePropName="checked" noStyle>
-                <Checkbox>Remember me</Checkbox>
-              </Form.Item>
-              <LinkHOC className="login-form-forgot" href="/">
-                Forgot password
-              </LinkHOC>
-            </Form.Item>
+            <Input
+              placeholder="Email"
+              name="email"
+              required
+              className={form?.email?.valid ? 'valid' : 'invalid'}
+            />
+            <Input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+              className={form?.password?.valid ? 'valid' : 'invalid'}
+            />
+
+            <Input
+              type="password"
+              name="_password"
+              placeholder="Confirm Password"
+              required
+              className={form?._password?.valid ? 'valid' : 'invalid'}
+            />
+
+            <Input
+              placeholder="Nickname"
+              name="nickname"
+              required
+              className={form?.nickname?.valid ? 'valid' : 'invalid'}
+            />
           </section>
-          <Button type="primary">Login</Button>
-        </Form>
+          <Button htmlType="submit" type="primary">
+            SIGN UP
+          </Button>
+        </form>
       </div>
       <div className="login-describe-container">
-        <img src="https://w.namu.la/s/35f771d4c99fead552a2b33da26a0a53aace0f23a2df055ce72789521d5e2c955f6639d688d6ca538f455f7a0cd1dbe66e3129372fd43b091c79541201a27e39eb541eba4bd37702b3e38339442cfb8f051f4def9a0ac9db566957636de26d70" alt="random artist" />
-        {/* TODO :: artist random image */}
-        <Row align="center" className="artist-description">
-          <Text text="Viviz - BOP BOP!" />
+        <Row align="flex-start" className="login-describe">
+          <Title text="Share your playlist via YouTube!" />
+          <Text text="Browse the KPOP charts and add your favorite songs to your playlist! Take a look at the songs that are counted every day." />
+          <section className="artists-profiles">
+            {artistList.slice(0, 5).map(item => (
+              <ProfileCircle
+                key={item.id}
+                className="profile-circle-container"
+                src={item?.music?.middleArtistProfile}
+                width={38}
+                height={38}
+              />
+            ))}
+            <Text text="+ More artists are registered with us." />
+          </section>
+          <Divider />
         </Row>
       </div>
     </SignUpContainer>

@@ -1,4 +1,5 @@
 import { ContentContainer } from '@atoms/Content/style';
+import { StyledInput } from '@atoms/Input/style';
 import { Span } from '@atoms/Text/style';
 import { imgCdn } from '@config/';
 import styled, { createGlobalStyle } from 'styled-components';
@@ -13,8 +14,8 @@ export const LoginPageGlobalStyle = createGlobalStyle`
 `;
 
 export const LoginContainer = styled.div`
-  margin: 5vh 50px;
-  max-width: 100%;
+  margin: 5vh auto;
+  max-width: 1140px;
   display: flex;
   justify-content: space-between;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -85,17 +86,34 @@ export const LoginContainer = styled.div`
   }
 
   > div.action-container {
-    flex: 50%;
+    flex: 25%;
 
     margin-top: auto;
     margin-bottom: auto;
+
+    ${StyledInput} {
+      ::placeholder {
+        font-style: normal;
+      }
+    }
+
     h3 {
       letter-spacing: 1.012px;
+    }
+
+    .sign {
+      margin: 14px 0;
+      color: var(--font-gray-color);
     }
 
     ${Span} {
       display: inline-block;
       margin-bottom: 14px;
+    }
+
+    .ant-divider-inner-text {
+      font-weight: 400;
+      color: var(--font-gray-color);
     }
 
     a.login-form-forgot {
@@ -107,6 +125,7 @@ export const LoginContainer = styled.div`
       align-items: center;
       justify-content: center;
       height: 42px;
+      font-weight: 600;
     }
   }
 `;
