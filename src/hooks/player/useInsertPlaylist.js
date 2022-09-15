@@ -1,6 +1,5 @@
 import { createPlaylist } from '@actions/playlistActions';
-import notificationConfig from '@config/notification';
-import { notification } from 'antd';
+import notification from '@config/notification';
 import { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import useVideoPlaylist from './useVideoPlaylist';
@@ -23,18 +22,14 @@ const useInsertPlaylist = modalToggler => {
         }),
       ).unwrap();
       notification.success({
-        className: 'success-notification',
         message: `${response?.title} 작성 완료`,
         key: 'success-playlist-insert',
-        ...notificationConfig,
       });
       modalToggler();
     } catch (err) {
       notification.error({
-        className: 'error-notification',
         message: '플레이리스트 작성 실패',
         description: '잠시후에 다시 시도해주세요',
-        ...notificationConfig,
       });
     }
   };

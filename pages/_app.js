@@ -6,7 +6,6 @@ import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 
-const Player = dynamic(() => import('@organisms/Player'));
 const BarPlayer = dynamic(() => import('@organisms/BarPlayer'), { ssr: false });
 
 const App = ({ Component, pageProps }) => {

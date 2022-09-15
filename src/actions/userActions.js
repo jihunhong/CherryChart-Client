@@ -44,3 +44,19 @@ export const loadFavoriteArtist = createAsyncThunk(
     }
   },
 );
+
+export const signUp = createAsyncThunk(
+  'user/sign-up',
+  async ({ email, password, nickname }, { rejectWithValue }) => {
+    try {
+      const response = await axios.post('/api/user/signup', {
+        email,
+        password,
+        nickname,
+      });
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err.reponse.data);
+    }
+  },
+);

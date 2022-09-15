@@ -1,27 +1,27 @@
 import Input from '@atoms/Input';
-import LinkHOC from '@atoms/LinkHOC';
 import ProfileCircle from '@atoms/ProfileCircle';
 import Text from '@atoms/Text';
 import Title from '@atoms/Title';
 import { ACCOUNT_ARTIST_IMAGE } from '@config/settings';
+import useSignUp from '@hooks/form/useSignUp';
 import useValidation from '@hooks/form/useValidation';
-import { Button, Checkbox, Divider, Form, Row } from 'antd';
+import { Button, Divider, Row } from 'antd';
 import { useState } from 'react';
-import { BiInfoCircle } from 'react-icons/bi';
 import { useSelector } from 'react-redux';
 import { SignUpContainer } from './style';
 
 const SignUpPage = () => {
-  const { artistList } = useSelector(state => state.artist);
+  const artistList = useSelector(state => state.artist.artistList);
+  const signup_loading = useSelector(state => state.user.signup_loading);
   const [random] = useState(Math.floor(Math.random() * 10) % ACCOUNT_ARTIST_IMAGE.length);
   const { form, onChange } = useValidation();
-  console.log(form);
+  const { onSubmit } = useSignUp(form);
   return (
     <SignUpContainer imageName={ACCOUNT_ARTIST_IMAGE[random]}>
       <div className="action-container">
         <Title level={3} text="Hello, Friend!" />
         <Text type="secondary" text="Enter your details and start journey with us" level={3} />
-        <form onChange={onChange}>
+        <form method="post" onChange={onChange} onSubmit={onSubmit}>
           <section className="login-container">
             <Input
               placeholder="Email"
@@ -52,7 +52,7 @@ const SignUpPage = () => {
               className={form?.nickname?.valid ? 'valid' : 'invalid'}
             />
           </section>
-          <Button htmlType="submit" type="primary">
+          <Button htmlType="submit" type="primary" loading={signup_loading}>
             SIGN UP
           </Button>
         </form>

@@ -17,6 +17,7 @@ const LoginPage = () => {
   const { artistList } = useSelector(state => state.artist);
   const [_, handleLogin] = useGoogleLogin();
   const [random] = useState(Math.floor(Math.random() * 10) % ACCOUNT_ARTIST_IMAGE.length);
+  const router = useRouter();
 
   return (
     <>
@@ -46,7 +47,13 @@ const LoginPage = () => {
             <Row className="sign" align="middle" justify="start">
               <span>Don't have an account?&nbsp;</span>
               Please
-              <LinkHOC href="/signup">&nbsp;Signup</LinkHOC>
+              <LinkHOC
+                href={`/signup${
+                  router.query?.redirect ? `?redirect=${router.query.redirect}` : ''
+                }`}
+              >
+                &nbsp;Signup
+              </LinkHOC>
             </Row>
             <Divider>or</Divider>
             <GoogleButton style={{ width: '100%' }} type="light" onClick={handleLogin} />

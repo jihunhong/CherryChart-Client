@@ -1,5 +1,10 @@
 import { createPlaylist } from '@actions/playlistActions';
-import { loadMyYoutubePlaylist, loadGoogleProfile, loadFavoriteArtist } from '@actions/userActions';
+import {
+  loadMyYoutubePlaylist,
+  loadGoogleProfile,
+  loadFavoriteArtist,
+  signUp,
+} from '@actions/userActions';
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -12,6 +17,9 @@ const initialState = {
   create_playlist_loading: false,
   create_playlist_done: false,
   create_playlist_error: null,
+  signup_loading: false,
+  signup_done: false,
+  signup_error: null,
 };
 
 const userSlice = createSlice({
@@ -57,6 +65,22 @@ const userSlice = createSlice({
         state.create_playlist_loading = false;
         state.create_playlist_done = true;
         state.create_playlist_error = action.payload;
+      })
+      .addCase(signUp.pending, (state, action) => {
+        state.signup_loading = true;
+        state.signup_done = false;
+        state.signup_error = null;
+      })
+      .addCase(signUp.fulfilled, (state, action) => {
+        state.signup_loading = false;
+        state.signup_done = true;
+        state.signup_error = null;
+        state.me = action.payload;
+      })
+      .addCase(signUp.rejected, (state, action) => {
+        state.signup_loading = false;
+        state.signup_done = true;
+        state.signup_error = action.payload;
       }),
 });
 

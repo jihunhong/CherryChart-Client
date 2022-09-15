@@ -14,6 +14,8 @@ export const SignUpContainer = styled(LoginContainer)`
       }
     }
     &.invalid {
+      &:after {
+      }
       &:focus-within {
         :after {
           border-bottom: 2px solid #f00034;
