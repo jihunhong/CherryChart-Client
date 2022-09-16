@@ -1,6 +1,11 @@
 import { AlbumCoverContainer } from '@atoms/AlbumCover/style';
 import { FlexColumn } from '@atoms/FlexColumn/style';
+import { SliderContainer } from '@atoms/Slider/style';
+import { TabNavs, TabsContainer } from '@atoms/Tabs/style';
 import { PlayerMusicItemContainer } from '@molecules/PlayerMusicItem/style';
+import PlaylistItem from '@molecules/PlaylistItem';
+import { PlaylistItemContainer } from '@molecules/PlaylistItem/style';
+import { ProfilePlaylistsContainer } from '@organisms/ProfilePlaylists/style';
 import { BiVolumeFull } from 'react-icons/bi';
 import styled from 'styled-components';
 
@@ -36,24 +41,34 @@ export const BarPlaylistContainer = styled.div`
 export const PlaylistSideContainer = styled.section`
   .playlist-header {
     display: grid;
-    padding: 8px 4px;
+    padding: 8px 0px;
     align-items: center;
     grid-auto-flow: column;
 
     .save-playlist {
       display: flex;
       align-items: center;
+      button {
+        padding: 4px 0;
+        border: none;
+      }
       svg {
-        margin-right: 4px;
+        margin-right: 0.8rem;
       }
     }
   }
 
-  div.grid {
+  ${TabsContainer} {
+    padding: 8px 4px;
+    ${TabNavs} {
+      margin: 0 -1rem;
+    }
+  }
+
+  div.song-grid {
     display: grid;
     grid-auto-flow: row;
     ${PlayerMusicItemContainer} {
-      padding: 0 8px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       h5[class*='typography'] {
         font-size: 14px;
@@ -92,6 +107,27 @@ export const PlaylistSideContainer = styled.section`
           border-radius: 4px;
         }
       }
+    }
+  }
+`;
+
+export const PlaylistGrid = styled.div`
+  ${ProfilePlaylistsContainer} {
+    h4 {
+      color: #fff;
+    }
+    ${SliderContainer} {
+      ul.list {
+        grid-auto-columns: ${(100 / 6).toFixed(2)}%;
+      }
+    }
+  }
+  ${PlaylistItemContainer} {
+    .thumb-container {
+      margin: 0;
+    }
+    .meta {
+      display: none;
     }
   }
 `;

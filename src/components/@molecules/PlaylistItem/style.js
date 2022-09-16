@@ -32,19 +32,12 @@ export const PlaylistItemContainer = styled.div`
     :after {
       transition: opacity 0.3s ease-in-out;
       position: absolute;
-      background: linear-gradient(360deg, rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+      background: linear-gradient(180.57deg, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.65) 100%);
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       content: '';
-      opacity: 0;
-    }
-
-    :hover {
-      :after {
-        opacity: 1;
-      }
     }
   }
 

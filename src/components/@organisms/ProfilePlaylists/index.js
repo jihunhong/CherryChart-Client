@@ -3,12 +3,16 @@ import Title from '@atoms/Title';
 import PlaylistItem from '@molecules/PlaylistItem';
 import { ProfilePlaylistsContainer } from './style';
 
-const ProfilePlaylists = ({ dataSource }) => {
+const ProfilePlaylists = ({ title = 'Playlist', dataSource }) => {
   return (
     <ProfilePlaylistsContainer>
       <section>
-        <Title level={4} text="Playlist" />
-        <Slider occupy={1 / 12} dataSource={dataSource} renderItem={item => <PlaylistItem pId={item.pId} />} />
+        <Title level={4} text={title} />
+        <Slider
+          occupy={1 / 12}
+          dataSource={dataSource}
+          renderItem={item => <PlaylistItem pId={item.pId} />}
+        />
       </section>
     </ProfilePlaylistsContainer>
   );
