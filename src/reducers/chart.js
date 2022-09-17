@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { loadChart } from '@actions/chartActions';
+import { likeChartSong, loadChart, unlikeChartSong } from '@actions/chartActions';
 
 const initialState = {
   chartLoading: false,
@@ -33,6 +33,39 @@ const chartSlice = createSlice({
         state.chartLoading = false;
         state.chartDataDone = true;
         state.chartError = action.payload;
+      })
+      .addCase(likeChartSong.fulfilled, (state, action) => {
+        const targetIndex = state.chartData.findIndex(el => el.music.id === action.payload.songId);
+        state.chartData = state.chartData.map((item, index) => {
+          if (index === targetIndex) {
+            return {
+              ...item,
+              music: {
+                ...item.music,
+                liker: [...item.music.liker, action.payload.id],
+              },
+            };
+          }
+          return { ...item };
+        });
+      })
+      .addCase(unlikeChartSong.fulfilled, (state, action) => {
+        const targetIndex = state.chartData.findIndex(el => el.music.id === action.payload.songId);
+        state.chartData[targetIndex].music.liker = state.chartData[targetIndex].music.liker.filter(
+          item => item.id !== action.payload.id,
+        );
+        state.chartData = state.chartData.map((item, index) => {
+          if (index === targetIndex) {
+            return {
+              ...item,
+              music: {
+                ...item.music,
+                liker: item.music.liker.filter(id => id !== action.payload.id),
+              },
+            };
+          }
+          return { ...item };
+        });
       }),
 });
 

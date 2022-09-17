@@ -2,15 +2,14 @@ import SiteSelector from '@atoms/SiteSelector';
 import Slider from '@atoms/Slider';
 import Text from '@atoms/Text';
 import Title from '@atoms/Title';
+import useAggregateAlbum from '@hooks/useAggreateAlbum';
 import aggregateAlbum from '@lib/aggregateAlbum';
 import CarouselItem from '@molecules/CarouselItem';
-import { useSelector } from 'react-redux';
+import { memo } from 'react';
 import { CarouselGlobalStyle, ChartCarouselContainer } from './style';
 
-const ChartCarousel = ({ title, subtext }) => {
-  const { chartData } = useSelector(state => state.chart);
-
-  const albums = aggregateAlbum(chartData);
+const ChartCarousel = ({ dataSource = [] }) => {
+  const albums = useAggregateAlbum(dataSource);
 
   return (
     <>
@@ -30,4 +29,4 @@ const ChartCarousel = ({ title, subtext }) => {
   );
 };
 
-export default ChartCarousel;
+export default memo(ChartCarousel);

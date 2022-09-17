@@ -81,11 +81,3 @@ export const YoutubeIcon = styled('span')`
     cursor: pointer;
   }
 `;
-
-export const HeartIcon = styled('span')`
-  margin: auto;
-
-  & svg {
-    cursor: pointer;
-  }
-`;

@@ -1,17 +1,13 @@
+import Like from '@atoms/Like';
 import LinkHOC from '@atoms/LinkHOC';
 import Text from '@atoms/Text';
 import useAddItem from '@hooks/useAddItem';
+import useLike from '@hooks/useLike';
 import { Avatar } from 'antd';
-import { BiHeart } from 'react-icons/bi';
+import { memo } from 'react';
 import { FaYoutube } from 'react-icons/fa';
-import {
-  AlbumName,
-  CoverImageContainer,
-  HeartIcon,
-  MusicListItemContainer,
-  Rank,
-  YoutubeIcon,
-} from './style';
+import { likerPropsAreEqual } from 'src/memo/likerPropsAreEqual';
+import { AlbumName, CoverImageContainer, MusicListItemContainer, Rank, YoutubeIcon } from './style';
 
 const ChartItem = ({
   id,
@@ -21,8 +17,8 @@ const ChartItem = ({
   albumName,
   video,
   albumId,
-  middleCoverImage,
   smallCoverImage,
+  liker,
 }) => {
   const [handleMusic] = useAddItem({
     id,
@@ -33,6 +29,7 @@ const ChartItem = ({
     videoId: video?.videoId,
     albumId,
   });
+  const [liked, handleLike] = useLike(id, liker);
 
   return (
     <MusicListItemContainer>
@@ -62,18 +59,16 @@ const ChartItem = ({
       <div className="flex-container action-container" onClick={handleMusic}>
         {video?.videoId && (
           <YoutubeIcon>
-            <FaYoutube />
+            <FaYoutube size={18} />
           </YoutubeIcon>
         )}
       </div>
 
-      <div className="flex-container action-container">
-        <HeartIcon>
-          <BiHeart />
-        </HeartIcon>
+      <div className="flex-container action-container" onClick={handleLike}>
+        <Like liked={liked} size={18} />
       </div>
     </MusicListItemContainer>
   );
 };
 
-export default ChartItem;
+export default memo(ChartItem, likerPropsAreEqual);

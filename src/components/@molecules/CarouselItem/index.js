@@ -1,6 +1,7 @@
 import LinkHOC from '@atoms/LinkHOC';
 import Title from '@atoms/Title';
 import CarouselCoverImage from '@molecules/CarouselCoverImage';
+import { memo } from 'react';
 import { Artist, CarouselItemContainer } from './style';
 
 const CarouselItem = ({ albumName, artistName, albumId, middleCoverImage }) => {
@@ -15,4 +16,4 @@ const CarouselItem = ({ albumName, artistName, albumId, middleCoverImage }) => {
   );
 };
 
-export default CarouselItem;
+export default memo(CarouselItem);
