@@ -6,7 +6,7 @@ const ProfileCircle = ({ src, width = 38, height = 38, ...props }) => {
   if (src?.indexOf(imgCdn) > -1) {
     return (
       <ProfileCircleContainer $width={width} $height={height} {...props}>
-        <Image src={src} width={width} height={height} />
+        <Image src={src} width={width} height={height} lazyBoundary={`${height * 2}px`} />
       </ProfileCircleContainer>
     );
   }

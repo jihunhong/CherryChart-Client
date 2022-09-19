@@ -7,7 +7,7 @@ const AlbumCover = ({ size, src, className, ...props }) => {
   }
   return (
     <AlbumCoverContainer $size={size} className={className} {...props}>
-      <Image src={src} width={size} height={size} />
+      <Image src={src} width={size} height={size} lazyBoundary={`${size * 2}px`} />
     </AlbumCoverContainer>
   );
 };

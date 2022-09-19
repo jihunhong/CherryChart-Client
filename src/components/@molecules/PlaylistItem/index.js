@@ -13,7 +13,14 @@ const PlaylistItem = ({ pId }) => {
         <div className="thumb-container">
           {preview?.thumbnails?.length ? (
             preview.thumbnails.map(item => (
-              <Image key={item} src={item} width={80} height={80} alt="cover" />
+              <Image
+                key={item}
+                src={item}
+                width={80}
+                height={80}
+                alt="cover"
+                lazyBoundary="160px"
+              />
             ))
           ) : (
             <BiListPlus size={120} color="#696969" />

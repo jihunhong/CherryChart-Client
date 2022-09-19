@@ -21,7 +21,12 @@ const Artists = ({ dataSource = [] }) => {
                 <div key={item?.music.id}>
                   <LinkHOC href={`/album/${item?.music.albumId}`}>
                     <div>
-                      <Image src={item?.music?.middleArtistProfile} width={300} height={300} />
+                      <Image
+                        src={item?.music?.middleArtistProfile}
+                        width={300}
+                        height={300}
+                        lazyBoundary="600px"
+                      />
                     </div>
                   </LinkHOC>
                 </div>
