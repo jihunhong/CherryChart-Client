@@ -4,6 +4,7 @@ import {
   loadGoogleProfile,
   loadFavoriteArtist,
   signUp,
+  logIn,
 } from '@actions/userActions';
 import { createSlice } from '@reduxjs/toolkit';
 
@@ -20,6 +21,9 @@ const initialState = {
   signup_loading: false,
   signup_done: false,
   signup_error: null,
+  logIn_loading: false,
+  logIn_done: false,
+  logIn_error: null,
 };
 
 const userSlice = createSlice({
@@ -81,6 +85,22 @@ const userSlice = createSlice({
         state.signup_loading = false;
         state.signup_done = true;
         state.signup_error = action.payload;
+      })
+      .addCase(logIn.pending, (state, action) => {
+        state.logIn_loading = true;
+        state.logIn_done = false;
+        state.logIn_error = null;
+      })
+      .addCase(logIn.fulfilled, (state, action) => {
+        state.logIn_loading = false;
+        state.logIn_done = true;
+        state.logIn_error = null;
+        state.me = action.payload;
+      })
+      .addCase(logIn.rejected, (state, action) => {
+        state.logIn_loading = false;
+        state.logIn_done = true;
+        state.logIn_error = action.payload;
       }),
 });
 

@@ -12,6 +12,9 @@ export const loadGoogleProfile = createAsyncThunk(
       const response = await axios.get('/api/oauth/google/user');
       return response?.data;
     } catch (err) {
+      if (!err.response) {
+        throw err;
+      }
       return rejectWithValue(err.reponse.data);
     }
   },
@@ -24,6 +27,9 @@ export const loadMyYoutubePlaylist = createAsyncThunk(
       const response = await axios.get('/api/youtube/playlist/list');
       return response.data;
     } catch (err) {
+      if (!err.response) {
+        throw err;
+      }
       return rejectWithValue(err.reponse.data);
     }
   },
@@ -40,6 +46,9 @@ export const loadFavoriteArtist = createAsyncThunk(
       });
       return response.data;
     } catch (err) {
+      if (!err.response) {
+        throw err;
+      }
       return rejectWithValue(err.reponse.data);
     }
   },
@@ -56,7 +65,28 @@ export const signUp = createAsyncThunk(
       });
       return response.data;
     } catch (err) {
-      return rejectWithValue(err.reponse.data);
+      if (!err.response) {
+        throw err;
+      }
+      return rejectWithValue(err.response.data);
+    }
+  },
+);
+
+export const logIn = createAsyncThunk(
+  'user/logIn',
+  async ({ email, password }, { rejectWithValue }) => {
+    try {
+      const response = await axios.post('/api/user/login', {
+        email,
+        password,
+      });
+      return response.data;
+    } catch (err) {
+      if (!err.response) {
+        throw err;
+      }
+      return rejectWithValue(err.response.data);
     }
   },
 );

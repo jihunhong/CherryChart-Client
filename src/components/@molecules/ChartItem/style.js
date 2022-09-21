@@ -27,7 +27,7 @@ export const MusicListItemContainer = styled('li')`
   background: #fff;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 24px;
   border-radius: 6px;
-  transition: box-shadow 0.8s ease-in-out;
+  transition: transform 0.1s ease-in-out;
 
   div[class*='flex-container'],
   a[class*='flex-container'] {
@@ -37,6 +37,12 @@ export const MusicListItemContainer = styled('li')`
 
   div[class*='action-container'] {
     cursor: pointer;
+    svg {
+      transition: transform 0.25s ease-in-out;
+      :hover {
+        transform: scale(1.5);
+      }
+    }
   }
 
   a {
@@ -52,10 +58,14 @@ export const MusicListItemContainer = styled('li')`
   ${Span}.artist-name {
     color: rgba(0, 0, 0, 0.45);
     margin: auto 1.4rem;
+    transition: text-decoration 0.25s ease-in-out;
+    :hover {
+      text-decoration: underline;
+    }
   }
 
   :hover {
-    box-shadow: rgb(149 157 165 / 60%) 2px 3px 6px;
+    transform: scale(1.03);
   }
 `;
 
@@ -68,6 +78,10 @@ export const AlbumName = styled('span')`
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
+  transition: text-decoration 0.25s ease-in-out;
+  :hover {
+    text-decoration: underline;
+  }
 `;
 
 export const YoutubeIcon = styled('span')`

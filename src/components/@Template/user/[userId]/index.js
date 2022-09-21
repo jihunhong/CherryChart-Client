@@ -8,7 +8,7 @@ const UserDetail = () => {
   const favoriteArtists = useSelector(state => state.user.favorite_artists);
   return (
     <section>
-      <ProfileBanner />
+      <ProfileBanner {...me} />
       <ProfilePlaylists dataSource={me?.playlists} />
       <ProfileArtists dataSource={favoriteArtists} />
     </section>

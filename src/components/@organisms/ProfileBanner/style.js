@@ -13,10 +13,10 @@ export const ProfileBannerContainer = styled.div`
   .absolute-section {
     width: calc(100% - 24px);
     position: absolute;
-    bottom: -14px;
+    bottom: 8px;
     left: 24px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     ${ProfileCircleContainer} {
       width: 84px;
       height: 84px;
@@ -38,6 +38,15 @@ export const ProfileInfoContainer = styled.div`
       vertical-align: middle;
       margin-right: 4px;
     }
+  }
+`;
+
+export const UserActionsContainer = styled.div`
+  margin-left: 12px;
+
+  button {
+    color: var(--dark-gray);
+    border-color: var(--dark-gray);
   }
 `;
 

@@ -5,10 +5,10 @@ import { useSelector } from 'react-redux';
 
 const PlayerControls = () => {
   const loop = useSelector(state => state.player.loop);
-  const { handleRepeat, handleShuffle, handleTogglePlaylist } = usePlayerControl();
+  const { handleMute, handleRepeat, handleShuffle, handleTogglePlaylist } = usePlayerControl();
   return (
     <>
-      <div className="icon-container">
+      <div className="icon-container" onClick={handleMute}>
         <BiVolumeFull size={18} />
       </div>
       <div className={`icon-container ${loop ? 'active' : ''}`} onClick={handleRepeat}>

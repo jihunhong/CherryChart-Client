@@ -1,5 +1,5 @@
 import { ContentContainer } from '@atoms/Content/style';
-import { StyledInput } from '@atoms/Input/style';
+import { InputContainer, StyledInput } from '@atoms/Input/style';
 import { Span } from '@atoms/Text/style';
 import { imgCdn } from '@config/';
 import styled, { createGlobalStyle } from 'styled-components';
@@ -91,9 +91,12 @@ export const LoginContainer = styled.div`
     margin-top: auto;
     margin-bottom: auto;
 
-    ${StyledInput} {
-      ::placeholder {
-        font-style: normal;
+    ${InputContainer} {
+      margin-bottom: 2rem;
+      ${StyledInput} {
+        ::placeholder {
+          font-style: normal;
+        }
       }
     }
 

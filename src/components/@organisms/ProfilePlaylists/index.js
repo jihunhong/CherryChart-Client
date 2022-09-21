@@ -3,11 +3,11 @@ import Title from '@atoms/Title';
 import PlaylistItem from '@molecules/PlaylistItem';
 import { ProfilePlaylistsContainer } from './style';
 
-const ProfilePlaylists = ({ title = 'Playlist', dataSource }) => {
+const ProfilePlaylists = ({ dataSource }) => {
   return (
     <ProfilePlaylistsContainer>
       <section>
-        <Title level={4} text={title} />
+        <Title level={4} text="Playlist" />
         <Slider
           occupy={1 / 12}
           dataSource={dataSource}

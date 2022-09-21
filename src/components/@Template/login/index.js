@@ -5,18 +5,22 @@ import Text from '@atoms/Text';
 import Title from '@atoms/Title';
 import { ACCOUNT_ARTIST_IMAGE } from '@config/settings';
 import useGoogleLogin from '@hooks/oauth2/useGoogleLogin';
-import { Button, Checkbox, Divider, Form, Row } from 'antd';
+import { Button, Divider, Row } from 'antd';
+import useValidation from '@hooks/form/useValidation';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import GoogleButton from 'react-google-button';
 import { BiInfoCircle } from 'react-icons/bi';
 import { useSelector } from 'react-redux';
 import { LoginContainer, LoginPageGlobalStyle } from './style';
+import useLogin from '@hooks/user/useLogin';
 
 const LoginPage = () => {
   const { artistList } = useSelector(state => state.artist);
-  const [_, handleLogin] = useGoogleLogin();
+  const [_, handleGoogleLogin] = useGoogleLogin();
   const [random] = useState(Math.floor(Math.random() * 10) % ACCOUNT_ARTIST_IMAGE.length);
+  const { form, onChange } = useValidation();
+  const [loading, handleLogin] = useLogin(form);
   const router = useRouter();
 
   return (
@@ -26,24 +30,19 @@ const LoginPage = () => {
         <div className="action-container">
           <Title level={3} text="Welcome back!" />
           <Text type="secondary" text="Check the music charts and make a playlist" level={3} />
-          <Form autoComplete="off">
+          <form method="post" onChange={onChange} onSubmit={handleLogin}>
             <section className="login-container">
-              <Form.Item rules={[{ required: true, message: 'Please input your username!' }]}>
-                <Input placeholder="Email" autoCapitalize="none" maxLength={100} />
-              </Form.Item>
-              <Form.Item rules={[{ required: true, message: 'Please input your password!' }]}>
-                <Input type="password" placeholder="Password" />
-              </Form.Item>
-              <Form.Item>
-                <Form.Item name="remember" valuePropName="checked" noStyle>
-                  <Checkbox>Remember me</Checkbox>
-                </Form.Item>
-                <LinkHOC className="login-form-forgot" href="/">
-                  Forgot password
-                </LinkHOC>
-              </Form.Item>
+              <Input
+                placeholder="Email"
+                name="email"
+                required
+                className={form?.email?.valid ? 'valid' : 'invalid'}
+              />
+              <Input type="password" name="password" placeholder="Password" required />
             </section>
-            <Button type="primary">LOGIN</Button>
+            <Button type="primary" htmlType="submit" loading={loading}>
+              LOGIN
+            </Button>
             <Row className="sign" align="middle" justify="start">
               <span>Don't have an account?&nbsp;</span>
               Please
@@ -56,8 +55,8 @@ const LoginPage = () => {
               </LinkHOC>
             </Row>
             <Divider>or</Divider>
-            <GoogleButton style={{ width: '100%' }} type="light" onClick={handleLogin} />
-          </Form>
+            <GoogleButton style={{ width: '100%' }} type="light" onClick={handleGoogleLogin} />
+          </form>
         </div>
         <div className="login-describe-container">
           <Row align="flex-start" className="login-describe">

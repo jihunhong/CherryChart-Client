@@ -12,6 +12,15 @@ const usePlayerControl = () => {
       }
     }
   };
+
+  const handleMute = () => {
+    if (window.YTPlayer.isMuted()) {
+      window.YTPlayer.unMute();
+    } else {
+      window.YTPlayer.mute();
+    }
+  };
+
   const handleRepeat = () => {
     dispatch(playerSlice.actions.toggleRepeat());
   };
@@ -30,6 +39,6 @@ const usePlayerControl = () => {
     dispatch(playerSlice.actions.togglePlayList());
   };
 
-  return { handleRepeat, handleShuffle, handleTogglePlaylist, handlePlayItem };
+  return { handleMute, handleRepeat, handleShuffle, handleTogglePlaylist, handlePlayItem };
 };
 export default usePlayerControl;

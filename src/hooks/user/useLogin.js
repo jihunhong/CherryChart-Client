@@ -1,23 +1,23 @@
-import { signUp } from '@actions/userActions';
+import { logIn, signUp } from '@actions/userActions';
 import { success, error } from '@config/notification';
 import { useRouter } from 'next/router';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-const useSignUp = form => {
+const useLogin = form => {
   const dispatch = useDispatch();
   const router = useRouter();
-  const onSubmit = async e => {
+  const logIn_loading = useSelector(state => state.user.logIn_loading);
+  const handleLogin = async e => {
     e.preventDefault();
     try {
       await dispatch(
-        signUp({
+        logIn({
           email: form?.email?.value,
           password: form?.password?.value,
-          nickname: form?.nickname?.value,
         }),
       ).unwrap();
       success({
-        message: '가입 완료',
+        message: '로그인 완료',
       });
       router.push(router.query?.redirect || '/');
     } catch (err) {
@@ -27,7 +27,7 @@ const useSignUp = form => {
     }
   };
 
-  return { onSubmit };
+  return [logIn_loading, handleLogin];
 };
 
-export default useSignUp;
+export default useLogin;
