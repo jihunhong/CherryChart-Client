@@ -21,8 +21,8 @@ const ProfileBanner = () => {
       <div className="absolute-section">
         <ProfileCircle src={me?.picture} width={80} height={80} />
         <ProfileInfoContainer>
-          <h4>{me?.nickname}</h4>
-          <h5>@&nbsp;{me?.email}</h5>
+          <h4>@&nbsp;{me?.nickname}</h4>
+          <h5>{me?.email}</h5>
         </ProfileInfoContainer>
         {parseInt(router.query.userId, 10) !== me?.id ? (
           <UserActionsContainer>
