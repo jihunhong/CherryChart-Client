@@ -17,7 +17,7 @@ import useLogin from '@hooks/user/useLogin';
 
 const LoginPage = () => {
   const { artistList } = useSelector(state => state.artist);
-  const [_, handleGoogleLogin] = useGoogleLogin();
+  const [handleGoogleLogin] = useGoogleLogin();
   const [random] = useState(Math.floor(Math.random() * 10) % ACCOUNT_ARTIST_IMAGE.length);
   const { form, onChange } = useValidation();
   const [loading, handleLogin] = useLogin(form);

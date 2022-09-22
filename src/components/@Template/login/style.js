@@ -1,16 +1,9 @@
-import { ContentContainer } from '@atoms/Content/style';
 import { InputContainer, StyledInput } from '@atoms/Input/style';
 import { Span } from '@atoms/Text/style';
 import { imgCdn } from '@config/';
 import styled, { createGlobalStyle } from 'styled-components';
 
 export const LoginPageGlobalStyle = createGlobalStyle`
-  ${ContentContainer} {
-    // aspect-ratio: 3840/2160;
-    // background-image: url(./svg/bubbles.svg);
-    // background-size: cover;
-    // background-repeat: no-repeat;
-  }
 `;
 
 export const LoginContainer = styled.div`

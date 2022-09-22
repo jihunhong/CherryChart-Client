@@ -1,15 +1,18 @@
 import { createPlaylist } from '@actions/playlistActions';
 import {
   loadMyYoutubePlaylist,
-  loadGoogleProfile,
+  loadMyProfile,
   loadFavoriteArtist,
   signUp,
   logIn,
+  logOut,
+  loadOtherUser,
 } from '@actions/userActions';
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   me: null,
+  otherUser: null,
   my_youtube_playlist: [],
   google_api_loading: false,
   google_oauth_loading: false,
@@ -39,18 +42,21 @@ const userSlice = createSlice({
       .addCase(loadFavoriteArtist.fulfilled, (state, action) => {
         state.favorite_artists = action.payload;
       })
-      .addCase(loadGoogleProfile.pending, (state, action) => {
+      .addCase(loadMyProfile.pending, (state, action) => {
         if (action.payload) {
           state.accessToken = action.payload;
         }
         state.google_oauth_loading = true;
       })
-      .addCase(loadGoogleProfile.fulfilled, (state, action) => {
+      .addCase(loadMyProfile.fulfilled, (state, action) => {
         state.google_oauth_loading = false;
         state.me = action.payload;
       })
-      .addCase(loadGoogleProfile.rejected, (state, action) => {
+      .addCase(loadMyProfile.rejected, (state, action) => {
         state.google_oauth_loading = false;
+      })
+      .addCase(loadOtherUser.fulfilled, (state, action) => {
+        state.otherUser = action.payload;
       })
       .addCase(loadMyYoutubePlaylist.fulfilled, (state, action) => {
         state.my_youtube_playlist = action.payload;
@@ -101,6 +107,9 @@ const userSlice = createSlice({
         state.logIn_loading = false;
         state.logIn_done = true;
         state.logIn_error = action.payload;
+      })
+      .addCase(logOut.fulfilled, (state, action) => {
+        state.me = null;
       }),
 });
 

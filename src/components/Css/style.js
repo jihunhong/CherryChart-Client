@@ -9,6 +9,12 @@ export const globalNotificationStyle = css`
   }
 `;
 
+export const globalPopoverStyle = css`
+  .ant-popover-inner-content {
+    padding: 0;
+  }
+`;
+
 export const scrollbar = css`
   overflow-x: hidden;
   overflow-y: scroll;

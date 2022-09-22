@@ -1,29 +1,30 @@
-import { Badge } from 'antd';
+import { FlexColumn } from '@atoms/FlexColumn/style';
+import { ProfileCircleContainer } from '@atoms/ProfileCircle/style';
 import styled from 'styled-components';
 
 export const PopOverMenusContainer = styled.div`
   display: grid;
   grid-auto-flow: column;
   grid-gap: 24px;
-  & span.ant-badge {
-    margin: auto 0;
-    & sup {
-      box-shadow: none;
-      transform: translate(0%, 0%);
-      width: 9px;
-      height: 9px;
-      position: absolute;
-      top: 2px;
-      border: 1px solid #fdfdfe;
-    }
-  }
 
-  svg {
-    font-size: 23px !important;
-    color: rgb(255 255 255 / 88%);
+  ${ProfileCircleContainer} {
+    cursor: pointer;
   }
 `;
 
-export const InitilBadge = styled(Badge)`
-  margin: auto 23px auto auto;
+export const UserMenuContainer = styled(FlexColumn)`
+  a {
+    color: var(--font-default-color);
+  }
+  div.menu-item {
+    padding: 6px 16px;
+    transition: background-color 0.1s ease-in-out;
+    cursor: pointer;
+    :hover {
+      background-color: #eaeaeaad;
+    }
+    svg {
+      margin-right: 0.45rem;
+    }
+  }
 `;

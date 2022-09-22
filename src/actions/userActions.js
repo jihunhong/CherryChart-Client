@@ -5,11 +5,23 @@ import axios from 'axios';
 axios.defaults.baseURL = API_URL;
 axios.defaults.withCredentials = true;
 
-export const loadGoogleProfile = createAsyncThunk(
-  'user/google-profile',
-  async (accessToken, { rejectWithValue }) => {
+export const loadMyProfile = createAsyncThunk('user/profile', async (_, { rejectWithValue }) => {
+  try {
+    const response = await axios.get('/api/user/profile');
+    return response?.data;
+  } catch (err) {
+    if (!err.response) {
+      throw err;
+    }
+    return rejectWithValue(err.reponse.data);
+  }
+});
+
+export const loadOtherUser = createAsyncThunk(
+  'user/other-user',
+  async ({ id }, { rejectWithValue }) => {
     try {
-      const response = await axios.get('/api/oauth/google/user');
+      const response = await axios.get(`/api/user/${id}`);
       return response?.data;
     } catch (err) {
       if (!err.response) {
@@ -22,7 +34,7 @@ export const loadGoogleProfile = createAsyncThunk(
 
 export const loadMyYoutubePlaylist = createAsyncThunk(
   'user/users-playlist',
-  async (accessToken, { rejectWithValue }) => {
+  async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get('/api/youtube/playlist/list');
       return response.data;
@@ -90,3 +102,15 @@ export const logIn = createAsyncThunk(
     }
   },
 );
+
+export const logOut = createAsyncThunk('user/logOut', async (payload, { rejectWithValue }) => {
+  try {
+    const response = await axios.post('/api/user/logout');
+    return response?.data;
+  } catch (err) {
+    if (!err.response) {
+      throw err;
+    }
+    return rejectWithValue(err.reponse.data);
+  }
+});

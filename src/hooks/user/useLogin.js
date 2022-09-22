@@ -1,4 +1,4 @@
-import { logIn, signUp } from '@actions/userActions';
+import { logIn } from '@actions/userActions';
 import { success, error } from '@config/notification';
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
@@ -22,7 +22,7 @@ const useLogin = form => {
       router.push(router.query?.redirect || '/');
     } catch (err) {
       error({
-        message: err,
+        message: err.message,
       });
     }
   };

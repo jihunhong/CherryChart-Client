@@ -1,14 +1,12 @@
 import Logo from '@atoms/Logo';
-import { Typography } from 'antd';
-import { FaApple, FaGlobeAfrica, FaGlobeAsia } from 'react-icons/fa';
-import { ProfileNavContainer } from './style';
+import { SiteNavContainer } from './style';
 
-const ProfileNav = () => {
+const SiteNav = () => {
   return (
-    <ProfileNavContainer align="center">
+    <SiteNavContainer align="center">
       <Logo />
-    </ProfileNavContainer>
+    </SiteNavContainer>
   );
 };
 
-export default ProfileNav;
+export default SiteNav;

@@ -1,13 +1,10 @@
-import { loadGoogleProfile, loadMyYoutubePlaylist } from '@actions/userActions';
+import { loadMyProfile } from '@actions/userActions';
 import { API_URL } from '@config/';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 const useGoogleLogin = () => {
   const dispatch = useDispatch();
-  const me = useSelector(state => state.user.me);
-  const router = useRouter();
   const handleLogin = () => {
     let timer = null;
     const loginWindow = window.open(
@@ -18,7 +15,7 @@ const useGoogleLogin = () => {
     if (loginWindow) {
       timer = setInterval(() => {
         if (loginWindow.closed) {
-          dispatch(loadGoogleProfile());
+          dispatch(loadMyProfile());
           if (timer) {
             clearInterval(timer);
           }
@@ -27,17 +24,7 @@ const useGoogleLogin = () => {
     }
   };
 
-  useEffect(() => {
-    if (me) {
-      dispatch(loadMyYoutubePlaylist())
-        .unwrap()
-        .then(() => {
-          router.back();
-        });
-    }
-  }, [me]);
-
-  return [null, handleLogin];
+  return [handleLogin];
 };
 
 export default useGoogleLogin;

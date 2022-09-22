@@ -13,7 +13,7 @@ const Footer = () => {
         <FlexColumn>
           <div className="site-footer">
             <Logo />
-            <Text text="Enjoy your music life and Kpop charts on YouTube. It's free!" />
+            <Text text="Enjoy your music life and Kpop charts on YouTube." />
           </div>
           <div>
             <div className="contact">
@@ -60,9 +60,6 @@ const Footer = () => {
             </li>
             <li className="disabled">
               <a>Favorite</a>
-            </li>
-            <li className="disabled">
-              <a>MyPage</a>
             </li>
           </ul>
         </SiteLinks>

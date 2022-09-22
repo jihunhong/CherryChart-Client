@@ -22,7 +22,7 @@ const useSignUp = form => {
       router.push(router.query?.redirect || '/');
     } catch (err) {
       error({
-        message: err,
+        message: err.message,
       });
     }
   };

@@ -1,12 +1,13 @@
-import Content from '@atoms/Content';
-import { SIDEBAR_WIDTH } from '@config/index';
+import Body from '@Layout/Body';
 import Footer from '@Layout/Footer';
 import Header from '@Layout/Header';
-import PopOverMenus from '@Layout/PopOverMenus';
-import ProfileNav from '@Layout/ProfileNav';
+import SiteNav from '@Layout/ProfileNav';
 import { Layout } from 'antd';
+import dynamic from 'next/dynamic';
 import Sidebar from '../Sidebar';
 import { GlobalStyle } from './style';
+
+const PopOverMenus = dynamic(() => import('@Layout/PopOverMenus'), { ssr: false });
 
 const AppLayout = ({ children }) => {
   return (
@@ -14,14 +15,14 @@ const AppLayout = ({ children }) => {
       <GlobalStyle />
       <Layout>
         <Header>
-          <ProfileNav />
+          <SiteNav />
           <PopOverMenus />
         </Header>
         <Layout className="app-content">
           <Sidebar />
-          <Content>
+          <Body>
             <>{children}</>
-          </Content>
+          </Body>
         </Layout>
         <Footer />
       </Layout>

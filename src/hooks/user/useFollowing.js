@@ -2,22 +2,20 @@ import useToggle from '@hooks/util/useToggle';
 import { useRouter } from 'next/router';
 import { useDebugValue, useEffect } from 'react';
 import { RiUserFollowLine, RiUserUnfollowLine } from 'react-icons/ri';
-import { useSelector } from 'react-redux';
 
-const useFollowing = () => {
-  const me = useSelector(state => state.user.me);
+const useFollowing = profile => {
   const router = useRouter();
   const [followStatus, _, setFollowStatus] = useToggle(false);
 
   useEffect(() => {
     const currentUserId = parseInt(router.query.userId, 10);
-    const flag = me?.followings?.includes(currentUserId);
+    const flag = profile?.followings?.includes(currentUserId);
     if (flag) {
       setFollowStatus(true);
     } else {
       setFollowStatus(false);
     }
-  }, [me, router]);
+  }, [profile, router]);
 
   useDebugValue([followStatus, followStatus ? RiUserUnfollowLine : RiUserFollowLine]);
 

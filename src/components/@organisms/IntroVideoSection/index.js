@@ -18,7 +18,10 @@ const IntroVideoSection = () => {
       <div className="container">
         <LetterBox>
           <Title className="site-title" level={1} text="Cherry Chart" />
-          <Text className="site-describe" text="Enjoy your music life and Kpop charts on YouTube. It's free!" />
+          <Text
+            className="site-describe"
+            text="Enjoy your music life and Kpop charts on YouTube."
+          />
           <a className="owner-link" href="https://github.com/jihunhong">
             <>
               2021 · jihunhong

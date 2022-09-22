@@ -27,7 +27,6 @@ export const MusicListItemContainer = styled('li')`
   background: #fff;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 24px;
   border-radius: 6px;
-  transition: transform 0.1s ease-in-out;
 
   div[class*='flex-container'],
   a[class*='flex-container'] {
@@ -62,10 +61,6 @@ export const MusicListItemContainer = styled('li')`
     :hover {
       text-decoration: underline;
     }
-  }
-
-  :hover {
-    transform: scale(1.03);
   }
 `;
 

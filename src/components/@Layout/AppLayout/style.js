@@ -1,4 +1,4 @@
-import { globalNotificationStyle, scrollbar } from '@components/Css/style';
+import { globalNotificationStyle, globalPopoverStyle, scrollbar } from '@components/Css/style';
 import { SIDEBAR_WIDTH } from '@config/';
 import { Layout } from 'antd';
 import styled, { createGlobalStyle, css } from 'styled-components';
@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
   :root {
     --primary-color: #1890ff;
     --light-plain-color: #3657dc;
+    --font-default-color: rgba(0, 0, 0, 0.85);
     --font-plain-color: #262f57;
     --background-color: #fcfdfe;
     --sidebar-text-color: #939393;
@@ -60,7 +61,10 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  
+
   ${globalNotificationStyle}
+  ${globalPopoverStyle}
 `;
 
 export const StyledLayout = styled(Layout)`

@@ -11,20 +11,19 @@ import {
   UserMetaContainer,
 } from './style';
 
-const ProfileBanner = () => {
-  const me = useSelector(state => state.user.me);
+const ProfileBanner = profile => {
   const [followStatus, FollowToggle] = useFollowing();
   const router = useRouter();
 
   return (
     <ProfileBannerContainer>
       <div className="absolute-section">
-        <ProfileCircle src={me?.picture} width={80} height={80} />
+        <ProfileCircle src={profile?.picture} width={80} height={80} />
         <ProfileInfoContainer>
-          <h4>@&nbsp;{me?.nickname}</h4>
-          <h5>{me?.email}</h5>
+          <h4>@&nbsp;{profile?.nickname}</h4>
+          <h5>{profile?.email}</h5>
         </ProfileInfoContainer>
-        {parseInt(router.query.userId, 10) !== me?.id ? (
+        {parseInt(router.query.userId, 10) !== profile?.id ? (
           <UserActionsContainer>
             <Button ghost type="primary" icon={<FollowToggle />}>
               {followStatus ? 'UnFollow' : 'Follow'}
@@ -32,9 +31,9 @@ const ProfileBanner = () => {
           </UserActionsContainer>
         ) : null}
         <UserMetaContainer>
-          <UserScore label="Follower" count={me?.followers?.length} />
-          <UserScore label="Following" count={me?.followings?.length} />
-          <UserScore label="Like" count={me?.liked?.length} />
+          <UserScore label="Follower" count={profile?.followers?.length} />
+          <UserScore label="Following" count={profile?.followings?.length} />
+          <UserScore label="Like" count={profile?.liked?.length} />
         </UserMetaContainer>
       </div>
     </ProfileBannerContainer>

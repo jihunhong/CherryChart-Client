@@ -1,7 +1,7 @@
 import { Layout } from 'antd';
 import styled from 'styled-components';
 
-export const ContentContainer = styled(Layout.Content)`
+export const BodyContainer = styled(Layout.Content)`
   background: #fcfdfe;
   padding: 0 50px 80px;
   position: relative;
