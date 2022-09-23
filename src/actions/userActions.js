@@ -47,6 +47,42 @@ export const loadMyYoutubePlaylist = createAsyncThunk(
   },
 );
 
+export const userFollow = createAsyncThunk(
+  'user/follow',
+  async ({ userId }, { rejectWithValue }) => {
+    try {
+      const response = await axios.patch('/api/user/follow', {
+        userId,
+      });
+      return response.data;
+    } catch (err) {
+      if (!err.response) {
+        throw err;
+      }
+      return rejectWithValue(err.reponse.data);
+    }
+  },
+);
+
+export const userUnFollow = createAsyncThunk(
+  'user/unfollow',
+  async ({ userId }, { rejectWithValue }) => {
+    try {
+      const response = await axios.delete('/api/user/unfollow', {
+        data: {
+          userId,
+        },
+      });
+      return response.data;
+    } catch (err) {
+      if (!err.response) {
+        throw err;
+      }
+      return rejectWithValue(err.reponse.data);
+    }
+  },
+);
+
 export const loadFavoriteArtist = createAsyncThunk(
   'artist/favorite',
   async ({ userId }, { rejectWithValue }) => {

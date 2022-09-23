@@ -2,7 +2,6 @@ import ProfileCircle from '@atoms/ProfileCircle';
 import useFollowing from '@hooks/user/useFollowing';
 import UserScore from '@molecules/UserScore';
 import { Button } from 'antd';
-import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
 import {
   ProfileBannerContainer,
@@ -12,8 +11,8 @@ import {
 } from './style';
 
 const ProfileBanner = profile => {
-  const [followStatus, FollowToggle] = useFollowing();
-  const router = useRouter();
+  const [followStatus, handleFollow, FollowBtn] = useFollowing(profile);
+  const me = useSelector(state => state.user.me);
 
   return (
     <ProfileBannerContainer>
@@ -23,13 +22,13 @@ const ProfileBanner = profile => {
           <h4>@&nbsp;{profile?.nickname}</h4>
           <h5>{profile?.email}</h5>
         </ProfileInfoContainer>
-        {parseInt(router.query.userId, 10) !== profile?.id ? (
-          <UserActionsContainer>
-            <Button ghost type="primary" icon={<FollowToggle />}>
+        {me?.id == profile?.id ? null : (
+          <UserActionsContainer $followed={followStatus}>
+            <Button ghost={followStatus} type="primary" icon={<FollowBtn />} onClick={handleFollow}>
               {followStatus ? 'UnFollow' : 'Follow'}
             </Button>
           </UserActionsContainer>
-        ) : null}
+        )}
         <UserMetaContainer>
           <UserScore label="Follower" count={profile?.followers?.length} />
           <UserScore label="Following" count={profile?.followings?.length} />

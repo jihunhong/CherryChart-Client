@@ -1,4 +1,9 @@
-import { globalNotificationStyle, globalPopoverStyle, scrollbar } from '@components/Css/style';
+import {
+  globalAntBtn,
+  globalAntNotificationStyle,
+  globalAntPopoverStyle,
+  scrollbar,
+} from '@components/Css/style';
 import { SIDEBAR_WIDTH } from '@config/';
 import { Layout } from 'antd';
 import styled, { createGlobalStyle, css } from 'styled-components';
@@ -63,8 +68,9 @@ export const GlobalStyle = createGlobalStyle`
 
   
 
-  ${globalNotificationStyle}
-  ${globalPopoverStyle}
+  ${globalAntNotificationStyle}
+  ${globalAntPopoverStyle}
+  ${globalAntBtn}
 `;
 
 export const StyledLayout = styled(Layout)`

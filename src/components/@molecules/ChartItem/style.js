@@ -1,4 +1,5 @@
 import { Span } from '@atoms/Text/style';
+import { SlideUp } from '@components/KeyFrames';
 import media from '@lib/media';
 import styled from 'styled-components';
 
@@ -16,6 +17,7 @@ export const CoverImageContainer = styled('div')`
 `;
 
 export const MusicListItemContainer = styled('li')`
+  ${SlideUp}
   display: grid;
   width: 100%;
   grid-auto-flow: column;

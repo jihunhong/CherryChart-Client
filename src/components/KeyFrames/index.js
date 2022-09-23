@@ -1,4 +1,4 @@
-import { keyframes } from 'styled-components';
+import { css, keyframes } from 'styled-components';
 
 export const playlistRenderAnim = keyframes`
     from {
@@ -10,14 +10,19 @@ export const playlistRenderAnim = keyframes`
     }
 `;
 
-export const SlideUp = keyframes`
-  from {
-    transform: translate(0, 120px);
-  }
-  to {
-    transform: translate(0, 0px);
-  }
-  
+export const SlideUp = css`
+  transition: transform 0.5s, opacity 0.5s;
+  transition-delay: 0.1s;
+  opacity: 0.3;
+  transform: translate3d(0, 30px, 0) rotate(0.001deg);
+
+  ${props =>
+    props.$intersecting
+      ? css`
+          opacity: 1;
+          transform: translateZ(0) rotate(0.001deg);
+        `
+      : ''}
 `;
 
 export const ripple = keyframes`

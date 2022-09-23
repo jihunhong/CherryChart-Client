@@ -2,9 +2,10 @@ import Like from '@atoms/Like';
 import LinkHOC from '@atoms/LinkHOC';
 import Text from '@atoms/Text';
 import useAddItem from '@hooks/useAddItem';
+import useIntersecting from '@hooks/useIntersecting';
 import useLike from '@hooks/useLike';
 import { Avatar } from 'antd';
-import { memo } from 'react';
+import { memo, useDebugValue, useRef } from 'react';
 import { FaYoutube } from 'react-icons/fa';
 import { likerPropsAreEqual } from 'src/memo/likerPropsAreEqual';
 import { AlbumName, CoverImageContainer, MusicListItemContainer, Rank, YoutubeIcon } from './style';
@@ -30,9 +31,11 @@ const ChartItem = ({
     albumId,
   });
   const [liked, handleLike] = useLike(id, liker);
+  const itemRef = useRef();
+  const [flag] = useIntersecting(itemRef);
 
   return (
-    <MusicListItemContainer>
+    <MusicListItemContainer ref={itemRef} $intersecting={flag}>
       <div className="flex-container">
         <Rank>{`0${rank}`?.slice(-2)}</Rank>
       </div>

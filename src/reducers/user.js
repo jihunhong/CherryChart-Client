@@ -7,6 +7,8 @@ import {
   logIn,
   logOut,
   loadOtherUser,
+  userFollow,
+  userUnFollow,
 } from '@actions/userActions';
 import { createSlice } from '@reduxjs/toolkit';
 
@@ -27,6 +29,7 @@ const initialState = {
   logIn_loading: false,
   logIn_done: false,
   logIn_error: null,
+  follow_loading: false,
 };
 
 const userSlice = createSlice({
@@ -75,6 +78,22 @@ const userSlice = createSlice({
         state.create_playlist_loading = false;
         state.create_playlist_done = true;
         state.create_playlist_error = action.payload;
+      })
+      .addCase(userFollow.pending, state => {
+        state.follow_loading = true;
+      })
+      .addCase(userFollow.fulfilled, (state, action) => {
+        state.follow_loading = false;
+        state.otherUser.followers = action.payload;
+        state.me.followings = [...state.me.followings, action.meta.arg.userId];
+      })
+      .addCase(userUnFollow.pending, state => {
+        state.follow_loading = true;
+      })
+      .addCase(userUnFollow.fulfilled, (state, action) => {
+        state.follow_loading = false;
+        state.otherUser.followers = action.payload;
+        state.me.followings = state.me.followings.filter(id => id !== action.meta.arg.userId);
       })
       .addCase(signUp.pending, (state, action) => {
         state.signup_loading = true;

@@ -45,8 +45,11 @@ export const UserActionsContainer = styled.div`
   margin-left: 12px;
 
   button {
-    color: var(--dark-gray);
-    border-color: var(--dark-gray);
+    > svg {
+      margin-right: 0;
+    }
+    color: ${props => (props.$followed ? 'var(--dark-gray)' : '#fff')};
+    border-color: ${props => (props.$followed ? 'var(--dark-gray)' : '#fff')};
   }
 `;
 

@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-export const globalNotificationStyle = css`
+export const globalAntNotificationStyle = css`
   > div[class*='-notification-notice-'] {
     border-radius: 6px;
     border: 0.5px solid rgba(0, 0, 0, 0.2);
@@ -9,9 +9,16 @@ export const globalNotificationStyle = css`
   }
 `;
 
-export const globalPopoverStyle = css`
+export const globalAntPopoverStyle = css`
   .ant-popover-inner-content {
     padding: 0;
+  }
+`;
+
+export const globalAntBtn = css`
+  button.ant-btn {
+    display: flex;
+    align-items: center;
   }
 `;
 

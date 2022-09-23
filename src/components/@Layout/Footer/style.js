@@ -5,7 +5,7 @@ import { FlexColumn } from '@atoms/FlexColumn/style';
 import { LogoContainer } from '@atoms/Logo/style';
 
 export const FooterContainer = styled(Layout.Footer)`
-  background: #fff;
+  background: var(--background-color);
   box-shadow: rgb(0 0 0 / 5%) 0px 6px 24px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px;
   padding-top: 0;
   padding-left: ${SIDEBAR_WIDTH}px;
