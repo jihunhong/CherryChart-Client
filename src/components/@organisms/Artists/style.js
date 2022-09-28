@@ -1,7 +1,9 @@
+import { SlideUp } from '@components/KeyFrames';
 import styled from 'styled-components';
 
 export const ArtistsContainer = styled.section`
-max-width: 93%;
+  ${SlideUp}
+  max-width: 93%;
   .ant-row {
     height: 40vh;
     overflow: hidden;
@@ -30,7 +32,7 @@ max-width: 93%;
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: repeat(5, 1fr);
     gap: 12px;
-    transform: rotatez(19deg) translate(84px,-97px);
+    transform: rotatez(23deg) translate(84px, -97px);
     > div {
       width: inherit;
       aspect-ratio: 1/1;

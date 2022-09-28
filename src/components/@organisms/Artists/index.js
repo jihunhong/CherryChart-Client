@@ -1,14 +1,18 @@
 import LinkHOC from '@atoms/LinkHOC';
 import Text from '@atoms/Text';
 import Title from '@atoms/Title';
+import useIntersecting from '@hooks/useIntersecting';
 import { Col, Row } from 'antd';
 import Image from 'next/image';
+import { useRef } from 'react';
 import { ArtistsContainer } from './style';
 
 const Artists = ({ dataSource = [] }) => {
+  const containerRef = useRef();
+  const [flag] = useIntersecting(containerRef);
   return (
     <>
-      <ArtistsContainer>
+      <ArtistsContainer ref={containerRef} $intersecting={flag}>
         <Row justify="start">
           <Col md={10} className="artists-description">
             <Title text="Take a look your Favorite Artist" />

@@ -7,12 +7,16 @@ import { Button, Row } from 'antd';
 import Image from 'next/image';
 import { BiWorld } from 'react-icons/bi';
 import { BsFillPlayFill } from 'react-icons/bs';
+import useIntersecting from '@hooks/useIntersecting';
+import { useRef } from 'react';
 import { FeatureContainer } from './style';
 
 const Features = () => {
+  const containerRef = useRef();
+  const [flag] = useIntersecting(containerRef);
   return (
     <>
-      <FeatureContainer>
+      <FeatureContainer ref={containerRef} $intersecting={flag}>
         <div className="grid">
           <FlexColumn gutter={[0, 22]}>
             <Image

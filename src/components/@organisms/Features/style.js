@@ -1,8 +1,10 @@
 import { Span } from '@atoms/Text/style';
 import { Headings } from '@atoms/Title/style';
+import { SlideUp } from '@components/KeyFrames';
 import styled from 'styled-components';
 
 export const FeatureContainer = styled.section`
+  ${SlideUp}
   position: relative;
 
   .grid {

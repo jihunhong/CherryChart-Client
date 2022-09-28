@@ -22,17 +22,17 @@ export const CarouselCoverImage = styled.img`
   height: 100%;
 
   :after {
-    transform: scale(0.9) translateY(15px);
-    filter: blur(10px);
-    opacity: 0.9;
     content: '';
     position: absolute;
-    width: inherit;
-    height: inherit;
-    background-image: inherit;
-    background-size: cover;
-    z-index: -1;
-    transition: filter 0.3s ease;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      226deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0.4) 35%,
+      rgba(255, 255, 255, 0.2) 42%,
+      rgba(255, 255, 255, 0) 60%
+    );
   }
 `;
 

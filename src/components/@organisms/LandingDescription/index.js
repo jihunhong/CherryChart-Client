@@ -1,12 +1,16 @@
 import Text from '@atoms/Text';
 import Title from '@atoms/Title';
+import useIntersecting from '@hooks/useIntersecting';
 import SamplePlayer from '@molecules/SamplePlayer';
 import { Col, Row } from 'antd';
+import { useRef } from 'react';
 import { LandingDescriptionContainer } from './style';
 
 const PlayListShare = () => {
+  const containerRef = useRef();
+  const [flag] = useIntersecting(containerRef);
   return (
-    <LandingDescriptionContainer>
+    <LandingDescriptionContainer ref={containerRef} $intersecting={flag}>
       <Row align="middle" justify="center">
         <Col offset={3} span={6} className="description">
           <Title text="Check out other playlists and share them!" />

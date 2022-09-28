@@ -13,7 +13,7 @@ const MyMusic = () => {
       <NavigationGlobal />
       <MyMusicContainer>
         <Row align="middle">
-          <h4>MY MUSIC</h4>
+          <h4>Library</h4>
         </Row>
         <Menu inlineIndent={12} theme="light" mode="inline" defaultSelectedKeys={['1']}>
           <MenuItem key="6" icon={<HiOutlineClock />}>

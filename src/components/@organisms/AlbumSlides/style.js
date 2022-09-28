@@ -1,6 +1,8 @@
+import { SlideUp } from '@components/KeyFrames';
 import styled from 'styled-components';
 
 export const AlbumSlidesContainer = styled.section`
+  ${SlideUp}
   overflow-y: hidden;
   .ant-row {
     flex-wrap: nowrap;

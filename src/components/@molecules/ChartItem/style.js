@@ -55,6 +55,7 @@ export const MusicListItemContainer = styled('li')`
 
   ${Span}.title {
     cursor: pointer;
+    font-weight: 600;
   }
   ${Span}.artist-name {
     color: rgba(0, 0, 0, 0.45);

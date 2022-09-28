@@ -19,9 +19,9 @@ export const getServerSideProps = wrapper.getServerSideProps(async context => {
   );
   await context.store.dispatch(
     loadArtists({
-      site: 'melon'
-    })
-  )
+      site: 'melon',
+    }),
+  );
   await context.store.dispatch(loadUpdatedSongs());
 });
 

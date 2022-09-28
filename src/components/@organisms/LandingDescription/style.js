@@ -1,9 +1,11 @@
 import { Span } from '@atoms/Text/style';
 import { Headings } from '@atoms/Title/style';
+import { SlideUp } from '@components/KeyFrames';
 import { imgCdn } from '@config/';
 import styled from 'styled-components';
 
 export const LandingDescriptionContainer = styled.section`
+  ${SlideUp}
   max-width: 93%;
   font-family: 'Poppins', sans-serif;
   border-radius: 14px;
@@ -11,7 +13,6 @@ export const LandingDescriptionContainer = styled.section`
     border-radius: 18px;
     height: 40vh;
     background-image: url('${imgCdn}/static/playlist-background.png?w=3000&ar=2025:503&fit=crop&auto=format');
-    background-size: cover;
     background-position-x: center;
     background-position-y: center;
     background-repeat: no-repeat;

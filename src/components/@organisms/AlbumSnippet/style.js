@@ -1,3 +1,4 @@
+import { AlbumCoverContainer } from '@atoms/AlbumCover/style';
 import { Button } from 'antd';
 import styled from 'styled-components';
 
@@ -11,6 +12,34 @@ export const AlbumInfoHeader = styled.section`
   grid-template-columns: 270px auto;
   column-gap: 12px;
   align-items: center;
+
+  ${AlbumCoverContainer} {
+    position: relative;
+    cursor: pointer;
+    :hover {
+      :after {
+        transform: translateY(0%);
+      }
+    }
+    :after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 120%;
+      content: '';
+      background: linear-gradient(
+        226deg,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(255, 255, 255, 0.4) 35%,
+        rgba(255, 255, 255, 0.2) 42%,
+        rgba(255, 255, 255, 0) 60%
+      );
+      transform: translateY(-16%);
+      will-change: transform;
+      transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
+    }
+  }
 
   .sight {
     height: -webkit-fill-available;
