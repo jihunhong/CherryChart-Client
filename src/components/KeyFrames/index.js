@@ -11,8 +11,7 @@ export const playlistRenderAnim = keyframes`
 `;
 
 export const SlideUp = css`
-  transition: transform 0.5s, opacity 0.5s;
-  transition-delay: 0.1s;
+  transition: transform 0.5s, opacity 0.2s;
   opacity: 0;
   transform: translate3d(0, 30px, 0) rotate(0.001deg);
 

@@ -1,14 +1,38 @@
+import LinkHOC from '@atoms/LinkHOC';
 import { Span } from '@atoms/Text/style';
 import { SlideUp } from '@components/KeyFrames';
 import media from '@lib/media';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 export const Rank = styled('span')`
-  margin: auto 0 auto 28px;
+  margin: auto;
 `;
 
-export const CoverImageContainer = styled('div')`
-  margin: auto;
+export const MusicListItemContainer = styled('li')`
+  ${SlideUp}
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background: #fff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 24px;
+  border-radius: 6px;
+  margin: 0 -1rem;
+
+  div[class*='flex-container'],
+  a[class*='flex-container'] {
+    margin: 0 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+`;
+
+export const StyledRankDiv = styled.div`
+  flex-basis: 44px;
+`;
+
+export const StyledCoverDiv = styled.div`
+  flex-basis: 64px;
   cursor: pointer;
   & img {
     padding: 4px;
@@ -16,58 +40,53 @@ export const CoverImageContainer = styled('div')`
   }
 `;
 
-export const MusicListItemContainer = styled('li')`
-  ${SlideUp}
-  display: grid;
-  width: 100%;
-  grid-auto-flow: column;
-  grid-column-gap: 1em;
-  grid-template-columns: 54px 64px 328px 222px 262px auto 130px 130px;
-  ${media.desktop`
-    grid-template-columns: 54px 64px 268px 222px 262px auto 80px 80px;
-  `}
-  background: #fff;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 24px;
-  border-radius: 6px;
-
-  div[class*='flex-container'],
-  a[class*='flex-container'] {
-    display: flex;
-    align-items: center;
+export const StyledTextDiv = styled.div`
+  margin: 0 1rem;
+  overflow: hidden;
+  a {
+    width: 100%;
   }
-
-  div[class*='action-container'] {
-    cursor: pointer;
-    svg {
-      transition: transform 0.25s ease-in-out;
+  &.title {
+    flex-basis: 290px;
+    max-width: 290px;
+    span {
+      cursor: pointer;
+      font-weight: 600;
+    }
+  }
+  &.artist-name {
+    flex-basis: 128px;
+    max-width: 128px;
+    span {
+      color: rgba(0, 0, 0, 0.45);
       :hover {
-        transform: scale(1.5);
+        text-decoration: underline;
       }
     }
   }
-
-  a {
-    ${Span} {
-      color: var(--font-plain-color);
-      margin: auto 1rem;
-    }
-  }
-
-  ${Span}.title {
-    cursor: pointer;
-    font-weight: 600;
-  }
-  ${Span}.artist-name {
-    color: rgba(0, 0, 0, 0.45);
-    margin: auto 1.4rem;
-    transition: text-decoration 0.25s ease-in-out;
-    :hover {
-      text-decoration: underline;
-    }
+  &.album-name {
+    flex-basis: 325px;
+    max-width: 325px;
   }
 `;
 
-export const AlbumName = styled('span')`
+export const StyledActionDiv = styled.div`
+  &.youtube {
+    margin-left: auto;
+  }
+  flex-basis: 80px;
+  cursor: pointer;
+  :hover {
+    svg {
+      transform: scale(1.25);
+    }
+  }
+  svg {
+    transition: transform 0.25s ease-in-out;
+  }
+`;
+
+export const AlbumName = styled.span`
   margin: 1rem;
   color: rgba(0, 0, 0, 0.85);
   display: inline-block;

@@ -9,7 +9,7 @@ export const ChartContainer = styled('div')`
   }
 `;
 
-export const MusicList = styled.section`
+export const MusicList = styled.ul`
   display: grid;
   grid-auto-flow: row;
   grid-row-gap: 1rem;
