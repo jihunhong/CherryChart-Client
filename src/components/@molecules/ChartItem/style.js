@@ -1,15 +1,11 @@
-import LinkHOC from '@atoms/LinkHOC';
-import { Span } from '@atoms/Text/style';
 import { SlideUp } from '@components/KeyFrames';
-import media from '@lib/media';
-import Link from 'next/link';
 import styled from 'styled-components';
 
 export const Rank = styled('span')`
   margin: auto;
 `;
 
-export const MusicListItemContainer = styled('li')`
+export const MusicListItemContainer = styled.li`
   ${SlideUp}
   display: flex;
   flex-wrap: wrap;
@@ -17,7 +13,6 @@ export const MusicListItemContainer = styled('li')`
   background: #fff;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 24px;
   border-radius: 6px;
-  margin: 0 -1rem;
 
   div[class*='flex-container'],
   a[class*='flex-container'] {
@@ -64,14 +59,15 @@ export const StyledTextDiv = styled.div`
       }
     }
   }
-  &.album-name {
+  &.album-name[class*='flex-container'] {
+    margin-left: auto;
     flex-basis: 325px;
     max-width: 325px;
   }
 `;
 
 export const StyledActionDiv = styled.div`
-  &.youtube {
+  &.youtube[class*='flex-container'] {
     margin-left: auto;
   }
   flex-basis: 80px;

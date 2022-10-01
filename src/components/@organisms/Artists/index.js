@@ -22,7 +22,7 @@ const Artists = ({ dataSource = [] }) => {
             {/** TODO :: 앨범 데이터를 임시로 사용 */}
             <div className="artists-avatars-container">
               {dataSource?.slice(0, 25).map(item => (
-                <div key={item?.music.id}>
+                <div key={item?.rank}>
                   <LinkHOC href={`/album/${item?.music.albumId}`}>
                     <div>
                       <Image

@@ -7,8 +7,19 @@ export const StyledBestArtist = styled.article`
   h2 {
     margin-bottom: 0px;
     position: absolute;
-    top: 84px;
+    top: 74px;
     left: 0;
+    margin-left: 11px;
+    :after {
+      position: absolute;
+      top: 50%;
+      left: -11px;
+      content: '';
+      height: 60%;
+      width: 4px;
+      transform: translateY(-50%);
+      background-color: var(--primary-color);
+    }
   }
   div.meta-container {
     border-radius: 14px;
@@ -20,6 +31,21 @@ export const StyledBestArtist = styled.article`
     left: 0;
     padding-bottom: calc(100% * (4 / 17));
     z-index: 1;
+    :after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      content: '';
+      background: linear-gradient(
+        35deg,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(255, 255, 255, 0.3) 35%,
+        rgba(255, 255, 255, 0.2) 42%,
+        rgba(255, 255, 255, 0) 60%
+      );
+    }
   }
   div.meta {
     width: calc(100% - 380px);

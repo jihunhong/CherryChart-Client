@@ -3,7 +3,6 @@ import Slider from '@atoms/Slider';
 import Text from '@atoms/Text';
 import Title from '@atoms/Title';
 import useAggregateAlbum from '@hooks/useAggreateAlbum';
-import aggregateAlbum from '@lib/aggregateAlbum';
 import CarouselItem from '@molecules/CarouselItem';
 import { memo } from 'react';
 import { CarouselGlobalStyle, ChartCarouselContainer } from './style';
@@ -14,7 +13,7 @@ const ChartCarousel = ({ dataSource = [] }) => {
   return (
     <>
       <ChartCarouselContainer>
-        <Title level={4}>
+        <Title level={4} text={null}>
           <SiteSelector />
         </Title>
         <Text text={`${albums?.length || 0} Albums`} />

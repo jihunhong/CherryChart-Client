@@ -2,7 +2,7 @@ import { Layout } from 'antd';
 import styled from 'styled-components';
 
 export const HeaderContainer = styled(Layout.Header)`
-  background: #fff;
+  background: var(--background-color);
   z-index: 101;
   box-shadow: rgb(0 0 0 / 5%) 0px 6px 24px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px;
   display: flex;

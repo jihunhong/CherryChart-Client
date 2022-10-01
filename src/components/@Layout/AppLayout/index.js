@@ -1,4 +1,4 @@
-import Body from '@Layout/Body';
+import Main from '@Layout/Main';
 import Footer from '@Layout/Footer';
 import Header from '@Layout/Header';
 import SiteNav from '@Layout/ProfileNav';
@@ -20,9 +20,9 @@ const AppLayout = ({ children }) => {
         </Header>
         <Layout className="app-content">
           <Sidebar />
-          <Body>
+          <Main>
             <>{children}</>
-          </Body>
+          </Main>
         </Layout>
         <Footer />
       </Layout>

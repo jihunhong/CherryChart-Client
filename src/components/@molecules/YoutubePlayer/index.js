@@ -33,7 +33,7 @@ const YoutubePlayer = ({ onStateChange }) => {
         onStateChange={onStateChange}
         containerClassName="youtube-container"
         width="200"
-        opts={{ playerVars: { autoplay: 0, loop: 0, mute: 1, controls: 1, playlist: storageList } }}
+        opts={{ playerVars: { autoplay: 0, loop: 0, mute: 1, controls: 0, playlist: storageList } }}
         onEnd={onPlayEnd}
         onReady={onReadyEnd}
       />

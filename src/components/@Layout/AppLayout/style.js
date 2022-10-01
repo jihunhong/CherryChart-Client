@@ -43,7 +43,7 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     align-items: stretch;
     > .ant-layout {
-      background: #fff;
+      background: var(--background-color);
     }
   }
 
@@ -51,6 +51,7 @@ export const GlobalStyle = createGlobalStyle`
     z-index: 700;
   }
   .app-content {
+    background: var(--background-color);
     padding-top: 56px;
     padding-left: ${SIDEBAR_WIDTH}px;
   }
