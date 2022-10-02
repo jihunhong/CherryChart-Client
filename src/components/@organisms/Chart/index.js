@@ -4,7 +4,7 @@ import useAddChart from '@hooks/player/useAddChart';
 import ChartItem from '@molecules/ChartItem';
 import { Button } from 'antd';
 import { BsFillPlayFill, BsShuffle } from 'react-icons/bs';
-import { ChartContainer, Header, MusicList } from './style';
+import { ChartContainer, Header, StyledChartList } from './style';
 
 const Chart = ({ dataSource = [] }) => {
   const [handleAdd, handleShuffle] = useAddChart();
@@ -27,11 +27,11 @@ const Chart = ({ dataSource = [] }) => {
         </div>
       </Header>
 
-      <MusicList>
+      <StyledChartList>
         {dataSource.map(item => (
           <ChartItem rank={item.rank} {...item.music} key={item.rank} />
         ))}
-      </MusicList>
+      </StyledChartList>
     </ChartContainer>
   );
 };

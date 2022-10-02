@@ -1,15 +1,17 @@
 import Title from '@atoms/Title';
+import useArtistPagination from '@hooks/useArtistPagination';
 import { BsHeartFill } from 'react-icons/bs';
 import { FiWatch } from 'react-icons/fi';
-import { StyledBestArtist, StyledDetailDiv } from './style';
+import { SliderPagination, StyledBestArtist, StyledDetailDiv } from './style';
 
-const BestArtist = ({ src, artistName }) => {
+const BestArtists = () => {
+  const [artist, onChange, current] = useArtistPagination();
   return (
     <StyledBestArtist>
-      <Title level={2} text="Trending" />
+      <Title level={1} text="Trending" />
       <div className="meta-container">
         <div className="meta">
-          <span className="artist-name">{artistName}</span>
+          <span className="artist-name">{artist?.artistName}</span>
           <p>
             This is sample static data (artist, description, using time, etc.. ) consectetur
             adipisicing elit. Exercitationem nemo possimus saepe illum, sint at laboriosam deleniti
@@ -31,9 +33,25 @@ const BestArtist = ({ src, artistName }) => {
           </StyledDetailDiv>
         </div>
       </div>
-      <img src={src} alt="best artist" />
+      <div className="image-container">
+        <img src={`${artist?.profileImage}?w=650&auto=format`} alt="best artist" />
+      </div>
+      <div className="pagination" onClick={onChange}>
+        <SliderPagination
+          data-index={0}
+          className={`slider-pagination ${current === 0 ? 'active' : ''}`}
+        />
+        <SliderPagination
+          data-index={1}
+          className={`slider-pagination ${current === 1 ? 'active' : ''}`}
+        />
+        <SliderPagination
+          data-index={2}
+          className={`slider-pagination ${current === 2 ? 'active' : ''}`}
+        />
+      </div>
     </StyledBestArtist>
   );
 };
 
-export default BestArtist;
+export default BestArtists;

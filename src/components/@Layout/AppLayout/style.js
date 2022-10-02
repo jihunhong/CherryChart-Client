@@ -23,6 +23,7 @@ export const GlobalStyle = createGlobalStyle`
     --gray-color: #a3a0a0;
     --font-gray-color: #868484;
     --dark-gray: #434343;
+    --yellow-slider-dot: #ffd351e6;
 
     --header-height: 56px;
     --bar-player-height: 62px;

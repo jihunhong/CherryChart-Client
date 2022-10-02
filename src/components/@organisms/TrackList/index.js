@@ -1,14 +1,14 @@
 import TrackItem from '@molecules/TrackItem';
-import { MusicList } from '@organisms/Chart/style';
+import { StyledTrackList } from './style';
 
 const TrackList = ({ dataSource = [] }) => {
   return (
     <>
-      <MusicList>
+      <StyledTrackList>
         {dataSource?.map((t, index) => (
           <TrackItem key={t.title} rank={index + 1} videoId={t.video?.videoId} {...t} />
         ))}
-      </MusicList>
+      </StyledTrackList>
     </>
   );
 };

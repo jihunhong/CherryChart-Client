@@ -5,8 +5,8 @@ export const StyledMain = styled(Layout.Content)`
   background: var(--background-color);
   padding: 0 50px 80px;
   position: relative;
-  max-width: 1280px;
-  margin: 0 auto 0 0;
+  max-width: 1440px;
+  margin: 0 auto;
 
   & > section {
     margin: 5vh auto;
