@@ -52,7 +52,7 @@ const Features = () => {
           </FlexColumn>
           <div />
           <div className="feature-description">
-            <Title text="Listen and Watch" />
+            <Title text="Listen and Watch" level={1} />
             <Text text="Browse the KPOP charts and add your favorite songs to your playlist!" />
             <Text text="Take a look at the songs that are counted every day." />
             <Row>
