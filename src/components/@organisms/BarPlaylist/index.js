@@ -22,6 +22,7 @@ const PlaylistInsertModal = dynamic(() => import('@organisms/Modal/PlaylistInser
 
 const BarPlaylist = () => {
   const playList = useSelector(state => state.player.playList);
+  const selectedIndex = useSelector(state => state.player.selectedIndex);
   const { onSortEnd } = useDragItem();
   const [visible, toggle] = usePlaylistModal(false);
   const usersList = useSelector(state => state.user.me?.playlists);
@@ -30,7 +31,7 @@ const BarPlaylist = () => {
     <>
       {visible ? <PlaylistInsertModal visible={visible} onCancel={toggle} /> : <></>}
       <div className="player-side"></div>
-      <PlaylistSideContainer className="playlist-side">
+      <PlaylistSideContainer className="playlist-side" $selectedIndex={selectedIndex}>
         <Tabs
           items={[
             {

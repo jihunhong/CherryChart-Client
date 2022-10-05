@@ -1,6 +1,20 @@
-import { AlbumCoverContainer } from '@atoms/AlbumCover/style';
-import { FlexColumn } from '@atoms/FlexColumn/style';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const PlayerInExpandUI = css`
+  position: fixed;
+  top: 50%;
+  left: 56px;
+  --side-padding: calc(56px * 2);
+  width: calc(100vw - var(--side-padding) - 36vw);
+  aspect-ratio: 16/9;
+  height: auto;
+  z-index: 1;
+  transform: translateY(-50%);
+  > iframe {
+    width: 100%;
+    height: 100%;
+  }
+`;
 
 export const BarPlayerContainer = styled.div`
   .youtube-container {
@@ -9,9 +23,12 @@ export const BarPlayerContainer = styled.div`
     left: 13px;
     width: 480px;
     height: 270px;
+    z-index: 0;
+    transition: all 0.6s;
+    ${props => (props.$isExpand ? PlayerInExpandUI : '')}
     & iframe {
-      width: 480px;
-      height: 270px;
+      width: 100%;
+      height: 100%;
     }
   }
   position: fixed;

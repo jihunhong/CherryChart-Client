@@ -21,7 +21,7 @@ const BarPlayer = () => {
   const isExpand = useSelector(state => state.player.isExpand);
 
   return (
-    <BarPlayerContainer>
+    <BarPlayerContainer $isExpand={isExpand}>
       <YoutubePlayer onStateChange={onStateChange} />
       <div className="player-action">
         <PlayControls />

@@ -47,4 +47,14 @@ export const PlayerMusicItemContainer = styled.div`
     color: #909090;
     font-weight: 400;
   }
+  .actions {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  :hover {
+    .actions {
+      opacity: 1;
+    }
+  }
 `;

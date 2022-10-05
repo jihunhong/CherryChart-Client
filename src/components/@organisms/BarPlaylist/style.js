@@ -23,7 +23,7 @@ export const BarPlaylistContainer = styled.div`
   background: #000;
   ${props =>
     props.$isExpand ? 'transform: translate3d(0,0,0);' : 'transform: translate3d(0, 100vh, 0);'}
-  transition: transform 300ms cubic-bezier(0.2, 0, 0.6, 1);
+  transition: transform .3s cubic-bezier(0.2, 0, 0.6, 1);
   will-change: transform;
   .player-side {
     flex: 1;
@@ -69,24 +69,15 @@ export const PlaylistSideContainer = styled.section`
     display: grid;
     grid-auto-flow: row;
     ${PlayerMusicItemContainer} {
+      transition: background 0.3s;
+      padding: 0 4px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       h5[class*='typography'] {
         font-size: 14px;
       }
+
       &.active {
-        background-color: var(--dark-gray);
-        ${AlbumCoverContainer} {
-          position: relative;
-          :after {
-            position: absolute;
-            background: rgba(0, 0, 0, 0.7);
-            top: 0;
-            left: 0;
-            width: inherit;
-            height: inherit;
-            border-radius: 4px;
-          }
-        }
+        background: rgb(128 128 128 / 40%);
       }
       a {
         pointer-events: none;

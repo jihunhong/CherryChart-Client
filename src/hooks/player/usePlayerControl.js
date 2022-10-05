@@ -14,6 +14,7 @@ const usePlayerControl = () => {
   };
 
   const handleMute = () => {
+    dispatch(playerSlice.actions.toggleMute());
     if (window.YTPlayer.isMuted()) {
       window.YTPlayer.unMute();
     } else {

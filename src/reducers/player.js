@@ -1,12 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
+export const initialState = {
   visible: true,
   isExpand: false,
   playList: [],
   selectedIndex: 0,
   loop: false,
   playing: false,
+  muted: false,
 };
 
 const playerSlice = createSlice({
@@ -21,6 +22,9 @@ const playerSlice = createSlice({
     },
     togglePlay(state) {
       state.playing = !state.playing;
+    },
+    toggleMute(state) {
+      state.muted = !state.muted;
     },
     switchPlay(state, action) {
       state.playing = action.payload;
@@ -71,5 +75,4 @@ const playerSlice = createSlice({
     },
   },
 });
-
 export default playerSlice;

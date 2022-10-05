@@ -42,7 +42,8 @@
         "specialLink": ["hrefLeft", "hrefRight"],
         "aspects": ["invalidHref", "preferButton"]
       }
-    ]
+    ],
+    "no-underscore-dangle": 0
     // next Link에서 이용되는 a 태그의 validate
   },
   "plugins": ["import", "react-hooks"]
