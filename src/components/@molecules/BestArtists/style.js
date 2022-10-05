@@ -7,7 +7,7 @@ export const StyledBestArtist = styled.article`
   h1 {
     margin-bottom: 0px;
     position: absolute;
-    top: 74px;
+    top: 110px;
     left: 0;
     margin-left: 11px;
     :after {
@@ -39,6 +39,7 @@ export const StyledBestArtist = styled.article`
       top: 0;
       left: 0;
       content: '';
+      border-radius: 14px;
       background: linear-gradient(
         10deg,
         rgb(234 234 234) 0%,
@@ -49,7 +50,7 @@ export const StyledBestArtist = styled.article`
     }
   }
   div.meta {
-    width: calc(100% - 380px);
+    width: calc(100% - 430px);
     position: absolute;
     top: 35%;
     transform: translateY(-35%);
@@ -82,7 +83,8 @@ export const StyledBestArtist = styled.article`
   }
   & div.image-container {
     border-bottom-right-radius: 14px;
-    width: 319px;
+    overflow: hidden;
+    width: 400px;
     position: absolute;
     bottom: 0;
     right: 0;

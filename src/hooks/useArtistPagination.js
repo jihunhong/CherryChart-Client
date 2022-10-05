@@ -28,7 +28,7 @@ const useArtistPagination = () => {
     }
   };
 
-  return [artistList[currentIndex].music?.artist, onChange, currentIndex];
+  return [artistList[currentIndex]?.music?.artist, onChange, currentIndex];
 };
 
 export default useArtistPagination;

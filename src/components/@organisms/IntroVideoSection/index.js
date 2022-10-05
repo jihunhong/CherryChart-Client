@@ -41,7 +41,6 @@ const IntroVideoSection = () => {
                 showinfo: 0,
                 disablekb: 1,
                 rel: 0,
-                playlist: LANDING_BACKGROUND_VIDEO_ID[currentPlayed],
               },
             }}
           />

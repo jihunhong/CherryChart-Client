@@ -1,6 +1,5 @@
 import usePlayList from '@hooks/player/usePlayList';
 import playerSlice from '@reducers/player';
-import { useDebugValue } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import YouTube from 'react-youtube';
 
