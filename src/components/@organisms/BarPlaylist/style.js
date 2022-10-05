@@ -98,6 +98,21 @@ export const PlaylistSideContainer = styled.section`
           border-radius: 4px;
         }
       }
+      .actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        :hover {
+          svg {
+            transform: scale(1.25);
+          }
+        }
+        svg {
+          transition: transform 0.25s ease-in-out;
+        }
+      }
     }
   }
 `;
