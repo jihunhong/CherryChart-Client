@@ -27,16 +27,6 @@ const useAddItem = ({
         }),
       );
     } else {
-      // if (window.YTPlayer) {
-      //   if (playList.length) {
-      //     window.YTPlayer.cuePlaylist(videoId);
-      //   } else {
-      //     window.YTPlayer.cuePlaylist([videoId]);
-      //   }
-      //   if (window.YTPlayer.getPlayerState() !== 1) {
-      //     window.YTPlayer.playVideoAt(selectedIndex);
-      //   }
-      // }
       dispatch(
         playerSlice.actions.addMusicToPlayList({
           id,
@@ -49,6 +39,7 @@ const useAddItem = ({
         }),
       );
     }
+    dispatch(playerSlice.actions.switchPlay(true));
   }, [id, title, artistName, albumName, videoId, smallCoverImage, albumId, tracks]);
 
   return [handler];
