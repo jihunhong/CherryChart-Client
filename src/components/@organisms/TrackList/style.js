@@ -4,5 +4,4 @@ export const StyledTrackList = styled.ul`
   display: grid;
   grid-auto-flow: row;
   padding: 0;
-  margin-top: 29px;
 `;

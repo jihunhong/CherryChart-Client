@@ -9,7 +9,7 @@ export const StyledMain = styled(Layout.Content)`
   margin: 0 auto;
 
   & > section {
-    margin: 5vh auto;
+    margin: 3.8rem auto;
   }
   & * {
     box-sizing: border-box;

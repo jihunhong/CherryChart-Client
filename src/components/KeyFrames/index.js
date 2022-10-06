@@ -10,6 +10,15 @@ export const playlistRenderAnim = keyframes`
     }
 `;
 
+export const Opacity = keyframes`
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+`;
+
 export const SlideUp = css`
   transition: transform 0.5s, opacity 0.2s;
   opacity: 0;

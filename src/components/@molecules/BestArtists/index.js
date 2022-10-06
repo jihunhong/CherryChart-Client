@@ -10,7 +10,7 @@ const BestArtists = () => {
     <StyledBestArtist>
       <Title level={1} text="Trending" />
       <div className="meta-container">
-        <div className="meta">
+        <div className="meta" key={artist?.profileImage}>
           <span className="artist-name">{artist?.artistName}</span>
           <p>
             This is sample static data (artist, description, using time, etc.. ) consectetur
@@ -33,7 +33,7 @@ const BestArtists = () => {
           </StyledDetailDiv>
         </div>
       </div>
-      <div className="image-container">
+      <div className="image-container" key={artist?.profileImage}>
         <img src={`${artist?.profileImage}?w=650&auto=format`} alt="best artist" />
       </div>
       <div className="pagination" onClick={onChange}>

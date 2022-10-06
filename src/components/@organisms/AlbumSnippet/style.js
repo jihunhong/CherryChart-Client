@@ -7,15 +7,47 @@ export const PlayButton = styled(Button)`
   border: none;
 `;
 
-export const AlbumInfoHeader = styled.section`
+export const StyledAlbumSnippet = styled.section`
+  position: relative;
+  margin-bottom: 0;
+`;
+
+export const SnippetBackground = styled.div`
+  position: absolute;
+  overflow: hidden;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  width: 100%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+  :before {
+    content: '';
+    position: absolute;
+    inset: -2rem;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+export const SnippetGrid = styled.div`
   display: grid;
   grid-template-columns: 270px auto;
   column-gap: 12px;
   align-items: center;
+  padding: 2rem;
 
   ${AlbumCoverContainer} {
     position: relative;
     cursor: pointer;
+    overflow: hidden;
+    border-radius: 6px;
+
     :hover {
       :after {
         transform: translateY(0%);
@@ -23,19 +55,20 @@ export const AlbumInfoHeader = styled.section`
     }
     :after {
       position: absolute;
+
       top: 0;
       left: 0;
       width: 100%;
-      height: 120%;
+      height: 100%;
       content: '';
       background: linear-gradient(
-        226deg,
+        210deg,
         rgba(255, 255, 255, 0.4) 0%,
         rgba(255, 255, 255, 0.4) 35%,
         rgba(255, 255, 255, 0.2) 42%,
         rgba(255, 255, 255, 0) 60%
       );
-      transform: translateY(-16%);
+      transform: translateY(-15%);
       will-change: transform;
       transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
     }
@@ -53,6 +86,10 @@ export const AlbumInfoHeader = styled.section`
     justify-content: center;
     height: 100%;
     position: relative;
+    margin: 0;
+    > span {
+      color: var(--font-default-color);
+    }
     > h2.album-name {
       margin: 0;
       align-items: baseline;

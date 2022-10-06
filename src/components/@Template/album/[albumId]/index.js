@@ -8,10 +8,12 @@ const AlbumDetail = () => {
   const { albums, artistName, tracks, releaseDate, albumName } = useSelector(state => state.album);
   return (
     <>
-      <AlbumSnippet />
-      <TrackList dataSource={tracks} />
-      <AlbumFooter releaseDate={releaseDate} tracks={tracks} albumName={albumName} />
-      <RelatedAlbums dataSource={albums} artist={artistName} />
+      <section>
+        <AlbumSnippet />
+        <TrackList dataSource={tracks} />
+        <AlbumFooter releaseDate={releaseDate} tracks={tracks} albumName={albumName} />
+        <RelatedAlbums dataSource={albums} artist={artistName} />
+      </section>
     </>
   );
 };

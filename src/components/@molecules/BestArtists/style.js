@@ -1,3 +1,4 @@
+import { Opacity } from '@components/KeyFrames';
 import styled from 'styled-components';
 
 export const StyledBestArtist = styled.article`
@@ -48,6 +49,13 @@ export const StyledBestArtist = styled.article`
         rgba(255, 255, 255, 0) 60%
       );
     }
+  }
+  div.meta,
+  div.image-container {
+    animation-name: ${Opacity};
+    animation-duration: 0.5s;
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
   }
   div.meta {
     width: calc(100% - 430px);

@@ -1,12 +1,12 @@
 import dayjs from 'dayjs';
-import { AlbumInfoContainer } from './style';
+import { StyledAlbumFooter } from './style';
 
 const AlbumFooter = ({ releaseDate, tracks, albumName }) => {
   return (
-    <AlbumInfoContainer>
+    <StyledAlbumFooter>
       <p>{dayjs(releaseDate).format('MMMM DD, YYYY')}</p>
       <p>{`${tracks?.length} Songs - ${albumName}`}</p>
-    </AlbumInfoContainer>
+    </StyledAlbumFooter>
   );
 };
 
