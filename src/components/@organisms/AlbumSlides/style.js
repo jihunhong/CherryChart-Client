@@ -6,8 +6,8 @@ export const AlbumSlidesContainer = styled.section`
   overflow-y: hidden;
   .ant-row {
     flex-wrap: nowrap;
-    overflow-y: hidden;
-    overflow-x: hidden;
+    width: 100%;
+    overflow: hidden;
     margin-left: -12px;
     margin-right: -12px;
     > img {

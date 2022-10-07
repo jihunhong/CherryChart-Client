@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const CarouselCoverImageContainer = styled.div`
   > span {
     border-radius: 8px;
-    box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 2px 6px 2px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;
     margin-bottom: 13px;
     position: relative;
     :hover {

@@ -14,6 +14,7 @@ export const SongSliceItemContainer = styled.div`
     flex: 0 1 64px;
     margin-right: 16px;
     border-radius: 6px;
+    padding-left: 4px;
   }
 
   ${FlexColumn} {
