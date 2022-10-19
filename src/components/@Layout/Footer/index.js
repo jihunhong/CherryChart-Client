@@ -4,11 +4,11 @@ import Logo from '@atoms/Logo';
 import Text from '@atoms/Text';
 import { FaGithub } from 'react-icons/fa';
 import { FiMail } from 'react-icons/fi';
-import { Author, FooterContainer, SiteLinks } from './style';
+import { Author, StyledFooter, SiteLinks } from './style';
 
 const Footer = () => {
   return (
-    <FooterContainer>
+    <StyledFooter>
       <div className="grid-column">
         <FlexColumn>
           <div className="site-footer">
@@ -17,10 +17,12 @@ const Footer = () => {
           </div>
           <div>
             <div className="contact">
-              <FiMail size={20} /> <a href="mailto:redgee49@gmail.com">redgee49@gmail.com</a>
+              <FiMail size={20} />
+              <a href="mailto:redgee49@gmail.com">redgee49@gmail.com</a>
             </div>
             <div className="contact">
-              <FaGithub size={20} /> <a href="https://github.com/jihunhong">jihunhong</a>
+              <FaGithub size={20} />
+              <a href="https://github.com/jihunhong">jihunhong</a>
             </div>
           </div>
         </FlexColumn>
@@ -65,7 +67,7 @@ const Footer = () => {
         </SiteLinks>
       </div>
       <Author>© CHERRYCHART, 2021. Created by jihunhong.</Author>
-    </FooterContainer>
+    </StyledFooter>
   );
 };
 

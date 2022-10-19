@@ -19,6 +19,7 @@ export const LetterBox = styled.section`
     font-weight: 800;
     display: inline-block;
     margin-bottom: 5px;
+    text-shadow: none;
   }
 
   .site-title {
@@ -68,13 +69,8 @@ export const VideoWrapper = styled.div`
     width: 100%;
     height: auto;
     aspect-ratio: 16/9;
-    background: linear-gradient(
-      180deg,
-      rgb(252 253 254) 0%,
-      rgba(255, 255, 255, 1) 5%,
-      rgba(255, 255, 255, 0) 16%
-    );
-    background-image: linear-gradient(90deg, rgb(0 219 222 / 40%) 0%, rgb(252 0 255 / 40%) 100%);
+    background: rgb(252 253 254 / 35%);
+
     z-index: 1;
   }
 

@@ -44,3 +44,7 @@ export const ScaleUp = css`
   transform: scale(1.05);
   transition: 0.3s ease-in-out;
 `;
+
+export const NeonGradientBackground = css`
+  background-image: linear-gradient(90deg, rgb(0 219 222 / 40%) 0%, rgb(252 0 255 / 40%) 100%);
+`;

@@ -30,7 +30,12 @@ const BarPlaylist = () => {
   return (
     <>
       {visible ? <PlaylistInsertModal visible={visible} onCancel={toggle} /> : <></>}
-      <div className="player-side"></div>
+      <div className="player-side">
+        {/**
+         * <Player /> 컴포넌트가
+         * absolute로 이곳에 위치한것처럼 보이게된다.
+         */}
+      </div>
       <PlaylistSideContainer className="playlist-side" $selectedIndex={selectedIndex}>
         <Tabs
           items={[
@@ -60,7 +65,7 @@ const BarPlaylist = () => {
               label: '보관함',
               children: (
                 <PlaylistGrid>
-                  <ProfilePlaylists title={'재생목록'} dataSource={usersList} />
+                  <ProfilePlaylists title="재생목록" dataSource={usersList} />
                 </PlaylistGrid>
               ),
             },

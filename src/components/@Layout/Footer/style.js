@@ -4,9 +4,9 @@ import { SIDEBAR_WIDTH } from '@config/';
 import { FlexColumn } from '@atoms/FlexColumn/style';
 import { LogoContainer } from '@atoms/Logo/style';
 
-export const FooterContainer = styled(Layout.Footer)`
+export const StyledFooter = styled(Layout.Footer)`
   background: var(--background-color);
-  box-shadow: rgb(0 0 0 / 5%) 0px 6px 24px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px;
+  border-top: 1px solid rgb(0 0 0 / 8%);
   padding-top: 0;
   padding-left: ${SIDEBAR_WIDTH}px;
   min-height: 300px;
@@ -14,7 +14,10 @@ export const FooterContainer = styled(Layout.Footer)`
     margin-bottom: 6px;
   }
   > .grid-column {
-    padding: 50px;
+    padding: 50px 50px 80px;
+    position: relative;
+    max-width: 1680px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-auto-flow: column;

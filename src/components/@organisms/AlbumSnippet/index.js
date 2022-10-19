@@ -21,7 +21,7 @@ const AlbumSnippet = () => {
   useEffect(() => {
     if (canvasRef.current) {
       const image = new Image();
-      image.src = replaceSize(artist?.profileImage, 500);
+      image.src = replaceSize(smallCoverImage, 120);
       image.onload = function () {
         scaleToFit(this, canvasRef.current);
       };

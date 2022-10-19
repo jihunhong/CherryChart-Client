@@ -19,7 +19,6 @@ export const SnippetBackground = styled.div`
   border-top-right-radius: 14px;
   width: 100%;
   height: 100%;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
   :before {
     content: '';

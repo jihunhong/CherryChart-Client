@@ -11,7 +11,9 @@ const YouTube = dynamic(() => import('react-youtube'), {
   loading: () => <div>...</div>,
 });
 const IntroVideoSection = () => {
-  const [currentPlayed] = useState(Math.floor(Math.random() * 10) % 2);
+  const [currentPlayed] = useState(
+    Math.floor(Math.random() * 10) % LANDING_BACKGROUND_VIDEO_ID.length,
+  );
 
   return (
     <IntroSectionContainer>
@@ -38,7 +40,6 @@ const IntroVideoSection = () => {
                 mute: 1,
                 controls: 0,
                 loop: 1,
-                showinfo: 0,
                 disablekb: 1,
                 rel: 0,
               },
