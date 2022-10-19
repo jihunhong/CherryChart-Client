@@ -34,7 +34,7 @@ const BestArtists = () => {
         </div>
       </div>
       <div className="image-container" key={artist?.profileImage}>
-        <img src={`${artist?.profileImage}?w=650&auto=format`} alt="best artist" />
+        <img src={`${artist?.profileImage}?w=650&auto=format&sat=-100`} alt="best artist" />
       </div>
       <div className="pagination" onClick={onChange}>
         <SliderPagination
