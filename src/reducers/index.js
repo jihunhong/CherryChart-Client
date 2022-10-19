@@ -19,7 +19,14 @@ const persistConfig = {
 const rootReducer = (state, action) => {
   switch (action.type) {
     case HYDRATE:
-      return { ...state, ...action.payload };
+      const nextState = {
+        ...state,
+        ...action.payload,
+      };
+      if (state.player) {
+        nextState.player = state.player;
+      }
+      return nextState;
     case REHYDRATE:
       return {
         ...action.payload?._persist,
